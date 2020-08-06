@@ -1,0 +1,48 @@
+site_name: Program Learning for Beginner
+repo_url: https://github.com/KmolYuan/program-learning
+copyright: Copyright © 2020 <a href="https://github.com/KmolYuan">Yuan Chang</a>
+site_description: Programing language tutorials.
+
+theme:
+  name: material
+  favicon: img/icon.png
+  logo: img/logo.png
+  nav_style: dark
+  features:
+    - tabs
+
+markdown_extensions:
+  - pymdownx.arithmatex
+  - pymdownx.smartsymbols
+  - pymdownx.tabbed
+  - pymdownx.superfences:
+      preserve_tabs: true
+  - toc:
+      permalink: true
+  - admonition
+  - smarty
+  - attr_list
+  - codehilite
+
+plugins:
+  - search
+  - git-revision-date-localized
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
+
+nav:
+  - Home Page: index.md
+  - Basic:
+    - Git: git.md
+    - Markdown & HTML5 (TODO): markdown-html5.md
+    - YAML (TODO): yaml.md
+    - Python: python.md
+    - C / C++: c-cpp.md
+    - Matlab (EN): matlab-en.md
+    - Latex Math (TODO): latex-math.md
+  - Advanced:
+    - Regular Expression: re.md
+    - Syntax: syntax.md
+  - Keywords:
+    - IT introduces: IT-intro.md
