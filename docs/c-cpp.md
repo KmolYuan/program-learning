@@ -37,9 +37,10 @@ C++ 是由 C 語言延伸而來，擴充了更多較「抽象」的語法，以�
 ![llvm logo](img/llvm.svg){: style="width:200px"}
 ![visual cpp logo](img/visual_cpp.png){: style="width:200px"}
 
-C / C++ 的世界觀中，**由於 Linux 是由 C++ 寫成的**，所以其開發環境是最簡易的。
+C / C++ 的世界觀中，由於 Linux 是由 C/C++ 寫成的，所以其開發環境是最簡易的。
 GCC 編譯器通常最努力支援最新的標準；其他還有如 LLVM 品牌。
-而相近的 mac OS 使用的是支援 Objective-C 較好的 Clang。
+而相近的 mac OS 使用的是支援 Objective-C 較好的 Clang，
+不過 Apple 已經捨棄 Objective-C 主打 Swift 語言，Objective-C 已轉為底層的實現。
 至於 Windows 則是主打自家的 Visual C++，不過 GCC 的 MinGW 與其他編譯器的 Windows 版本也在搶攻這塊市場。
 
 ## Compile
@@ -57,6 +58,18 @@ C 和 C++ 的編譯流程是相同的。
     但是由於閱讀需要，會使用排版工具，如 [CLang-format](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)。
 
     支援此功能的 IDE 可以使協同時盡量保持程式碼風格一致。
+
+!!!ABI
+    相同的編譯型程式語言在互相連結時使用 API (Application Programing Interface)，
+    不同的編譯型程式語言是如何溝通的？
+
+    ABI (Application Binary Interface) 是各種平台間機器碼的共用介面，隨作業系統與裝置而異。
+    可以簡單理解成，C 語言中的名稱是 ABI 的名稱，但是 C++ 會給它編上 `__cpp_` 的前綴和簽章（因為有重載功能），
+    甚至是亂數產生前綴（防止相同名稱的無名 Namespace 等）。
+    這導致 C 語言永遠無法理解 C++ Library 的內容，唯一的辦法就是 C++ 保持使用者給的名稱不做編碼。
+
+    在後面的章節示範中，[C++ to C](#c-to-c) 會有特殊的語法保留名稱。
+    如 C/C++/Fortran/Rust 之間的溝通，就是保持 ABI 一致。
 
 ### Declaration and Definition
 
