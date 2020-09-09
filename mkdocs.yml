@@ -44,5 +44,6 @@ nav:
   - Advanced:
     - Regular Expression: re.md
     - Syntax: syntax.md
+    - Expression and Statement: expr.md
   - Keywords:
     - IT introduces: IT-intro.md
