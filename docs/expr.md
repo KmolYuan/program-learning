@@ -59,3 +59,21 @@ let c = match b {
 // 另一種 match pattern
 let d = if let Case::Done(done) = b { 10 } else { 20 };
 ```
+
+JavaScript 的函式也是很經典的例子，總共有三種函式寫法：
+
+```js
+/// 這邊只是示範，const 變數不可以重複指派
+// 函式陳述式（不用結尾分號）
+function f() {}
+// 函式表達式
+const f = function () {};
+// 無 this 的箭號函式 (arrow function)
+const f = () => {};
+// 異步函式的版本
+async function f() {}
+const f = async function () {};
+const f = async () => {};
+// 無指派，執行後回收函式本體
+(function () {})();
+```
