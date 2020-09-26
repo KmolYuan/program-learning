@@ -33,15 +33,19 @@ extra_javascript:
 
 nav:
   - Home Page: index.md
-  - Basic:
-    - Git: git.md
-    - HTML5 & CSS & Markdown: html5.md
-    - YAML: yaml.md
-    - Python: python.md
-    - C / C++: c-cpp.md
-    - Matlab (EN): matlab-en.md
-    - Latex Math (TODO): latex-math.md
-  - Advanced:
+  - Knowledge:
+    - Version Control:
+      - Git: git.md
+    - Programing:
+      - Python: python.md
+      - C / C++: c-cpp.md
+      - Matlab (EN): matlab-en.md
+    - Webpages:
+      - HTML5 & CSS & Markdown: html5.md
+    - Data Format:
+      - YAML: yaml.md
+      - Latex Math (TODO): latex-math.md
+  - Multi-Language Learning:
     - Regular Expression: re.md
     - Syntax: syntax.md
     - Expression and Statement: expr.md
