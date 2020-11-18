@@ -33,9 +33,9 @@ C++ 是由 C 語言延伸而來，擴充了更多較「抽象」的語法，以�
 然而不同編譯器就會導致某些指令不是「標準」用法，而且它不按 C / C++ 文法管轄，極容易破壞閱讀。
 因此除非環境必須，還是盡量少使用。
 
-![gcc logo](img/gnu_compiler_collection.svg){: style="width:200px"}
-![llvm logo](img/llvm.svg){: style="width:200px"}
-![visual cpp logo](img/visual_cpp.png){: style="width:200px"}
+<img src="img/gnu_compiler_collection.svg" width="200px" />
+<img src="img/llvm.svg" width="200px" />
+<img src="img/visual_cpp.png" width="200px" />
 
 C / C++ 的世界觀中，由於 Linux 是由 C/C++ 寫成的，所以其開發環境是最簡易的。
 GCC 編譯器通常最努力支援最新的標準；其他還有如 LLVM 品牌。
