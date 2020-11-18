@@ -30,11 +30,11 @@
     根據測試，它在相同邏輯下會比優化的 C 語言慢 20~200 倍。
 + 相對龐大：同於高階程式語言的問題，Python 包裝成產品是 Byte Code 加上虛擬層，仍沒有機器碼小。
 
-[interpretor]: IT-intro.md#compile
+[interpretor]: ../it-intro.md#compile
 
 ## Syntax
 
-Python 是看[換行記號](syntax.md#line-break)的，換而言之，你可以將每一行程式碼視為一條指令，
+Python 是看[換行記號](../multilang/syntax.md#line-break)的，換而言之，你可以將每一行程式碼視為一條指令，
 而不需要擔心它還有其他部分突然出現在檔案的其他地方，影響閱讀。
 
 ```python
@@ -112,7 +112,7 @@ Python 有一般程式語言常見的數據種類：
 而且，`bool`、`int`、`float`、`complex` 都可以混和運算。
 
 至於字串則是 Unicode 8 編碼而非二進制編碼，本身就具備各種常用的演算法且支援檢索功能，
-並可以藉由[物件導向](IT-intro.md#objective-orientation)的方式呼叫，如 `'sbc'.find('c')` 可以獲得 2。
+並可以藉由[物件導向](../it-intro.md#objective-orientation)的方式呼叫，如 `'sbc'.find('c')` 可以獲得 2。
 而多行字串可以紀錄換行字元和縮排，用三個引號 `"""` 表示。
 
 ```

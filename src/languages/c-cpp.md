@@ -33,9 +33,9 @@ C++ 是由 C 語言延伸而來，擴充了更多較「抽象」的語法，以�
 然而不同編譯器就會導致某些指令不是「標準」用法，而且它不按 C / C++ 文法管轄，極容易破壞閱讀。
 因此除非環境必須，還是盡量少使用。
 
-<img src="img/gnu_compiler_collection.svg" width="200px" />
-<img src="img/llvm.svg" width="200px" />
-<img src="img/visual_cpp.png" width="200px" />
+<img src="img/gnu_compiler_collection.svg" width="200px"/>
+<img src="img/llvm.svg" width="200px"/>
+<img src="img/visual_cpp.png" width="200px"/>
 
 C / C++ 的世界觀中，由於 Linux 是由 C/C++ 寫成的，所以其開發環境是最簡易的。
 GCC 編譯器通常最努力支援最新的標準；其他還有如 LLVM 品牌。
@@ -543,7 +543,7 @@ $(MAKE) -c path/to/other/makefile
 
 ### CMake
 
-![cmake logo](img/cmake.svg){: style="width:200px"}
+<img src="img/cmake.svg" width="200px"/>
 
 基本上，CMake 直接為編譯流程打造各種變數與指令可以使用，非常方便。
 編譯只剩兩步驟：**產生編譯架構**和**呼叫編譯器編譯**。
@@ -982,7 +982,7 @@ static int SUM = 0;
 static void foo();
 ```
 
-## Scope / Stack and Heap
+## Scope, Stack and Heap
 
 在沒有任何 `{}` 符號包裝程式碼的情況下，稱為 Global Scope。
 上面的小節提過，宣告的位置會決定該名稱的可見性。
@@ -997,7 +997,7 @@ static void foo();
 以下功能的定義語法包含 Scope：
 
 + [Function](#function) / [Lambda Function](#lambda-function) / [Loops](#while-loop) / [Condition](#condition)
-+ [Sturcture](#sturcture) / [Class](#objective-orientation) / [Union](union)
++ [Sturcture](#sturcture) / [Class](#objective-orientation) / [Union](#union)
 + [Namespace](#namespace) / [Enum Class](#enum-class)
 + 例外：[Switch Case](#switch-case) / [Enum](#enum)
 
