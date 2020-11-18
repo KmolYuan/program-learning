@@ -357,7 +357,7 @@ git push --tags
 <li>非高效使用者界面：反應不須即時的圖形化使用者界面 (GUI, Graphical User Interface)。</li>
 <li>內嵌語言：主程式需要一種高階語言作為編程使用。</li>
 </ul>
-<p>官方使用 C 語言來做實作<a href="languages/IT-intro.html#compile">直譯器</a>，稱為 CPython，實現如下重要的概念：</p>
+<p>官方使用 C 語言來做實作<a href="languages/../it-intro.html#compile">直譯器</a>，稱為 CPython，實現如下重要的概念：</p>
 <ul>
 <li>得益於 C 語言程式庫的延伸性，提昇執行效能。</li>
 <li>原型 (Prototype) 規範，可以與多種程式語言交換資料。</li>
@@ -376,7 +376,7 @@ git push --tags
 <li>相對龐大：同於高階程式語言的問題，Python 包裝成產品是 Byte Code 加上虛擬層，仍沒有機器碼小。</li>
 </ul>
 <h2><a class="header" href="#syntax" id="syntax">Syntax</a></h2>
-<p>Python 是看<a href="languages/syntax.html#line-break">換行記號</a>的，換而言之，你可以將每一行程式碼視為一條指令，
+<p>Python 是看<a href="languages/../multilang/syntax.html#line-break">換行記號</a>的，換而言之，你可以將每一行程式碼視為一條指令，
 而不需要擔心它還有其他部分突然出現在檔案的其他地方，影響閱讀。</p>
 <pre><code class="language-python"># 不會視為 1 + 1 - 2 * 9，而是兩次運算
 1 + 1
@@ -435,7 +435,7 @@ if __name__ == '__main__':
 <p>與原始的數據類型相比，Python 的數據沒有 <code>unsigned</code> 的種類，也沒有 <code>long</code> 的長度調整，增加了方便性。
 而且，<code>bool</code>、<code>int</code>、<code>float</code>、<code>complex</code> 都可以混和運算。</p>
 <p>至於字串則是 Unicode 8 編碼而非二進制編碼，本身就具備各種常用的演算法且支援檢索功能，
-並可以藉由<a href="languages/IT-intro.html#objective-orientation">物件導向</a>的方式呼叫，如 <code>'sbc'.find('c')</code> 可以獲得 2。
+並可以藉由<a href="languages/../it-intro.html#objective-orientation">物件導向</a>的方式呼叫，如 <code>'sbc'.find('c')</code> 可以獲得 2。
 而多行字串可以紀錄換行字元和縮排，用三個引號 <code>&quot;&quot;&quot;</code> 表示。</p>
 <pre><code>s = &quot;&quot;&quot;
 line1
@@ -1136,9 +1136,9 @@ print(__annotations__['a'] is int)
 </code></pre>
 <p>然而不同編譯器就會導致某些指令不是「標準」用法，而且它不按 C / C++ 文法管轄，極容易破壞閱讀。
 因此除非環境必須，還是盡量少使用。</p>
-<img src="languages/img/gnu_compiler_collection.svg" width="200px" />
-<img src="languages/img/llvm.svg" width="200px" />
-<img src="languages/img/visual_cpp.png" width="200px" />
+<img src="languages/img/gnu_compiler_collection.svg" width="200px"/>
+<img src="languages/img/llvm.svg" width="200px"/>
+<img src="languages/img/visual_cpp.png" width="200px"/>
 <p>C / C++ 的世界觀中，由於 Linux 是由 C/C++ 寫成的，所以其開發環境是最簡易的。
 GCC 編譯器通常最努力支援最新的標準；其他還有如 LLVM 品牌。
 而相近的 mac OS 使用的是支援 Objective-C 較好的 Clang，
@@ -1517,7 +1517,7 @@ run: requirements.txt
 <p>然而，Makefile 仍然在多種平台、編譯器、相依程式庫的處理不是很好。
 因此就衍生出了基於 Make 的 CMake。</p>
 <h3><a class="header" href="#cmake" id="cmake">CMake</a></h3>
-<p><img src="languages/img/cmake.svg" alt="cmake logo" />{: style=&quot;width:200px&quot;}</p>
+<img src="languages/img/cmake.svg" width="200px"/>
 <p>基本上，CMake 直接為編譯流程打造各種變數與指令可以使用，非常方便。
 編譯只剩兩步驟：<strong>產生編譯架構</strong>和<strong>呼叫編譯器編譯</strong>。</p>
 <pre><code class="language-sh"># 在 CMake project 頂層目錄
@@ -1833,7 +1833,7 @@ void foo();
 <pre><code class="language-c">static int SUM = 0;
 static void foo();
 </code></pre>
-<h2><a class="header" href="#scope--stack-and-heap" id="scope--stack-and-heap">Scope / Stack and Heap</a></h2>
+<h2><a class="header" href="#scope-stack-and-heap" id="scope-stack-and-heap">Scope, Stack and Heap</a></h2>
 <p>在沒有任何 <code>{}</code> 符號包裝程式碼的情況下，稱為 Global Scope。
 上面的小節提過，宣告的位置會決定該名稱的可見性。
 至於哪些是 Scope，可以從語法大約看出端倪。</p>
@@ -1844,7 +1844,7 @@ static void foo();
 <p>以下功能的定義語法包含 Scope：</p>
 <ul>
 <li><a href="languages/c-cpp.html#function">Function</a> / <a href="languages/c-cpp.html#lambda-function">Lambda Function</a> / <a href="languages/c-cpp.html#while-loop">Loops</a> / <a href="languages/c-cpp.html#condition">Condition</a></li>
-<li><a href="languages/c-cpp.html#sturcture">Sturcture</a> / <a href="languages/c-cpp.html#objective-orientation">Class</a> / <a href="languages/union">Union</a></li>
+<li><a href="languages/c-cpp.html#sturcture">Sturcture</a> / <a href="languages/c-cpp.html#objective-orientation">Class</a> / <a href="languages/c-cpp.html#union">Union</a></li>
 <li><a href="languages/c-cpp.html#namespace">Namespace</a> / <a href="languages/c-cpp.html#enum-class">Enum Class</a></li>
 <li>例外：<a href="languages/c-cpp.html#switch-case">Switch Case</a> / <a href="languages/c-cpp.html#enum">Enum</a></li>
 </ul>

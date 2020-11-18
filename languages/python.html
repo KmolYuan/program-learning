@@ -174,7 +174,7 @@
 <li>非高效使用者界面：反應不須即時的圖形化使用者界面 (GUI, Graphical User Interface)。</li>
 <li>內嵌語言：主程式需要一種高階語言作為編程使用。</li>
 </ul>
-<p>官方使用 C 語言來做實作<a href="IT-intro.html#compile">直譯器</a>，稱為 CPython，實現如下重要的概念：</p>
+<p>官方使用 C 語言來做實作<a href="../it-intro.html#compile">直譯器</a>，稱為 CPython，實現如下重要的概念：</p>
 <ul>
 <li>得益於 C 語言程式庫的延伸性，提昇執行效能。</li>
 <li>原型 (Prototype) 規範，可以與多種程式語言交換資料。</li>
@@ -193,7 +193,7 @@
 <li>相對龐大：同於高階程式語言的問題，Python 包裝成產品是 Byte Code 加上虛擬層，仍沒有機器碼小。</li>
 </ul>
 <h2><a class="header" href="#syntax" id="syntax">Syntax</a></h2>
-<p>Python 是看<a href="syntax.html#line-break">換行記號</a>的，換而言之，你可以將每一行程式碼視為一條指令，
+<p>Python 是看<a href="../multilang/syntax.html#line-break">換行記號</a>的，換而言之，你可以將每一行程式碼視為一條指令，
 而不需要擔心它還有其他部分突然出現在檔案的其他地方，影響閱讀。</p>
 <pre><code class="language-python"># 不會視為 1 + 1 - 2 * 9，而是兩次運算
 1 + 1
@@ -252,7 +252,7 @@ if __name__ == '__main__':
 <p>與原始的數據類型相比，Python 的數據沒有 <code>unsigned</code> 的種類，也沒有 <code>long</code> 的長度調整，增加了方便性。
 而且，<code>bool</code>、<code>int</code>、<code>float</code>、<code>complex</code> 都可以混和運算。</p>
 <p>至於字串則是 Unicode 8 編碼而非二進制編碼，本身就具備各種常用的演算法且支援檢索功能，
-並可以藉由<a href="IT-intro.html#objective-orientation">物件導向</a>的方式呼叫，如 <code>'sbc'.find('c')</code> 可以獲得 2。
+並可以藉由<a href="../it-intro.html#objective-orientation">物件導向</a>的方式呼叫，如 <code>'sbc'.find('c')</code> 可以獲得 2。
 而多行字串可以紀錄換行字元和縮排，用三個引號 <code>&quot;&quot;&quot;</code> 表示。</p>
 <pre><code>s = &quot;&quot;&quot;
 line1
