@@ -1,0 +1,379 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Matlab (EN) - Program Learning</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="程式入門">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="../vc/index.html"><strong aria-hidden="true">2.</strong> Version Control</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vc/git.html"><strong aria-hidden="true">2.1.</strong> Git</a></li></ol></li><li class="chapter-item expanded "><a href="../languages/index.html"><strong aria-hidden="true">3.</strong> Languages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../languages/python.html"><strong aria-hidden="true">3.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="../languages/c-cpp.html"><strong aria-hidden="true">3.2.</strong> C / C++</a></li><li class="chapter-item expanded "><a href="../languages/matlab-en.html" class="active"><strong aria-hidden="true">3.3.</strong> Matlab (EN)</a></li><li class="chapter-item expanded "><a href="../languages/latex-math.html"><strong aria-hidden="true">3.4.</strong> Latex Math (TODO)</a></li></ol></li><li class="chapter-item expanded "><a href="../webpages/index.html"><strong aria-hidden="true">4.</strong> Webpages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../webpages/html5.html"><strong aria-hidden="true">4.1.</strong> HTML5 &amp; CSS &amp; Markdown</a></li></ol></li><li class="chapter-item expanded "><a href="../data-format/index.html"><strong aria-hidden="true">5.</strong> Data Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-format/yaml.html"><strong aria-hidden="true">5.1.</strong> YAML</a></li></ol></li><li class="chapter-item expanded "><a href="../multilang/index.html"><strong aria-hidden="true">6.</strong> Multi-Language Learning</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../multilang/re.html"><strong aria-hidden="true">6.1.</strong> Regular Expression</a></li><li class="chapter-item expanded "><a href="../multilang/syntax.html"><strong aria-hidden="true">6.2.</strong> Syntax</a></li><li class="chapter-item expanded "><a href="../multilang/expr.html"><strong aria-hidden="true">6.3.</strong> Expression and Statement</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../it-intro.html">Keywords</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Program Learning</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#matlab-en" id="matlab-en">Matlab (EN)</a></h1>
+<p>Matlab is a scientific computing language, actually not a &quot;programing&quot; language.
+Matlab is implemented by Java language and speed up by the kernel written in C++ / Cuda.</p>
+<p>Although Matlab implements the object-oriented concept, it is rarely used.
+Therefore, most of them are operated by pure functions.</p>
+<p>This section will teach you familiar with Matlab development environment and programming methods.</p>
+<h2><a class="header" href="#environment" id="environment">Environment</a></h2>
+<h3><a class="header" href="#working-directory" id="working-directory">Working Directory</a></h3>
+<p>The current path is set as working directory by default.
+In the working directory, any function names can be called from separate matlab scripts.
+Whether it is calling from a script file or console.</p>
+<p>Matlab has no import syntax, so if a function is in the working directory,
+it can be called directly.
+The built-in functions and names in Matlab are included in working directory at begining.</p>
+<h3><a class="header" href="#working-space" id="working-space">Working Space</a></h3>
+<p>The working space will store and update local variables during execution.
+After run once, the reference expression may use previous values.</p>
+<h2><a class="header" href="#syntax" id="syntax">Syntax</a></h2>
+<ul>
+<li>Continuous blank is same as one blank.</li>
+<li>Indents (leading blanks) will not affect the commands.</li>
+<li>Line breaks (new line symbols) will be considered in grammar.
+<ul>
+<li>Use &quot;<code>...</code>&quot; symbol to break a line manually at breakable position (like blank).</li>
+<li>You can break a line without &quot;<code>...</code>&quot; symbol if there has &quot;<code>;</code>&quot; symbol.</li>
+<li>In another words, you can join multiple lines into one line if there has &quot;<code>;</code>&quot; symbols.</li>
+</ul>
+</li>
+</ul>
+<p>Here is line break example:</p>
+<pre><code class="language-matlab">% Manually line break
+a = 10 ... Comment
+    * (20 + 70)... Another comment
+    + 30
+
+b = [1, 2, 3;  % Comment
+     4, 5, 6;  % Another comment
+     7, 8, 9]
+
+clc; close all; clear  % Join three lines (not recommend)
+</code></pre>
+<h3><a class="header" href="#comment" id="comment">Comment</a></h3>
+<p>The comment syntax is a leading &quot;<code>%</code>&quot; symbol,
+all after characters will be ignored until a new line is started.</p>
+<pre><code class="language-matlab">% Comment!
+% ignored = 'help!';
+worked_function
+</code></pre>
+<h3><a class="header" href="#assignment" id="assignment">Assignment</a></h3>
+<p>A value can be assigned to a name, which is called &quot;variable&quot;.
+There is no any constraint mechanism of &quot;constants&quot; in Matlab,
+so every names are mutable (editable) and shadowable (coverable).</p>
+<pre><code class="language-matlab">a = 10
+</code></pre>
+<p>The basic syntax is same as Mathematical syntax with a &quot;<code>=</code>&quot; operator.
+The left side is variable name and the right side is an expression.
+&quot;Expression&quot; means a calculable or derivable value,
+including literal value, name reference, function calling and operator using.</p>
+<p>Each assignment syntax will be printed out in console.
+To depress the output, add a &quot;<code>;</code>&quot; symbol after it.</p>
+<pre><code class="language-matlab">a = sin(deg2rad(60));
+</code></pre>
+<h3><a class="header" href="#array" id="array">Array</a></h3>
+<p>&quot;Array&quot; is the base value type in Matlab.
+Even a single number is an 1x1 array.</p>
+<p>1D and 2D array are supported by built-in literal value.
+The 1D array value can be splited by comma &quot;<code>,</code>&quot; symbols or space.
+And 2D rows can be splited by semicolon &quot;<code>;</code>&quot; symbols.
+If there are any operation expressions here, strongly not recommend use space as 1D spliter,
+because it will mess up the operators.</p>
+<pre><code class="language-matlab">10 + 30  % 1x1 array
+[5, 5]  % 2x1 array
+[5 5]  % 2x1 array, splited by space
+[1, 2; 3, 4]  % 2x2 array
+</code></pre>
+<p>Array will flat embed into another array automatically.</p>
+<pre><code class="language-matlab">a = [1, 2, 3];
+b = [a; a]  % [1, 2, 3; 1, 2, 3]
+</code></pre>
+<p>Array has most operator in Matlab.
+Some of the operator is element-wise, the others are matrix-wise.
+There is also has transpose operator for the 2D array.</p>
+<pre><code class="language-matlab">[1, 1; 2, 2] * 2  % Element-wise [2, 2; 4, 4]
+[1, 1; 2, 2] * [2, 2; 3, 3]  % Matrix-wise [5, 5; 10, 10]
+[1, 1; 2, 2] .* [2, 2; 3, 3]  % Element-wise operator [2, 2; 6, 6]
+[1, 1; 2, 2] .* 2  % Element-wise operator is also suitable
+[1, 1; 2, 2]'  % Trailing operator (transpose) [1, 2; 1, 2]
+</code></pre>
+<h3><a class="header" href="#control-sequence" id="control-sequence">Control Sequence</a></h3>
+<p>Basic control sequence like &quot;if else&quot;, &quot;for&quot; loop or &quot;while&quot; loop are supported.
+A &quot;<code>end</code>&quot; keyword is used to close the code block of the control sequence.</p>
+<pre><code class="language-matlab">if i &gt; 20
+    i = i + 1;
+elseif i == 5
+    i = i^2;
+else
+    i = 20;
+end
+</code></pre>
+<pre><code class="language-matlab">counter = 0;
+for i = 1:30
+    counter = counter + i
+    if counter // 7
+        break
+    end
+end
+</code></pre>
+<pre><code class="language-matlab">stop = true;
+while stop
+    stop = ~stop;
+end
+</code></pre>
+<h3><a class="header" href="#function" id="function">Function</a></h3>
+<p>Function is a set of commands that requires specific input variables and returns specific variables.
+Unlike control sequence, indentation is usually not used in functions.</p>
+<p>Matlab does not have a <code>return</code> syntax with values.
+The return values need to define their names.
+You can define them with the &quot;<code>=</code>&quot; symbol in the function definition.</p>
+<pre><code class="language-matlab">% Use function
+get_3 = plus(1, 2)  % 3
+[get_2, get_1] = return_two(true, 1, 2)  % 2 1
+
+% Function definition
+function c = plus(a, b)
+c = a + b;
+end
+
+% Multiple return values
+function [a, b] = return_two(condition, a, b)
+if condition
+    a = b;
+    b = a;
+end
+end
+</code></pre>
+<p>A function without input value or return value:</p>
+<pre><code class="language-matlab">% Use function
+hello  % Calling function without input value
+@hello  % Function handle
+
+% Function definition
+function hello
+fprintf('hello world!\n')
+end
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../languages/c-cpp.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../languages/latex-math.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../languages/c-cpp.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../languages/latex-math.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

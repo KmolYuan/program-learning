@@ -1,0 +1,659 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Syntax - Program Learning</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="程式入門">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="../vc/index.html"><strong aria-hidden="true">2.</strong> Version Control</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vc/git.html"><strong aria-hidden="true">2.1.</strong> Git</a></li></ol></li><li class="chapter-item expanded "><a href="../languages/index.html"><strong aria-hidden="true">3.</strong> Languages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../languages/python.html"><strong aria-hidden="true">3.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="../languages/c-cpp.html"><strong aria-hidden="true">3.2.</strong> C / C++</a></li><li class="chapter-item expanded "><a href="../languages/matlab-en.html"><strong aria-hidden="true">3.3.</strong> Matlab (EN)</a></li><li class="chapter-item expanded "><a href="../languages/latex-math.html"><strong aria-hidden="true">3.4.</strong> Latex Math (TODO)</a></li></ol></li><li class="chapter-item expanded "><a href="../webpages/index.html"><strong aria-hidden="true">4.</strong> Webpages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../webpages/html5.html"><strong aria-hidden="true">4.1.</strong> HTML5 &amp; CSS &amp; Markdown</a></li></ol></li><li class="chapter-item expanded "><a href="../data-format/index.html"><strong aria-hidden="true">5.</strong> Data Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-format/yaml.html"><strong aria-hidden="true">5.1.</strong> YAML</a></li></ol></li><li class="chapter-item expanded "><a href="../multilang/index.html"><strong aria-hidden="true">6.</strong> Multi-Language Learning</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../multilang/re.html"><strong aria-hidden="true">6.1.</strong> Regular Expression</a></li><li class="chapter-item expanded "><a href="../multilang/syntax.html" class="active"><strong aria-hidden="true">6.2.</strong> Syntax</a></li><li class="chapter-item expanded "><a href="../multilang/expr.html"><strong aria-hidden="true">6.3.</strong> Expression and Statement</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../it-intro.html">Keywords</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Program Learning</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#syntax" id="syntax">Syntax</a></h1>
+<p>本篇將講述常見程式語言的解構方式，以常見的程式語言作為範例。建議先閱讀 <a href="re.html">Regular Expression</a>。</p>
+<p>閱讀此篇有助於在不同語言之間切換，並有助於理解新的語言；無論為結構語言還是程式語言。</p>
+<h2><a class="header" href="#lark-parser" id="lark-parser">Lark Parser</a></h2>
+<p>Python 套件 <a href="https://github.com/lark-parser/lark">lark-parser/lark</a> 可以自訂程式語言的規則並解析它們。</p>
+<p>Lark 基於 EBNF，並使用 Earley Parser，本篇將解說電腦如何閱讀「語言」。</p>
+<p>基本元素：</p>
+<pre><code class="language-js">&quot;A&quot; &quot;ABC&quot; &quot;(&quot; &quot;)&quot;  // 字串與符號
+&quot;ABC&quot;i  // 不分大小寫的字串
+/regular_expression/flag  // Regular Expression
+&quot;a&quot;..&quot;z&quot; &quot;1&quot;..&quot;9&quot;  // 範圍
+expression ~ n  // 前一個子句必須出現 n 次
+expression ~ n..m  // 前一個子句必須出現 n 到 m 次
+expression?  // 前一個子句可以不存在或出現一次
+expression*  // 前一個子句可以不存在，或可以無限重複
+expression+  // 前一個子句至少出現一次，並可以無限重複
+(expression expression ...)  // 提升優先權
+[expression expression ...]  // 可選，同於 (expression expression ...)?
+</code></pre>
+<p>定義句：</p>
+<pre><code class="language-js">子句一: &quot;1&quot;..&quot;9&quot;
+子句二: 子句一 &quot;+&quot; 子句一
+</code></pre>
+<p>上面的 <code>子句二</code> 可以表示 <code>1 + 1</code>。</p>
+<p>基本上，為了排版，電腦使用的語言會忽略空白：</p>
+<pre><code class="language-js">%ignore /\s+/
+</code></pre>
+<p>上面的空白用 RE 表示，意味著一個或重複的不可視字元（包含 Tab）。
+忽略後，除非顯式表示，否則解析器不會計算。
+例如：<code>1 + 1</code> 和 <code>1+1</code> 是等效的；<code>A (B) C</code> 和 <code>A(B)C</code> 是等效的。
+但是文字通常有連續性，除非用符號分離，否則一定要至少隔一個空白。</p>
+<p>而文字也是定義的一部份，因此當變數名稱訂為：</p>
+<pre><code class="language-js">variable_character: &quot;a&quot;..&quot;z&quot; | &quot;A&quot;..&quot;Z&quot; | &quot;_&quot;
+variable: variable_character+
+</code></pre>
+<p>符號 <code>_</code> 也會被當成是變數可用的字元，並保持連續性。
+一些程式語言也許有例外，如 JavaScript 允許 <code>$</code> 作為變數名稱，而 Matlab 不允許 <code>_</code> 作為變數的第一個字元。</p>
+<p>子句的組成會影響解析的順序，進而影響程式中的優先權 (Priority)。</p>
+<pre><code class="language-js">digit: &quot;0&quot;..&quot;9&quot;
+int: digit+
+plus: int &quot;+&quot; int
+strong: &quot;(&quot; (int | plus_statement) &quot;)&quot;
+base: int | strong | plus
+plus_statement: base (&quot;+&quot; base)+
+</code></pre>
+<p>如上所示，<code>plus_statement</code> 可以表示 <code>(1 + 20) + 7</code>、<code>(5 + 6)</code>、<code>4 + (6 + 9)</code>、<code>2 + 777</code> 等語句。</p>
+<p>而以下文法：</p>
+<pre><code class="language-js">digit: &quot;0&quot;..&quot;9&quot;
+int: digit+
+assignment: plus_statement &quot;=&quot; int
+</code></pre>
+<p>對於 <code>2 + 3 = 5</code> 會先解析 <code>2 + 3</code>，而非 <code>3 = 5</code>。</p>
+<h2><a class="header" href="#commonly-used-syntax" id="commonly-used-syntax">Commonly Used Syntax</a></h2>
+<p>可簡單歸類程式語言中的語法構成。</p>
+<p>其中 <code>op1</code>, <code>op2</code>, ... 為使用的符號，可為任何字元或字串。</p>
+<p>以下將舉例各式程式語言的部分文法：</p>
+<h3><a class="header" href="#comment" id="comment">Comment</a></h3>
+<pre><code class="language-js">comment: op1 /[^\n]*/
+multiline_comment: op1 /[\s\S]*/ op2
+</code></pre>
+<p>註解是程式語言中很重要的一部份，因為他們不會影響執行內容。
+不過這些說明內容可以被提取出來做為說明文件等用途。</p>
+<ul>
+<li>
+<p>C / C++ / Java / JavaScript / C# / ...</p>
+<pre><code class="language-c">// 單行註解
+/* 區段註解 */
+</code></pre>
+</li>
+<li>
+<p>Python</p>
+<pre><code class="language-python"># 單行註解
+&quot;&quot;&quot;區段註解&quot;&quot;&quot;  # 其實是多行字串
+</code></pre>
+</li>
+<li>
+<p>Matlab</p>
+<pre><code class="language-matlab">% 單行註解
+%% 段落註解，以下的區塊可以被折疊。
+</code></pre>
+</li>
+<li>
+<p>Lua</p>
+<pre><code class="language-lua">-- 單行註解
+--[[
+區段註解
+--]]
+</code></pre>
+</li>
+</ul>
+<h3><a class="header" href="#line-break" id="line-break">Line Break</a></h3>
+<p>某些語言是會忽略換行記號的，因此可以併成一行也不會影響解析，有助於在只有一行的情況下輸入，如 Bash 中。</p>
+<pre><code class="language-js">%ignore /\r?\n/+
+</code></pre>
+<p>要注意有些程式碼並不是結尾有 <code>;</code> 註記就是忽略換行記號，
+如 Matlab 只是為了隱藏輸出訊息；Lua 沒有結尾記號但是會忽略換行。
+而像 JavaScript 會在換行處自動檢查並補上，但是官方仍建議開發者必須打上。
+至於 Python 則是加上 <code>;</code> 可以併做一行，可是無法加上縮排。</p>
+<p>忽略換行記號的語言如 C / C++ 可以這樣寫：</p>
+<pre><code class="language-c">a = (1 + 2)
+    * (2 + 3)
+    * (3 + 4);
+</code></pre>
+<p>可是如 JavaSript 有自動插入的機制，如下會導致強制段行（<code>return</code>、<code>break</code>、<code>throw</code>, <code>continue</code> 結尾）：</p>
+<pre><code class="language-js">return
+    1 + 3;
+</code></pre>
+<p>而在意換行記號的語言因為閱讀需要，會有換行的策略，如：</p>
+<ul>
+<li>
+<p>Python：可以在括弧 <code>()</code>、<code>[]</code>、<code>{}</code> 中換行。但是同時因為縮排規定，其中的縮排不能比原始行小。</p>
+<pre><code class="language-python">a = (
+    &quot;aaa&quot;,
+    &quot;bbb&quot;,
+    &quot;ccc&quot;,
+)
+</code></pre>
+</li>
+<li>
+<p>Bash：必須使用 <code>\</code> 符號在換行結尾。</p>
+<pre><code class="language-bash">rm -f file_a.md \
+file_b.md ${FLAG}
+</code></pre>
+</li>
+<li>
+<p>Matlab：可以在 <code>;</code> 後換行，除此之外必須使用 <code>...</code> 符號在換行結尾，而且其之後的內容會被視為註解。</p>
+<pre><code class="language-matlab">a = (1 + 2)...
+    * (2 + 3)...
+    * (3 + 4);
+a = [... 這裡要加
+    1, 2, 3;
+    4, 5, 6;
+    7, 8, 9]
+</code></pre>
+</li>
+<li>
+<p>Markdown：段落之間必須空一行，否則視為上一行，至於其他如列舉或標題等語法不受限。</p>
+<pre><code class="language-markdown">aaa,
+bbb.
+
+ccc:
+1. ddd
+    with ddd
+1. eee
+1. fff
+</code></pre>
+</li>
+</ul>
+<h3><a class="header" href="#indentation" id="indentation">Indentation</a></h3>
+<p>縮排通常做為排版使用，不過仍有語言作為程式碼區塊的判定，如 Python。</p>
+<pre><code class="language-js">indentation: &quot; &quot; ~ 4 | /\t/
+block: indentation+ code_block
+</code></pre>
+<p>若非使用縮排，程式區塊會使用符號或語句作為標記。</p>
+<ul>
+<li>
+<p>C / C++ / Java / JavaScript / C# / ...：使用大括弧 <code>{}</code>。</p>
+<pre><code class="language-c">if (a &lt; b) { return 0; }
+</code></pre>
+</li>
+<li>
+<p>Lua：不需要換行。有對應記號。</p>
+<pre><code class="language-lua">if a &lt; b then return 0 end
+while a &lt; b do a = a + 1 end
+</code></pre>
+</li>
+<li>
+<p>Latex：有對應記號。另外括充模組也能夠提供巨集 (Macro) 讓語法比較好看。</p>
+<pre><code class="language-latex">\if \else \fi  % 判斷式
+\loop \if \repeat  % While 迴圈，\repeat 有 \fi 的功能。
+</code></pre>
+</li>
+<li>
+<p>Matlab：需要換行。通常搭配 <code>end</code> 關鍵字結尾。</p>
+<pre><code class="language-matlab">if a &lt; b
+    return
+end
+</code></pre>
+</li>
+</ul>
+<h3><a class="header" href="#binary-operator" id="binary-operator">Binary Operator</a></h3>
+<pre><code class="language-js">binary: statement op1 statement
+</code></pre>
+<p>為兩項運算，如一般的數學式。前後的 <code>statement</code> 可以不相同。
+在計算的情況，通常可以連續操作如 <code>a + b + c</code> 或 <code>a = b = c</code>；
+但為避免讀錯，如 <code>a += b</code> 的縮寫不會允許連續的語句。</p>
+<ul>
+<li>
+<p>Common</p>
+<pre><code class="language-js">a + b
+a &lt; b
+a = b
+a += b
+a.b
+</code></pre>
+</li>
+<li>
+<p>Python</p>
+<pre><code class="language-python">a and b  # Logical AND
+a in b  # Contain check
+a is b  # Same memory position check
+a := b  # Assignment, but repersent &quot;a&quot; itself (in expression)
+</code></pre>
+</li>
+<li>
+<p>C / C++</p>
+<pre><code class="language-c">a &amp;&amp; b  // Logical AND
+a-&gt;b  // Pointer member
+a::b  // Namespace member
+a, b  // Run &quot;a&quot; and &quot;b&quot; but repersent &quot;b&quot; itself (in expression)
+</code></pre>
+</li>
+<li>
+<p>JavaScript</p>
+<pre><code class="language-js">a === b  // Same memory position check
+</code></pre>
+</li>
+<li>
+<p>C#</p>
+<pre><code class="language-c#">a ?? b // Repersents &quot;b&quot; if &quot;a&quot; is &quot;null&quot;, otherwise repersent &quot;a&quot;
+a?.b  // Repersents &quot;null&quot; if &quot;a&quot; is &quot;null&quot;, otherwise repersent the member &quot;b&quot;
+</code></pre>
+</li>
+<li>
+<p>R</p>
+<pre><code class="language-r">a &lt;= b  # Assignment
+</code></pre>
+</li>
+</ul>
+<h3><a class="header" href="#unary-operator" id="unary-operator">Unary Operator</a></h3>
+<pre><code class="language-js">leading_unary: op1 statement
+trailing_unary: statement op1
+</code></pre>
+<p>分成前置或尾置，為了相容二元運算，通常優先權會最大。
+但是因為 C++ 的前車之鑑，發現它們極易破壞可閱讀性，因此新的程式語言就較沒有出現。</p>
+<ul>
+<li>
+<p>C / C++</p>
+<pre><code class="language-c">!a  // Logical not
+~a  // Byte inverse
+*a  // Pointer get value
+&amp;a  // Get position to pointer
+++a  // Plus 1 to &quot;a&quot;, then represent &quot;a&quot;
+a++  // Represents &quot;a&quot;, then plus 1 to &quot;a&quot;
+</code></pre>
+</li>
+<li>
+<p>Python</p>
+<pre><code class="language-python">not a  # Logical not
+yield a  # Generator get input value (in expression)
+</code></pre>
+</li>
+<li>
+<p>C#</p>
+<pre><code class="language-c#">a?  // Type &quot;a&quot; can be &quot;null&quot;
+</code></pre>
+</li>
+<li>
+<p>Haskell：函數型程式語言，語法與數學式相仿，函式優先權最高。由 <code>f x1 x2 ...</code> 表示函式 <code>f</code> 和其參數 <code>x1</code>、<code>x2</code> 等。</p>
+<pre><code class="language-haskell">f a = sin a * 10  -- Same as &quot;(sin a) * 10&quot;, &quot;f&quot; and &quot;sin&quot; is function.
+</code></pre>
+</li>
+</ul>
+<h3><a class="header" href="#ternary-operator" id="ternary-operator">Ternary Operator</a></h3>
+<pre><code class="language-js">ternary: statement op1 statement op2 statement
+</code></pre>
+<p>較長的句型，由兩個運算子組成。</p>
+<ul>
+<li>
+<p>C / C++ / Java / JavaScript / C#</p>
+<pre><code class="language-c">a ? b : c  // If &quot;a&quot; is true, repersents &quot;b&quot;, otherwise repersents &quot;c&quot;
+</code></pre>
+</li>
+<li>
+<p>Python</p>
+<pre><code class="language-python">b if a else c  # If &quot;a&quot; is true, repersents &quot;b&quot;, otherwise repersents &quot;c&quot;
+a for b in c  # An iterator generate &quot;a&quot;, extract &quot;b&quot; from &quot;c&quot; during iterating
+a for b in c if d  # Same as above, skip if &quot;d&quot; is &quot;False&quot;
+</code></pre>
+</li>
+</ul>
+<h3><a class="header" href="#other-statements" id="other-statements">Other Statements</a></h3>
+<p>至於其他就比較多元了。因此，基礎概念必須先熟悉，如型別標示就會很大程度的影響文法，
+但是只要知道該概念會需要哪些參數、選項，自然便會容易理解。</p>
+<p>如單純的 while loop 在哪種語言都沒什麼變化：</p>
+<ul>
+<li>
+<p>C / C++ / Java / JavaScript / C# / ...</p>
+<pre><code class="language-c++">while (check_statement) {
+    run_statements
+}
+
+// Check after run once
+do {
+    run_statements
+} while (check_statement)
+</code></pre>
+</li>
+<li>
+<p>Python</p>
+<pre><code class="language-python">while check_statement:
+    run_statements
+</code></pre>
+</li>
+<li>
+<p>Rust</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>while check_statement {
+    run_statements
+}
+<span class="boring">}
+</span></code></pre></pre>
+</li>
+</ul>
+<p>而物件導向有些卻有可見性，有些會聲明物件本身為 &quot;self&quot;：</p>
+<ul>
+<li>
+<p>C++</p>
+<pre><code class="language-c++">public:
+decorator return_type func_name(arg1_type arg1, arg2_type arg2, ...) {
+    run_statements
+}
+</code></pre>
+</li>
+<li>
+<p>Python</p>
+<pre><code class="language-python">def func_name(self, arg1, arg2, ...):
+    &quot;&quot;&quot;Doc string&quot;&quot;&quot;
+    run_statements
+</code></pre>
+</li>
+</ul>
+<p>最後舉例 Function 的表示百百種：</p>
+<ul>
+<li>
+<p>C / C++：有 Closure 語法。</p>
+<pre><code class="language-c++">// Normal Function
+decorator return_type func_name(arg1_type arg1, arg2_type arg2, ...) {
+    run_statements
+}
+
+// Lambda Fuction (Closures, only in C++)
+[refer_mode] (arg1_type arg1, arg2_type arg2, ...) -&gt; return_type {
+    run_statements
+}
+
+// Generic Fuction (only in C++)
+template&lt;template_option&gt;
+decorator return_type func_name(arg1_type arg1, arg2_type arg2, ...) {
+    run_statements
+}
+</code></pre>
+</li>
+<li>
+<p>Python：沒有 Closure 語法，自動處理。</p>
+<pre><code class="language-python"># Simple Function
+def func_name(arg1, arg2, ...):
+    &quot;&quot;&quot;Doc string&quot;&quot;&quot;
+    run_statements
+
+# Lambda Function
+lambda arg1, arg2, ...: return_statement
+
+# Typed decorated Function
+@decorator
+def func_name(arg1: arg1_type, arg2: arg2_type, ..., *, kward1: kward1_type, ..., **, kward2: kward2_type, ...) -&gt; return_type:
+    &quot;&quot;&quot;Doc string&quot;&quot;&quot;
+    run_statements
+</code></pre>
+</li>
+<li>
+<p>JavaScript：沒有 Closure 語法，自動處理。</p>
+<pre><code class="language-js">// Simple Function
+function func_name(arg1, arg2, ...) {
+    run_statements
+}
+
+// Lambda Function
+function (arg1, arg2, ...) {
+    run_statements
+}
+
+// Lambda Function
+(arg1, arg2, ...) =&gt; {
+    run_statements
+}
+
+// Lambda Function
+arg1 =&gt; return_statement
+</code></pre>
+</li>
+<li>
+<p>Rust：有 Closure 語法。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// Simple Function
+fn func_name(arg1: arg1_type, arg2: arg2_type, ...) -&gt; return_type {
+    run_statements
+    return_statement
+}
+
+// Generic Fuction
+fn func_name&lt;template_option&gt;(arg1: arg1_type, arg2: arg2_type, ...) -&gt; return_type {
+    run_statements
+    return_statement
+}
+
+// Closures
+|arg1: arg1_type, arg2: arg1_type, ...| -&gt; return_type {
+    run_statements
+}
+<span class="boring">}
+</span></code></pre></pre>
+</li>
+<li>
+<p>Go：沒有 Closure 語法，自動處理。</p>
+<pre><code class="language-go">func func_name(arg1 arg1_type, arg2 arg2_type, ...) return_type {
+    run_statements
+}
+</code></pre>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../multilang/re.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../multilang/expr.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../multilang/re.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../multilang/expr.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

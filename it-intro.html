@@ -1,0 +1,439 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Keywords - Program Learning</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="程式入門">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="vc/index.html"><strong aria-hidden="true">2.</strong> Version Control</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="vc/git.html"><strong aria-hidden="true">2.1.</strong> Git</a></li></ol></li><li class="chapter-item expanded "><a href="languages/index.html"><strong aria-hidden="true">3.</strong> Languages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="languages/python.html"><strong aria-hidden="true">3.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="languages/c-cpp.html"><strong aria-hidden="true">3.2.</strong> C / C++</a></li><li class="chapter-item expanded "><a href="languages/matlab-en.html"><strong aria-hidden="true">3.3.</strong> Matlab (EN)</a></li><li class="chapter-item expanded "><a href="languages/latex-math.html"><strong aria-hidden="true">3.4.</strong> Latex Math (TODO)</a></li></ol></li><li class="chapter-item expanded "><a href="webpages/index.html"><strong aria-hidden="true">4.</strong> Webpages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webpages/html5.html"><strong aria-hidden="true">4.1.</strong> HTML5 &amp; CSS &amp; Markdown</a></li></ol></li><li class="chapter-item expanded "><a href="data-format/index.html"><strong aria-hidden="true">5.</strong> Data Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-format/yaml.html"><strong aria-hidden="true">5.1.</strong> YAML</a></li></ol></li><li class="chapter-item expanded "><a href="multilang/index.html"><strong aria-hidden="true">6.</strong> Multi-Language Learning</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="multilang/re.html"><strong aria-hidden="true">6.1.</strong> Regular Expression</a></li><li class="chapter-item expanded "><a href="multilang/syntax.html"><strong aria-hidden="true">6.2.</strong> Syntax</a></li><li class="chapter-item expanded "><a href="multilang/expr.html"><strong aria-hidden="true">6.3.</strong> Expression and Statement</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="it-intro.html" class="active">Keywords</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Program Learning</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#it-introduces" id="it-introduces">IT Introduces</a></h1>
+<p>請查詢關鍵字並瞭解以下分類的技術或概念，並思考問題。</p>
+<ul>
+<li>
+<p>每個關鍵字皆附上較常用的中文翻譯。</p>
+</li>
+<li>
+<p>'=' 符號為相同概念。</p>
+</li>
+</ul>
+<h2><a class="header" href="#programing-languages" id="programing-languages">Programing Languages</a></h2>
+<h3><a class="header" href="#compile" id="compile">Compile</a></h3>
+<ul>
+<li>Compile 編譯
+<ul>
+<li>Compiler 編譯器</li>
+<li>Machine code 機器碼 = Binaries</li>
+<li>Executable Files 可執行檔</li>
+<li>Libraries 程式庫</li>
+<li>Byte Codes</li>
+<li>Entry Point</li>
+</ul>
+</li>
+<li>Interprete 直譯
+<ul>
+<li>Interpreter 直譯器</li>
+</ul>
+</li>
+<li>JIT (Just In Time) 及時編譯</li>
+</ul>
+<ul>
+<li>Compile Time</li>
+<li>Run Time</li>
+</ul>
+<ul>
+<li>Bootstrapping / Self-hosting</li>
+</ul>
+<h4><a class="header" href="#question" id="question">Question</a></h4>
+<ol>
+<li><details><summary>一種語言的編譯方式只有一種嗎？</summary>否。</details>
+</li>
+<li><details><summary>CPython 的編譯方式為？</summary>先編譯為 Byte Codes，再對 Byte Codes 做直譯。</details>
+</li>
+<li><details><summary>Windows 的命令提示字元 (Command Prompt) 的編譯方式為？</summary>直譯式。</details>
+</li>
+<li><details><summary>使用一款軟體突然當機，是 Compile Time 還是 Run Time 錯誤？</summary>Run Time</details>
+</li>
+<li><details><summary>C++ 是否有 Bootstrapping 的實作？</summary>GCC Compiler</details>
+</li>
+</ol>
+<h3><a class="header" href="#type-anotation" id="type-anotation">Type Anotation</a></h3>
+<ul>
+<li>Strong Typing 強型別</li>
+<li>Weak Typing 弱型別</li>
+</ul>
+<h4><a class="header" href="#question-1" id="question-1">Question</a></h4>
+<ol>
+<li><details><summary>Python 的類型標示為？</summary>Weak Typing</details>
+</li>
+<li><details><summary>除了註解功能，Python 可以表示類型嗎？</summary>可以，參見 PEP 484。</details>
+</li>
+<li><details><summary>一種程式語言的類型標示是否會導致編譯方式不同？</summary>否。會因為實作困難度影響，但是仍可克服。</details>
+</li>
+</ol>
+<h3><a class="header" href="#language-concepts" id="language-concepts">Language Concepts</a></h3>
+<ul>
+<li>Variables 變數 / Literatures / Functions 函數</li>
+<li>Structures 結構體</li>
+<li>Control Flow 控制流程
+<ul>
+<li>Go to</li>
+<li>While Loop</li>
+<li>For Loop</li>
+<li>If Else Condition</li>
+<li>Switch Case</li>
+<li>Recursive 遞迴</li>
+</ul>
+</li>
+<li>Stack 棧 / Heap 堆
+<ul>
+<li>Life Cycle 生命週期</li>
+<li>Variables Visibility 變數可見性</li>
+<li>Pointer 指標 / Reference 參照 / Reference Counter 參照計數器</li>
+<li>Garbage Collection 垃圾回收</li>
+</ul>
+</li>
+<li>Function Signature 函式簽章</li>
+<li>Anonymous Functions 匿名函式 / Function Pointer 函式指標</li>
+<li>Objective Orientation 物件導向</li>
+<li>Syntactic Sugar 語法糖 / Syntactic Salt 語法鹽</li>
+<li>Unit Test 單元測試</li>
+<li>Version Control 版本控制</li>
+<li>Doc String</li>
+</ul>
+<ul>
+<li>Standard Libraries 標準庫</li>
+<li>Third Party Libraries 第三方程式庫</li>
+<li>Dependencies 相依性</li>
+</ul>
+<ul>
+<li>Compiler Macros 編譯器巨集</li>
+<li>Compiler Optimizations 編譯器最佳化</li>
+</ul>
+<ul>
+<li>String Encode 字串編碼</li>
+<li>RE (Regular Expression) 正規表達式</li>
+<li>EBNF (Extended Backus–Naur Form) 擴充巴克斯範式</li>
+</ul>
+<ul>
+<li>Writing Style Guide 寫作風格指南</li>
+<li>&quot;Pythonic&quot;</li>
+</ul>
+<h4><a class="header" href="#question-2" id="question-2">Question</a></h4>
+<ol>
+<li><details><summary>「宣告 (Declaration)」主要是為了上述哪種概念？</summary>Life Cycle</details>
+</li>
+<li><details><summary>組合語言 (Assembly Language) 中有哪些概念？</summary>Variables, Go to, Pointer</details>
+</li>
+<li><details><summary>可以用組合語言實現更抽象的概念嗎？</summary>可以。</details>
+</li>
+<li><details><summary>Pointer 使用後未清除會造成何種問題？</summary>Memory Leak</details>
+</li>
+<li><details><summary>RE 和 EBNF 皆可定義文字規則，若發生 Miss Match，差別在於？</summary>RE 只會忽略。</details>
+</li>
+<li><details><summary>透過 EBNF，可以實作自己的程式語言，然而 Syntactic Sugar 或 Syntactic Salt 過多分別可能造成何種問題？</summary>Syntactic Sugar 過多會導致不易閱讀且有多種寫法；Syntactic Salt 過多會導致開發效率低下。</details>
+</li>
+<li><details><summary>規定 Writing Style Guide 主要是為了？</summary>易於讓協同者閱讀與方便修改。</details>
+</li>
+<li><details><summary>使用 Unicode 而非其他語系的目的為？</summary>可以使用所有語系的文字。</details>
+</li>
+</ol>
+<h3><a class="header" href="#objective-orientation" id="objective-orientation">Objective Orientation</a></h3>
+<ul>
+<li>Members 成員 / Methods 方法</li>
+<li>Property 屬性 = Getter &amp; Setter</li>
+<li>Inherit 繼承 / Virtual Inheritance 虛繼承</li>
+<li>Interface 介面 = Abstract Class 抽象類別</li>
+<li>Generic Type 泛型</li>
+</ul>
+<h4><a class="header" href="#question-3" id="question-3">Question</a></h4>
+<ol>
+<li><details><summary>定義 Members 的可見性是否對編譯器最佳化有幫助？</summary>否，屬於編譯檢查機制。</details>
+</li>
+<li><details><summary>虛繼承除了放棄多重繼承功能，還可以怎麼解決？</summary>建立抽象方法 (Abstract Methods / Virtual Methods)。</details>
+</li>
+<li><details><summary>Generic Type 的概念是否只有在 Strong Typing？</summary>否，Weak Typing 會在 Compile Time 推導類別；或 Run Time 檢查類別。</details>
+</li>
+</ol>
+<h2><a class="header" href="#data-structure" id="data-structure">Data Structure</a></h2>
+<ul>
+<li>Chain 鍊
+<ul>
+<li>Array 陣列</li>
+<li>Linked List</li>
+<li>Record</li>
+</ul>
+</li>
+<li>Tree 樹
+<ul>
+<li>Binary Search Tree 二元搜尋樹</li>
+<li>Red–black Tree 紅黑樹</li>
+<li>Map 映射</li>
+</ul>
+</li>
+<li>Hashable Value 可雜湊值</li>
+</ul>
+<h4><a class="header" href="#question-4" id="question-4">Question</a></h4>
+<ol>
+<li><details><summary>Python 有哪些類型的容器？</summary>Linked List (List), Record (Tuple), Red–black Tree (Set), Mapping (Dictionary)</details>
+</li>
+<li><details><summary>樹狀結構是否有排列順序？</summary>否。</details>
+</li>
+<li><details><summary>樹狀結構如何記錄重複的值？</summary>可以使用 Map 存放計數器。</details>
+</li>
+</ol>
+<h2><a class="header" href="#structural-languages" id="structural-languages">Structural Languages</a></h2>
+<ul>
+<li>CSV</li>
+<li>XML / HTML</li>
+<li>CSS / SASS</li>
+<li>YAML / TOML</li>
+<li>Markdown</li>
+<li>Latex / Bibtex</li>
+<li>STL</li>
+</ul>
+<h4><a class="header" href="#question-5" id="question-5">Question</a></h4>
+<ol>
+<li><details><summary>瀏覽器 (Browser) 本身是複合式的軟體，舉例其可以直譯的結構語言和程式語言？</summary>HTML, CSS, Java Script</details>
+</li>
+</ol>
+<h1><a class="header" href="#platforms" id="platforms">Platforms</a></h1>
+<h3><a class="header" href="#file-system" id="file-system">File System</a></h3>
+<ul>
+<li>Root = Super User = Administrator</li>
+<li>File Mode 檔案權限</li>
+<li>File Operate 檔案操作</li>
+<li>Path Separator</li>
+<li>Shell Script / Bash / Command Prompt</li>
+<li>Environment Variables 環境變數</li>
+<li>File Suffix 副檔名</li>
+<li>Link File 捷徑 / Soft Link 軟連結 / Hard Link 硬連結</li>
+</ul>
+<h4><a class="header" href="#question-6" id="question-6">Question</a></h4>
+<ol>
+<li><details><summary>Linux 可執行檔的附檔名通常為何？</summary>沒有副檔名。</details>
+</li>
+<li><details><summary>Windows、Linux、mac OS 的檔案系統，哪兩個最相近？</summary>Linux 和 mac OS。</details>
+</li>
+<li><details><summary>Soft Link 較 Hard Link 的好處有哪些？</summary>不會被誤認成實體檔案、可以跨磁區。</details>
+</li>
+<li><details><summary>若不使用 File Browser，Text-Based File 會因為附檔名而無法開啟嗎？</summary>不會。</details>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="multilang/expr.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="multilang/expr.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>HTML5 &amp; CSS &amp; Markdown - Program Learning</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="程式入門">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="../vc/index.html"><strong aria-hidden="true">2.</strong> Version Control</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vc/git.html"><strong aria-hidden="true">2.1.</strong> Git</a></li></ol></li><li class="chapter-item expanded "><a href="../languages/index.html"><strong aria-hidden="true">3.</strong> Languages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../languages/python.html"><strong aria-hidden="true">3.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="../languages/c-cpp.html"><strong aria-hidden="true">3.2.</strong> C / C++</a></li><li class="chapter-item expanded "><a href="../languages/matlab-en.html"><strong aria-hidden="true">3.3.</strong> Matlab (EN)</a></li><li class="chapter-item expanded "><a href="../languages/latex-math.html"><strong aria-hidden="true">3.4.</strong> Latex Math (TODO)</a></li></ol></li><li class="chapter-item expanded "><a href="../webpages/index.html"><strong aria-hidden="true">4.</strong> Webpages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../webpages/html5.html" class="active"><strong aria-hidden="true">4.1.</strong> HTML5 &amp; CSS &amp; Markdown</a></li></ol></li><li class="chapter-item expanded "><a href="../data-format/index.html"><strong aria-hidden="true">5.</strong> Data Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-format/yaml.html"><strong aria-hidden="true">5.1.</strong> YAML</a></li></ol></li><li class="chapter-item expanded "><a href="../multilang/index.html"><strong aria-hidden="true">6.</strong> Multi-Language Learning</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../multilang/re.html"><strong aria-hidden="true">6.1.</strong> Regular Expression</a></li><li class="chapter-item expanded "><a href="../multilang/syntax.html"><strong aria-hidden="true">6.2.</strong> Syntax</a></li><li class="chapter-item expanded "><a href="../multilang/expr.html"><strong aria-hidden="true">6.3.</strong> Expression and Statement</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../it-intro.html">Keywords</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Program Learning</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#html5--css--markdown" id="html5--css--markdown">HTML5 &amp; CSS &amp; Markdown</a></h1>
+<p>介紹一種廣泛使用的結構性語言：SGML (Standard Generalized Markup Language)，也是 HTML 和 XML 語言的基礎。</p>
+<p>由於 SGML 本身十分複雜不易理解，出現了較嚴謹的子集版本 XML (Extensible Markup Language) 方便使用：</p>
+<pre><code class="language-xml">&lt;!-- 註解 --&gt;
+&lt;tag attribute1=&quot;attr1 value&quot; attribute2=&quot;attr2 value&quot;&gt;My &lt;tag&gt;text&lt;/tag&gt;.&lt;/tag&gt;
+</code></pre>
+<p>相較於 JSON 或 YAML 的語法，XML 顯然較難閱讀，但是在一行內可以夾帶較多資訊，而不需要更多節點。
+除了 text 屬性外，XML 的語法會忽視不可視字元 (invisible characters) 方便壓縮大小（除非是分隔必要）。
+特別的是，text 屬性會忽略頭尾的不可視字元，而且可以包含子節點。
+SGML 主要攜帶的是 text 屬性，也就是文本。其延伸的結構語言主要都是為了呈現文本內容，如網路協定或是靜態文章。</p>
+<p>!!!節點
+在結構語言中稱為節點 (node)，在 SGML 中稱為元素 (element)，不過為明白講解，還是稱其為節點。</p>
+<p>網頁所使用的就是 HTML (HyperText Markup Language)，是使用特定 tag 標記特定用途的區域，由網頁瀏覽器渲染產生網頁靜態外觀的。
+至於動態外觀呢？就是由瀏覽器內的腳本程式語言來修改 HTML 的節點，重新局部渲染所達成的，目前是由 JavaScript 獨挑大樑。</p>
+<p>本章先不介紹 JavaScript，而是注重於靜態網頁。</p>
+<h2><a class="header" href="#html-basic-structure" id="html-basic-structure">HTML Basic Structure</a></h2>
+<p>基本的 HTML 架構為：</p>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;...&lt;/head&gt;
+&lt;body&gt;...&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>其中 head 包含頁面資訊，如標題、圖示、編碼等等資訊。
+而 body 則是頁面內容，藉由特定節點排版。
+第一行的 <code>&lt;!doctype html&gt;</code> 標示文件內容為 HTML，以提醒其他 XML 解譯器，此標示不分大小寫。</p>
+<p>body 包含 h1 到 h6 的標題、p 段落、a 超連結、span 內聯、img 圖片、pre 預格式化、code 程式碼、li 條列等區塊；
+也可以包含 div 布局容器，甚至是 script 在載入時執行 JavaScript。
+更多可以參考 <a href="https://www.w3schools.com/tags/ref_byfunc.asp">https://www.w3schools.com/tags/ref_byfunc.asp</a>。</p>
+<p>為了能夠快速檢索，每個 body 裡的節點可以設置 id 與 class 兩種屬性，如下：</p>
+<pre><code class="language-html">&lt;p id=&quot;p1&quot; class=&quot;myclass&quot;&gt;&lt;/p&gt;
+&lt;p id=&quot;p2&quot; class=&quot;myclass&quot;&gt;&lt;/p&gt;
+</code></pre>
+<p>差別在於，每個節點的 id 是唯一的，且不可重複定義相同的 id，檢索速度也較快；
+而 class 則可以簡單地用名稱從複雜的結構中篩選出來。
+實作上則因解譯器不同而異。</p>
+<p>對於瀏覽器，<code>http://mypage#p1</code> 可以支援直接將顯示區 (view part) 直接捲動到該 id 節點的位置。</p>
+<h2><a class="header" href="#css" id="css">CSS</a></h2>
+<p>單純 HTML 只會直接將各區塊「排列」出來，若要調整大小、排列順序、顏色、字型等外觀，
+就要依賴階層樣式表 (Cascading Style Sheets, CSS) 的設定。</p>
+<p>在 body 裡的每種子節點都有 style 屬性，可以設定單獨的節點（包含 body 本身）。
+而 head 裡的 style 節點可以設定多個節點的外觀。</p>
+<p>單獨的樣式設定如下：</p>
+<pre><code class="language-html">&lt;p style=&quot;color: red&quot;&gt;Red text&lt;/p&gt;
+</code></pre>
+<p>而 style 節點中則是正規的 CSS 語法：</p>
+<pre><code class="language-css">/* 註解 */
+p {
+  color: red;
+}
+</code></pre>
+<p>上面的語法可以將所有 p 節點的文字顏色都變成紅色。
+跟 HTML 一樣，CSS 會忽略不可視字元，後面的定義會覆蓋前面的定義。</p>
+<p>而 id 和 class 屬性也可以用來篩選節點，<code>.</code> 用來指定 class，<code>#</code> 用來指定 id。</p>
+<pre><code class="language-css">.myclass {
+  color: red;
+}
+#p1 {
+  color: blue;
+}
+/* 特定節點的 class */
+p.myclass {
+  color: yellow;
+}
+/* 多個節點的定義 */
+#p1, h2 {
+  color: green;
+}
+</code></pre>
+<p>要注意的是，HTML 和 CSS 會有相容性問題，和 JavaScript 一樣，較舊的瀏覽器可能無法支援某些排版方式。</p>
+<h2><a class="header" href="#markdown" id="markdown">Markdown</a></h2>
+<p>然而 HTML 諸多功能有時候反而會讓純文章寫作有點麻煩，因此有了 Markdown 的產生，並且能夠支援內聯 HTML 語法。
+基本上，就是用簡單的標記代表 HTML 語法，沒有支援的就直接用 HTML 補上。
+詳細的語法可以參考 <a href="https://daringfireball.net/projects/markdown/syntax">https://daringfireball.net/projects/markdown/syntax</a>。</p>
+<p>實際應用上，可以用編譯的方式從 Markdown 轉為 HTML，而使用靜態轉換或 JavaScript 在載入時轉換都可以達成。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../webpages/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../data-format/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../webpages/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../data-format/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

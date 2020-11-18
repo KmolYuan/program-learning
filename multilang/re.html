@@ -1,0 +1,430 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Regular Expression - Program Learning</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="程式入門">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="../vc/index.html"><strong aria-hidden="true">2.</strong> Version Control</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vc/git.html"><strong aria-hidden="true">2.1.</strong> Git</a></li></ol></li><li class="chapter-item expanded "><a href="../languages/index.html"><strong aria-hidden="true">3.</strong> Languages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../languages/python.html"><strong aria-hidden="true">3.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="../languages/c-cpp.html"><strong aria-hidden="true">3.2.</strong> C / C++</a></li><li class="chapter-item expanded "><a href="../languages/matlab-en.html"><strong aria-hidden="true">3.3.</strong> Matlab (EN)</a></li><li class="chapter-item expanded "><a href="../languages/latex-math.html"><strong aria-hidden="true">3.4.</strong> Latex Math (TODO)</a></li></ol></li><li class="chapter-item expanded "><a href="../webpages/index.html"><strong aria-hidden="true">4.</strong> Webpages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../webpages/html5.html"><strong aria-hidden="true">4.1.</strong> HTML5 &amp; CSS &amp; Markdown</a></li></ol></li><li class="chapter-item expanded "><a href="../data-format/index.html"><strong aria-hidden="true">5.</strong> Data Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-format/yaml.html"><strong aria-hidden="true">5.1.</strong> YAML</a></li></ol></li><li class="chapter-item expanded "><a href="../multilang/index.html"><strong aria-hidden="true">6.</strong> Multi-Language Learning</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../multilang/re.html" class="active"><strong aria-hidden="true">6.1.</strong> Regular Expression</a></li><li class="chapter-item expanded "><a href="../multilang/syntax.html"><strong aria-hidden="true">6.2.</strong> Syntax</a></li><li class="chapter-item expanded "><a href="../multilang/expr.html"><strong aria-hidden="true">6.3.</strong> Expression and Statement</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../it-intro.html">Keywords</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Program Learning</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#regular-expression" id="regular-expression">Regular Expression</a></h1>
+<p>正規表達式 (RE, Regex, Regular Expression) 是一種擷取規則文字的機制。其原理為：</p>
+<ol>
+<li>建立文法 (Grammar) 表達式。</li>
+<li>演算法根據其規則進行比對 (Match)。</li>
+<li>若相符，將會把文法中的群組 (Group) 內容取出，稱為 Token。</li>
+<li>若不相符，會跳過。</li>
+<li>繼續尋找直到搜尋完畢。</li>
+</ol>
+<p>在閱讀 <a href="syntax.html">Syntax</a> 之前，可以先透過本節學習如何從有規律的文字中擷取需要的內容。</p>
+<p>本節使用 JavaScript 表示 RE 文法，故會有夾注號 <code>/</code> 如：<code>/re+/</code>。使用其他程式語言時可忽略，按其規則為準。</p>
+<p>推薦的測試網站：<a href="https://regex101.com">https://regex101.com</a></p>
+<h2><a class="header" href="#rules" id="rules">Rules</a></h2>
+<h3><a class="header" href="#base-grammar" id="base-grammar">Base Grammar</a></h3>
+<p>除了特殊字元，RE 的文法<strong>等價</strong>於要解析的文字：</p>
+<pre><code class="language-js">/abc/  // abc
+</code></pre>
+<p><strong>特殊字元</strong>，作為起始即有特殊作用：<code>.</code>, <code>?</code>, <code>+</code>, <code>*</code>, <code>|</code>, <code>[</code>, <code>(</code>, <code>)</code>, <code>$</code>, <code>^</code>, <code>\</code></p>
+<p><strong>非特殊字元</strong>，可單獨作為表示，但是可配合特殊字元：<code>,</code>(comma), <code>{</code>, <code>}</code>, <code>]</code></p>
+<h3><a class="header" href="#any-single-character" id="any-single-character">Any Single Character</a></h3>
+<p>使用 <code>.</code> 表示任意單一字元，包含不可視字元。</p>
+<h3><a class="header" href="#escape-character" id="escape-character">Escape Character</a></h3>
+<p>跳脫字元 (Escape Character) 為反斜線 <code>\</code>。</p>
+<p>主要可以表示特殊規則，幫助縮減文法長度。</p>
+<p>另外可以強迫特殊字元（包含自身）變成普通文字。</p>
+<h3><a class="header" href="#invisible-characters" id="invisible-characters">Invisible Characters</a></h3>
+<p>不可視字元 (Invisible Characters) 為顯示或列印時沒有顯示符號的字元，如下：</p>
+<table><thead><tr><th align="center">符號</th><th align="center">說明</th></tr></thead><tbody>
+<tr><td align="center"><code> </code></td><td align="center">空白 (Space)</td></tr>
+<tr><td align="center"><code>\t</code></td><td align="center">縮進 (Tab)</td></tr>
+<tr><td align="center">Linux &amp; MacOS: <code>\n</code>, Windows: <code>\r\n</code></td><td align="center">換行 (Newline)</td></tr>
+</tbody></table>
+<h3><a class="header" href="#repetition" id="repetition">Repetition</a></h3>
+<p><strong>單一文字</strong>重複規則如下：</p>
+<pre><code class="language-js">/a{n}/  // 表示 a 重複 n 次
+/a{n,}/  // 表示 a 最少重複 n 次，最多無限次
+/a{n,m}/  // 表示 a 最少重複 n 次，最多 m 次
+</code></pre>
+<p>而簡化語法如下：</p>
+<pre><code class="language-js">/a?/  // 表示 a 最少重複 0 次，最多 1 次（可寫可不寫）
+/a+/  // 表示 a 最少重複 1 次，最多無限次
+/a*/  // 表示 a 最少重複 0 次，最多無限次
+</code></pre>
+<p>若前一個是群組則會套用到群組的規則。</p>
+<pre><code class="language-js">/(abc)+/  // abc, abcabc, abcabcabc, ...
+</code></pre>
+<h3><a class="header" href="#group" id="group">Group</a></h3>
+<p>使用群組 (Group) 功能擷取文字，符號為 <code>(</code> 和 <code>)</code>。</p>
+<p>定義 Group 0 為整段符合的文字，剩下的從 1 開始編號，重複的以此類推。</p>
+<pre><code class="language-js">/(aaa)(bbb)/  // g0: aaabbb, g1: aaa, g2: bbb
+/(aaa)(bbb)+/  // g0: aaabbbbbb, g1: aaa, g2: bbb, g3: bbb
+</code></pre>
+<p>若沒有要擷取文字，為了方便定義規則，可以宣告為匿名群組。</p>
+<pre><code class="language-js">/(?:abc)+/
+</code></pre>
+<h3><a class="header" href="#logical-or" id="logical-or">Logical Or</a></h3>
+<p>邏輯或 <code>|</code> 運算子能夠將多個類似的規則在同個文法中表現。</p>
+<p>然而正規表達式的邏輯或運算子是最低優先權的，必須使用匿名群組等提升優先權。</p>
+<pre><code class="language-js">/aa(?:bb|cc|dd)e/  // aabbe, aacce, aadde
+</code></pre>
+<h3><a class="header" href="#list" id="list">List</a></h3>
+<p>清單 (List) 表示單一字元的多種選項，是邏輯或的一種縮寫，符號為 <code>[</code> 和 <code>]</code>。</p>
+<pre><code class="language-js">/a[bcd]e/  // abe, ace, ade
+/a(?:a|b|c)e/  // 等價
+</code></pre>
+<p>為了方便，清單支援 ASCII Code 的範圍 (Range) 標示，且可以連續標示。
+不過如果是其他字元，會以 ASCII 的編號表示。</p>
+<pre><code class="language-js">/[0-9]/  // 0 ~ 9
+/[a-zA-Z]/  // a ~ z, A ~ Z
+</code></pre>
+<p>另外清單前端加上 <code>^</code> 符號為反向集合，會對應到沒有顯示的字元，可以只標示例外即可。</p>
+<pre><code class="language-js">/[^a-z]/
+</code></pre>
+<p>而清單也支援重複的定義。</p>
+<pre><code class="language-js">/[qrs]{3}/  // qqq, rrr, sss, ...
+</code></pre>
+<h3><a class="header" href="#anchor" id="anchor">Anchor</a></h3>
+<p>定位點 (Anchor) 可以幫助在文字中定位，<strong>不代表任何字元</strong>，常用的如下：</p>
+<ul>
+<li><code>^</code>：<strong>整個字串</strong>或<strong>行</strong>的開頭。</li>
+<li><code>$</code>：<strong>整個字串</strong>或<strong>行</strong>的結尾。</li>
+</ul>
+<h3><a class="header" href="#common-tokens" id="common-tokens">Common Tokens</a></h3>
+<p>以下列舉常用的規則：</p>
+<table><thead><tr><th align="center">符號</th><th align="center">說明</th><th align="center">等價</th><th align="center">反向</th></tr></thead><tbody>
+<tr><td align="center"><code>\s</code></td><td align="center">不可視字元</td><td align="center"><code>[\r\n\t ]</code></td><td align="center"><code>\S</code></td></tr>
+<tr><td align="center"><code>\d</code></td><td align="center">數字</td><td align="center"><code>[0-9]</code></td><td align="center"><code>\D</code></td></tr>
+<tr><td align="center"><code>\w</code></td><td align="center">文字</td><td align="center"><code>[0-9a-zA-Z]</code></td><td align="center"><code>\W</code></td></tr>
+<tr><td align="center"><code>\b</code></td><td align="center">文字邊界（定位點）</td><td align="center"><code>(^\w\|\w$\|\W\w\|\w\W)</code></td><td align="center"><code>\B</code></td></tr>
+</tbody></table>
+<h3><a class="header" href="#flags" id="flags">Flags</a></h3>
+<p>正規表達式的選項稱為 Flag，可能因為不同程式語言的規則而異。常用的如下：</p>
+<table><thead><tr><th align="center">Flag</th><th align="center">說明</th><th align="center">備註</th></tr></thead><tbody>
+<tr><td align="center"><strong>g</strong>lobal</td><td align="center">不只作用一次</td><td align="center">Python 不支援</td></tr>
+<tr><td align="center"><strong>m</strong>ultiple line</td><td align="center">啟用後，<code>^$</code> 對應行的開頭和結尾，而非整個字串</td><td align="center"></td></tr>
+<tr><td align="center"><strong>i</strong>nsensitive</td><td align="center">忽略大小寫</td><td align="center"></td></tr>
+<tr><td align="center">e<strong>x</strong>tend</td><td align="center">啟用單行註解功能 <code>#</code> 並忽略空白標示</td><td align="center">JavaScript 不支援</td></tr>
+<tr><td align="center">stik<strong>y</strong></td><td align="center">每次符合必須相連</td><td align="center">僅 JavaScript 支援</td></tr>
+<tr><td align="center"><strong>u</strong>nicode</td><td align="center">支援萬國碼，<code>\w</code> 將對應所有其他字元</td><td align="center"></td></tr>
+<tr><td align="center"><strong>a</strong>scii</td><td align="center">僅支援 ASCII Code</td><td align="center">僅 Python 支援</td></tr>
+</tbody></table>
+<p>在 JavaScript 中，Flag 可以寫在括弧後啟用。</p>
+<pre><code class="language-js">/abc/gm
+</code></pre>
+<h2><a class="header" href="#token-example" id="token-example">Token Example</a></h2>
+<p>試著思考題目，並參考正規表達式的撰寫思路。</p>
+<h3><a class="header" href="#csv" id="csv">CSV</a></h3>
+<p>逗號分隔值 (CSV, Comma-Separated Values) 通常為逗號、縮進、空白等符號分開數值。</p>
+<pre><code>0.01 0.06 -9.997
+1.69 +40.44 4.6321
+</code></pre>
+<p>思路：</p>
+<ul>
+<li>
+<p>數字在文法中可以表示成：</p>
+<pre><code class="language-js">/d+/
+</code></pre>
+</li>
+<li>
+<p>浮點數可以表示成：</p>
+<pre><code class="language-js">/\d*\.?d+/
+</code></pre>
+</li>
+<li>
+<p>帶有符號的浮點數可以表示成：</p>
+<pre><code class="language-js">/[+-]?\d*\.?d+/
+</code></pre>
+</li>
+<li>
+<p>每行有三個數值，用空白分隔，可以表示成：</p>
+<pre><code class="language-js">/^([+-]?\d*\.?d+) ([+-]?\d*\.?d+) ([+-]?\d*\.?d+)$/m
+</code></pre>
+</li>
+</ul>
+<p>可得：</p>
+<table><thead><tr><th align="center">Match</th><th align="center">g1</th><th align="center">g2</th><th align="center">g3</th></tr></thead><tbody>
+<tr><td align="center">1</td><td align="center">0.01</td><td align="center">0.06</td><td align="center">-9.997</td></tr>
+<tr><td align="center">2</td><td align="center">1.69</td><td align="center">+40.44</td><td align="center">4.6321</td></tr>
+</tbody></table>
+<h3><a class="header" href="#g-code" id="g-code">G Code</a></h3>
+<p>假設這是某台工具機的指令碼，你必須設計它的速度規劃。
+在忽略換行記號的情況下，試著抓取以下每行 G code 中的 <strong>G 碼</strong>、<strong>座標</strong>和<strong>進給速度</strong>。
+不相關的內容可以忽略。</p>
+<pre><code class="language-g">%
+O100
+G00 G40 G49 G20 G90
+N05 M10
+N10 M05
+N15 G91 G28 Z0
+N20 G90
+N25 T1 M06
+N30 G00 Z.1
+N35 G00 X2.5 Y2.5
+N40 G01 Z-.25 F200
+N45 G01 X5 Y5
+N50 G00 Z.1
+N55 G28 X0 Y0
+N60 M05
+N65 M45
+%
+</code></pre>
+<ul>
+<li>
+<p>根據 N、G、X、Y、Z、F 排列順序，每個符號會跟隨一個<strong>整數</strong>或<strong>帶符號的浮點數</strong>。</p>
+<pre><code class="language-js">/N\d+/
+/X[+-]?\d*\.?\d+/
+</code></pre>
+</li>
+<li>
+<p>而 N、X、Y、Z、F 為可選的項目。</p>
+<pre><code class="language-js">/(?:X([+-]?\d*\.?\d+))?/
+</code></pre>
+</li>
+<li>
+<p>可以使用 <code>\s*</code> 代表間隔的空白，每行可排列成：</p>
+<pre><code class="language-js">/G(\d+)\s*(?:X([+-]?\d*\.?\d+))?\s*(?:Y([+-]?\d*\.?\d+))?\s*(?:Z([+-]?\d*\.?\d+))?\s*(?:F([+-]?\d*\.?\d+))?\s*/
+</code></pre>
+</li>
+</ul>
+<p>可得：</p>
+<table><thead><tr><th align="center">Match</th><th align="center">g1</th><th align="center">g2</th><th align="center">g3</th><th align="center">g4</th><th align="center">g5</th></tr></thead><tbody>
+<tr><td align="center">1</td><td align="center">00</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">2</td><td align="center">40</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">3</td><td align="center">49</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">4</td><td align="center">20</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">5</td><td align="center">90</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">6</td><td align="center">91</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">7</td><td align="center">28</td><td align="center"></td><td align="center"></td><td align="center">0</td><td align="center"></td></tr>
+<tr><td align="center">8</td><td align="center">90</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">9</td><td align="center">00</td><td align="center"></td><td align="center"></td><td align="center">.1</td><td align="center"></td></tr>
+<tr><td align="center">10</td><td align="center">00</td><td align="center">2.5</td><td align="center">2.5</td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">11</td><td align="center">01</td><td align="center"></td><td align="center"></td><td align="center">-.25</td><td align="center">200</td></tr>
+<tr><td align="center">12</td><td align="center">01</td><td align="center">5</td><td align="center">5</td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">13</td><td align="center">00</td><td align="center"></td><td align="center"></td><td align="center">.1</td><td align="center"></td></tr>
+<tr><td align="center">14</td><td align="center">28</td><td align="center">0</td><td align="center">0</td><td align="center"></td><td align="center"></td></tr>
+</tbody></table>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../multilang/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../multilang/syntax.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../multilang/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../multilang/syntax.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
