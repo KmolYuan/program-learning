@@ -1,5 +1,10 @@
 name: Deploy Book
-on: [push]
+on:
+  push:
+    branchs: [ master ]
+    tags: [ v* ]
+  pull_request:
+    branches: [ master ]
 jobs:
   build:
     runs-on: ubuntu-latest
