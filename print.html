@@ -370,7 +370,7 @@ f2(10.);
 <p>編譯器在實作時，其實只要把 <code>a</code> 和 <code>b</code> 視為相同的記憶體，就可以達成移動的流程。</p>
 <p>在 C++ 中，預設都是複製，另外可以使用 <code>std::move()</code> 函式來達成變數移動。</p>
 <h2 id="copy"><a class="header" href="#copy">Copy</a></h2>
-<p><strong>複製</strong>的方式固然簡單，但是也意味著造成最大的執行成本：時間和空間都不可避免的浪費掉了，特別是對於唯讀 (read-only) 資料。若是程式中可以標明常量 (constant) 或可變 (mutable) 變數，還可以將常量的複製行為移除。但若是沒有，複製一整個資料可說是非常重的負擔。</p>
+<p><strong>複製</strong>的方式固然簡單，但是也意味著造成最大的執行成本：時間和空間都不可避免的浪費掉了，特別是對於唯讀 (read-only) 資料。若是程式中可以標明常量 (constant) 或可變 (mutable) 變數，還可以將常量的複製行為移除，稱為 Copy propagation。但若是沒有，複製一整個資料可說是非常重的負擔。</p>
 <p>在 Rust 中，只有原始類型 (primitive type) 預設是可以複製的，包含布林 (boolean)、整數 (integer)、浮點數 (float)、字元 (character)、單元 (unit)、指標 (pointer)。至於其他類型 struct、enum、union 則必須實作 Clone trait，以達成可複製的條件。</p>
 <pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
@@ -460,7 +460,7 @@ let b = a.clone();
 assert_eq!(Rc::strong_count(&amp;a), 2);
 <span class="boring">}
 </span></code></pre></pre>
-<p>至於跨執行序分享資料時，若需要修改該資料，會造成<strong>資料競爭 (data racing)</strong>，產生不同步的情況，因此 <code>Arc</code> 無法像 <code>Rc</code> 一樣輕鬆的改變 heap 上的數值。為了解決資料競爭，可以加上一個<strong>互斥鎖 (mutex lock)</strong>，使用一個<strong>原子化 (atomic)</strong> 的布林值（通常是 <code>u8</code>）來鎖住資料，執行序必須檢查鎖是否開啟，等到開啟後才可以鎖住並修改資料。</p>
+<p>至於跨執行序分享資料時，若需要修改該資料，會造成<strong>資料競爭 (data racing)</strong>，產生不同步的情況，因此 <code>Arc</code> 無法像 <code>Rc</code> 一樣輕鬆的改變 heap 上的數值。為了解決資料競爭，可以加上一個<strong>互斥鎖 (mutex lock)</strong>，使用一個<strong>原子化 (atomic)</strong> 的布林值（通常是 <code>u8</code>）來鎖住資料，執行序必須檢查鎖是否開啟，等到開啟後才可以鎖住並修改資料。Python 中就有一個全部變數共用的鎖，稱為全域直譯器鎖 (Global Interpreter Lock, GIL)，因此其實現新執行序的方式便是再開一個解譯器，避免資料競爭。</p>
 <pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
