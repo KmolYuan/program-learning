@@ -164,6 +164,6 @@ let a = Arc::new(Mutex::new(0));
 assert_eq!(*a.lock().unwrap(), 10);
 ```
 
-不過對於原始型別，原子化類型 [`std::sync::atomic::Atomic*`](https://doc.rust-lang.org/std/sync/atomic/index.html) 應該更容易使用，而完全不需要互斥鎖。因為在支援的平台上，處理器可以自動排程寫入狀態，以避免底層的資料競爭，不過浮點數是不支援的。
+不過對於原始類型，原子化類型 [`std::sync::atomic::Atomic*`](https://doc.rust-lang.org/std/sync/atomic/index.html) 應該更容易使用，而完全不需要互斥鎖。因為在支援的平台上，處理器可以自動排程寫入狀態，以避免底層的資料競爭，不過浮點數是不支援的。
 
 除了普通持有資料的計數外，還有可懸掛空值的**弱參照 (weak reference)**，因此前者相對之下稱為**強參照 (strong reference)**。弱參照持有的原始指標可以修改，類似於 `mut &T` 或 `mut &mut T`，可以改變指向，而強參照持有原始資料的指標，因此只能固定。`Rc::downgrade()` 和 `Arc::downgrade()` 可以將強參照降級為弱參照，不過由於弱參照會有空值，使用數值時都需要重新檢查，較花時間。
