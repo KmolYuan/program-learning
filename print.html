@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="vc/index.html"><strong aria-hidden="true">2.</strong> Version Control</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="vc/git.html"><strong aria-hidden="true">2.1.</strong> Git</a></li></ol></li><li class="chapter-item expanded "><a href="languages/index.html"><strong aria-hidden="true">3.</strong> Languages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="languages/python.html"><strong aria-hidden="true">3.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="languages/c-cpp.html"><strong aria-hidden="true">3.2.</strong> C / C++</a></li><li class="chapter-item expanded "><a href="languages/matlab-en.html"><strong aria-hidden="true">3.3.</strong> Matlab (EN)</a></li><li class="chapter-item expanded "><a href="languages/latex-math.html"><strong aria-hidden="true">3.4.</strong> Latex Math (TODO)</a></li></ol></li><li class="chapter-item expanded "><a href="webpages/index.html"><strong aria-hidden="true">4.</strong> Webpages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webpages/html5.html"><strong aria-hidden="true">4.1.</strong> HTML5 &amp; CSS &amp; Markdown</a></li></ol></li><li class="chapter-item expanded "><a href="data-format/index.html"><strong aria-hidden="true">5.</strong> Data Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-format/yaml.html"><strong aria-hidden="true">5.1.</strong> YAML</a></li></ol></li><li class="chapter-item expanded "><a href="multilang/index.html"><strong aria-hidden="true">6.</strong> Multi-Language Learning</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="multilang/re.html"><strong aria-hidden="true">6.1.</strong> Regular Expression</a></li><li class="chapter-item expanded "><a href="multilang/syntax.html"><strong aria-hidden="true">6.2.</strong> Syntax</a></li><li class="chapter-item expanded "><a href="multilang/expr.html"><strong aria-hidden="true">6.3.</strong> Expression and Statement</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="it-intro.html">Keywords</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="vc/index.html"><strong aria-hidden="true">2.</strong> Version Control</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="vc/git.html"><strong aria-hidden="true">2.1.</strong> Git</a></li></ol></li><li class="chapter-item expanded "><a href="multilang/index.html"><strong aria-hidden="true">3.</strong> Multi-Language Learning</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="multilang/assignment.html"><strong aria-hidden="true">3.1.</strong> Assignment</a></li><li class="chapter-item expanded "><a href="multilang/re.html"><strong aria-hidden="true">3.2.</strong> Regular Expression</a></li><li class="chapter-item expanded "><a href="multilang/syntax.html"><strong aria-hidden="true">3.3.</strong> Syntax</a></li><li class="chapter-item expanded "><a href="multilang/expr.html"><strong aria-hidden="true">3.4.</strong> Expression and Statement</a></li></ol></li><li class="chapter-item expanded "><a href="languages/index.html"><strong aria-hidden="true">4.</strong> Languages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="languages/python.html"><strong aria-hidden="true">4.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="languages/c-cpp.html"><strong aria-hidden="true">4.2.</strong> C / C++</a></li><li class="chapter-item expanded "><a href="languages/matlab-en.html"><strong aria-hidden="true">4.3.</strong> Matlab (EN)</a></li><li class="chapter-item expanded "><a href="languages/latex-math.html"><strong aria-hidden="true">4.4.</strong> Latex Math (TODO)</a></li></ol></li><li class="chapter-item expanded "><a href="webpages/index.html"><strong aria-hidden="true">5.</strong> Webpages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webpages/html5.html"><strong aria-hidden="true">5.1.</strong> HTML5 &amp; CSS &amp; Markdown</a></li></ol></li><li class="chapter-item expanded "><a href="data-format/index.html"><strong aria-hidden="true">6.</strong> Data Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-format/yaml.html"><strong aria-hidden="true">6.1.</strong> YAML</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="it-intro.html">Keywords</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -319,6 +319,842 @@ git push --tags
 <p>克隆後下載子倉儲。加上 <code>--recursive</code> 會套用到子倉儲的子倉儲。</p>
 <pre><code class="language-bash">git submodule update --init --recursive
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="multi-language-learning"><a class="header" href="#multi-language-learning">Multi-Language Learning</a></h1>
+<p>在各種程式語言間可以相互學習的概念。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="assignment"><a class="header" href="#assignment">Assignment</a></h1>
+<p><strong>指派 (Assignment)</strong> 是程式語言中最基本的一種語法，亦也是一種最關鍵的邏輯問題，為一種<strong>變數 (variable)</strong> 之間的轉移手段。指派通常有幾種行為：<strong>移動 (move)</strong>、<strong>複製 (copy)</strong> 與<strong>參照計數 (reference counted)</strong>。為了方便說明，現在就以三種都具備的 Rust 程式語言來表示。</p>
+<p>首先以下是 Rust 中的指派語句：</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 指派語句
+let mut a = 20.;
+// 修改也是指派語句
+a = 10.;
+assert_eq!(a, 10.);
+
+// pattern matching 也是指派語句
+match 10. {
+    a =&gt; { assert_eq!(a, 10.); }
+    _ =&gt; {}
+}
+
+// if let pattern matching 也是指派語句
+if let a = 10. {
+    assert_eq!(a, 10.);
+}
+
+// while let pattern matching 也是指派語句
+let mut iter = [10.].into_iter();
+while let Some(&amp;a) = iter.next() {
+    assert_eq!(a, 10.);
+}
+
+// for-loop 也是指派語句，語意同上
+for a in [10.] {
+    assert_eq!(a, 10.);
+}
+
+// closure 預設是取指標，但是其生命週期必須比原始資料短
+let f1 = |b| { assert_eq!(a, b); };
+// 使用 move 關鍵字會使用指派語句
+let f2 = move |b| { assert_eq!(a, b); };
+// 呼叫函式也是指派語句，同於上面的 b = a
+f1(10.);
+f2(10.);
+<span class="boring">}
+</span></code></pre></pre>
+<p>Rust 在預設的情況下選擇使用 move 或 copy 來處理指派問題，再加上必須用關鍵字 <code>mut</code> 標示可變變數，因此效能上會有靈活調整的優勢。有趣的是雖然 Rust 是靜態型別的程式語言，但是上面的範例完全不用標明類型，都是自動推導的。</p>
+<h2 id="move"><a class="header" href="#move">Move</a></h2>
+<p><strong>移動</strong>算是比較新的概念，而且只發生在語義上。當 <code>a</code> 變數移動到 <code>b</code> 變數時，可視為資料的完全轉移，因此 <code>a</code> 變數就不可使用了。亦即，<code>a</code> 的資料的生命週期 (life cycle) 被「延長」到新的變數，直到變數 <code>b</code> 被刪除，資料才會被刪除。</p>
+<p>編譯器在實作時，其實只要把 <code>a</code> 和 <code>b</code> 視為相同的記憶體，就可以達成移動的流程。</p>
+<p>在 C++ 中，預設都是複製，另外可以使用 <code>std::move()</code> 函式來達成變數移動。</p>
+<h2 id="copy"><a class="header" href="#copy">Copy</a></h2>
+<p><strong>複製</strong>的方式固然簡單，但是也意味著造成最大的執行成本：時間和空間都不可避免的浪費掉了，特別是對於唯讀 (read-only) 資料。若是程式中可以標明常量 (constant) 或可變 (mutable) 變數，還可以將常量的複製行為移除。但若是沒有，複製一整個資料可說是非常重的負擔。</p>
+<p>在 Rust 中，只有原始類型 (primitive type) 預設是可以複製的，包含布林 (boolean)、整數 (integer)、浮點數 (float)、字元 (character)、單元 (unit)、指標 (pointer)。至於其他類型 struct、enum、union 則必須實作 Clone trait，以達成可複製的條件。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>#[derive(Clone, PartialEq, Debug)]
+struct Point {
+    x: f64,
+    y: f64,
+}
+
+let mut p1 = Point {x: 0., y: 0.};
+let p2 = p1.clone();
+assert_eq!(p1, p2);
+p1.x = 10.;
+assert_ne!(p1, p2);
+<span class="boring">}
+</span></code></pre></pre>
+<p>上面的程式使用派生巨集 (derive macro)，會自動實作複製的行為，但若是其中有欄位 (field) 的類型沒有實作 Clone，就必須手動用實作語法 <code>impl Clone for Point {...}</code> 處理。上面其他的 trait 也是相同的道理，<code>PartialEq</code> 可以實作「等於」與「不等於」運算子，<code>Debug</code> 可以實作運行期間錯誤訊息的格式。達成可複製條件後，就可以手動用 <code>Clone::clone()</code> 這個方法來複製。</p>
+<p>若要達成跟原始型別一樣，指派時自動複製，則可以實作一個標記用的 Copy trait，這樣編譯器在解析時會自動呼叫 <code>Clone::clone()</code>。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>#[derive(Copy, Clone, PartialEq, Debug)]
+struct Point {
+    x: f64,
+    y: f64,
+}
+
+let mut p1 = Point {x: 0., y: 0.};
+let p2 = p1;
+assert_eq!(p1, p2);
+p1.x = 10.;
+assert_ne!(p1, p2);
+<span class="boring">}
+</span></code></pre></pre>
+<h2 id="pointer-and-reference"><a class="header" href="#pointer-and-reference">Pointer and Reference</a></h2>
+<p>在認識參照計數之前，必須先認識<strong>指標 (pointer)</strong>。指標是指向變數的記憶體位置，是用一段整數來當做代號，可以藉由儲存指標來達成在變數之外存取該變數的數值。</p>
+<p>然而，指標顯然也是另外一個變數，自然也可以有自己的指標，在語法上較難處理，也很花時間理解。這時候某些程式語言會推出語義上的指標，來參考原本的數據以免去複製的步驟，稱為<strong>參照 (reference)</strong>。</p>
+<p>再者，指標顯然有一些致命缺陷，甚至是可被攻擊的目標：</p>
+<ul>
+<li>懸掛指標 (hanged pointer)：原始的數值有自己的生命週期，若是在刪除後仍去存取，亦可能取到錯誤的數值。或是創建空指標時沒有指到正確位置就進行讀寫。</li>
+<li>記憶體洩漏 (memory leak)：存入數值後忘記刪除，就刪除指標，會造成浪費記憶體空間（因為直到程式執行完才會清除）。</li>
+<li>堆棧溢出 (stack overflow)：指標可以索取連續的記憶體陣列，但是如果檢索的長度超出範圍，會得到錯誤數值。</li>
+</ul>
+<p>在 Rust 中，指標與參照是相同的，統一稱為<strong>指標 (pointer)</strong>。不能保證生命週期的指標稱為<strong>原始指標 (raw pointer)</strong>，寫作 <code>*T</code>；能保證生命週期的稱為<strong>智慧指標 (smart pointer)</strong>，寫作 <code>&amp;T</code>，也是最常用的一種。能保證生命週期的行為也稱為<strong>記憶體安全 (memory safe)</strong>。記憶體安全也是 Rust 語言的一大賣點，所以預設不能使用原始指標，除非開啟 <strong>unsafe</strong> 選項。</p>
+<p>原始指標操作簡單，但是較「危險」。智慧指標在 Rust 則是採取<strong>所有權 (ownership)</strong> 系統。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut a = 10.;
+{
+  // b 借走所有權，不可使用 a
+  let b = &amp;mut a;
+  // 修改記憶體
+  *b = 20.;
+}
+// b 生命週期提前結束，所有權還給 a
+assert_eq!(a, 20.);
+<span class="boring">}
+</span></code></pre></pre>
+<p>在上面的程式碼中，Rust 可以使用一個大括弧 <code>{}</code> 在執行區創造出一個<strong>範圍 (scope)</strong>，這個範圍跟函式、判斷式等 runtime 要素是一樣的。當使用 <code>let</code> 關鍵字指派一個新的變數，若變數沒有被移動，則都會在括弧關閉的地方被刪除。此概念在 C / C++ 中也有。</p>
+<p>當使用 <code>&amp;a</code> / <code>&amp;mut a</code> 運算子，表示對變數 <code>a</code> 索取智慧指標，若有關鍵字 <code>mut</code>，則代表這個指標可以修改變數，前提是變數 <code>a</code> 也是可變的。索取指標會造成所有權被借走，導致 <code>a</code> 不能使用，這在編譯期間就會檢查，並且指出原始資料與指標之間的關係。</p>
+<p>值得注意的是，這邊 <code>b</code> 不用加上 <code>mut</code> 標示為可變，因為指標僅修改指向的內容，而非自身。</p>
+<p>所有權系統是為了保障<strong>執行序安全 (thread safe)</strong>，因此智慧指標只能在單一執行序使用，如果要在多執行序使用，比如說平行處理，則必須使用參照計數。</p>
+<h2 id="reference-counted"><a class="header" href="#reference-counted">Reference Counted</a></h2>
+<p>在程式語言中，通常會有<strong>記憶體管理 (memory management)</strong> 系統。短暫的執行區稱為 stack，用來作為部份資料生命週期的判定；而必須跨越多個執行區、太龐大或長期使用的資料則會放置在 heap。Rust 的所有權系統都是在 stack 間移動，不過為了達成跨執行序存取，必須將資料轉移至 heap，這時就必須使用原始指標達成。</p>
+<p><strong>參照計數</strong>的概念在於，所有的資料都存於 heap，當新增「變數」（Python 稱為「名稱」）時，就會增加計數器；當參照的數量變成 0 時，就會刪除資料。例如 Java、JavaScript 或 Python 這種只有參照計數系統的程式語言，就是用模擬 stack 的方式移除資料的引用。不過，完全以參照計數為主的程式語言便需要一套<strong>垃圾收集 (garbage collection)</strong> 系統，移除長久未使用的變數，它們可能在載入的過程中遺留下來，造成另類的記憶體洩漏。</p>
+<p>在 Rust 中，<a href="https://doc.rust-lang.org/std/rc/struct.Rc.html"><code>std::rc::Rc</code></a> 和 <a href="https://doc.rust-lang.org/std/sync/struct.Arc.html"><code>std::sync::Arc</code></a> 是標準庫 (standard library) 提供的參照計數器，<code>Rc</code> 是單執行序使用的，可以應用於在容器之間分享資料；<code>Arc</code> 則是多執行序使用的，可以在不同執行序間分享資料。若沒有多執行序用途，<code>Rc</code> 存取的速度會較好。</p>
+<p>另外得注意的是，<code>Rc::new()</code> 和 <code>Arc::new()</code> 會移動資料到內部，因此一開始就要用參照計數器的話就必須將資料包裝起來。而解除時是使用 <code>Arc::try_unwrap</code> 和 <code>Rc::try_unwrap</code>，可以直接將內部資料移動出來，不過必須在計數器為 1 的情況下。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::{
+    sync::Arc,
+    rc::Rc,
+};
+
+// 建立資料
+let a = Arc::new(0);
+// 增加引用
+let b = a.clone();
+// 檢查計數器
+assert_eq!(Arc::strong_count(&amp;a), 2);
+
+let a = Rc::new(0);
+let b = a.clone();
+assert_eq!(Rc::strong_count(&amp;a), 2);
+<span class="boring">}
+</span></code></pre></pre>
+<p>至於跨執行序分享資料時，若需要修改該資料，會造成<strong>資料競爭 (data racing)</strong>，產生不同步的情況，因此 <code>Arc</code> 無法像 <code>Rc</code> 一樣輕鬆的改變 heap 上的數值。為了解決資料競爭，可以加上一個<strong>互斥鎖 (mutex lock)</strong>，使用一個<strong>原子化 (atomic)</strong> 的布林值（通常是 <code>u8</code>）來鎖住資料，執行序必須檢查鎖是否開啟，等到開啟後才可以鎖住並修改資料。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use std::sync::{Arc, Mutex};
+
+let a = Arc::new(Mutex::new(0));
+*a.lock().unwrap() = 10;
+assert_eq!(*a.lock().unwrap(), 10);
+<span class="boring">}
+</span></code></pre></pre>
+<p>不過對於原始型別，原子化類型 <a href="https://doc.rust-lang.org/std/sync/atomic/index.html"><code>std::sync::atomic::Atomic*</code></a> 應該更容易使用，而完全不需要互斥鎖。因為在支援的平台上，處理器可以自動排程寫入狀態，以避免底層的資料競爭，不過浮點數是不支援的。</p>
+<p>除了普通持有資料的計數外，還有可懸掛空值的<strong>弱參照 (weak reference)</strong>，因此前者相對之下稱為<strong>強參照 (strong reference)</strong>。弱參照持有的原始指標可以修改，類似於 <code>mut &amp;T</code> 或 <code>mut &amp;mut T</code>，可以改變指向，而強參照持有原始資料的指標，因此只能固定。<code>Rc::downgrade()</code> 和 <code>Arc::downgrade()</code> 可以將強參照降級為弱參照，不過由於弱參照會有空值，使用數值時都需要重新檢查，較花時間。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="regular-expression"><a class="header" href="#regular-expression">Regular Expression</a></h1>
+<p>正規表達式 (RE, Regex, Regular Expression) 是一種擷取規則文字的機制。其原理為：</p>
+<ol>
+<li>建立文法 (Grammar) 表達式。</li>
+<li>演算法根據其規則進行比對 (Match)。</li>
+<li>若相符，將會把文法中的群組 (Group) 內容取出，稱為 Token。</li>
+<li>若不相符，會跳過。</li>
+<li>繼續尋找直到搜尋完畢。</li>
+</ol>
+<p>在閱讀 <a href="multilang/syntax.html">Syntax</a> 之前，可以先透過本節學習如何從有規律的文字中擷取需要的內容。</p>
+<p>本節使用 JavaScript 表示 RE 文法，故會有夾注號 <code>/</code> 如：<code>/re+/</code>。使用其他程式語言時可忽略，按其規則為準。</p>
+<p>推薦的測試網站：<a href="https://regex101.com">https://regex101.com</a></p>
+<h2 id="rules"><a class="header" href="#rules">Rules</a></h2>
+<h3 id="base-grammar"><a class="header" href="#base-grammar">Base Grammar</a></h3>
+<p>除了特殊字元，RE 的文法<strong>等價</strong>於要解析的文字：</p>
+<pre><code class="language-js">/abc/  // abc
+</code></pre>
+<p><strong>特殊字元</strong>，作為起始即有特殊作用：<code>.</code>, <code>?</code>, <code>+</code>, <code>*</code>, <code>|</code>, <code>[</code>, <code>(</code>, <code>)</code>, <code>$</code>, <code>^</code>, <code>\</code></p>
+<p><strong>非特殊字元</strong>，可單獨作為表示，但是可配合特殊字元：<code>,</code>(comma), <code>{</code>, <code>}</code>, <code>]</code></p>
+<h3 id="any-single-character"><a class="header" href="#any-single-character">Any Single Character</a></h3>
+<p>使用 <code>.</code> 表示任意單一字元，包含不可視字元。</p>
+<h3 id="escape-character"><a class="header" href="#escape-character">Escape Character</a></h3>
+<p>跳脫字元 (Escape Character) 為反斜線 <code>\</code>。</p>
+<p>主要可以表示特殊規則，幫助縮減文法長度。</p>
+<p>另外可以強迫特殊字元（包含自身）變成普通文字。</p>
+<h3 id="invisible-characters"><a class="header" href="#invisible-characters">Invisible Characters</a></h3>
+<p>不可視字元 (Invisible Characters) 為顯示或列印時沒有顯示符號的字元，如下：</p>
+<table><thead><tr><th align="center">符號</th><th align="center">說明</th></tr></thead><tbody>
+<tr><td align="center"><code> </code></td><td align="center">空白 (Space)</td></tr>
+<tr><td align="center"><code>\t</code></td><td align="center">縮進 (Tab)</td></tr>
+<tr><td align="center">Linux &amp; MacOS: <code>\n</code>, Windows: <code>\r\n</code></td><td align="center">換行 (Newline)</td></tr>
+</tbody></table>
+<h3 id="repetition"><a class="header" href="#repetition">Repetition</a></h3>
+<p><strong>單一文字</strong>重複規則如下：</p>
+<pre><code class="language-js">/a{n}/  // 表示 a 重複 n 次
+/a{n,}/  // 表示 a 最少重複 n 次，最多無限次
+/a{n,m}/  // 表示 a 最少重複 n 次，最多 m 次
+</code></pre>
+<p>而簡化語法如下：</p>
+<pre><code class="language-js">/a?/  // 表示 a 最少重複 0 次，最多 1 次（可寫可不寫）
+/a+/  // 表示 a 最少重複 1 次，最多無限次
+/a*/  // 表示 a 最少重複 0 次，最多無限次
+</code></pre>
+<p>若前一個是群組則會套用到群組的規則。</p>
+<pre><code class="language-js">/(abc)+/  // abc, abcabc, abcabcabc, ...
+</code></pre>
+<h3 id="group"><a class="header" href="#group">Group</a></h3>
+<p>使用群組 (Group) 功能擷取文字，符號為 <code>(</code> 和 <code>)</code>。</p>
+<p>定義 Group 0 為整段符合的文字，剩下的從 1 開始編號，重複的以此類推。</p>
+<pre><code class="language-js">/(aaa)(bbb)/  // g0: aaabbb, g1: aaa, g2: bbb
+/(aaa)(bbb)+/  // g0: aaabbbbbb, g1: aaa, g2: bbb, g3: bbb
+</code></pre>
+<p>若沒有要擷取文字，為了方便定義規則，可以宣告為匿名群組。</p>
+<pre><code class="language-js">/(?:abc)+/
+</code></pre>
+<h3 id="logical-or"><a class="header" href="#logical-or">Logical Or</a></h3>
+<p>邏輯或 <code>|</code> 運算子能夠將多個類似的規則在同個文法中表現。</p>
+<p>然而正規表達式的邏輯或運算子是最低優先權的，必須使用匿名群組等提升優先權。</p>
+<pre><code class="language-js">/aa(?:bb|cc|dd)e/  // aabbe, aacce, aadde
+</code></pre>
+<h3 id="list"><a class="header" href="#list">List</a></h3>
+<p>清單 (List) 表示單一字元的多種選項，是邏輯或的一種縮寫，符號為 <code>[</code> 和 <code>]</code>。</p>
+<pre><code class="language-js">/a[bcd]e/  // abe, ace, ade
+/a(?:a|b|c)e/  // 等價
+</code></pre>
+<p>為了方便，清單支援 ASCII Code 的範圍 (Range) 標示，且可以連續標示。
+不過如果是其他字元，會以 ASCII 的編號表示。</p>
+<pre><code class="language-js">/[0-9]/  // 0 ~ 9
+/[a-zA-Z]/  // a ~ z, A ~ Z
+</code></pre>
+<p>另外清單前端加上 <code>^</code> 符號為反向集合，會對應到沒有顯示的字元，可以只標示例外即可。</p>
+<pre><code class="language-js">/[^a-z]/
+</code></pre>
+<p>而清單也支援重複的定義。</p>
+<pre><code class="language-js">/[qrs]{3}/  // qqq, rrr, sss, ...
+</code></pre>
+<h3 id="anchor"><a class="header" href="#anchor">Anchor</a></h3>
+<p>定位點 (Anchor) 可以幫助在文字中定位，<strong>不代表任何字元</strong>，常用的如下：</p>
+<ul>
+<li><code>^</code>：<strong>整個字串</strong>或<strong>行</strong>的開頭。</li>
+<li><code>$</code>：<strong>整個字串</strong>或<strong>行</strong>的結尾。</li>
+</ul>
+<h3 id="common-tokens"><a class="header" href="#common-tokens">Common Tokens</a></h3>
+<p>以下列舉常用的規則：</p>
+<table><thead><tr><th align="center">符號</th><th align="center">說明</th><th align="center">等價</th><th align="center">反向</th></tr></thead><tbody>
+<tr><td align="center"><code>\s</code></td><td align="center">不可視字元</td><td align="center"><code>[\r\n\t ]</code></td><td align="center"><code>\S</code></td></tr>
+<tr><td align="center"><code>\d</code></td><td align="center">數字</td><td align="center"><code>[0-9]</code></td><td align="center"><code>\D</code></td></tr>
+<tr><td align="center"><code>\w</code></td><td align="center">文字</td><td align="center"><code>[0-9a-zA-Z]</code></td><td align="center"><code>\W</code></td></tr>
+<tr><td align="center"><code>\b</code></td><td align="center">文字邊界（定位點）</td><td align="center"><code>(^\w\|\w$\|\W\w\|\w\W)</code></td><td align="center"><code>\B</code></td></tr>
+</tbody></table>
+<h3 id="flags"><a class="header" href="#flags">Flags</a></h3>
+<p>正規表達式的選項稱為 Flag，可能因為不同程式語言的規則而異。常用的如下：</p>
+<table><thead><tr><th align="center">Flag</th><th align="center">說明</th><th align="center">備註</th></tr></thead><tbody>
+<tr><td align="center"><strong>g</strong>lobal</td><td align="center">不只作用一次</td><td align="center">Python 不支援</td></tr>
+<tr><td align="center"><strong>m</strong>ultiple line</td><td align="center">啟用後，<code>^$</code> 對應行的開頭和結尾，而非整個字串</td><td align="center"></td></tr>
+<tr><td align="center"><strong>i</strong>nsensitive</td><td align="center">忽略大小寫</td><td align="center"></td></tr>
+<tr><td align="center">e<strong>x</strong>tend</td><td align="center">啟用單行註解功能 <code>#</code> 並忽略空白標示</td><td align="center">JavaScript 不支援</td></tr>
+<tr><td align="center">stik<strong>y</strong></td><td align="center">每次符合必須相連</td><td align="center">僅 JavaScript 支援</td></tr>
+<tr><td align="center"><strong>u</strong>nicode</td><td align="center">支援萬國碼，<code>\w</code> 將對應所有其他字元</td><td align="center"></td></tr>
+<tr><td align="center"><strong>a</strong>scii</td><td align="center">僅支援 ASCII Code</td><td align="center">僅 Python 支援</td></tr>
+</tbody></table>
+<p>在 JavaScript 中，Flag 可以寫在括弧後啟用。</p>
+<pre><code class="language-js">/abc/gm
+</code></pre>
+<h2 id="token-example"><a class="header" href="#token-example">Token Example</a></h2>
+<p>試著思考題目，並參考正規表達式的撰寫思路。</p>
+<h3 id="csv"><a class="header" href="#csv">CSV</a></h3>
+<p>逗號分隔值 (CSV, Comma-Separated Values) 通常為逗號、縮進、空白等符號分開數值。</p>
+<pre><code>0.01 0.06 -9.997
+1.69 +40.44 4.6321
+</code></pre>
+<p>思路：</p>
+<ul>
+<li>
+<p>數字在文法中可以表示成：</p>
+<pre><code class="language-js">/d+/
+</code></pre>
+</li>
+<li>
+<p>浮點數可以表示成：</p>
+<pre><code class="language-js">/\d*\.?d+/
+</code></pre>
+</li>
+<li>
+<p>帶有符號的浮點數可以表示成：</p>
+<pre><code class="language-js">/[+-]?\d*\.?d+/
+</code></pre>
+</li>
+<li>
+<p>每行有三個數值，用空白分隔，可以表示成：</p>
+<pre><code class="language-js">/^([+-]?\d*\.?d+) ([+-]?\d*\.?d+) ([+-]?\d*\.?d+)$/m
+</code></pre>
+</li>
+</ul>
+<p>可得：</p>
+<table><thead><tr><th align="center">Match</th><th align="center">g1</th><th align="center">g2</th><th align="center">g3</th></tr></thead><tbody>
+<tr><td align="center">1</td><td align="center">0.01</td><td align="center">0.06</td><td align="center">-9.997</td></tr>
+<tr><td align="center">2</td><td align="center">1.69</td><td align="center">+40.44</td><td align="center">4.6321</td></tr>
+</tbody></table>
+<h3 id="g-code"><a class="header" href="#g-code">G Code</a></h3>
+<p>假設這是某台工具機的指令碼，你必須設計它的速度規劃。
+在忽略換行記號的情況下，試著抓取以下每行 G code 中的 <strong>G 碼</strong>、<strong>座標</strong>和<strong>進給速度</strong>。
+不相關的內容可以忽略。</p>
+<pre><code class="language-g">%
+O100
+G00 G40 G49 G20 G90
+N05 M10
+N10 M05
+N15 G91 G28 Z0
+N20 G90
+N25 T1 M06
+N30 G00 Z.1
+N35 G00 X2.5 Y2.5
+N40 G01 Z-.25 F200
+N45 G01 X5 Y5
+N50 G00 Z.1
+N55 G28 X0 Y0
+N60 M05
+N65 M45
+%
+</code></pre>
+<ul>
+<li>
+<p>根據 N、G、X、Y、Z、F 排列順序，每個符號會跟隨一個<strong>整數</strong>或<strong>帶符號的浮點數</strong>。</p>
+<pre><code class="language-js">/N\d+/
+/X[+-]?\d*\.?\d+/
+</code></pre>
+</li>
+<li>
+<p>而 N、X、Y、Z、F 為可選的項目。</p>
+<pre><code class="language-js">/(?:X([+-]?\d*\.?\d+))?/
+</code></pre>
+</li>
+<li>
+<p>可以使用 <code>\s*</code> 代表間隔的空白，每行可排列成：</p>
+<pre><code class="language-js">/G(\d+)\s*(?:X([+-]?\d*\.?\d+))?\s*(?:Y([+-]?\d*\.?\d+))?\s*(?:Z([+-]?\d*\.?\d+))?\s*(?:F([+-]?\d*\.?\d+))?\s*/
+</code></pre>
+</li>
+</ul>
+<p>可得：</p>
+<table><thead><tr><th align="center">Match</th><th align="center">g1</th><th align="center">g2</th><th align="center">g3</th><th align="center">g4</th><th align="center">g5</th></tr></thead><tbody>
+<tr><td align="center">1</td><td align="center">00</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">2</td><td align="center">40</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">3</td><td align="center">49</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">4</td><td align="center">20</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">5</td><td align="center">90</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">6</td><td align="center">91</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">7</td><td align="center">28</td><td align="center"></td><td align="center"></td><td align="center">0</td><td align="center"></td></tr>
+<tr><td align="center">8</td><td align="center">90</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">9</td><td align="center">00</td><td align="center"></td><td align="center"></td><td align="center">.1</td><td align="center"></td></tr>
+<tr><td align="center">10</td><td align="center">00</td><td align="center">2.5</td><td align="center">2.5</td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">11</td><td align="center">01</td><td align="center"></td><td align="center"></td><td align="center">-.25</td><td align="center">200</td></tr>
+<tr><td align="center">12</td><td align="center">01</td><td align="center">5</td><td align="center">5</td><td align="center"></td><td align="center"></td></tr>
+<tr><td align="center">13</td><td align="center">00</td><td align="center"></td><td align="center"></td><td align="center">.1</td><td align="center"></td></tr>
+<tr><td align="center">14</td><td align="center">28</td><td align="center">0</td><td align="center">0</td><td align="center"></td><td align="center"></td></tr>
+</tbody></table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="syntax"><a class="header" href="#syntax">Syntax</a></h1>
+<p>本篇將講述常見程式語言的解構方式，以常見的程式語言作為範例。建議先閱讀 <a href="multilang/re.html">Regular Expression</a>。</p>
+<p>閱讀此篇有助於在不同語言之間切換，並有助於理解新的語言；無論為結構語言還是程式語言。</p>
+<h2 id="lark-parser"><a class="header" href="#lark-parser">Lark Parser</a></h2>
+<p>Python 套件 <a href="https://github.com/lark-parser/lark">lark-parser/lark</a> 可以自訂程式語言的規則並解析它們。</p>
+<p>Lark 基於 EBNF，並使用 Earley Parser，本篇將解說電腦如何閱讀「語言」。</p>
+<p>基本元素：</p>
+<pre><code class="language-js">&quot;A&quot; &quot;ABC&quot; &quot;(&quot; &quot;)&quot;  // 字串與符號
+&quot;ABC&quot;i  // 不分大小寫的字串
+/regular_expression/flag  // Regular Expression
+&quot;a&quot;..&quot;z&quot; &quot;1&quot;..&quot;9&quot;  // 範圍
+expression ~ n  // 前一個子句必須出現 n 次
+expression ~ n..m  // 前一個子句必須出現 n 到 m 次
+expression?  // 前一個子句可以不存在或出現一次
+expression*  // 前一個子句可以不存在，或可以無限重複
+expression+  // 前一個子句至少出現一次，並可以無限重複
+(expression expression ...)  // 提升優先權
+[expression expression ...]  // 可選，同於 (expression expression ...)?
+</code></pre>
+<p>定義句：</p>
+<pre><code class="language-js">子句一: &quot;1&quot;..&quot;9&quot;
+子句二: 子句一 &quot;+&quot; 子句一
+</code></pre>
+<p>上面的 <code>子句二</code> 可以表示 <code>1 + 1</code>。</p>
+<p>基本上，為了排版，電腦使用的語言會忽略空白：</p>
+<pre><code class="language-js">%ignore /\s+/
+</code></pre>
+<p>上面的空白用 RE 表示，意味著一個或重複的不可視字元（包含 Tab）。
+忽略後，除非顯式表示，否則解析器不會計算。
+例如：<code>1 + 1</code> 和 <code>1+1</code> 是等效的；<code>A (B) C</code> 和 <code>A(B)C</code> 是等效的。
+但是文字通常有連續性，除非用符號分離，否則一定要至少隔一個空白。</p>
+<p>而文字也是定義的一部份，因此當變數名稱訂為：</p>
+<pre><code class="language-js">variable_character: &quot;a&quot;..&quot;z&quot; | &quot;A&quot;..&quot;Z&quot; | &quot;_&quot;
+variable: variable_character+
+</code></pre>
+<p>符號 <code>_</code> 也會被當成是變數可用的字元，並保持連續性。
+一些程式語言也許有例外，如 JavaScript 允許 <code>$</code> 作為變數名稱，而 Matlab 不允許 <code>_</code> 作為變數的第一個字元。</p>
+<p>子句的組成會影響解析的順序，進而影響程式中的優先權 (Priority)。</p>
+<pre><code class="language-js">digit: &quot;0&quot;..&quot;9&quot;
+int: digit+
+plus: int &quot;+&quot; int
+strong: &quot;(&quot; (int | plus_statement) &quot;)&quot;
+base: int | strong | plus
+plus_statement: base (&quot;+&quot; base)+
+</code></pre>
+<p>如上所示，<code>plus_statement</code> 可以表示 <code>(1 + 20) + 7</code>、<code>(5 + 6)</code>、<code>4 + (6 + 9)</code>、<code>2 + 777</code> 等語句。</p>
+<p>而以下文法：</p>
+<pre><code class="language-js">digit: &quot;0&quot;..&quot;9&quot;
+int: digit+
+assignment: plus_statement &quot;=&quot; int
+</code></pre>
+<p>對於 <code>2 + 3 = 5</code> 會先解析 <code>2 + 3</code>，而非 <code>3 = 5</code>。</p>
+<h2 id="commonly-used-syntax"><a class="header" href="#commonly-used-syntax">Commonly Used Syntax</a></h2>
+<p>可簡單歸類程式語言中的語法構成。</p>
+<p>其中 <code>op1</code>, <code>op2</code>, ... 為使用的符號，可為任何字元或字串。</p>
+<p>以下將舉例各式程式語言的部分文法：</p>
+<h3 id="comment"><a class="header" href="#comment">Comment</a></h3>
+<pre><code class="language-js">comment: op1 /[^\n]*/
+multiline_comment: op1 /[\s\S]*/ op2
+</code></pre>
+<p>註解是程式語言中很重要的一部份，因為他們不會影響執行內容。
+不過這些說明內容可以被提取出來做為說明文件等用途。</p>
+<ul>
+<li>
+<p>C / C++ / Java / JavaScript / C# / ...</p>
+<pre><code class="language-c">// 單行註解
+/* 區段註解 */
+</code></pre>
+</li>
+<li>
+<p>Python</p>
+<pre><code class="language-python"># 單行註解
+&quot;&quot;&quot;區段註解&quot;&quot;&quot;  # 其實是多行字串
+</code></pre>
+</li>
+<li>
+<p>Matlab</p>
+<pre><code class="language-matlab">% 單行註解
+%% 段落註解，以下的區塊可以被折疊。
+</code></pre>
+</li>
+<li>
+<p>Lua</p>
+<pre><code class="language-lua">-- 單行註解
+--[[
+區段註解
+--]]
+</code></pre>
+</li>
+</ul>
+<h3 id="line-break"><a class="header" href="#line-break">Line Break</a></h3>
+<p>某些語言是會忽略換行記號的，因此可以併成一行也不會影響解析，有助於在只有一行的情況下輸入，如 Bash 中。</p>
+<pre><code class="language-js">%ignore /\r?\n/+
+</code></pre>
+<p>要注意有些程式碼並不是結尾有 <code>;</code> 註記就是忽略換行記號，
+如 Matlab 只是為了隱藏輸出訊息；Lua 沒有結尾記號但是會忽略換行。
+而像 JavaScript 會在換行處自動檢查並補上，但是官方仍建議開發者必須打上。
+至於 Python 則是加上 <code>;</code> 可以併做一行，可是無法加上縮排。</p>
+<p>忽略換行記號的語言如 C / C++ 可以這樣寫：</p>
+<pre><code class="language-c">a = (1 + 2)
+    * (2 + 3)
+    * (3 + 4);
+</code></pre>
+<p>可是如 JavaSript 有自動插入的機制，如下會導致強制段行（<code>return</code>、<code>break</code>、<code>throw</code>, <code>continue</code> 結尾）：</p>
+<pre><code class="language-js">return
+    1 + 3;
+</code></pre>
+<p>而在意換行記號的語言因為閱讀需要，會有換行的策略，如：</p>
+<ul>
+<li>
+<p>Python：可以在括弧 <code>()</code>、<code>[]</code>、<code>{}</code> 中換行。但是同時因為縮排規定，其中的縮排不能比原始行小。</p>
+<pre><code class="language-python">a = (
+    &quot;aaa&quot;,
+    &quot;bbb&quot;,
+    &quot;ccc&quot;,
+)
+</code></pre>
+</li>
+<li>
+<p>Bash：必須使用 <code>\</code> 符號在換行結尾。</p>
+<pre><code class="language-bash">rm -f file_a.md \
+file_b.md ${FLAG}
+</code></pre>
+</li>
+<li>
+<p>Matlab：可以在 <code>;</code> 後換行，除此之外必須使用 <code>...</code> 符號在換行結尾，而且其之後的內容會被視為註解。</p>
+<pre><code class="language-matlab">a = (1 + 2)...
+    * (2 + 3)...
+    * (3 + 4);
+a = [... 這裡要加
+    1, 2, 3;
+    4, 5, 6;
+    7, 8, 9]
+</code></pre>
+</li>
+<li>
+<p>Markdown：段落之間必須空一行，否則視為上一行，至於其他如列舉或標題等語法不受限。</p>
+<pre><code class="language-markdown">aaa,
+bbb.
+
+ccc:
+1. ddd
+    with ddd
+1. eee
+1. fff
+</code></pre>
+</li>
+</ul>
+<h3 id="indentation"><a class="header" href="#indentation">Indentation</a></h3>
+<p>縮排通常做為排版使用，不過仍有語言作為程式碼區塊的判定，如 Python。</p>
+<pre><code class="language-js">indentation: &quot; &quot; ~ 4 | /\t/
+block: indentation+ code_block
+</code></pre>
+<p>若非使用縮排，程式區塊會使用符號或語句作為標記。</p>
+<ul>
+<li>
+<p>C / C++ / Java / JavaScript / C# / ...：使用大括弧 <code>{}</code>。</p>
+<pre><code class="language-c">if (a &lt; b) { return 0; }
+</code></pre>
+</li>
+<li>
+<p>Lua：不需要換行。有對應記號。</p>
+<pre><code class="language-lua">if a &lt; b then return 0 end
+while a &lt; b do a = a + 1 end
+</code></pre>
+</li>
+<li>
+<p>Latex：有對應記號。另外括充模組也能夠提供巨集 (Macro) 讓語法比較好看。</p>
+<pre><code class="language-latex">\if \else \fi  % 判斷式
+\loop \if \repeat  % While 迴圈，\repeat 有 \fi 的功能。
+</code></pre>
+</li>
+<li>
+<p>Matlab：需要換行。通常搭配 <code>end</code> 關鍵字結尾。</p>
+<pre><code class="language-matlab">if a &lt; b
+    return
+end
+</code></pre>
+</li>
+</ul>
+<h3 id="binary-operator"><a class="header" href="#binary-operator">Binary Operator</a></h3>
+<pre><code class="language-js">binary: statement op1 statement
+</code></pre>
+<p>為兩項運算，如一般的數學式。前後的 <code>statement</code> 可以不相同。
+在計算的情況，通常可以連續操作如 <code>a + b + c</code> 或 <code>a = b = c</code>；
+但為避免讀錯，如 <code>a += b</code> 的縮寫不會允許連續的語句。</p>
+<ul>
+<li>
+<p>Common</p>
+<pre><code class="language-js">a + b
+a &lt; b
+a = b
+a += b
+a.b
+</code></pre>
+</li>
+<li>
+<p>Python</p>
+<pre><code class="language-python">a and b  # Logical AND
+a in b  # Contain check
+a is b  # Same memory position check
+a := b  # Assignment, but repersent &quot;a&quot; itself (in expression)
+</code></pre>
+</li>
+<li>
+<p>C / C++</p>
+<pre><code class="language-c">a &amp;&amp; b  // Logical AND
+a-&gt;b  // Pointer member
+a::b  // Namespace member
+a, b  // Run &quot;a&quot; and &quot;b&quot; but repersent &quot;b&quot; itself (in expression)
+</code></pre>
+</li>
+<li>
+<p>JavaScript</p>
+<pre><code class="language-js">a === b  // Same memory position check
+</code></pre>
+</li>
+<li>
+<p>C#</p>
+<pre><code class="language-c#">a ?? b // Repersents &quot;b&quot; if &quot;a&quot; is &quot;null&quot;, otherwise repersent &quot;a&quot;
+a?.b  // Repersents &quot;null&quot; if &quot;a&quot; is &quot;null&quot;, otherwise repersent the member &quot;b&quot;
+</code></pre>
+</li>
+<li>
+<p>R</p>
+<pre><code class="language-r">a &lt;= b  # Assignment
+</code></pre>
+</li>
+</ul>
+<h3 id="unary-operator"><a class="header" href="#unary-operator">Unary Operator</a></h3>
+<pre><code class="language-js">leading_unary: op1 statement
+trailing_unary: statement op1
+</code></pre>
+<p>分成前置或尾置，為了相容二元運算，通常優先權會最大。
+但是因為 C++ 的前車之鑑，發現它們極易破壞可閱讀性，因此新的程式語言就較沒有出現。</p>
+<ul>
+<li>
+<p>C / C++</p>
+<pre><code class="language-c">!a  // Logical not
+~a  // Byte inverse
+*a  // Pointer get value
+&amp;a  // Get position to pointer
+++a  // Plus 1 to &quot;a&quot;, then represent &quot;a&quot;
+a++  // Represents &quot;a&quot;, then plus 1 to &quot;a&quot;
+</code></pre>
+</li>
+<li>
+<p>Python</p>
+<pre><code class="language-python">not a  # Logical not
+yield a  # Generator get input value (in expression)
+</code></pre>
+</li>
+<li>
+<p>C#</p>
+<pre><code class="language-c#">a?  // Type &quot;a&quot; can be &quot;null&quot;
+</code></pre>
+</li>
+<li>
+<p>Haskell：函數型程式語言，語法與數學式相仿，函式優先權最高。由 <code>f x1 x2 ...</code> 表示函式 <code>f</code> 和其參數 <code>x1</code>、<code>x2</code> 等。</p>
+<pre><code class="language-haskell">f a = sin a * 10  -- Same as &quot;(sin a) * 10&quot;, &quot;f&quot; and &quot;sin&quot; is function.
+</code></pre>
+</li>
+</ul>
+<h3 id="ternary-operator"><a class="header" href="#ternary-operator">Ternary Operator</a></h3>
+<pre><code class="language-js">ternary: statement op1 statement op2 statement
+</code></pre>
+<p>較長的句型，由兩個運算子組成。</p>
+<ul>
+<li>
+<p>C / C++ / Java / JavaScript / C#</p>
+<pre><code class="language-c">a ? b : c  // If &quot;a&quot; is true, repersents &quot;b&quot;, otherwise repersents &quot;c&quot;
+</code></pre>
+</li>
+<li>
+<p>Python</p>
+<pre><code class="language-python">b if a else c  # If &quot;a&quot; is true, repersents &quot;b&quot;, otherwise repersents &quot;c&quot;
+a for b in c  # An iterator generate &quot;a&quot;, extract &quot;b&quot; from &quot;c&quot; during iterating
+a for b in c if d  # Same as above, skip if &quot;d&quot; is &quot;False&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="other-statements"><a class="header" href="#other-statements">Other Statements</a></h3>
+<p>至於其他就比較多元了。因此，基礎概念必須先熟悉，如型別標示就會很大程度的影響文法，
+但是只要知道該概念會需要哪些參數、選項，自然便會容易理解。</p>
+<p>如單純的 while loop 在哪種語言都沒什麼變化：</p>
+<ul>
+<li>
+<p>C / C++ / Java / JavaScript / C# / ...</p>
+<pre><code class="language-c++">while (check_statement) {
+    run_statements
+}
+
+// Check after run once
+do {
+    run_statements
+} while (check_statement)
+</code></pre>
+</li>
+<li>
+<p>Python</p>
+<pre><code class="language-python">while check_statement:
+    run_statements
+</code></pre>
+</li>
+<li>
+<p>Rust</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>while check_statement {
+    run_statements
+}
+<span class="boring">}
+</span></code></pre></pre>
+</li>
+</ul>
+<p>而物件導向有些卻有可見性，有些會聲明物件本身為 &quot;self&quot;：</p>
+<ul>
+<li>
+<p>C++</p>
+<pre><code class="language-c++">public:
+decorator return_type func_name(arg1_type arg1, arg2_type arg2, ...) {
+    run_statements
+}
+</code></pre>
+</li>
+<li>
+<p>Python</p>
+<pre><code class="language-python">def func_name(self, arg1, arg2, ...):
+    &quot;&quot;&quot;Doc string&quot;&quot;&quot;
+    run_statements
+</code></pre>
+</li>
+</ul>
+<p>最後舉例 Function 的表示百百種：</p>
+<ul>
+<li>
+<p>C / C++：有 Closure 語法。</p>
+<pre><code class="language-c++">// Normal Function
+decorator return_type func_name(arg1_type arg1, arg2_type arg2, ...) {
+    run_statements
+}
+
+// Lambda Fuction (Closures, only in C++)
+[refer_mode] (arg1_type arg1, arg2_type arg2, ...) -&gt; return_type {
+    run_statements
+}
+
+// Generic Fuction (only in C++)
+template&lt;template_option&gt;
+decorator return_type func_name(arg1_type arg1, arg2_type arg2, ...) {
+    run_statements
+}
+</code></pre>
+</li>
+<li>
+<p>Python：沒有 Closure 語法，自動處理。</p>
+<pre><code class="language-python"># Simple Function
+def func_name(arg1, arg2, ...):
+    &quot;&quot;&quot;Doc string&quot;&quot;&quot;
+    run_statements
+
+# Lambda Function
+lambda arg1, arg2, ...: return_statement
+
+# Typed decorated Function
+@decorator
+def func_name(arg1: arg1_type, arg2: arg2_type, ..., *, kward1: kward1_type, ..., **, kward2: kward2_type, ...) -&gt; return_type:
+    &quot;&quot;&quot;Doc string&quot;&quot;&quot;
+    run_statements
+</code></pre>
+</li>
+<li>
+<p>JavaScript：沒有 Closure 語法，自動處理。</p>
+<pre><code class="language-js">// Simple Function
+function func_name(arg1, arg2, ...) {
+    run_statements
+}
+
+// Lambda Function
+function (arg1, arg2, ...) {
+    run_statements
+}
+
+// Lambda Function
+(arg1, arg2, ...) =&gt; {
+    run_statements
+}
+
+// Lambda Function
+arg1 =&gt; return_statement
+</code></pre>
+</li>
+<li>
+<p>Rust：有 Closure 語法。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// Simple Function
+fn func_name(arg1: arg1_type, arg2: arg2_type, ...) -&gt; return_type {
+    run_statements
+    return_statement
+}
+
+// Generic Fuction
+fn func_name&lt;template_option&gt;(arg1: arg1_type, arg2: arg2_type, ...) -&gt; return_type {
+    run_statements
+    return_statement
+}
+
+// Closures
+|arg1: arg1_type, arg2: arg1_type, ...| -&gt; return_type {
+    run_statements
+}
+<span class="boring">}
+</span></code></pre></pre>
+</li>
+<li>
+<p>Go：沒有 Closure 語法，自動處理。</p>
+<pre><code class="language-go">func func_name(arg1 arg1_type, arg2 arg2_type, ...) return_type {
+    run_statements
+}
+</code></pre>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="expression-and-statement"><a class="header" href="#expression-and-statement">Expression and Statement</a></h1>
+<p>表達式 (Expression) 和陳述式 (Statement) 的差別在於，
+前者為一種值 (value)，後者不代表任何運行結果，範例如下：</p>
+<pre><code class="language-c">a = sin(pi);
+</code></pre>
+<p>先不管是什麼程式語言，上面的意思假設是「用 pi 參數呼叫 sin 函式，將結果存入 a 名稱中」，
+那 <code>pi</code>、<code>sin(pi)</code> 是一種表達式，而 <code>a = sin(pi)</code> 是一種陳述式。</p>
+<p>單純的陳述式例如模組導入：</p>
+<pre><code class="language-python">from sys import exit
+</code></pre>
+<p>然而如 C/C++ 的指派 (assignment) 式有表達式的功能，指派的同時代表右值。</p>
+<pre><code class="language-c">if (i = true)
+    always_go();
+</code></pre>
+<p>原本 Python 的指派式並非表達式，但是 Python 3.8 新增的 assignment expression (<a href="https://www.python.org/dev/peps/pep-0572/">PEP 572</a>)
+讓指派也有代表右值的功能。</p>
+<pre><code class="language-python">if i := True:
+    always_go()
+</code></pre>
+<p>另外 C/C++ 的逗號運算子 (comma operator) 代表最後項的值。
+不過這個運算子優先權太低，導致必須用括弧提昇優先權，酷似函式呼叫容易搞混，因此不常用。</p>
+<pre><code class="language-c">int will_be_10 = (first(), second(), 10);
+</code></pre>
+<p>類似的特性被 Rust 引用，任何 code block 都是表達式（代表末尾值，加分號 <code>;</code> 成為陳述式）：</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>/// function code block 可以不寫 return
+fn my_function() -&gt; u8 { 10 }
+
+let a = if check() { 10 } else { 20 };
+let b = while check() {
+    dothing();
+    callback()
+};
+// 匹配，可以解決 none、try catch 和 switch case 的問題
+let c = match b {
+    MyCase::Done(done) =&gt; done,
+    // return 關鍵字是從函式回傳而非 code block
+    // return 反而是陳述句
+    MyCase::None =&gt; { return Result::Err(&quot;not work&quot;); }
+};
+// 另一種 match pattern
+let d = if let Case::Done(done) = b { 10 } else { 20 };
+<span class="boring">}
+</span></code></pre></pre>
+<p>JavaScript 的函式也是很經典的例子，總共有三種函式寫法：</p>
+<pre><code class="language-js">/// 這邊只是示範，const 變數不可以重複指派
+// 函式陳述式（不用結尾分號）
+function f() {}
+// 函式表達式
+const f = function () {};
+// 無 this 的箭號函式 (arrow function)
+const f = () =&gt; {};
+// 異步函式的版本
+async function f() {}
+const f = async function () {};
+const f = async () =&gt; {};
+// 無指派，執行後回收函式本體
+(function () {})();
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="languages"><a class="header" href="#languages">Languages</a></h1>
 <p>學習一些程式語言範本。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="python"><a class="header" href="#python">Python</a></h1>
@@ -350,7 +1186,7 @@ git push --tags
 根據測試，它在相同邏輯下會比優化的 C 語言慢 20~200 倍。</li>
 <li>相對龐大：同於高階程式語言的問題，Python 包裝成產品是 Byte Code 加上虛擬層，仍沒有機器碼小。</li>
 </ul>
-<h2 id="syntax"><a class="header" href="#syntax">Syntax</a></h2>
+<h2 id="syntax-1"><a class="header" href="#syntax-1">Syntax</a></h2>
 <p>Python 是看<a href="languages/../multilang/syntax.html#line-break">換行記號</a>的，換而言之，你可以將每一行程式碼視為一條指令，
 而不需要擔心它還有其他部分突然出現在檔案的其他地方，影響閱讀。</p>
 <pre><code class="language-python"># 不會視為 1 + 1 - 2 * 9，而是兩次運算
@@ -473,7 +1309,7 @@ abc = a[0] + a[-1]  # 'abc'
 <p>比較演算法可以直接用運算子達成，可是必須兩方皆為 Tuple。</p>
 <pre><code class="language-python">(1, 2, 3) == (4, 5, 6)
 </code></pre>
-<h4 id="list"><a class="header" href="#list">List</a></h4>
+<h4 id="list-1"><a class="header" href="#list-1">List</a></h4>
 <p>清單 (List) 是能夠修改的鏈狀容器，支援排序演算法等操作。
 使用工廠函式 <code>list</code> 可以建立空的或轉換可迭代物件。</p>
 <pre><code class="language-python"># 中括弧表示 List
@@ -2374,7 +3210,7 @@ The built-in functions and names in Matlab are included in working directory at 
 <h3 id="working-space"><a class="header" href="#working-space">Working Space</a></h3>
 <p>The working space will store and update local variables during execution.
 After run once, the reference expression may use previous values.</p>
-<h2 id="syntax-1"><a class="header" href="#syntax-1">Syntax</a></h2>
+<h2 id="syntax-2"><a class="header" href="#syntax-2">Syntax</a></h2>
 <ul>
 <li>Continuous blank is same as one blank.</li>
 <li>Indents (leading blanks) will not affect the commands.</li>
@@ -2398,14 +3234,14 @@ b = [1, 2, 3;  % Comment
 
 clc; close all; clear  % Join three lines (not recommend)
 </code></pre>
-<h3 id="comment"><a class="header" href="#comment">Comment</a></h3>
+<h3 id="comment-1"><a class="header" href="#comment-1">Comment</a></h3>
 <p>The comment syntax is a leading &quot;<code>%</code>&quot; symbol,
 all after characters will be ignored until a new line is started.</p>
 <pre><code class="language-matlab">% Comment!
 % ignored = 'help!';
 worked_function
 </code></pre>
-<h3 id="assignment"><a class="header" href="#assignment">Assignment</a></h3>
+<h3 id="assignment-1"><a class="header" href="#assignment-1">Assignment</a></h3>
 <p>A value can be assigned to a name, which is called &quot;variable&quot;.
 There is no any constraint mechanism of &quot;constants&quot; in Matlab,
 so every names are mutable (editable) and shadowable (coverable).</p>
@@ -2619,7 +3455,7 @@ false
 <pre><code class="language-yaml">version: &quot;3.9&quot;
 title: &quot;My: title&quot;
 </code></pre>
-<h1 id="indentation"><a class="header" href="#indentation">Indentation</a></h1>
+<h1 id="indentation-1"><a class="header" href="#indentation-1">Indentation</a></h1>
 <p>縮排是樹狀結構的主要語法，代表子節點。
 YAML 的縮排通常為 2 空白，某些實作會對此嚴格限制。</p>
 <pre><code class="language-yaml">A:
@@ -2687,690 +3523,6 @@ doc: &gt;-  # 忽略接續的空白行
 doc: |
   aaa
   bbb
-</code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="multi-language-learning"><a class="header" href="#multi-language-learning">Multi-Language Learning</a></h1>
-<p>在各種程式語言間可以相互學習的概念。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="regular-expression"><a class="header" href="#regular-expression">Regular Expression</a></h1>
-<p>正規表達式 (RE, Regex, Regular Expression) 是一種擷取規則文字的機制。其原理為：</p>
-<ol>
-<li>建立文法 (Grammar) 表達式。</li>
-<li>演算法根據其規則進行比對 (Match)。</li>
-<li>若相符，將會把文法中的群組 (Group) 內容取出，稱為 Token。</li>
-<li>若不相符，會跳過。</li>
-<li>繼續尋找直到搜尋完畢。</li>
-</ol>
-<p>在閱讀 <a href="multilang/syntax.html">Syntax</a> 之前，可以先透過本節學習如何從有規律的文字中擷取需要的內容。</p>
-<p>本節使用 JavaScript 表示 RE 文法，故會有夾注號 <code>/</code> 如：<code>/re+/</code>。使用其他程式語言時可忽略，按其規則為準。</p>
-<p>推薦的測試網站：<a href="https://regex101.com">https://regex101.com</a></p>
-<h2 id="rules"><a class="header" href="#rules">Rules</a></h2>
-<h3 id="base-grammar"><a class="header" href="#base-grammar">Base Grammar</a></h3>
-<p>除了特殊字元，RE 的文法<strong>等價</strong>於要解析的文字：</p>
-<pre><code class="language-js">/abc/  // abc
-</code></pre>
-<p><strong>特殊字元</strong>，作為起始即有特殊作用：<code>.</code>, <code>?</code>, <code>+</code>, <code>*</code>, <code>|</code>, <code>[</code>, <code>(</code>, <code>)</code>, <code>$</code>, <code>^</code>, <code>\</code></p>
-<p><strong>非特殊字元</strong>，可單獨作為表示，但是可配合特殊字元：<code>,</code>(comma), <code>{</code>, <code>}</code>, <code>]</code></p>
-<h3 id="any-single-character"><a class="header" href="#any-single-character">Any Single Character</a></h3>
-<p>使用 <code>.</code> 表示任意單一字元，包含不可視字元。</p>
-<h3 id="escape-character"><a class="header" href="#escape-character">Escape Character</a></h3>
-<p>跳脫字元 (Escape Character) 為反斜線 <code>\</code>。</p>
-<p>主要可以表示特殊規則，幫助縮減文法長度。</p>
-<p>另外可以強迫特殊字元（包含自身）變成普通文字。</p>
-<h3 id="invisible-characters"><a class="header" href="#invisible-characters">Invisible Characters</a></h3>
-<p>不可視字元 (Invisible Characters) 為顯示或列印時沒有顯示符號的字元，如下：</p>
-<table><thead><tr><th align="center">符號</th><th align="center">說明</th></tr></thead><tbody>
-<tr><td align="center"><code> </code></td><td align="center">空白 (Space)</td></tr>
-<tr><td align="center"><code>\t</code></td><td align="center">縮進 (Tab)</td></tr>
-<tr><td align="center">Linux &amp; MacOS: <code>\n</code>, Windows: <code>\r\n</code></td><td align="center">換行 (Newline)</td></tr>
-</tbody></table>
-<h3 id="repetition"><a class="header" href="#repetition">Repetition</a></h3>
-<p><strong>單一文字</strong>重複規則如下：</p>
-<pre><code class="language-js">/a{n}/  // 表示 a 重複 n 次
-/a{n,}/  // 表示 a 最少重複 n 次，最多無限次
-/a{n,m}/  // 表示 a 最少重複 n 次，最多 m 次
-</code></pre>
-<p>而簡化語法如下：</p>
-<pre><code class="language-js">/a?/  // 表示 a 最少重複 0 次，最多 1 次（可寫可不寫）
-/a+/  // 表示 a 最少重複 1 次，最多無限次
-/a*/  // 表示 a 最少重複 0 次，最多無限次
-</code></pre>
-<p>若前一個是群組則會套用到群組的規則。</p>
-<pre><code class="language-js">/(abc)+/  // abc, abcabc, abcabcabc, ...
-</code></pre>
-<h3 id="group"><a class="header" href="#group">Group</a></h3>
-<p>使用群組 (Group) 功能擷取文字，符號為 <code>(</code> 和 <code>)</code>。</p>
-<p>定義 Group 0 為整段符合的文字，剩下的從 1 開始編號，重複的以此類推。</p>
-<pre><code class="language-js">/(aaa)(bbb)/  // g0: aaabbb, g1: aaa, g2: bbb
-/(aaa)(bbb)+/  // g0: aaabbbbbb, g1: aaa, g2: bbb, g3: bbb
-</code></pre>
-<p>若沒有要擷取文字，為了方便定義規則，可以宣告為匿名群組。</p>
-<pre><code class="language-js">/(?:abc)+/
-</code></pre>
-<h3 id="logical-or"><a class="header" href="#logical-or">Logical Or</a></h3>
-<p>邏輯或 <code>|</code> 運算子能夠將多個類似的規則在同個文法中表現。</p>
-<p>然而正規表達式的邏輯或運算子是最低優先權的，必須使用匿名群組等提升優先權。</p>
-<pre><code class="language-js">/aa(?:bb|cc|dd)e/  // aabbe, aacce, aadde
-</code></pre>
-<h3 id="list-1"><a class="header" href="#list-1">List</a></h3>
-<p>清單 (List) 表示單一字元的多種選項，是邏輯或的一種縮寫，符號為 <code>[</code> 和 <code>]</code>。</p>
-<pre><code class="language-js">/a[bcd]e/  // abe, ace, ade
-/a(?:a|b|c)e/  // 等價
-</code></pre>
-<p>為了方便，清單支援 ASCII Code 的範圍 (Range) 標示，且可以連續標示。
-不過如果是其他字元，會以 ASCII 的編號表示。</p>
-<pre><code class="language-js">/[0-9]/  // 0 ~ 9
-/[a-zA-Z]/  // a ~ z, A ~ Z
-</code></pre>
-<p>另外清單前端加上 <code>^</code> 符號為反向集合，會對應到沒有顯示的字元，可以只標示例外即可。</p>
-<pre><code class="language-js">/[^a-z]/
-</code></pre>
-<p>而清單也支援重複的定義。</p>
-<pre><code class="language-js">/[qrs]{3}/  // qqq, rrr, sss, ...
-</code></pre>
-<h3 id="anchor"><a class="header" href="#anchor">Anchor</a></h3>
-<p>定位點 (Anchor) 可以幫助在文字中定位，<strong>不代表任何字元</strong>，常用的如下：</p>
-<ul>
-<li><code>^</code>：<strong>整個字串</strong>或<strong>行</strong>的開頭。</li>
-<li><code>$</code>：<strong>整個字串</strong>或<strong>行</strong>的結尾。</li>
-</ul>
-<h3 id="common-tokens"><a class="header" href="#common-tokens">Common Tokens</a></h3>
-<p>以下列舉常用的規則：</p>
-<table><thead><tr><th align="center">符號</th><th align="center">說明</th><th align="center">等價</th><th align="center">反向</th></tr></thead><tbody>
-<tr><td align="center"><code>\s</code></td><td align="center">不可視字元</td><td align="center"><code>[\r\n\t ]</code></td><td align="center"><code>\S</code></td></tr>
-<tr><td align="center"><code>\d</code></td><td align="center">數字</td><td align="center"><code>[0-9]</code></td><td align="center"><code>\D</code></td></tr>
-<tr><td align="center"><code>\w</code></td><td align="center">文字</td><td align="center"><code>[0-9a-zA-Z]</code></td><td align="center"><code>\W</code></td></tr>
-<tr><td align="center"><code>\b</code></td><td align="center">文字邊界（定位點）</td><td align="center"><code>(^\w\|\w$\|\W\w\|\w\W)</code></td><td align="center"><code>\B</code></td></tr>
-</tbody></table>
-<h3 id="flags"><a class="header" href="#flags">Flags</a></h3>
-<p>正規表達式的選項稱為 Flag，可能因為不同程式語言的規則而異。常用的如下：</p>
-<table><thead><tr><th align="center">Flag</th><th align="center">說明</th><th align="center">備註</th></tr></thead><tbody>
-<tr><td align="center"><strong>g</strong>lobal</td><td align="center">不只作用一次</td><td align="center">Python 不支援</td></tr>
-<tr><td align="center"><strong>m</strong>ultiple line</td><td align="center">啟用後，<code>^$</code> 對應行的開頭和結尾，而非整個字串</td><td align="center"></td></tr>
-<tr><td align="center"><strong>i</strong>nsensitive</td><td align="center">忽略大小寫</td><td align="center"></td></tr>
-<tr><td align="center">e<strong>x</strong>tend</td><td align="center">啟用單行註解功能 <code>#</code> 並忽略空白標示</td><td align="center">JavaScript 不支援</td></tr>
-<tr><td align="center">stik<strong>y</strong></td><td align="center">每次符合必須相連</td><td align="center">僅 JavaScript 支援</td></tr>
-<tr><td align="center"><strong>u</strong>nicode</td><td align="center">支援萬國碼，<code>\w</code> 將對應所有其他字元</td><td align="center"></td></tr>
-<tr><td align="center"><strong>a</strong>scii</td><td align="center">僅支援 ASCII Code</td><td align="center">僅 Python 支援</td></tr>
-</tbody></table>
-<p>在 JavaScript 中，Flag 可以寫在括弧後啟用。</p>
-<pre><code class="language-js">/abc/gm
-</code></pre>
-<h2 id="token-example"><a class="header" href="#token-example">Token Example</a></h2>
-<p>試著思考題目，並參考正規表達式的撰寫思路。</p>
-<h3 id="csv"><a class="header" href="#csv">CSV</a></h3>
-<p>逗號分隔值 (CSV, Comma-Separated Values) 通常為逗號、縮進、空白等符號分開數值。</p>
-<pre><code>0.01 0.06 -9.997
-1.69 +40.44 4.6321
-</code></pre>
-<p>思路：</p>
-<ul>
-<li>
-<p>數字在文法中可以表示成：</p>
-<pre><code class="language-js">/d+/
-</code></pre>
-</li>
-<li>
-<p>浮點數可以表示成：</p>
-<pre><code class="language-js">/\d*\.?d+/
-</code></pre>
-</li>
-<li>
-<p>帶有符號的浮點數可以表示成：</p>
-<pre><code class="language-js">/[+-]?\d*\.?d+/
-</code></pre>
-</li>
-<li>
-<p>每行有三個數值，用空白分隔，可以表示成：</p>
-<pre><code class="language-js">/^([+-]?\d*\.?d+) ([+-]?\d*\.?d+) ([+-]?\d*\.?d+)$/m
-</code></pre>
-</li>
-</ul>
-<p>可得：</p>
-<table><thead><tr><th align="center">Match</th><th align="center">g1</th><th align="center">g2</th><th align="center">g3</th></tr></thead><tbody>
-<tr><td align="center">1</td><td align="center">0.01</td><td align="center">0.06</td><td align="center">-9.997</td></tr>
-<tr><td align="center">2</td><td align="center">1.69</td><td align="center">+40.44</td><td align="center">4.6321</td></tr>
-</tbody></table>
-<h3 id="g-code"><a class="header" href="#g-code">G Code</a></h3>
-<p>假設這是某台工具機的指令碼，你必須設計它的速度規劃。
-在忽略換行記號的情況下，試著抓取以下每行 G code 中的 <strong>G 碼</strong>、<strong>座標</strong>和<strong>進給速度</strong>。
-不相關的內容可以忽略。</p>
-<pre><code class="language-g">%
-O100
-G00 G40 G49 G20 G90
-N05 M10
-N10 M05
-N15 G91 G28 Z0
-N20 G90
-N25 T1 M06
-N30 G00 Z.1
-N35 G00 X2.5 Y2.5
-N40 G01 Z-.25 F200
-N45 G01 X5 Y5
-N50 G00 Z.1
-N55 G28 X0 Y0
-N60 M05
-N65 M45
-%
-</code></pre>
-<ul>
-<li>
-<p>根據 N、G、X、Y、Z、F 排列順序，每個符號會跟隨一個<strong>整數</strong>或<strong>帶符號的浮點數</strong>。</p>
-<pre><code class="language-js">/N\d+/
-/X[+-]?\d*\.?\d+/
-</code></pre>
-</li>
-<li>
-<p>而 N、X、Y、Z、F 為可選的項目。</p>
-<pre><code class="language-js">/(?:X([+-]?\d*\.?\d+))?/
-</code></pre>
-</li>
-<li>
-<p>可以使用 <code>\s*</code> 代表間隔的空白，每行可排列成：</p>
-<pre><code class="language-js">/G(\d+)\s*(?:X([+-]?\d*\.?\d+))?\s*(?:Y([+-]?\d*\.?\d+))?\s*(?:Z([+-]?\d*\.?\d+))?\s*(?:F([+-]?\d*\.?\d+))?\s*/
-</code></pre>
-</li>
-</ul>
-<p>可得：</p>
-<table><thead><tr><th align="center">Match</th><th align="center">g1</th><th align="center">g2</th><th align="center">g3</th><th align="center">g4</th><th align="center">g5</th></tr></thead><tbody>
-<tr><td align="center">1</td><td align="center">00</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
-<tr><td align="center">2</td><td align="center">40</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
-<tr><td align="center">3</td><td align="center">49</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
-<tr><td align="center">4</td><td align="center">20</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
-<tr><td align="center">5</td><td align="center">90</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
-<tr><td align="center">6</td><td align="center">91</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
-<tr><td align="center">7</td><td align="center">28</td><td align="center"></td><td align="center"></td><td align="center">0</td><td align="center"></td></tr>
-<tr><td align="center">8</td><td align="center">90</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
-<tr><td align="center">9</td><td align="center">00</td><td align="center"></td><td align="center"></td><td align="center">.1</td><td align="center"></td></tr>
-<tr><td align="center">10</td><td align="center">00</td><td align="center">2.5</td><td align="center">2.5</td><td align="center"></td><td align="center"></td></tr>
-<tr><td align="center">11</td><td align="center">01</td><td align="center"></td><td align="center"></td><td align="center">-.25</td><td align="center">200</td></tr>
-<tr><td align="center">12</td><td align="center">01</td><td align="center">5</td><td align="center">5</td><td align="center"></td><td align="center"></td></tr>
-<tr><td align="center">13</td><td align="center">00</td><td align="center"></td><td align="center"></td><td align="center">.1</td><td align="center"></td></tr>
-<tr><td align="center">14</td><td align="center">28</td><td align="center">0</td><td align="center">0</td><td align="center"></td><td align="center"></td></tr>
-</tbody></table>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="syntax-2"><a class="header" href="#syntax-2">Syntax</a></h1>
-<p>本篇將講述常見程式語言的解構方式，以常見的程式語言作為範例。建議先閱讀 <a href="multilang/re.html">Regular Expression</a>。</p>
-<p>閱讀此篇有助於在不同語言之間切換，並有助於理解新的語言；無論為結構語言還是程式語言。</p>
-<h2 id="lark-parser"><a class="header" href="#lark-parser">Lark Parser</a></h2>
-<p>Python 套件 <a href="https://github.com/lark-parser/lark">lark-parser/lark</a> 可以自訂程式語言的規則並解析它們。</p>
-<p>Lark 基於 EBNF，並使用 Earley Parser，本篇將解說電腦如何閱讀「語言」。</p>
-<p>基本元素：</p>
-<pre><code class="language-js">&quot;A&quot; &quot;ABC&quot; &quot;(&quot; &quot;)&quot;  // 字串與符號
-&quot;ABC&quot;i  // 不分大小寫的字串
-/regular_expression/flag  // Regular Expression
-&quot;a&quot;..&quot;z&quot; &quot;1&quot;..&quot;9&quot;  // 範圍
-expression ~ n  // 前一個子句必須出現 n 次
-expression ~ n..m  // 前一個子句必須出現 n 到 m 次
-expression?  // 前一個子句可以不存在或出現一次
-expression*  // 前一個子句可以不存在，或可以無限重複
-expression+  // 前一個子句至少出現一次，並可以無限重複
-(expression expression ...)  // 提升優先權
-[expression expression ...]  // 可選，同於 (expression expression ...)?
-</code></pre>
-<p>定義句：</p>
-<pre><code class="language-js">子句一: &quot;1&quot;..&quot;9&quot;
-子句二: 子句一 &quot;+&quot; 子句一
-</code></pre>
-<p>上面的 <code>子句二</code> 可以表示 <code>1 + 1</code>。</p>
-<p>基本上，為了排版，電腦使用的語言會忽略空白：</p>
-<pre><code class="language-js">%ignore /\s+/
-</code></pre>
-<p>上面的空白用 RE 表示，意味著一個或重複的不可視字元（包含 Tab）。
-忽略後，除非顯式表示，否則解析器不會計算。
-例如：<code>1 + 1</code> 和 <code>1+1</code> 是等效的；<code>A (B) C</code> 和 <code>A(B)C</code> 是等效的。
-但是文字通常有連續性，除非用符號分離，否則一定要至少隔一個空白。</p>
-<p>而文字也是定義的一部份，因此當變數名稱訂為：</p>
-<pre><code class="language-js">variable_character: &quot;a&quot;..&quot;z&quot; | &quot;A&quot;..&quot;Z&quot; | &quot;_&quot;
-variable: variable_character+
-</code></pre>
-<p>符號 <code>_</code> 也會被當成是變數可用的字元，並保持連續性。
-一些程式語言也許有例外，如 JavaScript 允許 <code>$</code> 作為變數名稱，而 Matlab 不允許 <code>_</code> 作為變數的第一個字元。</p>
-<p>子句的組成會影響解析的順序，進而影響程式中的優先權 (Priority)。</p>
-<pre><code class="language-js">digit: &quot;0&quot;..&quot;9&quot;
-int: digit+
-plus: int &quot;+&quot; int
-strong: &quot;(&quot; (int | plus_statement) &quot;)&quot;
-base: int | strong | plus
-plus_statement: base (&quot;+&quot; base)+
-</code></pre>
-<p>如上所示，<code>plus_statement</code> 可以表示 <code>(1 + 20) + 7</code>、<code>(5 + 6)</code>、<code>4 + (6 + 9)</code>、<code>2 + 777</code> 等語句。</p>
-<p>而以下文法：</p>
-<pre><code class="language-js">digit: &quot;0&quot;..&quot;9&quot;
-int: digit+
-assignment: plus_statement &quot;=&quot; int
-</code></pre>
-<p>對於 <code>2 + 3 = 5</code> 會先解析 <code>2 + 3</code>，而非 <code>3 = 5</code>。</p>
-<h2 id="commonly-used-syntax"><a class="header" href="#commonly-used-syntax">Commonly Used Syntax</a></h2>
-<p>可簡單歸類程式語言中的語法構成。</p>
-<p>其中 <code>op1</code>, <code>op2</code>, ... 為使用的符號，可為任何字元或字串。</p>
-<p>以下將舉例各式程式語言的部分文法：</p>
-<h3 id="comment-1"><a class="header" href="#comment-1">Comment</a></h3>
-<pre><code class="language-js">comment: op1 /[^\n]*/
-multiline_comment: op1 /[\s\S]*/ op2
-</code></pre>
-<p>註解是程式語言中很重要的一部份，因為他們不會影響執行內容。
-不過這些說明內容可以被提取出來做為說明文件等用途。</p>
-<ul>
-<li>
-<p>C / C++ / Java / JavaScript / C# / ...</p>
-<pre><code class="language-c">// 單行註解
-/* 區段註解 */
-</code></pre>
-</li>
-<li>
-<p>Python</p>
-<pre><code class="language-python"># 單行註解
-&quot;&quot;&quot;區段註解&quot;&quot;&quot;  # 其實是多行字串
-</code></pre>
-</li>
-<li>
-<p>Matlab</p>
-<pre><code class="language-matlab">% 單行註解
-%% 段落註解，以下的區塊可以被折疊。
-</code></pre>
-</li>
-<li>
-<p>Lua</p>
-<pre><code class="language-lua">-- 單行註解
---[[
-區段註解
---]]
-</code></pre>
-</li>
-</ul>
-<h3 id="line-break"><a class="header" href="#line-break">Line Break</a></h3>
-<p>某些語言是會忽略換行記號的，因此可以併成一行也不會影響解析，有助於在只有一行的情況下輸入，如 Bash 中。</p>
-<pre><code class="language-js">%ignore /\r?\n/+
-</code></pre>
-<p>要注意有些程式碼並不是結尾有 <code>;</code> 註記就是忽略換行記號，
-如 Matlab 只是為了隱藏輸出訊息；Lua 沒有結尾記號但是會忽略換行。
-而像 JavaScript 會在換行處自動檢查並補上，但是官方仍建議開發者必須打上。
-至於 Python 則是加上 <code>;</code> 可以併做一行，可是無法加上縮排。</p>
-<p>忽略換行記號的語言如 C / C++ 可以這樣寫：</p>
-<pre><code class="language-c">a = (1 + 2)
-    * (2 + 3)
-    * (3 + 4);
-</code></pre>
-<p>可是如 JavaSript 有自動插入的機制，如下會導致強制段行（<code>return</code>、<code>break</code>、<code>throw</code>, <code>continue</code> 結尾）：</p>
-<pre><code class="language-js">return
-    1 + 3;
-</code></pre>
-<p>而在意換行記號的語言因為閱讀需要，會有換行的策略，如：</p>
-<ul>
-<li>
-<p>Python：可以在括弧 <code>()</code>、<code>[]</code>、<code>{}</code> 中換行。但是同時因為縮排規定，其中的縮排不能比原始行小。</p>
-<pre><code class="language-python">a = (
-    &quot;aaa&quot;,
-    &quot;bbb&quot;,
-    &quot;ccc&quot;,
-)
-</code></pre>
-</li>
-<li>
-<p>Bash：必須使用 <code>\</code> 符號在換行結尾。</p>
-<pre><code class="language-bash">rm -f file_a.md \
-file_b.md ${FLAG}
-</code></pre>
-</li>
-<li>
-<p>Matlab：可以在 <code>;</code> 後換行，除此之外必須使用 <code>...</code> 符號在換行結尾，而且其之後的內容會被視為註解。</p>
-<pre><code class="language-matlab">a = (1 + 2)...
-    * (2 + 3)...
-    * (3 + 4);
-a = [... 這裡要加
-    1, 2, 3;
-    4, 5, 6;
-    7, 8, 9]
-</code></pre>
-</li>
-<li>
-<p>Markdown：段落之間必須空一行，否則視為上一行，至於其他如列舉或標題等語法不受限。</p>
-<pre><code class="language-markdown">aaa,
-bbb.
-
-ccc:
-1. ddd
-    with ddd
-1. eee
-1. fff
-</code></pre>
-</li>
-</ul>
-<h3 id="indentation-1"><a class="header" href="#indentation-1">Indentation</a></h3>
-<p>縮排通常做為排版使用，不過仍有語言作為程式碼區塊的判定，如 Python。</p>
-<pre><code class="language-js">indentation: &quot; &quot; ~ 4 | /\t/
-block: indentation+ code_block
-</code></pre>
-<p>若非使用縮排，程式區塊會使用符號或語句作為標記。</p>
-<ul>
-<li>
-<p>C / C++ / Java / JavaScript / C# / ...：使用大括弧 <code>{}</code>。</p>
-<pre><code class="language-c">if (a &lt; b) { return 0; }
-</code></pre>
-</li>
-<li>
-<p>Lua：不需要換行。有對應記號。</p>
-<pre><code class="language-lua">if a &lt; b then return 0 end
-while a &lt; b do a = a + 1 end
-</code></pre>
-</li>
-<li>
-<p>Latex：有對應記號。另外括充模組也能夠提供巨集 (Macro) 讓語法比較好看。</p>
-<pre><code class="language-latex">\if \else \fi  % 判斷式
-\loop \if \repeat  % While 迴圈，\repeat 有 \fi 的功能。
-</code></pre>
-</li>
-<li>
-<p>Matlab：需要換行。通常搭配 <code>end</code> 關鍵字結尾。</p>
-<pre><code class="language-matlab">if a &lt; b
-    return
-end
-</code></pre>
-</li>
-</ul>
-<h3 id="binary-operator"><a class="header" href="#binary-operator">Binary Operator</a></h3>
-<pre><code class="language-js">binary: statement op1 statement
-</code></pre>
-<p>為兩項運算，如一般的數學式。前後的 <code>statement</code> 可以不相同。
-在計算的情況，通常可以連續操作如 <code>a + b + c</code> 或 <code>a = b = c</code>；
-但為避免讀錯，如 <code>a += b</code> 的縮寫不會允許連續的語句。</p>
-<ul>
-<li>
-<p>Common</p>
-<pre><code class="language-js">a + b
-a &lt; b
-a = b
-a += b
-a.b
-</code></pre>
-</li>
-<li>
-<p>Python</p>
-<pre><code class="language-python">a and b  # Logical AND
-a in b  # Contain check
-a is b  # Same memory position check
-a := b  # Assignment, but repersent &quot;a&quot; itself (in expression)
-</code></pre>
-</li>
-<li>
-<p>C / C++</p>
-<pre><code class="language-c">a &amp;&amp; b  // Logical AND
-a-&gt;b  // Pointer member
-a::b  // Namespace member
-a, b  // Run &quot;a&quot; and &quot;b&quot; but repersent &quot;b&quot; itself (in expression)
-</code></pre>
-</li>
-<li>
-<p>JavaScript</p>
-<pre><code class="language-js">a === b  // Same memory position check
-</code></pre>
-</li>
-<li>
-<p>C#</p>
-<pre><code class="language-c#">a ?? b // Repersents &quot;b&quot; if &quot;a&quot; is &quot;null&quot;, otherwise repersent &quot;a&quot;
-a?.b  // Repersents &quot;null&quot; if &quot;a&quot; is &quot;null&quot;, otherwise repersent the member &quot;b&quot;
-</code></pre>
-</li>
-<li>
-<p>R</p>
-<pre><code class="language-r">a &lt;= b  # Assignment
-</code></pre>
-</li>
-</ul>
-<h3 id="unary-operator"><a class="header" href="#unary-operator">Unary Operator</a></h3>
-<pre><code class="language-js">leading_unary: op1 statement
-trailing_unary: statement op1
-</code></pre>
-<p>分成前置或尾置，為了相容二元運算，通常優先權會最大。
-但是因為 C++ 的前車之鑑，發現它們極易破壞可閱讀性，因此新的程式語言就較沒有出現。</p>
-<ul>
-<li>
-<p>C / C++</p>
-<pre><code class="language-c">!a  // Logical not
-~a  // Byte inverse
-*a  // Pointer get value
-&amp;a  // Get position to pointer
-++a  // Plus 1 to &quot;a&quot;, then represent &quot;a&quot;
-a++  // Represents &quot;a&quot;, then plus 1 to &quot;a&quot;
-</code></pre>
-</li>
-<li>
-<p>Python</p>
-<pre><code class="language-python">not a  # Logical not
-yield a  # Generator get input value (in expression)
-</code></pre>
-</li>
-<li>
-<p>C#</p>
-<pre><code class="language-c#">a?  // Type &quot;a&quot; can be &quot;null&quot;
-</code></pre>
-</li>
-<li>
-<p>Haskell：函數型程式語言，語法與數學式相仿，函式優先權最高。由 <code>f x1 x2 ...</code> 表示函式 <code>f</code> 和其參數 <code>x1</code>、<code>x2</code> 等。</p>
-<pre><code class="language-haskell">f a = sin a * 10  -- Same as &quot;(sin a) * 10&quot;, &quot;f&quot; and &quot;sin&quot; is function.
-</code></pre>
-</li>
-</ul>
-<h3 id="ternary-operator"><a class="header" href="#ternary-operator">Ternary Operator</a></h3>
-<pre><code class="language-js">ternary: statement op1 statement op2 statement
-</code></pre>
-<p>較長的句型，由兩個運算子組成。</p>
-<ul>
-<li>
-<p>C / C++ / Java / JavaScript / C#</p>
-<pre><code class="language-c">a ? b : c  // If &quot;a&quot; is true, repersents &quot;b&quot;, otherwise repersents &quot;c&quot;
-</code></pre>
-</li>
-<li>
-<p>Python</p>
-<pre><code class="language-python">b if a else c  # If &quot;a&quot; is true, repersents &quot;b&quot;, otherwise repersents &quot;c&quot;
-a for b in c  # An iterator generate &quot;a&quot;, extract &quot;b&quot; from &quot;c&quot; during iterating
-a for b in c if d  # Same as above, skip if &quot;d&quot; is &quot;False&quot;
-</code></pre>
-</li>
-</ul>
-<h3 id="other-statements"><a class="header" href="#other-statements">Other Statements</a></h3>
-<p>至於其他就比較多元了。因此，基礎概念必須先熟悉，如型別標示就會很大程度的影響文法，
-但是只要知道該概念會需要哪些參數、選項，自然便會容易理解。</p>
-<p>如單純的 while loop 在哪種語言都沒什麼變化：</p>
-<ul>
-<li>
-<p>C / C++ / Java / JavaScript / C# / ...</p>
-<pre><code class="language-c++">while (check_statement) {
-    run_statements
-}
-
-// Check after run once
-do {
-    run_statements
-} while (check_statement)
-</code></pre>
-</li>
-<li>
-<p>Python</p>
-<pre><code class="language-python">while check_statement:
-    run_statements
-</code></pre>
-</li>
-<li>
-<p>Rust</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>while check_statement {
-    run_statements
-}
-<span class="boring">}
-</span></code></pre></pre>
-</li>
-</ul>
-<p>而物件導向有些卻有可見性，有些會聲明物件本身為 &quot;self&quot;：</p>
-<ul>
-<li>
-<p>C++</p>
-<pre><code class="language-c++">public:
-decorator return_type func_name(arg1_type arg1, arg2_type arg2, ...) {
-    run_statements
-}
-</code></pre>
-</li>
-<li>
-<p>Python</p>
-<pre><code class="language-python">def func_name(self, arg1, arg2, ...):
-    &quot;&quot;&quot;Doc string&quot;&quot;&quot;
-    run_statements
-</code></pre>
-</li>
-</ul>
-<p>最後舉例 Function 的表示百百種：</p>
-<ul>
-<li>
-<p>C / C++：有 Closure 語法。</p>
-<pre><code class="language-c++">// Normal Function
-decorator return_type func_name(arg1_type arg1, arg2_type arg2, ...) {
-    run_statements
-}
-
-// Lambda Fuction (Closures, only in C++)
-[refer_mode] (arg1_type arg1, arg2_type arg2, ...) -&gt; return_type {
-    run_statements
-}
-
-// Generic Fuction (only in C++)
-template&lt;template_option&gt;
-decorator return_type func_name(arg1_type arg1, arg2_type arg2, ...) {
-    run_statements
-}
-</code></pre>
-</li>
-<li>
-<p>Python：沒有 Closure 語法，自動處理。</p>
-<pre><code class="language-python"># Simple Function
-def func_name(arg1, arg2, ...):
-    &quot;&quot;&quot;Doc string&quot;&quot;&quot;
-    run_statements
-
-# Lambda Function
-lambda arg1, arg2, ...: return_statement
-
-# Typed decorated Function
-@decorator
-def func_name(arg1: arg1_type, arg2: arg2_type, ..., *, kward1: kward1_type, ..., **, kward2: kward2_type, ...) -&gt; return_type:
-    &quot;&quot;&quot;Doc string&quot;&quot;&quot;
-    run_statements
-</code></pre>
-</li>
-<li>
-<p>JavaScript：沒有 Closure 語法，自動處理。</p>
-<pre><code class="language-js">// Simple Function
-function func_name(arg1, arg2, ...) {
-    run_statements
-}
-
-// Lambda Function
-function (arg1, arg2, ...) {
-    run_statements
-}
-
-// Lambda Function
-(arg1, arg2, ...) =&gt; {
-    run_statements
-}
-
-// Lambda Function
-arg1 =&gt; return_statement
-</code></pre>
-</li>
-<li>
-<p>Rust：有 Closure 語法。</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>// Simple Function
-fn func_name(arg1: arg1_type, arg2: arg2_type, ...) -&gt; return_type {
-    run_statements
-    return_statement
-}
-
-// Generic Fuction
-fn func_name&lt;template_option&gt;(arg1: arg1_type, arg2: arg2_type, ...) -&gt; return_type {
-    run_statements
-    return_statement
-}
-
-// Closures
-|arg1: arg1_type, arg2: arg1_type, ...| -&gt; return_type {
-    run_statements
-}
-<span class="boring">}
-</span></code></pre></pre>
-</li>
-<li>
-<p>Go：沒有 Closure 語法，自動處理。</p>
-<pre><code class="language-go">func func_name(arg1 arg1_type, arg2 arg2_type, ...) return_type {
-    run_statements
-}
-</code></pre>
-</li>
-</ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="expression-and-statement"><a class="header" href="#expression-and-statement">Expression and Statement</a></h1>
-<p>表達式 (Expression) 和陳述式 (Statement) 的差別在於，
-前者為一種值 (value)，後者不代表任何運行結果，範例如下：</p>
-<pre><code class="language-c">a = sin(pi);
-</code></pre>
-<p>先不管是什麼程式語言，上面的意思假設是「用 pi 參數呼叫 sin 函式，將結果存入 a 名稱中」，
-那 <code>pi</code>、<code>sin(pi)</code> 是一種表達式，而 <code>a = sin(pi)</code> 是一種陳述式。</p>
-<p>單純的陳述式例如模組導入：</p>
-<pre><code class="language-python">from sys import exit
-</code></pre>
-<p>然而如 C/C++ 的指派 (assignment) 式有表達式的功能，指派的同時代表右值。</p>
-<pre><code class="language-c">if (i = true)
-    always_go();
-</code></pre>
-<p>原本 Python 的指派式並非表達式，但是 Python 3.8 新增的 assignment expression (<a href="https://www.python.org/dev/peps/pep-0572/">PEP 572</a>)
-讓指派也有代表右值的功能。</p>
-<pre><code class="language-python">if i := True:
-    always_go()
-</code></pre>
-<p>另外 C/C++ 的逗號運算子 (comma operator) 代表最後項的值。
-不過這個運算子優先權太低，導致必須用括弧提昇優先權，酷似函式呼叫容易搞混，因此不常用。</p>
-<pre><code class="language-c">int will_be_10 = (first(), second(), 10);
-</code></pre>
-<p>類似的特性被 Rust 引用，任何 code block 都是表達式（代表末尾值，加分號 <code>;</code> 成為陳述式）：</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>/// function code block 可以不寫 return
-fn my_function() -&gt; u8 { 10 }
-
-let a = if check() { 10 } else { 20 };
-let b = while check() {
-    dothing();
-    callback()
-};
-// 匹配，可以解決 none、try catch 和 switch case 的問題
-let c = match b {
-    MyCase::Done(done) =&gt; done,
-    // return 關鍵字是從函式回傳而非 code block
-    // return 反而是陳述句
-    MyCase::None =&gt; { return Result::Err(&quot;not work&quot;); }
-};
-// 另一種 match pattern
-let d = if let Case::Done(done) = b { 10 } else { 20 };
-<span class="boring">}
-</span></code></pre></pre>
-<p>JavaScript 的函式也是很經典的例子，總共有三種函式寫法：</p>
-<pre><code class="language-js">/// 這邊只是示範，const 變數不可以重複指派
-// 函式陳述式（不用結尾分號）
-function f() {}
-// 函式表達式
-const f = function () {};
-// 無 this 的箭號函式 (arrow function)
-const f = () =&gt; {};
-// 異步函式的版本
-async function f() {}
-const f = async function () {};
-const f = async () =&gt; {};
-// 無指派，執行後回收函式本體
-(function () {})();
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="it-introduces"><a class="header" href="#it-introduces">IT Introduces</a></h1>
 <p>請查詢關鍵字並瞭解以下分類的技術或概念，並思考問題。</p>
