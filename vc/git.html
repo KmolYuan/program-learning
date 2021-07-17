@@ -4,47 +4,29 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Git - Program Learning</title>
-        
-        
-
-
         <!-- Custom HTML head -->
         
-
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="程式入門">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        
         <link rel="icon" href="../favicon.svg">
-        
-        
         <link rel="shortcut icon" href="../favicon.png">
-        
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
-        
         <link rel="stylesheet" href="../css/print.css" media="print">
-        
-
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        
         <link rel="stylesheet" href="../fonts/fonts.css">
-        
-
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -120,29 +102,23 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">Program Learning</h1>
 
                     <div class="right-buttons">
-                        
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
-                        
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -150,8 +126,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -163,11 +137,11 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#git" id="git">Git</a></h1>
-<h2><a class="header" href="#github" id="github">GitHub</a></h2>
+                        <h1 id="git"><a class="header" href="#git">Git</a></h1>
+<h2 id="github"><a class="header" href="#github">GitHub</a></h2>
 <p>GitHub 只是使用 Git 的網路倉儲服務，這兩個是不同東西。</p>
 <p>GitLab、BitBucket、Microsoft Azure 等都有提供類似的功能。</p>
-<h2><a class="header" href="#git-1" id="git-1">Git</a></h2>
+<h2 id="git-1"><a class="header" href="#git-1">Git</a></h2>
 <p><a href="https://git-scm.com/">Git</a> 是一種<strong>分散</strong>式<strong>版本控制</strong>架構。</p>
 <p>其中<strong>版本控制</strong>就是將 Text-based File 進行管理的方法。
 試想，將一個檔案新增 n 行，刪除 m 行，可以變成另一個檔案；
@@ -199,7 +173,7 @@
 當遠端不存在時，其中一個近端如果變成伺服器，其他近端將推送目標指向它，也可以做為遠端（當然也要注意 Base 問題）。</p>
 <p>當推送時 Base 不符合會產生衝突。代表開發者私底下竄改了某些提交，必須選擇放棄近端或遠端其中一邊的歷史。
 若放棄遠端，將會執行<strong>強制推送 (Force Push)</strong>，將會把遠端的目標分支強制同步成近端的樣子。</p>
-<h3><a class="header" href="#remote--client" id="remote--client">Remote &amp; Client</a></h3>
+<h3 id="remote--client"><a class="header" href="#remote--client">Remote &amp; Client</a></h3>
 <p>從遠端下載 master 分支到近端。
 其他分支會在開發者切換時下載下來。</p>
 <pre><code class="language-bash">git clone https://github.com/MMD-Training-2019/SupplementaryMaterial.git
@@ -213,7 +187,7 @@
 <p>強制推送。請先跟其他近端好好溝通過，否則應該將你的改變成為新分支。</p>
 <pre><code class="language-bash">git push -f
 </code></pre>
-<h3><a class="header" href="#commit" id="commit">Commit</a></h3>
+<h3 id="commit"><a class="header" href="#commit">Commit</a></h3>
 <p>啟動演算法，顯示單一檔案與上一次提交的改變。按下 <code>q</code> 可以退出。</p>
 <pre><code class="language-bash">git diff fileA.md
 </code></pre>
@@ -255,7 +229,7 @@ git reset fileA.md fileC.py
 <p>復原拆除。</p>
 <pre><code class="language-bash">git reset 'HEAD@{1}'
 </code></pre>
-<h3><a class="header" href="#tag" id="tag">Tag</a></h3>
+<h3 id="tag"><a class="header" href="#tag">Tag</a></h3>
 <p>顯示近端的標籤。</p>
 <pre><code class="language-bash">git tag
 </code></pre>
@@ -275,7 +249,7 @@ git push --tags
 <p>移動近端標籤到某個提交，相當於刪除再新增。推送時用更新的方式。</p>
 <pre><code class="language-bash">git tag -f v1.0 aaaaaaa
 </code></pre>
-<h3><a class="header" href="#branch" id="branch">Branch</a></h3>
+<h3 id="branch"><a class="header" href="#branch">Branch</a></h3>
 <p>顯示近端的分支。</p>
 <pre><code class="language-bash">git branch
 </code></pre>
@@ -298,7 +272,7 @@ git push --tags
 <p>移動近端分支到某個提交，相當於刪除再新增。推送時用強制推送。</p>
 <pre><code class="language-bash">git branch -f new-branch aaaaaaa
 </code></pre>
-<h3><a class="header" href="#merge" id="merge">Merge</a></h3>
+<h3 id="merge"><a class="header" href="#merge">Merge</a></h3>
 <p>合併 &quot;new-branch&quot; 到當前分支。
 如果成功，可以直接做其他事；如果失敗，需要手動解決，額外新增一個合併提交。</p>
 <pre><code class="language-bash">git merge new-branch
@@ -306,7 +280,7 @@ git push --tags
 <p>舉手投降，還原到還沒合併的狀態。</p>
 <pre><code class="language-bash">git merge --abort
 </code></pre>
-<h3><a class="header" href="#rebase" id="rebase">Rebase</a></h3>
+<h3 id="rebase"><a class="header" href="#rebase">Rebase</a></h3>
 <p>修改特定提交。輸入指令預覽最近的 3 個提交，
 這時會開啟 Vim，把想要更改的提交狀態改為 &quot;edit&quot;，輸入 <code>:wq</code> 離開。</p>
 <pre><code class="language-bash">git rebase -i HEAD~3
@@ -317,7 +291,7 @@ git push --tags
 <p>會疊加其他提交，有衝突的話需要解決。或是選擇放棄也可以。</p>
 <pre><code class="language-bash">git rebase --abort
 </code></pre>
-<h3><a class="header" href="#submodule" id="submodule">Submodule</a></h3>
+<h3 id="submodule"><a class="header" href="#submodule">Submodule</a></h3>
 <p>子倉儲就是新增一個參考倉儲到倉儲裡，只要切換目錄到裡面，基本操作都一樣。
 通常被需綁定版本的相依套件會使用。</p>
 <p>不過子倉儲的提交會在主倉儲綁定，所以改變時主倉儲必須新增提交來更新。
@@ -333,67 +307,38 @@ git push --tags
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="../vc/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
-
-                        
                             <a rel="next" href="../languages/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="../vc/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
-
-                
                     <a rel="next" href="../languages/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
-
-        
-
-        
-
-        
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
-
-        
-
-        
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
-        
-
     </body>
 </html>

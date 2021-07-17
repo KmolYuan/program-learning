@@ -4,47 +4,29 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>C / C++ - Program Learning</title>
-        
-        
-
-
         <!-- Custom HTML head -->
         
-
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="程式入門">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        
         <link rel="icon" href="../favicon.svg">
-        
-        
         <link rel="shortcut icon" href="../favicon.png">
-        
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
-        
         <link rel="stylesheet" href="../css/print.css" media="print">
-        
-
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        
         <link rel="stylesheet" href="../fonts/fonts.css">
-        
-
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -120,29 +102,23 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">Program Learning</h1>
 
                     <div class="right-buttons">
-                        
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
-                        
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -150,8 +126,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -163,7 +137,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#c--c" id="c--c">C / C++</a></h1>
+                        <h1 id="c--c"><a class="header" href="#c--c">C / C++</a></h1>
 <p>本篇簡介基礎概念。</p>
 <p>主張：C 可以達成任何機器碼能夠達成的事，而且可以將<strong>時間成本</strong>或<strong>程式體積</strong>降到最低。</p>
 <p>如其主張所示，C 語言幾乎可以達成任何應用（當然難度各有高低）。
@@ -175,7 +149,7 @@
 相較於很多程式語言都是獨裁政權，C++ 是民主政府，歷年來的各種功能是投票決定的。</p>
 <p>建議現在的版本使用 C++11 和 C++17，有較為貼近需求面的標準功能，
 而且比較符合高階程式語言的寫作想像；若非必要，舊有的用法應該避免出現。</p>
-<h2><a class="header" href="#compiler" id="compiler">Compiler</a></h2>
+<h2 id="compiler"><a class="header" href="#compiler">Compiler</a></h2>
 <p>其實 C / C++ 都會和另一個程式語言共存，稱為「編譯器指令」。
 它是一種直譯式語言，掌握 C / C++ 的生殺大權。
 最大的特徵就是由 <code>#</code> 開頭，會看換行記號，主要功能是做<strong>文字複製和替換</strong>。
@@ -194,7 +168,7 @@ GCC 編譯器通常最努力支援最新的標準；其他還有如 LLVM 品牌�
 而相近的 mac OS 使用的是支援 Objective-C 較好的 Clang，
 不過 Apple 已經捨棄 Objective-C 主打 Swift 語言，Objective-C 已轉為底層的實現。
 至於 Windows 則是主打自家的 Visual C++，不過 GCC 的 MinGW 與其他編譯器的 Windows 版本也在搶攻這塊市場。</p>
-<h2><a class="header" href="#compile" id="compile">Compile</a></h2>
+<h2 id="compile"><a class="header" href="#compile">Compile</a></h2>
 <p>「編譯」過程是 C 語言的一環，由於其主張，這個翻譯流程的最終目的通常是變成<strong>機器碼</strong>。
 中途的媒介為<strong>組合語言 (Assembly)</strong>，是一種僅次於機器碼的程式語言，
 其定位類似 G-code，可以直接對硬體下指令，但是又是人可以理解的程度，較適合除錯。
@@ -217,7 +191,7 @@ C / C++ 的語法是不看換行記號的，理論上可以一行寫完全部，
 在後面的章節示範中，[C++ to C](#c-to-c) 會有特殊的語法保留名稱。
 如 C/C++/Fortran/Rust 之間的溝通，就是保持 ABI 一致。
 </code></pre>
-<h3><a class="header" href="#declaration-and-definition" id="declaration-and-definition">Declaration and Definition</a></h3>
+<h3 id="declaration-and-definition"><a class="header" href="#declaration-and-definition">Declaration and Definition</a></h3>
 <p>C / C++ 的語法中，一個名稱（無論如何是什麼）分為「宣告 (Declaration n., Declare verb.)」
 和「定義 (Definition n., Define verb.)」兩部份。
 如果直接定義，則視為<strong>同時</strong>宣告和定義。
@@ -234,7 +208,7 @@ C / C++ 的語法是不看換行記號的，理論上可以一行寫完全部，
 <p>若其他 object files 的相同範圍（如 global）宣告相同名稱，則會<strong>共用</strong>該定義。
 這點非常重要，因為這會導致「撞名」的風險，造成上述的編譯失敗。
 對於此缺陷 C 和 C++ 有各自的解決方法。</p>
-<h3><a class="header" href="#header-and-source" id="header-and-source">Header and Source</a></h3>
+<h3 id="header-and-source"><a class="header" href="#header-and-source">Header and Source</a></h3>
 <p>「標頭檔 (Header)」和「來源檔 (Source)」正是分別用來存放<strong>宣告</strong>和<strong>定義</strong>的。
 在 C 語言中，標頭檔的副檔名使用 <code>*.h</code>，來源檔使用 <code>*.c</code>。
 原本 C++ 早期也是使用相同名稱，但是會搞混兩種不同的程式語言，因此改成 <code>*.c++</code>；
@@ -265,7 +239,7 @@ C / C++ 的語法是不看換行記號的，理論上可以一行寫完全部，
 若為 <code>NAME VALUE</code> 語法會替換 <code>NAME</code> 成為 <code>VALUE</code>；
 <code>NAME(p) VALUE</code> 語法可以替換包夾的文字 <code>p</code>，<code>VALUE</code> 就可以延伸 <code>p</code> 的文字。
 這種替換必須注意替換後的語法問題。</p>
-<h3><a class="header" href="#learn---compile-a-executable" id="learn---compile-a-executable">Learn - Compile a Executable</a></h3>
+<h3 id="learn---compile-a-executable"><a class="header" href="#learn---compile-a-executable">Learn - Compile a Executable</a></h3>
 <p>建立一個目錄當作 Project，在<strong>只有內建編譯器和文字編輯器</strong>的環境中練習自己編譯可以執行的二進位執行檔。
 通常 Linux 作業系統會內建它的老朋友 GCC / G++，對應 C / C++ 語言。</p>
 <p>首先使用 command line 建立工作區域，如 <code>~/Desktop/learn-c</code>。</p>
@@ -349,7 +323,7 @@ int main() {
 <pre><code class="language-batch">gcc main.c hello.c -o learn-c.exe
 .\learn-c
 </code></pre>
-<h3><a class="header" href="#executable-and-library" id="executable-and-library">Executable and Library</a></h3>
+<h3 id="executable-and-library"><a class="header" href="#executable-and-library">Executable and Library</a></h3>
 <p>「執行檔 (Executable)」就是剛才範例中，可以直接跑的檔案。
 「程式庫 (Library)」顧名思義就是將程式碼放在額外的地方。
 <strong>執行檔</strong>和<strong>程式庫</strong>其實是相同的，差別在於是否擁有「進入點 (Entry Point)」。
@@ -413,7 +387,7 @@ GCC / MinGW 中就要使用 <code>ar</code> 指令呼叫 archiver 來使用 obje
 GCC 的選項中可以指定 Library path 和 Library Name，如：</p>
 <pre><code class="language-c">gcc main.c -Llib -lmylib -o main
 </code></pre>
-<h4><a class="header" href="#c-to-c" id="c-to-c">C++ to C</a></h4>
+<h4 id="c-to-c"><a class="header" href="#c-to-c">C++ to C</a></h4>
 <p>在 C++ 的語法中，允許編譯器向下相容 C 語言。
 因為 C++ 其實不會產生和 C 一樣的物件名稱，像是重載 (Overload)、名稱空間 (Namespace) 等功能就會把名稱編碼。
 所以使用 <code>extern &quot;C&quot;</code> 修飾符或 <code>extern &quot;C&quot; {...}</code> 範圍來使編譯後名稱保持一致。</p>
@@ -434,7 +408,7 @@ extern &quot;C&quot; {
 }
 #endif
 </code></pre>
-<h3><a class="header" href="#learn---compile-a-shared-library" id="learn---compile-a-shared-library">Learn - Compile a Shared Library</a></h3>
+<h3 id="learn---compile-a-shared-library"><a class="header" href="#learn---compile-a-shared-library">Learn - Compile a Shared Library</a></h3>
 <p>再來於 Linux 上練習如何編譯一個跨平台的共享函式庫。</p>
 <pre><code class="language-c">cd ~/Desktop
 mkdir -p learn-c/lib
@@ -517,7 +491,7 @@ Windows 只要將 DLL 檔案放在一起或 <code>PATH</code> 環境變數的目
 但是除了累贅內容，加快速度會跟減少體積相斥。
 通常除錯階段會用最快編譯速度（不改動任何內容），發佈和性能測試時才會開啟優化選項。
 </code></pre>
-<h3><a class="header" href="#make" id="make">Make</a></h3>
+<h3 id="make"><a class="header" href="#make">Make</a></h3>
 <p>當檔案一多，往往會造成編譯麻煩。
 在架構簡單的狀況下，可以使用 Makefile，一種類似 Shell Script 的腳本文件，工具名稱就叫做 Make。</p>
 <p>Makefile 沒有副檔名，因為它本身就規定為 <code>Makefile</code>（區分大小寫）。
@@ -566,7 +540,7 @@ run: requirements.txt
 </code></pre>
 <p>然而，Makefile 仍然在多種平台、編譯器、相依程式庫的處理不是很好。
 因此就衍生出了基於 Make 的 CMake。</p>
-<h3><a class="header" href="#cmake" id="cmake">CMake</a></h3>
+<h3 id="cmake"><a class="header" href="#cmake">CMake</a></h3>
 <img src="img/cmake.svg" width="200px"/>
 <p>基本上，CMake 直接為編譯流程打造各種變數與指令可以使用，非常方便。
 編譯只剩兩步驟：<strong>產生編譯架構</strong>和<strong>呼叫編譯器編譯</strong>。</p>
@@ -615,7 +589,7 @@ target_link_libraries(${PROJECT_NAME} hello)
 <pre><code class="language-cmake">add_subdirectory(hello_lib)
 </code></pre>
 <p>更多功能可以去 <a href="https://cmake.org/cmake/help/latest/index.html">https://cmake.org/cmake/help/latest/index.html</a> 查詢。</p>
-<h2><a class="header" href="#data-type-variable" id="data-type-variable">Data Type Variable</a></h2>
+<h2 id="data-type-variable"><a class="header" href="#data-type-variable">Data Type Variable</a></h2>
 <p>Data Type 是最基本的組成，代表程式會<strong>花多少記憶體</strong>來使用。
 編譯器會自動偵測 32 和 64 位元平台的差異，協助計算需要使用的記憶體大小。</p>
 <p>基本的 Data type 如下：</p>
@@ -659,7 +633,7 @@ b = 30;  // 修改值
 因此在整數做除法前必須做 <a href="#cast">Casting</a>。相反，如果要做整除，就會特意轉成整數。</p>
 <pre><code>至於取餘數 `%` 運算子如果被除數是負數，則會得到負餘數，跟 Python 的正餘數不同。
 </code></pre>
-<h2><a class="header" href="#function" id="function">Function</a></h2>
+<h2 id="function"><a class="header" href="#function">Function</a></h2>
 <p>函式是另外一個基本構成，所謂的「程式」都包含在函式當中。</p>
 <p>函式有三要素，<strong>名稱</strong>、<strong>輸入類型</strong>、<strong>回傳類型</strong>。輸入值可以有多個，但是回傳值只能一個。
 這三者稱為簽章 (Signature)，其中<strong>名稱</strong>和<strong>輸入類型</strong>可以決定一個 C++ 函式是否為重載。
@@ -694,7 +668,7 @@ int main(int argc, char **argv) {
 <p>要注意的是，函式會有<strong>傳遞代價</strong>。
 在進入和傳出函式時是使用<strong>複製</strong>行為，所以不適合傳遞太大的物件。
 解決方法在以後的小節會說明。</p>
-<h3><a class="header" href="#overload" id="overload">Overload</a></h3>
+<h3 id="overload"><a class="header" href="#overload">Overload</a></h3>
 <p>在 C++ 中可以存在相同的函式名稱，不同的輸入類型和數量，稱為「重載」。
 每個重載函式可以擁有不同的實作，或引用其他重載名稱。</p>
 <pre><code class="language-c">int add(int, int);
@@ -722,7 +696,7 @@ double __add_double_double(double a, double b) {
     return a + b + c;
 }
 </code></pre>
-<h2><a class="header" href="#const" id="const">Const</a></h2>
+<h2 id="const"><a class="header" href="#const">Const</a></h2>
 <p>「常量 (Constant)」修飾符是編譯器提供的檢查機制，
 如果想維持數值不變，就應該使用此修飾符。
 常量變數必須在宣告時定義數值，C++ 則是在建構式執行完畢後就停止修改 Members。</p>
@@ -742,7 +716,7 @@ int b = a;  // 可以複製數值給其他變數
     double y() const { return _y; }
 }
 </code></pre>
-<h2><a class="header" href="#auto-type" id="auto-type">Auto Type</a></h2>
+<h2 id="auto-type"><a class="header" href="#auto-type">Auto Type</a></h2>
 <p>C++ 編譯器會自動推導類型，稱為 Auto Type。
 然而很大程度取決於你的常量寫法，而且在沒有編輯器的輔助下很容易誤導。
 而且這種標示會無法分開宣告和定義。</p>
@@ -764,7 +738,7 @@ auto add(T a, T b) -&gt; std::enable_if_t&lt;std::is_floating_point&lt;T&gt;::va
     return a + b;
 }
 </code></pre>
-<h2><a class="header" href="#flows" id="flows">Flows</a></h2>
+<h2 id="flows"><a class="header" href="#flows">Flows</a></h2>
 <p>流程控制的語法，只允許出現在函式程式碼範圍中，且不能在 Global Scope。
 這些語句中，只有一行的程式碼可以省略括弧 <code>{}</code>，語意不變，所以必須依賴仔細排版避免誤解。</p>
 <pre><code class="language-c">if (!name)
@@ -772,7 +746,7 @@ auto add(T a, T b) -&gt; std::enable_if_t&lt;std::is_floating_point&lt;T&gt;::va
 </code></pre>
 <p>!!!結尾分號
 流程控制和函式的語法中，結尾的括弧 <code>{}</code> 不需要加上分號 <code>;</code>，算是少數例外。</p>
-<h2><a class="header" href="#condition" id="condition">Condition</a></h2>
+<h2 id="condition"><a class="header" href="#condition">Condition</a></h2>
 <p>判斷式，使用 <code>if</code> <code>else</code> 關鍵字。</p>
 <pre><code class="language-c">if (n &gt; 20) {
     n = 20;
@@ -786,7 +760,7 @@ else if (n == 0) {
 else
     r = 0;
 </code></pre>
-<h3><a class="header" href="#go-to" id="go-to">Go to</a></h3>
+<h3 id="go-to"><a class="header" href="#go-to">Go to</a></h3>
 <p>設定標籤 (Label) 之後，可以用 <code>goto</code> 語句跳至任何同層或上層的標籤中。
 由於閱讀不易，已經很少使用。</p>
 <pre><code class="language-c">goto label;
@@ -794,7 +768,7 @@ skiped_fun();
 label:
 end_fun();
 </code></pre>
-<h3><a class="header" href="#switch-case" id="switch-case">Switch Case</a></h3>
+<h3 id="switch-case"><a class="header" href="#switch-case">Switch Case</a></h3>
 <p>類似 <code>if</code> <code>else</code> 的語句，比較單一變數的不同數值，用於整數。
 過去在實作上使用檢索表，所以比對速度較 <code>if</code> <code>else</code> 還快，
 但是如今的硬體效能已經與檢索表相當，若非容易閱讀，不需要特別使用此語法。</p>
@@ -817,7 +791,7 @@ end_fun();
 儘管語法相似，但是 Switch Case 並不是 Scope，
 沒有 Stack 功能，也因此不會規劃記憶體，所以不能在此處宣告變數。
 詳見 <a href="#scope-stack-and-heap">Stack</a>。</p>
-<h3><a class="header" href="#while-loop" id="while-loop">While Loop</a></h3>
+<h3 id="while-loop"><a class="header" href="#while-loop">While Loop</a></h3>
 <p>透過 Go to 語法的標籤倒置，配合判斷式可以製作中斷條件。
 為語法糖。</p>
 <pre><code class="language-c">while (n &lt; coeff) {
@@ -825,7 +799,7 @@ end_fun();
     n += 1;
 }
 </code></pre>
-<h3><a class="header" href="#for-loop" id="for-loop">For Loop</a></h3>
+<h3 id="for-loop"><a class="header" href="#for-loop">For Loop</a></h3>
 <p>對 While Loop 增加初始化值和步階程式，製作計數器。
 為語法糖。</p>
 <pre><code class="language-c">for (int i = 0; i &lt; 10; i += 2) {
@@ -833,7 +807,7 @@ end_fun();
     array_b[i] = 0;
 }
 </code></pre>
-<h3><a class="header" href="#range-based-for-loop" id="range-based-for-loop">Range Based For Loop</a></h3>
+<h3 id="range-based-for-loop"><a class="header" href="#range-based-for-loop">Range Based For Loop</a></h3>
 <p>C++11 以上支援，C 語言沒有。
 實作 <code>begin</code> 與 <code>end</code> 兩種 Methods，回傳同類型指標的實體可以進行迭代器模擬。
 有 <code>const</code> 版本的可以支援 <code>const auto&amp;</code> 的取值。
@@ -843,7 +817,7 @@ end_fun();
     r.require();
 }
 </code></pre>
-<h2><a class="header" href="#namespace" id="namespace">Namespace</a></h2>
+<h2 id="namespace"><a class="header" href="#namespace">Namespace</a></h2>
 <p>「名稱空間 (Namespace)」是 C++ 用來避免名稱重複的語法，可以為區域中的內容編上前綴名。
 引用時使用 Scope Member 存取運算子 <code>::</code> 取值，同一個名稱空間中的內容互相引用不需要加上前綴。
 習慣上名稱空間的內容不會縮排，而是在結尾括弧增加註解辨識。
@@ -883,7 +857,7 @@ void foo();
 <pre><code class="language-c">static int SUM = 0;
 static void foo();
 </code></pre>
-<h2><a class="header" href="#scope-stack-and-heap" id="scope-stack-and-heap">Scope, Stack and Heap</a></h2>
+<h2 id="scope-stack-and-heap"><a class="header" href="#scope-stack-and-heap">Scope, Stack and Heap</a></h2>
 <p>在沒有任何 <code>{}</code> 符號包裝程式碼的情況下，稱為 Global Scope。
 上面的小節提過，宣告的位置會決定該名稱的可見性。
 至於哪些是 Scope，可以從語法大約看出端倪。</p>
@@ -916,7 +890,7 @@ int b = 10;
     b = tmp;
 }
 </code></pre>
-<h3><a class="header" href="#array" id="array">Array</a></h3>
+<h3 id="array"><a class="header" href="#array">Array</a></h3>
 <p>陣列 (Array) 是在 Stack 上部屬的多個數值，用索引運算子 <code>[]</code> 檢索。
 長度必須在 Compile Time 已知。</p>
 <pre><code class="language-c">// 宣告
@@ -929,7 +903,7 @@ int a[] = {1, 2, 3};
 </code></pre>
 <p>然而其不易閱讀，會受 Stack 的記憶體上限限制，且會有函數傳遞成本，
 因此大多建議使用指標。</p>
-<h3><a class="header" href="#pointer" id="pointer">Pointer</a></h3>
+<h3 id="pointer"><a class="header" href="#pointer">Pointer</a></h3>
 <p>指標 (Pointer) 是 C 語言中最貼近底層的部份。
 簡單來說它是一種 type，內容是二進位的整數值，代表<strong>記憶體位置</strong>。
 透過記憶體位置，可以存取該位置的內容。
@@ -1010,7 +984,7 @@ a-&gt;c  // 存取成員 c
     *v = 10;
 }
 </code></pre>
-<h3><a class="header" href="#reference" id="reference">Reference</a></h3>
+<h3 id="reference"><a class="header" href="#reference">Reference</a></h3>
 <p>「參照 (Reference)」類似於指標，可是只是底層使用，語法與原始物件相同，主要是拿來解決函式傳遞成本。
 注意 C 沒有此功能。</p>
 <p>參照無法單獨宣告，必須直接引用現有物件，宣告時使用前置運算子 <code>&amp;</code>。
@@ -1023,7 +997,7 @@ int &amp;b = *v;  // 可以參考某個指標的值，b 的記憶體位置會等
 </code></pre>
 <p>參照也可以作為函式輸入與輸出，但是其生命週期會與原本物件一致，
 所以輸出通常會用在 <a href="#objective-orientation">Method 回傳 Member</a>。若不相符，編譯器會丟出錯誤。</p>
-<h3><a class="header" href="#reference-counter" id="reference-counter">Reference Counter</a></h3>
+<h3 id="reference-counter"><a class="header" href="#reference-counter">Reference Counter</a></h3>
 <p>若接觸過其他高階程式語言，為避免記憶體洩漏，應該會使用參照計數器 (Reference Counter)。
 在 C++11 以上的標準庫有提供，稱為 Shared Pointer。</p>
 <pre><code class="language-c++">#include &lt;memory&gt;
@@ -1054,7 +1028,7 @@ size_t count = b_ptr.count();  // 2
 好消息是 <code>unique_ptr</code> 早在 C++14 就有陣列的支援了。</p>
 <p>這些自動收尾的指標稱為 Smart Pointer，
 由於不會造成性能損耗又可以避免錯誤，多數開發已經建議取代 <code>new</code> <code>delete</code> 的手動指標。</p>
-<h3><a class="header" href="#container" id="container">Container</a></h3>
+<h3 id="container"><a class="header" href="#container">Container</a></h3>
 <p>「容器 (Container)」已經是大多數高階語言的內建功能。
 C++ 身為物件導向語言，已在標準庫中加入；但是 C 仍需要自己實作。
 通常不使用原始指標或參照的原因為：</p>
@@ -1093,7 +1067,7 @@ Key 必須實現 <code>&lt;</code> 小於運算子，Value 不限。</li>
 </ul>
 </li>
 </ul>
-<h2><a class="header" href="#cast" id="cast">Cast</a></h2>
+<h2 id="cast"><a class="header" href="#cast">Cast</a></h2>
 <p>從 A 類型切換到 B 類型時，稱為 Casting。
 在傳統 C 語言中，會在表達式前方增加優先權運算子，裡面放入要轉到的類型。</p>
 <pre><code class="language-c">(int)float_value + 20
@@ -1115,7 +1089,7 @@ Key 必須實現 <code>&lt;</code> 小於運算子，Value 不限。</li>
 static_cast&lt;double&gt;(int_value)  // Static Cast
 dynamic_cast&lt;double *&gt;(int_ptr)  // Dynamic Cast
 </code></pre>
-<h2><a class="header" href="#type-define" id="type-define">Type Define</a></h2>
+<h2 id="type-define"><a class="header" href="#type-define">Type Define</a></h2>
 <p>使用 <code>typedef</code> 語句可以為類型取別名。</p>
 <pre><code class="language-c">typedef int my_int;
 </code></pre>
@@ -1133,7 +1107,7 @@ C / C++ 命名方式沒以統一規則。從其他現代程式語言來看，
 通常會以 <code>PascalCase</code> (<code>CamelCase</code>) 用在 Sturcture 或 Class；
 Data Type、其他變數、名稱空間和函式使用 <code>snake_case</code>；
 常量、巨集會使用 <code>UPPER_CASE</code>。</p>
-<h2><a class="header" href="#sturcture" id="sturcture">Sturcture</a></h2>
+<h2 id="sturcture"><a class="header" href="#sturcture">Sturcture</a></h2>
 <p>為了使用方便，C 中可以定義 Sturcture 來使單次宣告產生需要的連續記憶體長度。
 例如每次需要兩個 double 來紀錄點座標，就會將點座標設計成 Sturcture。
 語法是在區塊中宣告所需變數，會依順序排列，這些變數稱為 Members。</p>
@@ -1180,7 +1154,7 @@ C 中的 `enum`, `union` 等同理。
 因此 Sturcture 在不同 object files 中重複定義不會有問題，但是單一 object file 不可以重複。</p>
 <p>再者，只有宣告的 Sturcture 根本不知道成員，也不能計算大小，因此只能做函式宣告，
 函式實作會用到成員，只能將其定義擺到 Sturcture 的定義之後。</p>
-<h3><a class="header" href="#objective-orientation" id="objective-orientation">Objective Orientation</a></h3>
+<h3 id="objective-orientation"><a class="header" href="#objective-orientation">Objective Orientation</a></h3>
 <p>在 C++ 的世界，所有的類型實體 (Instance) 都是「物件」。
 「實體」就像上面的 <code>p</code> 變數與 <code>Point</code> 的關係。
 這邊多出了新的關鍵字 <code>class</code>，儘管會有迷思，但是本質上 C++ 中的 Sturcture 跟 Class 是一樣的。
@@ -1296,7 +1270,7 @@ class D : public A, public B {
 C::SUM = 20;
 C *c = C::new_ptr();
 </code></pre>
-<h2><a class="header" href="#union" id="union">Union</a></h2>
+<h2 id="union"><a class="header" href="#union">Union</a></h2>
 <p>與 Sturcture 幾乎一樣，但是最大的特點是 Members 會共用記憶體位置，由最長的計算空間。
 而指標類型可以共用，達成切換儲存大小的功能。
 這個特性可以作為 Casting 的實現，但是不安全。</p>
@@ -1306,7 +1280,7 @@ C *c = C::new_ptr();
 };
 </code></pre>
 <p>在 C++ 中也可以定義建構式、可見性等功能，但是比較少用。</p>
-<h2><a class="header" href="#enum" id="enum">Enum</a></h2>
+<h2 id="enum"><a class="header" href="#enum">Enum</a></h2>
 <p>「列舉 (Enumeration)」功能意指在於建立多個「選項」數值供開發者使用，類似選擇題。
 然而其實底層是單純的數字。
 編譯器會從零開始為選項編碼，通常使用者只需要為選項考慮，
@@ -1327,7 +1301,7 @@ enum Color {
 enum Color color = RED;
 BLUE_X == BLUE  // true
 </code></pre>
-<h3><a class="header" href="#enum-class" id="enum-class">Enum Class</a></h3>
+<h3 id="enum-class"><a class="header" href="#enum-class">Enum Class</a></h3>
 <p>C++ 使用新的 Enum Class 來取代 Enum（不過仍有保留）。
 最大的差異在於，Enum Class 擁有 Scope 的概念，必須像 Namespace 一樣取值。</p>
 <pre><code class="language-c++">enum class Color {
@@ -1343,7 +1317,7 @@ Color color = Color::RED;
     WOMAN,
 };
 </code></pre>
-<h2><a class="header" href="#lambda-function" id="lambda-function">Lambda Function</a></h2>
+<h2 id="lambda-function"><a class="header" href="#lambda-function">Lambda Function</a></h2>
 <p>在 C++ 中函式也是一種物件。
 它們的類型如下表示：</p>
 <pre><code class="language-c">回傳類型 (*)(輸入類型, 輸入類型, ...)
@@ -1380,7 +1354,7 @@ int b = func();  // 100
 如果沒有引用或使用複製，匿名函式便與普通函式相同；當使用引用時，參照物件僅使用相同指標在該變數上，
 因此如果使用函式指標將匿名函式回傳出去，匿名函式的生命週期就會比被引用的變數長，造成執行時錯誤。
 使用參照引用模式的匿名函式稱為閉包 (Closure)。</p>
-<h2><a class="header" href="#template" id="template">Template</a></h2>
+<h2 id="template"><a class="header" href="#template">Template</a></h2>
 <p>在 C 中只能受限於巨集和編譯器指令達成編譯期間的計算。</p>
 <p>但是 C++ 擁有「模板 (Template)」功能，能夠使編譯時已知的參數預先填入，
 等於是編譯器專用的參數通道。
@@ -1437,67 +1411,38 @@ struct {
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="../languages/python.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
-
-                        
                             <a rel="next" href="../languages/matlab-en.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="../languages/python.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
-
-                
                     <a rel="next" href="../languages/matlab-en.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
-
-        
-
-        
-
-        
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
-
-        
-
-        
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
-        
-
     </body>
 </html>

@@ -4,49 +4,30 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Program Learning</title>
-        
         <meta name="robots" content="noindex" />
-        
-        
-
-
         <!-- Custom HTML head -->
         
-
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="程式入門">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        
         <link rel="icon" href="favicon.svg">
-        
-        
         <link rel="shortcut icon" href="favicon.png">
-        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
-        
         <link rel="stylesheet" href="css/print.css" media="print">
-        
-
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        
         <link rel="stylesheet" href="fonts/fonts.css">
-        
-
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -122,29 +103,23 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">Program Learning</h1>
 
                     <div class="right-buttons">
-                        
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
-                        
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -152,8 +127,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -165,7 +138,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#home-page" id="home-page">Home Page</a></h1>
+                        <h1 id="home-page"><a class="header" href="#home-page">Home Page</a></h1>
 <p>幫助初學者熟悉資訊領域的知識，盡量以循序漸進的方式排版。</p>
 <ul>
 <li><strong>Knowledge</strong>: 分開介紹各種資訊領域的工具知識。
@@ -179,12 +152,13 @@
 <li><strong>Multi-Language Learning</strong>: 講解一些跨程式語言的概念，從閱讀文法開始適應，會用較多不同實作舉例。</li>
 <li><strong>Keywords</strong>: 關鍵字延伸閱讀。</li>
 </ul>
-<h1><a class="header" href="#version-control" id="version-control">Version Control</a></h1>
-<h1><a class="header" href="#git" id="git">Git</a></h1>
-<h2><a class="header" href="#github" id="github">GitHub</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="version-control"><a class="header" href="#version-control">Version Control</a></h1>
+<p>撰寫程式前，必須先理解如何控制版本。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="git"><a class="header" href="#git">Git</a></h1>
+<h2 id="github"><a class="header" href="#github">GitHub</a></h2>
 <p>GitHub 只是使用 Git 的網路倉儲服務，這兩個是不同東西。</p>
 <p>GitLab、BitBucket、Microsoft Azure 等都有提供類似的功能。</p>
-<h2><a class="header" href="#git-1" id="git-1">Git</a></h2>
+<h2 id="git-1"><a class="header" href="#git-1">Git</a></h2>
 <p><a href="https://git-scm.com/">Git</a> 是一種<strong>分散</strong>式<strong>版本控制</strong>架構。</p>
 <p>其中<strong>版本控制</strong>就是將 Text-based File 進行管理的方法。
 試想，將一個檔案新增 n 行，刪除 m 行，可以變成另一個檔案；
@@ -216,7 +190,7 @@
 當遠端不存在時，其中一個近端如果變成伺服器，其他近端將推送目標指向它，也可以做為遠端（當然也要注意 Base 問題）。</p>
 <p>當推送時 Base 不符合會產生衝突。代表開發者私底下竄改了某些提交，必須選擇放棄近端或遠端其中一邊的歷史。
 若放棄遠端，將會執行<strong>強制推送 (Force Push)</strong>，將會把遠端的目標分支強制同步成近端的樣子。</p>
-<h3><a class="header" href="#remote--client" id="remote--client">Remote &amp; Client</a></h3>
+<h3 id="remote--client"><a class="header" href="#remote--client">Remote &amp; Client</a></h3>
 <p>從遠端下載 master 分支到近端。
 其他分支會在開發者切換時下載下來。</p>
 <pre><code class="language-bash">git clone https://github.com/MMD-Training-2019/SupplementaryMaterial.git
@@ -230,7 +204,7 @@
 <p>強制推送。請先跟其他近端好好溝通過，否則應該將你的改變成為新分支。</p>
 <pre><code class="language-bash">git push -f
 </code></pre>
-<h3><a class="header" href="#commit" id="commit">Commit</a></h3>
+<h3 id="commit"><a class="header" href="#commit">Commit</a></h3>
 <p>啟動演算法，顯示單一檔案與上一次提交的改變。按下 <code>q</code> 可以退出。</p>
 <pre><code class="language-bash">git diff fileA.md
 </code></pre>
@@ -272,7 +246,7 @@ git reset fileA.md fileC.py
 <p>復原拆除。</p>
 <pre><code class="language-bash">git reset 'HEAD@{1}'
 </code></pre>
-<h3><a class="header" href="#tag" id="tag">Tag</a></h3>
+<h3 id="tag"><a class="header" href="#tag">Tag</a></h3>
 <p>顯示近端的標籤。</p>
 <pre><code class="language-bash">git tag
 </code></pre>
@@ -292,7 +266,7 @@ git push --tags
 <p>移動近端標籤到某個提交，相當於刪除再新增。推送時用更新的方式。</p>
 <pre><code class="language-bash">git tag -f v1.0 aaaaaaa
 </code></pre>
-<h3><a class="header" href="#branch" id="branch">Branch</a></h3>
+<h3 id="branch"><a class="header" href="#branch">Branch</a></h3>
 <p>顯示近端的分支。</p>
 <pre><code class="language-bash">git branch
 </code></pre>
@@ -315,7 +289,7 @@ git push --tags
 <p>移動近端分支到某個提交，相當於刪除再新增。推送時用強制推送。</p>
 <pre><code class="language-bash">git branch -f new-branch aaaaaaa
 </code></pre>
-<h3><a class="header" href="#merge" id="merge">Merge</a></h3>
+<h3 id="merge"><a class="header" href="#merge">Merge</a></h3>
 <p>合併 &quot;new-branch&quot; 到當前分支。
 如果成功，可以直接做其他事；如果失敗，需要手動解決，額外新增一個合併提交。</p>
 <pre><code class="language-bash">git merge new-branch
@@ -323,7 +297,7 @@ git push --tags
 <p>舉手投降，還原到還沒合併的狀態。</p>
 <pre><code class="language-bash">git merge --abort
 </code></pre>
-<h3><a class="header" href="#rebase" id="rebase">Rebase</a></h3>
+<h3 id="rebase"><a class="header" href="#rebase">Rebase</a></h3>
 <p>修改特定提交。輸入指令預覽最近的 3 個提交，
 這時會開啟 Vim，把想要更改的提交狀態改為 &quot;edit&quot;，輸入 <code>:wq</code> 離開。</p>
 <pre><code class="language-bash">git rebase -i HEAD~3
@@ -334,7 +308,7 @@ git push --tags
 <p>會疊加其他提交，有衝突的話需要解決。或是選擇放棄也可以。</p>
 <pre><code class="language-bash">git rebase --abort
 </code></pre>
-<h3><a class="header" href="#submodule" id="submodule">Submodule</a></h3>
+<h3 id="submodule"><a class="header" href="#submodule">Submodule</a></h3>
 <p>子倉儲就是新增一個參考倉儲到倉儲裡，只要切換目錄到裡面，基本操作都一樣。
 通常被需綁定版本的相依套件會使用。</p>
 <p>不過子倉儲的提交會在主倉儲綁定，所以改變時主倉儲必須新增提交來更新。
@@ -345,8 +319,9 @@ git push --tags
 <p>克隆後下載子倉儲。加上 <code>--recursive</code> 會套用到子倉儲的子倉儲。</p>
 <pre><code class="language-bash">git submodule update --init --recursive
 </code></pre>
-<h1><a class="header" href="#languages" id="languages">Languages</a></h1>
-<h1><a class="header" href="#python" id="python">Python</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="languages"><a class="header" href="#languages">Languages</a></h1>
+<p>學習一些程式語言範本。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="python"><a class="header" href="#python">Python</a></h1>
 <p>本篇簡介基礎概念。</p>
 <p>主張：Python 為一種基於<strong>易於撰寫與閱讀</strong>且擁有<strong>強大功能性</strong>的程式語言。</p>
 <p>常用的應用為：</p>
@@ -375,7 +350,7 @@ git push --tags
 根據測試，它在相同邏輯下會比優化的 C 語言慢 20~200 倍。</li>
 <li>相對龐大：同於高階程式語言的問題，Python 包裝成產品是 Byte Code 加上虛擬層，仍沒有機器碼小。</li>
 </ul>
-<h2><a class="header" href="#syntax" id="syntax">Syntax</a></h2>
+<h2 id="syntax"><a class="header" href="#syntax">Syntax</a></h2>
 <p>Python 是看<a href="languages/../multilang/syntax.html#line-break">換行記號</a>的，換而言之，你可以將每一行程式碼視為一條指令，
 而不需要擔心它還有其他部分突然出現在檔案的其他地方，影響閱讀。</p>
 <pre><code class="language-python"># 不會視為 1 + 1 - 2 * 9，而是兩次運算
@@ -420,9 +395,9 @@ def main():
 if __name__ == '__main__':
     main()
 </code></pre>
-<h2><a class="header" href="#builtins" id="builtins">Builtins</a></h2>
+<h2 id="builtins"><a class="header" href="#builtins">Builtins</a></h2>
 <p>本節介紹程式碼常用的內建功能。</p>
-<h3><a class="header" href="#data-types" id="data-types">Data Types</a></h3>
+<h3 id="data-types"><a class="header" href="#data-types">Data Types</a></h3>
 <p>Python 有一般程式語言常見的數據種類：</p>
 <table><thead><tr><th align="center">名稱</th><th align="center">語法</th><th align="left">說明</th></tr></thead><tbody>
 <tr><td align="center">bool</td><td align="center"><code>True</code>, <code>False</code></td><td align="left">Boolean 布林值，代表 0 和 1。</td></tr>
@@ -443,7 +418,7 @@ line2
 &quot;&quot;&quot;
 </code></pre>
 <p>在 Python 的物件導向概念中，數據類型也是物件，所以可以繼承作為更多用途。</p>
-<h3><a class="header" href="#indexing" id="indexing">Indexing</a></h3>
+<h3 id="indexing"><a class="header" href="#indexing">Indexing</a></h3>
 <p>使用檢索運算子 (index operator) <code>[]</code> 按順序取值。
 索引跟大部分的程式語言一樣都是從 0 開始，並且之支援反向檢索，-1 代表最後一項。
 如果檢索失敗會引發 <code>IndexError</code>。</p>
@@ -464,11 +439,11 @@ fedcba = 'abcdef'[::-1]  # 'fedcba'
 <p>像是知名模組 NumPy 使用 Tuple 容器一樣：</p>
 <pre><code class="language-python">matrix[:, -1] == matrix[(slice(None), -1)]
 </code></pre>
-<h3><a class="header" href="#containers" id="containers">Containers</a></h3>
+<h3 id="containers"><a class="header" href="#containers">Containers</a></h3>
 <p>除了特殊需求，Python 內建了各種完善且快速的容器。</p>
 <p>Python 的記憶體都不是連續規劃的，所以可以儲存不同類型的內容，但是仍建議儲存有規則的內容。</p>
 <p>而容器的大小稱為長度 (Length)，可以由 <code>len()</code> 函式獲得。</p>
-<h4><a class="header" href="#tuple" id="tuple">Tuple</a></h4>
+<h4 id="tuple"><a class="header" href="#tuple">Tuple</a></h4>
 <p>元組 (Tuple) 是一種唯讀的鏈狀容器。
 使用工廠函式 <code>tuple</code> 可以建立空的或轉換可迭代物件。</p>
 <pre><code class="language-python"># 小括弧表示 Tuple，某些情形下可以省略但不建議
@@ -498,7 +473,7 @@ abc = a[0] + a[-1]  # 'abc'
 <p>比較演算法可以直接用運算子達成，可是必須兩方皆為 Tuple。</p>
 <pre><code class="language-python">(1, 2, 3) == (4, 5, 6)
 </code></pre>
-<h4><a class="header" href="#list" id="list">List</a></h4>
+<h4 id="list"><a class="header" href="#list">List</a></h4>
 <p>清單 (List) 是能夠修改的鏈狀容器，支援排序演算法等操作。
 使用工廠函式 <code>list</code> 可以建立空的或轉換可迭代物件。</p>
 <pre><code class="language-python"># 中括弧表示 List
@@ -541,7 +516,7 @@ a.sort(key=getitem_func)  # 由指定函式給值，該函式輸入一個項目�
 <code>sorted</code> 函式支援任何可迭代物件，而且支援 <code>reverse</code> 和 <code>key</code> 選項。</p>
 <pre><code class="language-python">new_list = sorted((5, 6, 8, 7))  # [5, 6, 7, 8]
 </code></pre>
-<h4><a class="header" href="#dict" id="dict">Dict</a></h4>
+<h4 id="dict"><a class="header" href="#dict">Dict</a></h4>
 <p>字典 (Dict) 是一種可修改的樹狀容器。
 使用工廠函式 <code>dict</code> 可以建立空的或轉換兩兩一對的可迭代物件。
 任何可雜湊的 (Hashable) 物件都可以作為索引，每個索引都會配一個值，
@@ -589,7 +564,7 @@ for v in a.values():  # 遍歷 Value
 for k, v in a.items():  # 遍歷 Key 和 Value
     ...
 </code></pre>
-<h4><a class="header" href="#set" id="set">Set</a></h4>
+<h4 id="set"><a class="header" href="#set">Set</a></h4>
 <p>集合 (Set) 為可修改的樹狀容器，其實就是 Dict 的 Key 部份，用來比較不可重複或無序的物件。
 使用工廠函式 <code>set</code> 可以建立空的或轉換可迭代物件。</p>
 <pre><code class="language-python"># 大括弧表示 Set
@@ -628,7 +603,7 @@ a == b  # 相等
 <p>另外還有唯讀的版本 Frozen Set（工廠函式 <code>frozenset</code>），支援雜湊功能。</p>
 <pre><code class="language-python">a = frozenset({1, 2, 3})
 </code></pre>
-<h4><a class="header" href="#closure--iterator" id="closure--iterator">Closure &amp; Iterator</a></h4>
+<h4 id="closure--iterator"><a class="header" href="#closure--iterator">Closure &amp; Iterator</a></h4>
 <p>當我們想表示一個容器是從另一個容器轉換過來時，
 會需要複製和處理的過程。
 如果手續不是很複雜，Python 提供了語法糖表示。</p>
@@ -694,7 +669,7 @@ def _iter():
             yield i
 r = _iter()
 </code></pre>
-<h4><a class="header" href="#builtins-iterator" id="builtins-iterator">Builtins Iterator</a></h4>
+<h4 id="builtins-iterator"><a class="header" href="#builtins-iterator">Builtins Iterator</a></h4>
 <p>內建迭代器 <code>range</code> 提供數字的計數，參數規則與分割器一樣。</p>
 <pre><code class="language-python">list(range(3))  # [0, 1, 2]
 list(range(3, 7))  # [3, 4, 5, 6]
@@ -705,10 +680,10 @@ list(range(3, 8, 2))  # [3, 5, 7]
     print(i, x, y)  # 0 12.0 20.05, 1 4.0 60.5
 </code></pre>
 <p>更多迭代器可以從 <code>itertools</code> 模組導入。</p>
-<h2><a class="header" href="#function-arguments" id="function-arguments">Function Arguments</a></h2>
+<h2 id="function-arguments"><a class="header" href="#function-arguments">Function Arguments</a></h2>
 <p>函式 (Function) 是 Python 中非常普遍的存在。
 Python 的函式不支援重載 (Overloading)，所以是使用引數 (Arguments) 的規則管理，迭代器也相同。</p>
-<h3><a class="header" href="#call-and-return" id="call-and-return">Call and Return</a></h3>
+<h3 id="call-and-return"><a class="header" href="#call-and-return">Call and Return</a></h3>
 <p>呼叫 (Call)，類似數學的語法，函式名稱在前，小括弧在後。
 即使沒有引數，仍需要寫上，不然只代表函式本身（注意函式也是物件），而非它的計算值。</p>
 <pre><code class="language-python">func()
@@ -726,7 +701,7 @@ Python 的函式不支援重載 (Overloading)，所以是使用引數 (Arguments
 g(f() + 10)  # 寫在表達式中可以參與運算後捨棄
 f()  # 若都沒運算會直接捨棄
 </code></pre>
-<h3><a class="header" href="#positional--keyword-arguments" id="positional--keyword-arguments">Positional &amp; Keyword Arguments</a></h3>
+<h3 id="positional--keyword-arguments"><a class="header" href="#positional--keyword-arguments">Positional &amp; Keyword Arguments</a></h3>
 <p>依照位置或關鍵字輸入。
 按語法順序如下：</p>
 <pre><code class="language-python">f(a, b, c, ..., d=d, e=e, f=f, ...)
@@ -746,7 +721,7 @@ f()  # 若都沒運算會直接捨棄
 <pre><code class="language-python">def f(a, b, ..., c=1, d=2, ..., /, e, f, ..., g=3, h=4, ...):
     ...
 </code></pre>
-<h3><a class="header" href="#decorator" id="decorator">Decorator</a></h3>
+<h3 id="decorator"><a class="header" href="#decorator">Decorator</a></h3>
 <p>Python 提供一種比較抽象的方式處理函式包裝的需求（如前處理和後處理），稱為裝飾器 (Decorator)。
 其語法為前方一個 <code>@</code> 符號，置於函式或類型上方一行，可以多個，每個一行，由外層包向內層。</p>
 <p>裝飾器就是函式，只是它們只能填入一個函式引數，且回傳函式。</p>
@@ -770,7 +745,7 @@ f0('50')  # 50mm
 class MyData:
     a: int = 10
 </code></pre>
-<h2><a class="header" href="#reference-counter" id="reference-counter">Reference Counter</a></h2>
+<h2 id="reference-counter"><a class="header" href="#reference-counter">Reference Counter</a></h2>
 <p>其實 Python 中並不叫做「變數 (Variables)」，而是「名稱 (Names)」，這麼做是為了區分 C 語言中的概念。</p>
 <p>在較低層級的程式語言中，為了能夠自由調整記憶體的使用時機，於是分為「Stack」和「Heap」。
 其中 Stack 為 Code Block 內的行程，分為一個 Global 與多個 Local，
@@ -835,7 +810,7 @@ def f():
 f()
 print(g)  # 60
 </code></pre>
-<h2><a class="header" href="#modules" id="modules">Modules</a></h2>
+<h2 id="modules"><a class="header" href="#modules">Modules</a></h2>
 <p>本節要介紹模組導入的概念。
 Python 預設有一組搜尋路徑，分別是執行位置、程式庫位置（包含內建和外部的）、執行檔位置、自訂位置。
 比較重要的是第一個，因為在執行期間，可以透過修改 <code>sys.path</code> 這個 List 來增加搜尋位置（但是不建議）。
@@ -888,7 +863,7 @@ def f3(): pass
 <pre><code class="language-python">def __getattr__(name):
     return ...
 </code></pre>
-<h2><a class="header" href="#objective-orientation" id="objective-orientation">Objective Orientation</a></h2>
+<h2 id="objective-orientation"><a class="header" href="#objective-orientation">Objective Orientation</a></h2>
 <p>經過前面章節的介紹，屬性存取運算子 <code>.</code> 是物件導向程式設計非常重要的一部分。
 如果 Function 是為了某個類型而運作，則稱為 Method。
 可以簡單的理解成：</p>
@@ -997,7 +972,7 @@ if __name__ == '__main__':
 <p>其實，魔法屬性 <code>__dir__</code> 是一個 Dict，而它會紀錄所有的屬性名稱。這是一個遞迴概念，因為 Dict 物件也有 <code>__dir__</code>。
 所以可以簡單理解為，Python 的物件導向是由 Dict 容器做出來的。
 因此每次 Dict 類型效能增加，都會使整個性能大幅提昇。</p>
-<h2><a class="header" href="#exceptions" id="exceptions">Exceptions</a></h2>
+<h2 id="exceptions"><a class="header" href="#exceptions">Exceptions</a></h2>
 <p>在 Python 中不會發生真的「崩潰」錯誤，至少在純 Python 的情況下。
 因為 Python 有一套例外機制，任何錯誤都是有來頭的，像之前提到的 <code>IndexError</code> 等。</p>
 <p>如果在一個可能會發生錯誤的地方想要避免例外，可以提前檢查，如檢查 Key 的存在以避免 <code>KeyError</code>。
@@ -1027,7 +1002,7 @@ else:
 finally:
     print(&quot;done!&quot;)
 </code></pre>
-<h3><a class="header" href="#context-manager" id="context-manager">Context Manager</a></h3>
+<h3 id="context-manager"><a class="header" href="#context-manager">Context Manager</a></h3>
 <p>單純的 <code>try</code> ... <code>finally</code> 可以在 <code>return</code> 後執行額外的工作，例如關閉檔案。</p>
 <pre><code class="language-python">f = open(&quot;f.txt&quot;, &quot;w+&quot;)
 try:
@@ -1043,7 +1018,7 @@ finally:
 <pre><code class="language-python">with open(&quot;f.txt&quot;, &quot;w+&quot;) as f:
     return f.read()
 </code></pre>
-<h2><a class="header" href="#doc-string" id="doc-string">Doc String</a></h2>
+<h2 id="doc-string"><a class="header" href="#doc-string">Doc String</a></h2>
 <p>Python 提供使用註解轉換為說明手冊的功能，這些註解稱為 Doc String。
 這些「註解」其實是普通字串，只是沒有指派而已，使用多行字串或是單行皆可以通過。</p>
 <p>由於是註解，不可以使用運算前的樣式，如 <code>+</code> 運算子或 Format Literal。
@@ -1075,7 +1050,7 @@ class A:
 </code></pre>
 <p>取得文字則是從魔法名稱 <code>__doc__</code> 字串物件中取得，函式和類型則是從魔法屬性。
 而內建函式 <code>help</code> 可以在直譯器中顯示 Doc String。</p>
-<h2><a class="header" href="#annotations" id="annotations">Annotations</a></h2>
+<h2 id="annotations"><a class="header" href="#annotations">Annotations</a></h2>
 <p>Python 3.5 開始逐漸重視類型標注的重要性，之前都使用較狹隘的函式註解標示。</p>
 <pre><code class="language-python">def add_unit(*ns: float, unit: str) -&gt; str:
     s = &quot;&quot;
@@ -1113,7 +1088,7 @@ class A:
 <pre><code class="language-python">a: int = 10
 print(__annotations__['a'] is int)
 </code></pre>
-<h1><a class="header" href="#c--c" id="c--c">C / C++</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="c--c"><a class="header" href="#c--c">C / C++</a></h1>
 <p>本篇簡介基礎概念。</p>
 <p>主張：C 可以達成任何機器碼能夠達成的事，而且可以將<strong>時間成本</strong>或<strong>程式體積</strong>降到最低。</p>
 <p>如其主張所示，C 語言幾乎可以達成任何應用（當然難度各有高低）。
@@ -1125,7 +1100,7 @@ print(__annotations__['a'] is int)
 相較於很多程式語言都是獨裁政權，C++ 是民主政府，歷年來的各種功能是投票決定的。</p>
 <p>建議現在的版本使用 C++11 和 C++17，有較為貼近需求面的標準功能，
 而且比較符合高階程式語言的寫作想像；若非必要，舊有的用法應該避免出現。</p>
-<h2><a class="header" href="#compiler" id="compiler">Compiler</a></h2>
+<h2 id="compiler"><a class="header" href="#compiler">Compiler</a></h2>
 <p>其實 C / C++ 都會和另一個程式語言共存，稱為「編譯器指令」。
 它是一種直譯式語言，掌握 C / C++ 的生殺大權。
 最大的特徵就是由 <code>#</code> 開頭，會看換行記號，主要功能是做<strong>文字複製和替換</strong>。
@@ -1144,7 +1119,7 @@ GCC 編譯器通常最努力支援最新的標準；其他還有如 LLVM 品牌�
 而相近的 mac OS 使用的是支援 Objective-C 較好的 Clang，
 不過 Apple 已經捨棄 Objective-C 主打 Swift 語言，Objective-C 已轉為底層的實現。
 至於 Windows 則是主打自家的 Visual C++，不過 GCC 的 MinGW 與其他編譯器的 Windows 版本也在搶攻這塊市場。</p>
-<h2><a class="header" href="#compile" id="compile">Compile</a></h2>
+<h2 id="compile"><a class="header" href="#compile">Compile</a></h2>
 <p>「編譯」過程是 C 語言的一環，由於其主張，這個翻譯流程的最終目的通常是變成<strong>機器碼</strong>。
 中途的媒介為<strong>組合語言 (Assembly)</strong>，是一種僅次於機器碼的程式語言，
 其定位類似 G-code，可以直接對硬體下指令，但是又是人可以理解的程度，較適合除錯。
@@ -1167,7 +1142,7 @@ C / C++ 的語法是不看換行記號的，理論上可以一行寫完全部，
 在後面的章節示範中，[C++ to C](#c-to-c) 會有特殊的語法保留名稱。
 如 C/C++/Fortran/Rust 之間的溝通，就是保持 ABI 一致。
 </code></pre>
-<h3><a class="header" href="#declaration-and-definition" id="declaration-and-definition">Declaration and Definition</a></h3>
+<h3 id="declaration-and-definition"><a class="header" href="#declaration-and-definition">Declaration and Definition</a></h3>
 <p>C / C++ 的語法中，一個名稱（無論如何是什麼）分為「宣告 (Declaration n., Declare verb.)」
 和「定義 (Definition n., Define verb.)」兩部份。
 如果直接定義，則視為<strong>同時</strong>宣告和定義。
@@ -1184,7 +1159,7 @@ C / C++ 的語法是不看換行記號的，理論上可以一行寫完全部，
 <p>若其他 object files 的相同範圍（如 global）宣告相同名稱，則會<strong>共用</strong>該定義。
 這點非常重要，因為這會導致「撞名」的風險，造成上述的編譯失敗。
 對於此缺陷 C 和 C++ 有各自的解決方法。</p>
-<h3><a class="header" href="#header-and-source" id="header-and-source">Header and Source</a></h3>
+<h3 id="header-and-source"><a class="header" href="#header-and-source">Header and Source</a></h3>
 <p>「標頭檔 (Header)」和「來源檔 (Source)」正是分別用來存放<strong>宣告</strong>和<strong>定義</strong>的。
 在 C 語言中，標頭檔的副檔名使用 <code>*.h</code>，來源檔使用 <code>*.c</code>。
 原本 C++ 早期也是使用相同名稱，但是會搞混兩種不同的程式語言，因此改成 <code>*.c++</code>；
@@ -1215,7 +1190,7 @@ C / C++ 的語法是不看換行記號的，理論上可以一行寫完全部，
 若為 <code>NAME VALUE</code> 語法會替換 <code>NAME</code> 成為 <code>VALUE</code>；
 <code>NAME(p) VALUE</code> 語法可以替換包夾的文字 <code>p</code>，<code>VALUE</code> 就可以延伸 <code>p</code> 的文字。
 這種替換必須注意替換後的語法問題。</p>
-<h3><a class="header" href="#learn---compile-a-executable" id="learn---compile-a-executable">Learn - Compile a Executable</a></h3>
+<h3 id="learn---compile-a-executable"><a class="header" href="#learn---compile-a-executable">Learn - Compile a Executable</a></h3>
 <p>建立一個目錄當作 Project，在<strong>只有內建編譯器和文字編輯器</strong>的環境中練習自己編譯可以執行的二進位執行檔。
 通常 Linux 作業系統會內建它的老朋友 GCC / G++，對應 C / C++ 語言。</p>
 <p>首先使用 command line 建立工作區域，如 <code>~/Desktop/learn-c</code>。</p>
@@ -1299,7 +1274,7 @@ int main() {
 <pre><code class="language-batch">gcc main.c hello.c -o learn-c.exe
 .\learn-c
 </code></pre>
-<h3><a class="header" href="#executable-and-library" id="executable-and-library">Executable and Library</a></h3>
+<h3 id="executable-and-library"><a class="header" href="#executable-and-library">Executable and Library</a></h3>
 <p>「執行檔 (Executable)」就是剛才範例中，可以直接跑的檔案。
 「程式庫 (Library)」顧名思義就是將程式碼放在額外的地方。
 <strong>執行檔</strong>和<strong>程式庫</strong>其實是相同的，差別在於是否擁有「進入點 (Entry Point)」。
@@ -1363,7 +1338,7 @@ GCC / MinGW 中就要使用 <code>ar</code> 指令呼叫 archiver 來使用 obje
 GCC 的選項中可以指定 Library path 和 Library Name，如：</p>
 <pre><code class="language-c">gcc main.c -Llib -lmylib -o main
 </code></pre>
-<h4><a class="header" href="#c-to-c" id="c-to-c">C++ to C</a></h4>
+<h4 id="c-to-c"><a class="header" href="#c-to-c">C++ to C</a></h4>
 <p>在 C++ 的語法中，允許編譯器向下相容 C 語言。
 因為 C++ 其實不會產生和 C 一樣的物件名稱，像是重載 (Overload)、名稱空間 (Namespace) 等功能就會把名稱編碼。
 所以使用 <code>extern &quot;C&quot;</code> 修飾符或 <code>extern &quot;C&quot; {...}</code> 範圍來使編譯後名稱保持一致。</p>
@@ -1384,7 +1359,7 @@ extern &quot;C&quot; {
 }
 #endif
 </code></pre>
-<h3><a class="header" href="#learn---compile-a-shared-library" id="learn---compile-a-shared-library">Learn - Compile a Shared Library</a></h3>
+<h3 id="learn---compile-a-shared-library"><a class="header" href="#learn---compile-a-shared-library">Learn - Compile a Shared Library</a></h3>
 <p>再來於 Linux 上練習如何編譯一個跨平台的共享函式庫。</p>
 <pre><code class="language-c">cd ~/Desktop
 mkdir -p learn-c/lib
@@ -1467,7 +1442,7 @@ Windows 只要將 DLL 檔案放在一起或 <code>PATH</code> 環境變數的目
 但是除了累贅內容，加快速度會跟減少體積相斥。
 通常除錯階段會用最快編譯速度（不改動任何內容），發佈和性能測試時才會開啟優化選項。
 </code></pre>
-<h3><a class="header" href="#make" id="make">Make</a></h3>
+<h3 id="make"><a class="header" href="#make">Make</a></h3>
 <p>當檔案一多，往往會造成編譯麻煩。
 在架構簡單的狀況下，可以使用 Makefile，一種類似 Shell Script 的腳本文件，工具名稱就叫做 Make。</p>
 <p>Makefile 沒有副檔名，因為它本身就規定為 <code>Makefile</code>（區分大小寫）。
@@ -1516,7 +1491,7 @@ run: requirements.txt
 </code></pre>
 <p>然而，Makefile 仍然在多種平台、編譯器、相依程式庫的處理不是很好。
 因此就衍生出了基於 Make 的 CMake。</p>
-<h3><a class="header" href="#cmake" id="cmake">CMake</a></h3>
+<h3 id="cmake"><a class="header" href="#cmake">CMake</a></h3>
 <img src="languages/img/cmake.svg" width="200px"/>
 <p>基本上，CMake 直接為編譯流程打造各種變數與指令可以使用，非常方便。
 編譯只剩兩步驟：<strong>產生編譯架構</strong>和<strong>呼叫編譯器編譯</strong>。</p>
@@ -1565,7 +1540,7 @@ target_link_libraries(${PROJECT_NAME} hello)
 <pre><code class="language-cmake">add_subdirectory(hello_lib)
 </code></pre>
 <p>更多功能可以去 <a href="https://cmake.org/cmake/help/latest/index.html">https://cmake.org/cmake/help/latest/index.html</a> 查詢。</p>
-<h2><a class="header" href="#data-type-variable" id="data-type-variable">Data Type Variable</a></h2>
+<h2 id="data-type-variable"><a class="header" href="#data-type-variable">Data Type Variable</a></h2>
 <p>Data Type 是最基本的組成，代表程式會<strong>花多少記憶體</strong>來使用。
 編譯器會自動偵測 32 和 64 位元平台的差異，協助計算需要使用的記憶體大小。</p>
 <p>基本的 Data type 如下：</p>
@@ -1609,7 +1584,7 @@ b = 30;  // 修改值
 因此在整數做除法前必須做 <a href="languages/c-cpp.html#cast">Casting</a>。相反，如果要做整除，就會特意轉成整數。</p>
 <pre><code>至於取餘數 `%` 運算子如果被除數是負數，則會得到負餘數，跟 Python 的正餘數不同。
 </code></pre>
-<h2><a class="header" href="#function" id="function">Function</a></h2>
+<h2 id="function"><a class="header" href="#function">Function</a></h2>
 <p>函式是另外一個基本構成，所謂的「程式」都包含在函式當中。</p>
 <p>函式有三要素，<strong>名稱</strong>、<strong>輸入類型</strong>、<strong>回傳類型</strong>。輸入值可以有多個，但是回傳值只能一個。
 這三者稱為簽章 (Signature)，其中<strong>名稱</strong>和<strong>輸入類型</strong>可以決定一個 C++ 函式是否為重載。
@@ -1644,7 +1619,7 @@ int main(int argc, char **argv) {
 <p>要注意的是，函式會有<strong>傳遞代價</strong>。
 在進入和傳出函式時是使用<strong>複製</strong>行為，所以不適合傳遞太大的物件。
 解決方法在以後的小節會說明。</p>
-<h3><a class="header" href="#overload" id="overload">Overload</a></h3>
+<h3 id="overload"><a class="header" href="#overload">Overload</a></h3>
 <p>在 C++ 中可以存在相同的函式名稱，不同的輸入類型和數量，稱為「重載」。
 每個重載函式可以擁有不同的實作，或引用其他重載名稱。</p>
 <pre><code class="language-c">int add(int, int);
@@ -1672,7 +1647,7 @@ double __add_double_double(double a, double b) {
     return a + b + c;
 }
 </code></pre>
-<h2><a class="header" href="#const" id="const">Const</a></h2>
+<h2 id="const"><a class="header" href="#const">Const</a></h2>
 <p>「常量 (Constant)」修飾符是編譯器提供的檢查機制，
 如果想維持數值不變，就應該使用此修飾符。
 常量變數必須在宣告時定義數值，C++ 則是在建構式執行完畢後就停止修改 Members。</p>
@@ -1692,7 +1667,7 @@ int b = a;  // 可以複製數值給其他變數
     double y() const { return _y; }
 }
 </code></pre>
-<h2><a class="header" href="#auto-type" id="auto-type">Auto Type</a></h2>
+<h2 id="auto-type"><a class="header" href="#auto-type">Auto Type</a></h2>
 <p>C++ 編譯器會自動推導類型，稱為 Auto Type。
 然而很大程度取決於你的常量寫法，而且在沒有編輯器的輔助下很容易誤導。
 而且這種標示會無法分開宣告和定義。</p>
@@ -1714,7 +1689,7 @@ auto add(T a, T b) -&gt; std::enable_if_t&lt;std::is_floating_point&lt;T&gt;::va
     return a + b;
 }
 </code></pre>
-<h2><a class="header" href="#flows" id="flows">Flows</a></h2>
+<h2 id="flows"><a class="header" href="#flows">Flows</a></h2>
 <p>流程控制的語法，只允許出現在函式程式碼範圍中，且不能在 Global Scope。
 這些語句中，只有一行的程式碼可以省略括弧 <code>{}</code>，語意不變，所以必須依賴仔細排版避免誤解。</p>
 <pre><code class="language-c">if (!name)
@@ -1722,7 +1697,7 @@ auto add(T a, T b) -&gt; std::enable_if_t&lt;std::is_floating_point&lt;T&gt;::va
 </code></pre>
 <p>!!!結尾分號
 流程控制和函式的語法中，結尾的括弧 <code>{}</code> 不需要加上分號 <code>;</code>，算是少數例外。</p>
-<h2><a class="header" href="#condition" id="condition">Condition</a></h2>
+<h2 id="condition"><a class="header" href="#condition">Condition</a></h2>
 <p>判斷式，使用 <code>if</code> <code>else</code> 關鍵字。</p>
 <pre><code class="language-c">if (n &gt; 20) {
     n = 20;
@@ -1736,7 +1711,7 @@ else if (n == 0) {
 else
     r = 0;
 </code></pre>
-<h3><a class="header" href="#go-to" id="go-to">Go to</a></h3>
+<h3 id="go-to"><a class="header" href="#go-to">Go to</a></h3>
 <p>設定標籤 (Label) 之後，可以用 <code>goto</code> 語句跳至任何同層或上層的標籤中。
 由於閱讀不易，已經很少使用。</p>
 <pre><code class="language-c">goto label;
@@ -1744,7 +1719,7 @@ skiped_fun();
 label:
 end_fun();
 </code></pre>
-<h3><a class="header" href="#switch-case" id="switch-case">Switch Case</a></h3>
+<h3 id="switch-case"><a class="header" href="#switch-case">Switch Case</a></h3>
 <p>類似 <code>if</code> <code>else</code> 的語句，比較單一變數的不同數值，用於整數。
 過去在實作上使用檢索表，所以比對速度較 <code>if</code> <code>else</code> 還快，
 但是如今的硬體效能已經與檢索表相當，若非容易閱讀，不需要特別使用此語法。</p>
@@ -1767,7 +1742,7 @@ end_fun();
 儘管語法相似，但是 Switch Case 並不是 Scope，
 沒有 Stack 功能，也因此不會規劃記憶體，所以不能在此處宣告變數。
 詳見 <a href="languages/c-cpp.html#scope-stack-and-heap">Stack</a>。</p>
-<h3><a class="header" href="#while-loop" id="while-loop">While Loop</a></h3>
+<h3 id="while-loop"><a class="header" href="#while-loop">While Loop</a></h3>
 <p>透過 Go to 語法的標籤倒置，配合判斷式可以製作中斷條件。
 為語法糖。</p>
 <pre><code class="language-c">while (n &lt; coeff) {
@@ -1775,7 +1750,7 @@ end_fun();
     n += 1;
 }
 </code></pre>
-<h3><a class="header" href="#for-loop" id="for-loop">For Loop</a></h3>
+<h3 id="for-loop"><a class="header" href="#for-loop">For Loop</a></h3>
 <p>對 While Loop 增加初始化值和步階程式，製作計數器。
 為語法糖。</p>
 <pre><code class="language-c">for (int i = 0; i &lt; 10; i += 2) {
@@ -1783,7 +1758,7 @@ end_fun();
     array_b[i] = 0;
 }
 </code></pre>
-<h3><a class="header" href="#range-based-for-loop" id="range-based-for-loop">Range Based For Loop</a></h3>
+<h3 id="range-based-for-loop"><a class="header" href="#range-based-for-loop">Range Based For Loop</a></h3>
 <p>C++11 以上支援，C 語言沒有。
 實作 <code>begin</code> 與 <code>end</code> 兩種 Methods，回傳同類型指標的實體可以進行迭代器模擬。
 有 <code>const</code> 版本的可以支援 <code>const auto&amp;</code> 的取值。
@@ -1793,7 +1768,7 @@ end_fun();
     r.require();
 }
 </code></pre>
-<h2><a class="header" href="#namespace" id="namespace">Namespace</a></h2>
+<h2 id="namespace"><a class="header" href="#namespace">Namespace</a></h2>
 <p>「名稱空間 (Namespace)」是 C++ 用來避免名稱重複的語法，可以為區域中的內容編上前綴名。
 引用時使用 Scope Member 存取運算子 <code>::</code> 取值，同一個名稱空間中的內容互相引用不需要加上前綴。
 習慣上名稱空間的內容不會縮排，而是在結尾括弧增加註解辨識。
@@ -1833,7 +1808,7 @@ void foo();
 <pre><code class="language-c">static int SUM = 0;
 static void foo();
 </code></pre>
-<h2><a class="header" href="#scope-stack-and-heap" id="scope-stack-and-heap">Scope, Stack and Heap</a></h2>
+<h2 id="scope-stack-and-heap"><a class="header" href="#scope-stack-and-heap">Scope, Stack and Heap</a></h2>
 <p>在沒有任何 <code>{}</code> 符號包裝程式碼的情況下，稱為 Global Scope。
 上面的小節提過，宣告的位置會決定該名稱的可見性。
 至於哪些是 Scope，可以從語法大約看出端倪。</p>
@@ -1866,7 +1841,7 @@ int b = 10;
     b = tmp;
 }
 </code></pre>
-<h3><a class="header" href="#array" id="array">Array</a></h3>
+<h3 id="array"><a class="header" href="#array">Array</a></h3>
 <p>陣列 (Array) 是在 Stack 上部屬的多個數值，用索引運算子 <code>[]</code> 檢索。
 長度必須在 Compile Time 已知。</p>
 <pre><code class="language-c">// 宣告
@@ -1879,7 +1854,7 @@ int a[] = {1, 2, 3};
 </code></pre>
 <p>然而其不易閱讀，會受 Stack 的記憶體上限限制，且會有函數傳遞成本，
 因此大多建議使用指標。</p>
-<h3><a class="header" href="#pointer" id="pointer">Pointer</a></h3>
+<h3 id="pointer"><a class="header" href="#pointer">Pointer</a></h3>
 <p>指標 (Pointer) 是 C 語言中最貼近底層的部份。
 簡單來說它是一種 type，內容是二進位的整數值，代表<strong>記憶體位置</strong>。
 透過記憶體位置，可以存取該位置的內容。
@@ -1960,7 +1935,7 @@ a-&gt;c  // 存取成員 c
     *v = 10;
 }
 </code></pre>
-<h3><a class="header" href="#reference" id="reference">Reference</a></h3>
+<h3 id="reference"><a class="header" href="#reference">Reference</a></h3>
 <p>「參照 (Reference)」類似於指標，可是只是底層使用，語法與原始物件相同，主要是拿來解決函式傳遞成本。
 注意 C 沒有此功能。</p>
 <p>參照無法單獨宣告，必須直接引用現有物件，宣告時使用前置運算子 <code>&amp;</code>。
@@ -1973,7 +1948,7 @@ int &amp;b = *v;  // 可以參考某個指標的值，b 的記憶體位置會等
 </code></pre>
 <p>參照也可以作為函式輸入與輸出，但是其生命週期會與原本物件一致，
 所以輸出通常會用在 <a href="languages/c-cpp.html#objective-orientation">Method 回傳 Member</a>。若不相符，編譯器會丟出錯誤。</p>
-<h3><a class="header" href="#reference-counter-1" id="reference-counter-1">Reference Counter</a></h3>
+<h3 id="reference-counter-1"><a class="header" href="#reference-counter-1">Reference Counter</a></h3>
 <p>若接觸過其他高階程式語言，為避免記憶體洩漏，應該會使用參照計數器 (Reference Counter)。
 在 C++11 以上的標準庫有提供，稱為 Shared Pointer。</p>
 <pre><code class="language-c++">#include &lt;memory&gt;
@@ -2004,7 +1979,7 @@ size_t count = b_ptr.count();  // 2
 好消息是 <code>unique_ptr</code> 早在 C++14 就有陣列的支援了。</p>
 <p>這些自動收尾的指標稱為 Smart Pointer，
 由於不會造成性能損耗又可以避免錯誤，多數開發已經建議取代 <code>new</code> <code>delete</code> 的手動指標。</p>
-<h3><a class="header" href="#container" id="container">Container</a></h3>
+<h3 id="container"><a class="header" href="#container">Container</a></h3>
 <p>「容器 (Container)」已經是大多數高階語言的內建功能。
 C++ 身為物件導向語言，已在標準庫中加入；但是 C 仍需要自己實作。
 通常不使用原始指標或參照的原因為：</p>
@@ -2043,7 +2018,7 @@ Key 必須實現 <code>&lt;</code> 小於運算子，Value 不限。</li>
 </ul>
 </li>
 </ul>
-<h2><a class="header" href="#cast" id="cast">Cast</a></h2>
+<h2 id="cast"><a class="header" href="#cast">Cast</a></h2>
 <p>從 A 類型切換到 B 類型時，稱為 Casting。
 在傳統 C 語言中，會在表達式前方增加優先權運算子，裡面放入要轉到的類型。</p>
 <pre><code class="language-c">(int)float_value + 20
@@ -2065,7 +2040,7 @@ Key 必須實現 <code>&lt;</code> 小於運算子，Value 不限。</li>
 static_cast&lt;double&gt;(int_value)  // Static Cast
 dynamic_cast&lt;double *&gt;(int_ptr)  // Dynamic Cast
 </code></pre>
-<h2><a class="header" href="#type-define" id="type-define">Type Define</a></h2>
+<h2 id="type-define"><a class="header" href="#type-define">Type Define</a></h2>
 <p>使用 <code>typedef</code> 語句可以為類型取別名。</p>
 <pre><code class="language-c">typedef int my_int;
 </code></pre>
@@ -2083,7 +2058,7 @@ C / C++ 命名方式沒以統一規則。從其他現代程式語言來看，
 通常會以 <code>PascalCase</code> (<code>CamelCase</code>) 用在 Sturcture 或 Class；
 Data Type、其他變數、名稱空間和函式使用 <code>snake_case</code>；
 常量、巨集會使用 <code>UPPER_CASE</code>。</p>
-<h2><a class="header" href="#sturcture" id="sturcture">Sturcture</a></h2>
+<h2 id="sturcture"><a class="header" href="#sturcture">Sturcture</a></h2>
 <p>為了使用方便，C 中可以定義 Sturcture 來使單次宣告產生需要的連續記憶體長度。
 例如每次需要兩個 double 來紀錄點座標，就會將點座標設計成 Sturcture。
 語法是在區塊中宣告所需變數，會依順序排列，這些變數稱為 Members。</p>
@@ -2130,7 +2105,7 @@ C 中的 `enum`, `union` 等同理。
 因此 Sturcture 在不同 object files 中重複定義不會有問題，但是單一 object file 不可以重複。</p>
 <p>再者，只有宣告的 Sturcture 根本不知道成員，也不能計算大小，因此只能做函式宣告，
 函式實作會用到成員，只能將其定義擺到 Sturcture 的定義之後。</p>
-<h3><a class="header" href="#objective-orientation-1" id="objective-orientation-1">Objective Orientation</a></h3>
+<h3 id="objective-orientation-1"><a class="header" href="#objective-orientation-1">Objective Orientation</a></h3>
 <p>在 C++ 的世界，所有的類型實體 (Instance) 都是「物件」。
 「實體」就像上面的 <code>p</code> 變數與 <code>Point</code> 的關係。
 這邊多出了新的關鍵字 <code>class</code>，儘管會有迷思，但是本質上 C++ 中的 Sturcture 跟 Class 是一樣的。
@@ -2246,7 +2221,7 @@ class D : public A, public B {
 C::SUM = 20;
 C *c = C::new_ptr();
 </code></pre>
-<h2><a class="header" href="#union" id="union">Union</a></h2>
+<h2 id="union"><a class="header" href="#union">Union</a></h2>
 <p>與 Sturcture 幾乎一樣，但是最大的特點是 Members 會共用記憶體位置，由最長的計算空間。
 而指標類型可以共用，達成切換儲存大小的功能。
 這個特性可以作為 Casting 的實現，但是不安全。</p>
@@ -2256,7 +2231,7 @@ C *c = C::new_ptr();
 };
 </code></pre>
 <p>在 C++ 中也可以定義建構式、可見性等功能，但是比較少用。</p>
-<h2><a class="header" href="#enum" id="enum">Enum</a></h2>
+<h2 id="enum"><a class="header" href="#enum">Enum</a></h2>
 <p>「列舉 (Enumeration)」功能意指在於建立多個「選項」數值供開發者使用，類似選擇題。
 然而其實底層是單純的數字。
 編譯器會從零開始為選項編碼，通常使用者只需要為選項考慮，
@@ -2277,7 +2252,7 @@ enum Color {
 enum Color color = RED;
 BLUE_X == BLUE  // true
 </code></pre>
-<h3><a class="header" href="#enum-class" id="enum-class">Enum Class</a></h3>
+<h3 id="enum-class"><a class="header" href="#enum-class">Enum Class</a></h3>
 <p>C++ 使用新的 Enum Class 來取代 Enum（不過仍有保留）。
 最大的差異在於，Enum Class 擁有 Scope 的概念，必須像 Namespace 一樣取值。</p>
 <pre><code class="language-c++">enum class Color {
@@ -2293,7 +2268,7 @@ Color color = Color::RED;
     WOMAN,
 };
 </code></pre>
-<h2><a class="header" href="#lambda-function" id="lambda-function">Lambda Function</a></h2>
+<h2 id="lambda-function"><a class="header" href="#lambda-function">Lambda Function</a></h2>
 <p>在 C++ 中函式也是一種物件。
 它們的類型如下表示：</p>
 <pre><code class="language-c">回傳類型 (*)(輸入類型, 輸入類型, ...)
@@ -2330,7 +2305,7 @@ int b = func();  // 100
 如果沒有引用或使用複製，匿名函式便與普通函式相同；當使用引用時，參照物件僅使用相同指標在該變數上，
 因此如果使用函式指標將匿名函式回傳出去，匿名函式的生命週期就會比被引用的變數長，造成執行時錯誤。
 使用參照引用模式的匿名函式稱為閉包 (Closure)。</p>
-<h2><a class="header" href="#template" id="template">Template</a></h2>
+<h2 id="template"><a class="header" href="#template">Template</a></h2>
 <p>在 C 中只能受限於巨集和編譯器指令達成編譯期間的計算。</p>
 <p>但是 C++ 擁有「模板 (Template)」功能，能夠使編譯時已知的參數預先填入，
 等於是編譯器專用的參數通道。
@@ -2382,24 +2357,24 @@ struct {
     consexpr double get_n() { return N; }
 }
 </code></pre>
-<h1><a class="header" href="#matlab-en" id="matlab-en">Matlab (EN)</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="matlab-en"><a class="header" href="#matlab-en">Matlab (EN)</a></h1>
 <p>Matlab is a scientific computing language, actually not a &quot;programing&quot; language.
 Matlab is implemented by Java language and speed up by the kernel written in C++ / Cuda.</p>
 <p>Although Matlab implements the object-oriented concept, it is rarely used.
 Therefore, most of them are operated by pure functions.</p>
 <p>This section will teach you familiar with Matlab development environment and programming methods.</p>
-<h2><a class="header" href="#environment" id="environment">Environment</a></h2>
-<h3><a class="header" href="#working-directory" id="working-directory">Working Directory</a></h3>
+<h2 id="environment"><a class="header" href="#environment">Environment</a></h2>
+<h3 id="working-directory"><a class="header" href="#working-directory">Working Directory</a></h3>
 <p>The current path is set as working directory by default.
 In the working directory, any function names can be called from separate matlab scripts.
 Whether it is calling from a script file or console.</p>
 <p>Matlab has no import syntax, so if a function is in the working directory,
 it can be called directly.
 The built-in functions and names in Matlab are included in working directory at begining.</p>
-<h3><a class="header" href="#working-space" id="working-space">Working Space</a></h3>
+<h3 id="working-space"><a class="header" href="#working-space">Working Space</a></h3>
 <p>The working space will store and update local variables during execution.
 After run once, the reference expression may use previous values.</p>
-<h2><a class="header" href="#syntax-1" id="syntax-1">Syntax</a></h2>
+<h2 id="syntax-1"><a class="header" href="#syntax-1">Syntax</a></h2>
 <ul>
 <li>Continuous blank is same as one blank.</li>
 <li>Indents (leading blanks) will not affect the commands.</li>
@@ -2423,14 +2398,14 @@ b = [1, 2, 3;  % Comment
 
 clc; close all; clear  % Join three lines (not recommend)
 </code></pre>
-<h3><a class="header" href="#comment" id="comment">Comment</a></h3>
+<h3 id="comment"><a class="header" href="#comment">Comment</a></h3>
 <p>The comment syntax is a leading &quot;<code>%</code>&quot; symbol,
 all after characters will be ignored until a new line is started.</p>
 <pre><code class="language-matlab">% Comment!
 % ignored = 'help!';
 worked_function
 </code></pre>
-<h3><a class="header" href="#assignment" id="assignment">Assignment</a></h3>
+<h3 id="assignment"><a class="header" href="#assignment">Assignment</a></h3>
 <p>A value can be assigned to a name, which is called &quot;variable&quot;.
 There is no any constraint mechanism of &quot;constants&quot; in Matlab,
 so every names are mutable (editable) and shadowable (coverable).</p>
@@ -2444,7 +2419,7 @@ including literal value, name reference, function calling and operator using.</p
 To depress the output, add a &quot;<code>;</code>&quot; symbol after it.</p>
 <pre><code class="language-matlab">a = sin(deg2rad(60));
 </code></pre>
-<h3><a class="header" href="#array-1" id="array-1">Array</a></h3>
+<h3 id="array-1"><a class="header" href="#array-1">Array</a></h3>
 <p>&quot;Array&quot; is the base value type in Matlab.
 Even a single number is an 1x1 array.</p>
 <p>1D and 2D array are supported by built-in literal value.
@@ -2470,7 +2445,7 @@ There is also has transpose operator for the 2D array.</p>
 [1, 1; 2, 2] .* 2  % Element-wise operator is also suitable
 [1, 1; 2, 2]'  % Trailing operator (transpose) [1, 2; 1, 2]
 </code></pre>
-<h3><a class="header" href="#control-sequence" id="control-sequence">Control Sequence</a></h3>
+<h3 id="control-sequence"><a class="header" href="#control-sequence">Control Sequence</a></h3>
 <p>Basic control sequence like &quot;if else&quot;, &quot;for&quot; loop or &quot;while&quot; loop are supported.
 A &quot;<code>end</code>&quot; keyword is used to close the code block of the control sequence.</p>
 <pre><code class="language-matlab">if i &gt; 20
@@ -2494,7 +2469,7 @@ while stop
     stop = ~stop;
 end
 </code></pre>
-<h3><a class="header" href="#function-1" id="function-1">Function</a></h3>
+<h3 id="function-1"><a class="header" href="#function-1">Function</a></h3>
 <p>Function is a set of commands that requires specific input variables and returns specific variables.
 Unlike control sequence, indentation is usually not used in functions.</p>
 <p>Matlab does not have a <code>return</code> syntax with values.
@@ -2527,9 +2502,10 @@ function hello
 fprintf('hello world!\n')
 end
 </code></pre>
-<h1><a class="header" href="#latex-math" id="latex-math">Latex Math</a></h1>
-<h1><a class="header" href="#webpages" id="webpages">Webpages</a></h1>
-<h1><a class="header" href="#html5--css--markdown" id="html5--css--markdown">HTML5 &amp; CSS &amp; Markdown</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="latex-math"><a class="header" href="#latex-math">Latex Math</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="webpages"><a class="header" href="#webpages">Webpages</a></h1>
+<p>網頁所使用的相關技術。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="html5--css--markdown"><a class="header" href="#html5--css--markdown">HTML5 &amp; CSS &amp; Markdown</a></h1>
 <p>介紹一種廣泛使用的結構性語言：SGML (Standard Generalized Markup Language)，也是 HTML 和 XML 語言的基礎。</p>
 <p>由於 SGML 本身十分複雜不易理解，出現了較嚴謹的子集版本 XML (Extensible Markup Language) 方便使用：</p>
 <pre><code class="language-xml">&lt;!-- 註解 --&gt;
@@ -2544,7 +2520,7 @@ SGML 主要攜帶的是 text 屬性，也就是文本。其延伸的結構語言
 <p>網頁所使用的就是 HTML (HyperText Markup Language)，是使用特定 tag 標記特定用途的區域，由網頁瀏覽器渲染產生網頁靜態外觀的。
 至於動態外觀呢？就是由瀏覽器內的腳本程式語言來修改 HTML 的節點，重新局部渲染所達成的，目前是由 JavaScript 獨挑大樑。</p>
 <p>本章先不介紹 JavaScript，而是注重於靜態網頁。</p>
-<h2><a class="header" href="#html-basic-structure" id="html-basic-structure">HTML Basic Structure</a></h2>
+<h2 id="html-basic-structure"><a class="header" href="#html-basic-structure">HTML Basic Structure</a></h2>
 <p>基本的 HTML 架構為：</p>
 <pre><code class="language-html">&lt;!doctype html&gt;
 &lt;html&gt;
@@ -2566,7 +2542,7 @@ SGML 主要攜帶的是 text 屬性，也就是文本。其延伸的結構語言
 而 class 則可以簡單地用名稱從複雜的結構中篩選出來。
 實作上則因解譯器不同而異。</p>
 <p>對於瀏覽器，<code>http://mypage#p1</code> 可以支援直接將顯示區 (view part) 直接捲動到該 id 節點的位置。</p>
-<h2><a class="header" href="#css" id="css">CSS</a></h2>
+<h2 id="css"><a class="header" href="#css">CSS</a></h2>
 <p>單純 HTML 只會直接將各區塊「排列」出來，若要調整大小、排列順序、顏色、字型等外觀，
 就要依賴階層樣式表 (Cascading Style Sheets, CSS) 的設定。</p>
 <p>在 body 裡的每種子節點都有 style 屬性，可以設定單獨的節點（包含 body 本身）。
@@ -2599,13 +2575,14 @@ p.myclass {
 }
 </code></pre>
 <p>要注意的是，HTML 和 CSS 會有相容性問題，和 JavaScript 一樣，較舊的瀏覽器可能無法支援某些排版方式。</p>
-<h2><a class="header" href="#markdown" id="markdown">Markdown</a></h2>
+<h2 id="markdown"><a class="header" href="#markdown">Markdown</a></h2>
 <p>然而 HTML 諸多功能有時候反而會讓純文章寫作有點麻煩，因此有了 Markdown 的產生，並且能夠支援內聯 HTML 語法。
 基本上，就是用簡單的標記代表 HTML 語法，沒有支援的就直接用 HTML 補上。
 詳細的語法可以參考 <a href="https://daringfireball.net/projects/markdown/syntax">https://daringfireball.net/projects/markdown/syntax</a>。</p>
 <p>實際應用上，可以用編譯的方式從 Markdown 轉為 HTML，而使用靜態轉換或 JavaScript 在載入時轉換都可以達成。</p>
-<h1><a class="header" href="#data-format" id="data-format">Data Format</a></h1>
-<h1><a class="header" href="#yaml" id="yaml">YAML</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="data-format"><a class="header" href="#data-format">Data Format</a></h1>
+<p>關於資料格式文法的相關說明。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="yaml"><a class="header" href="#yaml">YAML</a></h1>
 <p>YAML Ain't a Markup Language (YAML) 是一種結構語言。</p>
 <p>特點：可讀性高、以樹狀結構為主體。</p>
 <p>結構性語言的實作通常沒統一規定，為了謹慎，樹狀結構通常是無序的，鏈狀結構通常是有序的。</p>
@@ -2620,7 +2597,7 @@ p.myclass {
 其中 Json 是 JavaScript 的 object 物件，所以可以直接被 JavaScript 讀取，有夾帶惡意程式碼的風險。</p>
 <p>YAML 檔案的副檔名為 <code>*.yaml</code>，某些縮寫會用 <code>*.yml</code>。</p>
 <p>在往後的修訂中，YAML 會嘗試變成 Json 的子集語言，好讓一般的 Json 解析器可以讀取之。</p>
-<h2><a class="header" href="#key-value" id="key-value">Key Value</a></h2>
+<h2 id="key-value"><a class="header" href="#key-value">Key Value</a></h2>
 <p>可以想像成 C++ 的 Map 或 Python 的 dict 容器，YAML 的語法如下：</p>
 <pre><code class="language-yaml"># 註解
 key: value
@@ -2642,7 +2619,7 @@ false
 <pre><code class="language-yaml">version: &quot;3.9&quot;
 title: &quot;My: title&quot;
 </code></pre>
-<h1><a class="header" href="#indentation" id="indentation">Indentation</a></h1>
+<h1 id="indentation"><a class="header" href="#indentation">Indentation</a></h1>
 <p>縮排是樹狀結構的主要語法，代表子節點。
 YAML 的縮排通常為 2 空白，某些實作會對此嚴格限制。</p>
 <pre><code class="language-yaml">A:
@@ -2657,7 +2634,7 @@ B:
   - 1st
   - 2nd
 </code></pre>
-<h1><a class="header" href="#flow-style" id="flow-style">Flow Style</a></h1>
+<h1 id="flow-style"><a class="header" href="#flow-style">Flow Style</a></h1>
 <p>線性的表示法，與 Json 語法接近。</p>
 <pre><code class="language-yaml"># 樹狀結構
 A:
@@ -2672,7 +2649,7 @@ B:
 # 同於
 B: [1st, 2nd]
 </code></pre>
-<h1><a class="header" href="#reference-1" id="reference-1">Reference</a></h1>
+<h1 id="reference-1"><a class="header" href="#reference-1">Reference</a></h1>
 <p>當樹狀結構出現重複內容時可以引用先前的資料。
 使用 <code>&lt;&lt;</code> 插入內容，而之後的 key 可以更新。</p>
 <pre><code class="language-yaml">- &amp;os
@@ -2691,7 +2668,7 @@ test2:
   &lt;&lt;: *test
   skip failed: true
 </code></pre>
-<h1><a class="header" href="#multiline-string" id="multiline-string">Multiline String</a></h1>
+<h1 id="multiline-string"><a class="header" href="#multiline-string">Multiline String</a></h1>
 <p>字串太長時，為方便閱讀，可以手動折行，但是保持原本的單行狀態。</p>
 <pre><code class="language-yaml">doc: aaa bbb
 doc:
@@ -2711,8 +2688,9 @@ doc: |
   aaa
   bbb
 </code></pre>
-<h1><a class="header" href="#multi-language-learning" id="multi-language-learning">Multi-Language Learning</a></h1>
-<h1><a class="header" href="#regular-expression" id="regular-expression">Regular Expression</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="multi-language-learning"><a class="header" href="#multi-language-learning">Multi-Language Learning</a></h1>
+<p>在各種程式語言間可以相互學習的概念。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="regular-expression"><a class="header" href="#regular-expression">Regular Expression</a></h1>
 <p>正規表達式 (RE, Regex, Regular Expression) 是一種擷取規則文字的機制。其原理為：</p>
 <ol>
 <li>建立文法 (Grammar) 表達式。</li>
@@ -2724,27 +2702,27 @@ doc: |
 <p>在閱讀 <a href="multilang/syntax.html">Syntax</a> 之前，可以先透過本節學習如何從有規律的文字中擷取需要的內容。</p>
 <p>本節使用 JavaScript 表示 RE 文法，故會有夾注號 <code>/</code> 如：<code>/re+/</code>。使用其他程式語言時可忽略，按其規則為準。</p>
 <p>推薦的測試網站：<a href="https://regex101.com">https://regex101.com</a></p>
-<h2><a class="header" href="#rules" id="rules">Rules</a></h2>
-<h3><a class="header" href="#base-grammar" id="base-grammar">Base Grammar</a></h3>
+<h2 id="rules"><a class="header" href="#rules">Rules</a></h2>
+<h3 id="base-grammar"><a class="header" href="#base-grammar">Base Grammar</a></h3>
 <p>除了特殊字元，RE 的文法<strong>等價</strong>於要解析的文字：</p>
 <pre><code class="language-js">/abc/  // abc
 </code></pre>
 <p><strong>特殊字元</strong>，作為起始即有特殊作用：<code>.</code>, <code>?</code>, <code>+</code>, <code>*</code>, <code>|</code>, <code>[</code>, <code>(</code>, <code>)</code>, <code>$</code>, <code>^</code>, <code>\</code></p>
 <p><strong>非特殊字元</strong>，可單獨作為表示，但是可配合特殊字元：<code>,</code>(comma), <code>{</code>, <code>}</code>, <code>]</code></p>
-<h3><a class="header" href="#any-single-character" id="any-single-character">Any Single Character</a></h3>
+<h3 id="any-single-character"><a class="header" href="#any-single-character">Any Single Character</a></h3>
 <p>使用 <code>.</code> 表示任意單一字元，包含不可視字元。</p>
-<h3><a class="header" href="#escape-character" id="escape-character">Escape Character</a></h3>
+<h3 id="escape-character"><a class="header" href="#escape-character">Escape Character</a></h3>
 <p>跳脫字元 (Escape Character) 為反斜線 <code>\</code>。</p>
 <p>主要可以表示特殊規則，幫助縮減文法長度。</p>
 <p>另外可以強迫特殊字元（包含自身）變成普通文字。</p>
-<h3><a class="header" href="#invisible-characters" id="invisible-characters">Invisible Characters</a></h3>
+<h3 id="invisible-characters"><a class="header" href="#invisible-characters">Invisible Characters</a></h3>
 <p>不可視字元 (Invisible Characters) 為顯示或列印時沒有顯示符號的字元，如下：</p>
 <table><thead><tr><th align="center">符號</th><th align="center">說明</th></tr></thead><tbody>
 <tr><td align="center"><code> </code></td><td align="center">空白 (Space)</td></tr>
 <tr><td align="center"><code>\t</code></td><td align="center">縮進 (Tab)</td></tr>
 <tr><td align="center">Linux &amp; MacOS: <code>\n</code>, Windows: <code>\r\n</code></td><td align="center">換行 (Newline)</td></tr>
 </tbody></table>
-<h3><a class="header" href="#repetition" id="repetition">Repetition</a></h3>
+<h3 id="repetition"><a class="header" href="#repetition">Repetition</a></h3>
 <p><strong>單一文字</strong>重複規則如下：</p>
 <pre><code class="language-js">/a{n}/  // 表示 a 重複 n 次
 /a{n,}/  // 表示 a 最少重複 n 次，最多無限次
@@ -2758,7 +2736,7 @@ doc: |
 <p>若前一個是群組則會套用到群組的規則。</p>
 <pre><code class="language-js">/(abc)+/  // abc, abcabc, abcabcabc, ...
 </code></pre>
-<h3><a class="header" href="#group" id="group">Group</a></h3>
+<h3 id="group"><a class="header" href="#group">Group</a></h3>
 <p>使用群組 (Group) 功能擷取文字，符號為 <code>(</code> 和 <code>)</code>。</p>
 <p>定義 Group 0 為整段符合的文字，剩下的從 1 開始編號，重複的以此類推。</p>
 <pre><code class="language-js">/(aaa)(bbb)/  // g0: aaabbb, g1: aaa, g2: bbb
@@ -2767,12 +2745,12 @@ doc: |
 <p>若沒有要擷取文字，為了方便定義規則，可以宣告為匿名群組。</p>
 <pre><code class="language-js">/(?:abc)+/
 </code></pre>
-<h3><a class="header" href="#logical-or" id="logical-or">Logical Or</a></h3>
+<h3 id="logical-or"><a class="header" href="#logical-or">Logical Or</a></h3>
 <p>邏輯或 <code>|</code> 運算子能夠將多個類似的規則在同個文法中表現。</p>
 <p>然而正規表達式的邏輯或運算子是最低優先權的，必須使用匿名群組等提升優先權。</p>
 <pre><code class="language-js">/aa(?:bb|cc|dd)e/  // aabbe, aacce, aadde
 </code></pre>
-<h3><a class="header" href="#list-1" id="list-1">List</a></h3>
+<h3 id="list-1"><a class="header" href="#list-1">List</a></h3>
 <p>清單 (List) 表示單一字元的多種選項，是邏輯或的一種縮寫，符號為 <code>[</code> 和 <code>]</code>。</p>
 <pre><code class="language-js">/a[bcd]e/  // abe, ace, ade
 /a(?:a|b|c)e/  // 等價
@@ -2788,13 +2766,13 @@ doc: |
 <p>而清單也支援重複的定義。</p>
 <pre><code class="language-js">/[qrs]{3}/  // qqq, rrr, sss, ...
 </code></pre>
-<h3><a class="header" href="#anchor" id="anchor">Anchor</a></h3>
+<h3 id="anchor"><a class="header" href="#anchor">Anchor</a></h3>
 <p>定位點 (Anchor) 可以幫助在文字中定位，<strong>不代表任何字元</strong>，常用的如下：</p>
 <ul>
 <li><code>^</code>：<strong>整個字串</strong>或<strong>行</strong>的開頭。</li>
 <li><code>$</code>：<strong>整個字串</strong>或<strong>行</strong>的結尾。</li>
 </ul>
-<h3><a class="header" href="#common-tokens" id="common-tokens">Common Tokens</a></h3>
+<h3 id="common-tokens"><a class="header" href="#common-tokens">Common Tokens</a></h3>
 <p>以下列舉常用的規則：</p>
 <table><thead><tr><th align="center">符號</th><th align="center">說明</th><th align="center">等價</th><th align="center">反向</th></tr></thead><tbody>
 <tr><td align="center"><code>\s</code></td><td align="center">不可視字元</td><td align="center"><code>[\r\n\t ]</code></td><td align="center"><code>\S</code></td></tr>
@@ -2802,7 +2780,7 @@ doc: |
 <tr><td align="center"><code>\w</code></td><td align="center">文字</td><td align="center"><code>[0-9a-zA-Z]</code></td><td align="center"><code>\W</code></td></tr>
 <tr><td align="center"><code>\b</code></td><td align="center">文字邊界（定位點）</td><td align="center"><code>(^\w\|\w$\|\W\w\|\w\W)</code></td><td align="center"><code>\B</code></td></tr>
 </tbody></table>
-<h3><a class="header" href="#flags" id="flags">Flags</a></h3>
+<h3 id="flags"><a class="header" href="#flags">Flags</a></h3>
 <p>正規表達式的選項稱為 Flag，可能因為不同程式語言的規則而異。常用的如下：</p>
 <table><thead><tr><th align="center">Flag</th><th align="center">說明</th><th align="center">備註</th></tr></thead><tbody>
 <tr><td align="center"><strong>g</strong>lobal</td><td align="center">不只作用一次</td><td align="center">Python 不支援</td></tr>
@@ -2816,9 +2794,9 @@ doc: |
 <p>在 JavaScript 中，Flag 可以寫在括弧後啟用。</p>
 <pre><code class="language-js">/abc/gm
 </code></pre>
-<h2><a class="header" href="#token-example" id="token-example">Token Example</a></h2>
+<h2 id="token-example"><a class="header" href="#token-example">Token Example</a></h2>
 <p>試著思考題目，並參考正規表達式的撰寫思路。</p>
-<h3><a class="header" href="#csv" id="csv">CSV</a></h3>
+<h3 id="csv"><a class="header" href="#csv">CSV</a></h3>
 <p>逗號分隔值 (CSV, Comma-Separated Values) 通常為逗號、縮進、空白等符號分開數值。</p>
 <pre><code>0.01 0.06 -9.997
 1.69 +40.44 4.6321
@@ -2851,7 +2829,7 @@ doc: |
 <tr><td align="center">1</td><td align="center">0.01</td><td align="center">0.06</td><td align="center">-9.997</td></tr>
 <tr><td align="center">2</td><td align="center">1.69</td><td align="center">+40.44</td><td align="center">4.6321</td></tr>
 </tbody></table>
-<h3><a class="header" href="#g-code" id="g-code">G Code</a></h3>
+<h3 id="g-code"><a class="header" href="#g-code">G Code</a></h3>
 <p>假設這是某台工具機的指令碼，你必須設計它的速度規劃。
 在忽略換行記號的情況下，試著抓取以下每行 G code 中的 <strong>G 碼</strong>、<strong>座標</strong>和<strong>進給速度</strong>。
 不相關的內容可以忽略。</p>
@@ -2908,10 +2886,10 @@ N65 M45
 <tr><td align="center">13</td><td align="center">00</td><td align="center"></td><td align="center"></td><td align="center">.1</td><td align="center"></td></tr>
 <tr><td align="center">14</td><td align="center">28</td><td align="center">0</td><td align="center">0</td><td align="center"></td><td align="center"></td></tr>
 </tbody></table>
-<h1><a class="header" href="#syntax-2" id="syntax-2">Syntax</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="syntax-2"><a class="header" href="#syntax-2">Syntax</a></h1>
 <p>本篇將講述常見程式語言的解構方式，以常見的程式語言作為範例。建議先閱讀 <a href="multilang/re.html">Regular Expression</a>。</p>
 <p>閱讀此篇有助於在不同語言之間切換，並有助於理解新的語言；無論為結構語言還是程式語言。</p>
-<h2><a class="header" href="#lark-parser" id="lark-parser">Lark Parser</a></h2>
+<h2 id="lark-parser"><a class="header" href="#lark-parser">Lark Parser</a></h2>
 <p>Python 套件 <a href="https://github.com/lark-parser/lark">lark-parser/lark</a> 可以自訂程式語言的規則並解析它們。</p>
 <p>Lark 基於 EBNF，並使用 Earley Parser，本篇將解說電腦如何閱讀「語言」。</p>
 <p>基本元素：</p>
@@ -2960,11 +2938,11 @@ int: digit+
 assignment: plus_statement &quot;=&quot; int
 </code></pre>
 <p>對於 <code>2 + 3 = 5</code> 會先解析 <code>2 + 3</code>，而非 <code>3 = 5</code>。</p>
-<h2><a class="header" href="#commonly-used-syntax" id="commonly-used-syntax">Commonly Used Syntax</a></h2>
+<h2 id="commonly-used-syntax"><a class="header" href="#commonly-used-syntax">Commonly Used Syntax</a></h2>
 <p>可簡單歸類程式語言中的語法構成。</p>
 <p>其中 <code>op1</code>, <code>op2</code>, ... 為使用的符號，可為任何字元或字串。</p>
 <p>以下將舉例各式程式語言的部分文法：</p>
-<h3><a class="header" href="#comment-1" id="comment-1">Comment</a></h3>
+<h3 id="comment-1"><a class="header" href="#comment-1">Comment</a></h3>
 <pre><code class="language-js">comment: op1 /[^\n]*/
 multiline_comment: op1 /[\s\S]*/ op2
 </code></pre>
@@ -2998,7 +2976,7 @@ multiline_comment: op1 /[\s\S]*/ op2
 </code></pre>
 </li>
 </ul>
-<h3><a class="header" href="#line-break" id="line-break">Line Break</a></h3>
+<h3 id="line-break"><a class="header" href="#line-break">Line Break</a></h3>
 <p>某些語言是會忽略換行記號的，因此可以併成一行也不會影響解析，有助於在只有一行的情況下輸入，如 Bash 中。</p>
 <pre><code class="language-js">%ignore /\r?\n/+
 </code></pre>
@@ -3056,7 +3034,7 @@ ccc:
 </code></pre>
 </li>
 </ul>
-<h3><a class="header" href="#indentation-1" id="indentation-1">Indentation</a></h3>
+<h3 id="indentation-1"><a class="header" href="#indentation-1">Indentation</a></h3>
 <p>縮排通常做為排版使用，不過仍有語言作為程式碼區塊的判定，如 Python。</p>
 <pre><code class="language-js">indentation: &quot; &quot; ~ 4 | /\t/
 block: indentation+ code_block
@@ -3088,7 +3066,7 @@ end
 </code></pre>
 </li>
 </ul>
-<h3><a class="header" href="#binary-operator" id="binary-operator">Binary Operator</a></h3>
+<h3 id="binary-operator"><a class="header" href="#binary-operator">Binary Operator</a></h3>
 <pre><code class="language-js">binary: statement op1 statement
 </code></pre>
 <p>為兩項運算，如一般的數學式。前後的 <code>statement</code> 可以不相同。
@@ -3137,7 +3115,7 @@ a?.b  // Repersents &quot;null&quot; if &quot;a&quot; is &quot;null&quot;, other
 </code></pre>
 </li>
 </ul>
-<h3><a class="header" href="#unary-operator" id="unary-operator">Unary Operator</a></h3>
+<h3 id="unary-operator"><a class="header" href="#unary-operator">Unary Operator</a></h3>
 <pre><code class="language-js">leading_unary: op1 statement
 trailing_unary: statement op1
 </code></pre>
@@ -3171,7 +3149,7 @@ yield a  # Generator get input value (in expression)
 </code></pre>
 </li>
 </ul>
-<h3><a class="header" href="#ternary-operator" id="ternary-operator">Ternary Operator</a></h3>
+<h3 id="ternary-operator"><a class="header" href="#ternary-operator">Ternary Operator</a></h3>
 <pre><code class="language-js">ternary: statement op1 statement op2 statement
 </code></pre>
 <p>較長的句型，由兩個運算子組成。</p>
@@ -3189,7 +3167,7 @@ a for b in c if d  # Same as above, skip if &quot;d&quot; is &quot;False&quot;
 </code></pre>
 </li>
 </ul>
-<h3><a class="header" href="#other-statements" id="other-statements">Other Statements</a></h3>
+<h3 id="other-statements"><a class="header" href="#other-statements">Other Statements</a></h3>
 <p>至於其他就比較多元了。因此，基礎概念必須先熟悉，如型別標示就會很大程度的影響文法，
 但是只要知道該概念會需要哪些參數、選項，自然便會容易理解。</p>
 <p>如單純的 while loop 在哪種語言都沒什麼變化：</p>
@@ -3333,7 +3311,7 @@ fn func_name&lt;template_option&gt;(arg1: arg1_type, arg2: arg2_type, ...) -&gt;
 </code></pre>
 </li>
 </ul>
-<h1><a class="header" href="#expression-and-statement" id="expression-and-statement">Expression and Statement</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="expression-and-statement"><a class="header" href="#expression-and-statement">Expression and Statement</a></h1>
 <p>表達式 (Expression) 和陳述式 (Statement) 的差別在於，
 前者為一種值 (value)，後者不代表任何運行結果，範例如下：</p>
 <pre><code class="language-c">a = sin(pi);
@@ -3394,7 +3372,7 @@ const f = async () =&gt; {};
 // 無指派，執行後回收函式本體
 (function () {})();
 </code></pre>
-<h1><a class="header" href="#it-introduces" id="it-introduces">IT Introduces</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="it-introduces"><a class="header" href="#it-introduces">IT Introduces</a></h1>
 <p>請查詢關鍵字並瞭解以下分類的技術或概念，並思考問題。</p>
 <ul>
 <li>
@@ -3404,8 +3382,8 @@ const f = async () =&gt; {};
 <p>'=' 符號為相同概念。</p>
 </li>
 </ul>
-<h2><a class="header" href="#programing-languages" id="programing-languages">Programing Languages</a></h2>
-<h3><a class="header" href="#compile-1" id="compile-1">Compile</a></h3>
+<h2 id="programing-languages"><a class="header" href="#programing-languages">Programing Languages</a></h2>
+<h3 id="compile-1"><a class="header" href="#compile-1">Compile</a></h3>
 <ul>
 <li>Compile 編譯
 <ul>
@@ -3431,7 +3409,7 @@ const f = async () =&gt; {};
 <ul>
 <li>Bootstrapping / Self-hosting</li>
 </ul>
-<h4><a class="header" href="#question" id="question">Question</a></h4>
+<h4 id="question"><a class="header" href="#question">Question</a></h4>
 <ol>
 <li><details><summary>一種語言的編譯方式只有一種嗎？</summary>否。</details>
 </li>
@@ -3444,12 +3422,12 @@ const f = async () =&gt; {};
 <li><details><summary>C++ 是否有 Bootstrapping 的實作？</summary>GCC Compiler</details>
 </li>
 </ol>
-<h3><a class="header" href="#type-anotation" id="type-anotation">Type Anotation</a></h3>
+<h3 id="type-anotation"><a class="header" href="#type-anotation">Type Anotation</a></h3>
 <ul>
 <li>Strong Typing 強型別</li>
 <li>Weak Typing 弱型別</li>
 </ul>
-<h4><a class="header" href="#question-1" id="question-1">Question</a></h4>
+<h4 id="question-1"><a class="header" href="#question-1">Question</a></h4>
 <ol>
 <li><details><summary>Python 的類型標示為？</summary>Weak Typing</details>
 </li>
@@ -3458,7 +3436,7 @@ const f = async () =&gt; {};
 <li><details><summary>一種程式語言的類型標示是否會導致編譯方式不同？</summary>否。會因為實作困難度影響，但是仍可克服。</details>
 </li>
 </ol>
-<h3><a class="header" href="#language-concepts" id="language-concepts">Language Concepts</a></h3>
+<h3 id="language-concepts"><a class="header" href="#language-concepts">Language Concepts</a></h3>
 <ul>
 <li>Variables 變數 / Literatures / Functions 函數</li>
 <li>Structures 結構體</li>
@@ -3506,7 +3484,7 @@ const f = async () =&gt; {};
 <li>Writing Style Guide 寫作風格指南</li>
 <li>&quot;Pythonic&quot;</li>
 </ul>
-<h4><a class="header" href="#question-2" id="question-2">Question</a></h4>
+<h4 id="question-2"><a class="header" href="#question-2">Question</a></h4>
 <ol>
 <li><details><summary>「宣告 (Declaration)」主要是為了上述哪種概念？</summary>Life Cycle</details>
 </li>
@@ -3525,7 +3503,7 @@ const f = async () =&gt; {};
 <li><details><summary>使用 Unicode 而非其他語系的目的為？</summary>可以使用所有語系的文字。</details>
 </li>
 </ol>
-<h3><a class="header" href="#objective-orientation-2" id="objective-orientation-2">Objective Orientation</a></h3>
+<h3 id="objective-orientation-2"><a class="header" href="#objective-orientation-2">Objective Orientation</a></h3>
 <ul>
 <li>Members 成員 / Methods 方法</li>
 <li>Property 屬性 = Getter &amp; Setter</li>
@@ -3533,7 +3511,7 @@ const f = async () =&gt; {};
 <li>Interface 介面 = Abstract Class 抽象類別</li>
 <li>Generic Type 泛型</li>
 </ul>
-<h4><a class="header" href="#question-3" id="question-3">Question</a></h4>
+<h4 id="question-3"><a class="header" href="#question-3">Question</a></h4>
 <ol>
 <li><details><summary>定義 Members 的可見性是否對編譯器最佳化有幫助？</summary>否，屬於編譯檢查機制。</details>
 </li>
@@ -3542,7 +3520,7 @@ const f = async () =&gt; {};
 <li><details><summary>Generic Type 的概念是否只有在 Strong Typing？</summary>否，Weak Typing 會在 Compile Time 推導類別；或 Run Time 檢查類別。</details>
 </li>
 </ol>
-<h2><a class="header" href="#data-structure" id="data-structure">Data Structure</a></h2>
+<h2 id="data-structure"><a class="header" href="#data-structure">Data Structure</a></h2>
 <ul>
 <li>Chain 鍊
 <ul>
@@ -3560,7 +3538,7 @@ const f = async () =&gt; {};
 </li>
 <li>Hashable Value 可雜湊值</li>
 </ul>
-<h4><a class="header" href="#question-4" id="question-4">Question</a></h4>
+<h4 id="question-4"><a class="header" href="#question-4">Question</a></h4>
 <ol>
 <li><details><summary>Python 有哪些類型的容器？</summary>Linked List (List), Record (Tuple), Red–black Tree (Set), Mapping (Dictionary)</details>
 </li>
@@ -3569,7 +3547,7 @@ const f = async () =&gt; {};
 <li><details><summary>樹狀結構如何記錄重複的值？</summary>可以使用 Map 存放計數器。</details>
 </li>
 </ol>
-<h2><a class="header" href="#structural-languages" id="structural-languages">Structural Languages</a></h2>
+<h2 id="structural-languages"><a class="header" href="#structural-languages">Structural Languages</a></h2>
 <ul>
 <li>CSV</li>
 <li>XML / HTML</li>
@@ -3579,13 +3557,13 @@ const f = async () =&gt; {};
 <li>Latex / Bibtex</li>
 <li>STL</li>
 </ul>
-<h4><a class="header" href="#question-5" id="question-5">Question</a></h4>
+<h4 id="question-5"><a class="header" href="#question-5">Question</a></h4>
 <ol>
 <li><details><summary>瀏覽器 (Browser) 本身是複合式的軟體，舉例其可以直譯的結構語言和程式語言？</summary>HTML, CSS, Java Script</details>
 </li>
 </ol>
-<h1><a class="header" href="#platforms" id="platforms">Platforms</a></h1>
-<h3><a class="header" href="#file-system" id="file-system">File System</a></h3>
+<h1 id="platforms"><a class="header" href="#platforms">Platforms</a></h1>
+<h3 id="file-system"><a class="header" href="#file-system">File System</a></h3>
 <ul>
 <li>Root = Super User = Administrator</li>
 <li>File Mode 檔案權限</li>
@@ -3596,7 +3574,7 @@ const f = async () =&gt; {};
 <li>File Suffix 副檔名</li>
 <li>Link File 捷徑 / Soft Link 軟連結 / Hard Link 硬連結</li>
 </ul>
-<h4><a class="header" href="#question-6" id="question-6">Question</a></h4>
+<h4 id="question-6"><a class="header" href="#question-6">Question</a></h4>
 <ol>
 <li><details><summary>Linux 可執行檔的附檔名通常為何？</summary>沒有副檔名。</details>
 </li>
@@ -3612,59 +3590,31 @@ const f = async () =&gt; {};
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
-
-                        
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
-
-                
             </nav>
 
         </div>
 
-        
-
-        
-
-        
-
-        
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
-
-        
-
-        
         <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
         <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
-        
-        
         <script type="text/javascript">
         window.addEventListener('load', function() {
             window.setTimeout(window.print, 100);
         });
         </script>
-        
-        
-
     </body>
 </html>

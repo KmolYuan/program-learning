@@ -4,47 +4,29 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Syntax - Program Learning</title>
-        
-        
-
-
         <!-- Custom HTML head -->
         
-
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="程式入門">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        
         <link rel="icon" href="../favicon.svg">
-        
-        
         <link rel="shortcut icon" href="../favicon.png">
-        
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
-        
         <link rel="stylesheet" href="../css/print.css" media="print">
-        
-
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        
         <link rel="stylesheet" href="../fonts/fonts.css">
-        
-
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -120,29 +102,23 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">Program Learning</h1>
 
                     <div class="right-buttons">
-                        
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
-                        
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -150,8 +126,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -163,10 +137,10 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#syntax" id="syntax">Syntax</a></h1>
+                        <h1 id="syntax"><a class="header" href="#syntax">Syntax</a></h1>
 <p>本篇將講述常見程式語言的解構方式，以常見的程式語言作為範例。建議先閱讀 <a href="re.html">Regular Expression</a>。</p>
 <p>閱讀此篇有助於在不同語言之間切換，並有助於理解新的語言；無論為結構語言還是程式語言。</p>
-<h2><a class="header" href="#lark-parser" id="lark-parser">Lark Parser</a></h2>
+<h2 id="lark-parser"><a class="header" href="#lark-parser">Lark Parser</a></h2>
 <p>Python 套件 <a href="https://github.com/lark-parser/lark">lark-parser/lark</a> 可以自訂程式語言的規則並解析它們。</p>
 <p>Lark 基於 EBNF，並使用 Earley Parser，本篇將解說電腦如何閱讀「語言」。</p>
 <p>基本元素：</p>
@@ -215,11 +189,11 @@ int: digit+
 assignment: plus_statement &quot;=&quot; int
 </code></pre>
 <p>對於 <code>2 + 3 = 5</code> 會先解析 <code>2 + 3</code>，而非 <code>3 = 5</code>。</p>
-<h2><a class="header" href="#commonly-used-syntax" id="commonly-used-syntax">Commonly Used Syntax</a></h2>
+<h2 id="commonly-used-syntax"><a class="header" href="#commonly-used-syntax">Commonly Used Syntax</a></h2>
 <p>可簡單歸類程式語言中的語法構成。</p>
 <p>其中 <code>op1</code>, <code>op2</code>, ... 為使用的符號，可為任何字元或字串。</p>
 <p>以下將舉例各式程式語言的部分文法：</p>
-<h3><a class="header" href="#comment" id="comment">Comment</a></h3>
+<h3 id="comment"><a class="header" href="#comment">Comment</a></h3>
 <pre><code class="language-js">comment: op1 /[^\n]*/
 multiline_comment: op1 /[\s\S]*/ op2
 </code></pre>
@@ -253,7 +227,7 @@ multiline_comment: op1 /[\s\S]*/ op2
 </code></pre>
 </li>
 </ul>
-<h3><a class="header" href="#line-break" id="line-break">Line Break</a></h3>
+<h3 id="line-break"><a class="header" href="#line-break">Line Break</a></h3>
 <p>某些語言是會忽略換行記號的，因此可以併成一行也不會影響解析，有助於在只有一行的情況下輸入，如 Bash 中。</p>
 <pre><code class="language-js">%ignore /\r?\n/+
 </code></pre>
@@ -311,7 +285,7 @@ ccc:
 </code></pre>
 </li>
 </ul>
-<h3><a class="header" href="#indentation" id="indentation">Indentation</a></h3>
+<h3 id="indentation"><a class="header" href="#indentation">Indentation</a></h3>
 <p>縮排通常做為排版使用，不過仍有語言作為程式碼區塊的判定，如 Python。</p>
 <pre><code class="language-js">indentation: &quot; &quot; ~ 4 | /\t/
 block: indentation+ code_block
@@ -343,7 +317,7 @@ end
 </code></pre>
 </li>
 </ul>
-<h3><a class="header" href="#binary-operator" id="binary-operator">Binary Operator</a></h3>
+<h3 id="binary-operator"><a class="header" href="#binary-operator">Binary Operator</a></h3>
 <pre><code class="language-js">binary: statement op1 statement
 </code></pre>
 <p>為兩項運算，如一般的數學式。前後的 <code>statement</code> 可以不相同。
@@ -392,7 +366,7 @@ a?.b  // Repersents &quot;null&quot; if &quot;a&quot; is &quot;null&quot;, other
 </code></pre>
 </li>
 </ul>
-<h3><a class="header" href="#unary-operator" id="unary-operator">Unary Operator</a></h3>
+<h3 id="unary-operator"><a class="header" href="#unary-operator">Unary Operator</a></h3>
 <pre><code class="language-js">leading_unary: op1 statement
 trailing_unary: statement op1
 </code></pre>
@@ -426,7 +400,7 @@ yield a  # Generator get input value (in expression)
 </code></pre>
 </li>
 </ul>
-<h3><a class="header" href="#ternary-operator" id="ternary-operator">Ternary Operator</a></h3>
+<h3 id="ternary-operator"><a class="header" href="#ternary-operator">Ternary Operator</a></h3>
 <pre><code class="language-js">ternary: statement op1 statement op2 statement
 </code></pre>
 <p>較長的句型，由兩個運算子組成。</p>
@@ -444,7 +418,7 @@ a for b in c if d  # Same as above, skip if &quot;d&quot; is &quot;False&quot;
 </code></pre>
 </li>
 </ul>
-<h3><a class="header" href="#other-statements" id="other-statements">Other Statements</a></h3>
+<h3 id="other-statements"><a class="header" href="#other-statements">Other Statements</a></h3>
 <p>至於其他就比較多元了。因此，基礎概念必須先熟悉，如型別標示就會很大程度的影響文法，
 但是只要知道該概念會需要哪些參數、選項，自然便會容易理解。</p>
 <p>如單純的 while loop 在哪種語言都沒什麼變化：</p>
@@ -593,67 +567,38 @@ fn func_name&lt;template_option&gt;(arg1: arg1_type, arg2: arg2_type, ...) -&gt;
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="../multilang/re.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
-
-                        
                             <a rel="next" href="../multilang/expr.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="../multilang/re.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
-
-                
                     <a rel="next" href="../multilang/expr.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
-
-        
-
-        
-
-        
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
-
-        
-
-        
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
-        
-
     </body>
 </html>

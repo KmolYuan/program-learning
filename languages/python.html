@@ -4,47 +4,29 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Python - Program Learning</title>
-        
-        
-
-
         <!-- Custom HTML head -->
         
-
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="程式入門">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        
         <link rel="icon" href="../favicon.svg">
-        
-        
         <link rel="shortcut icon" href="../favicon.png">
-        
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
-        
         <link rel="stylesheet" href="../css/print.css" media="print">
-        
-
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        
         <link rel="stylesheet" href="../fonts/fonts.css">
-        
-
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -120,29 +102,23 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">Program Learning</h1>
 
                     <div class="right-buttons">
-                        
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
-                        
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -150,8 +126,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -163,7 +137,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#python" id="python">Python</a></h1>
+                        <h1 id="python"><a class="header" href="#python">Python</a></h1>
 <p>本篇簡介基礎概念。</p>
 <p>主張：Python 為一種基於<strong>易於撰寫與閱讀</strong>且擁有<strong>強大功能性</strong>的程式語言。</p>
 <p>常用的應用為：</p>
@@ -192,7 +166,7 @@
 根據測試，它在相同邏輯下會比優化的 C 語言慢 20~200 倍。</li>
 <li>相對龐大：同於高階程式語言的問題，Python 包裝成產品是 Byte Code 加上虛擬層，仍沒有機器碼小。</li>
 </ul>
-<h2><a class="header" href="#syntax" id="syntax">Syntax</a></h2>
+<h2 id="syntax"><a class="header" href="#syntax">Syntax</a></h2>
 <p>Python 是看<a href="../multilang/syntax.html#line-break">換行記號</a>的，換而言之，你可以將每一行程式碼視為一條指令，
 而不需要擔心它還有其他部分突然出現在檔案的其他地方，影響閱讀。</p>
 <pre><code class="language-python"># 不會視為 1 + 1 - 2 * 9，而是兩次運算
@@ -237,9 +211,9 @@ def main():
 if __name__ == '__main__':
     main()
 </code></pre>
-<h2><a class="header" href="#builtins" id="builtins">Builtins</a></h2>
+<h2 id="builtins"><a class="header" href="#builtins">Builtins</a></h2>
 <p>本節介紹程式碼常用的內建功能。</p>
-<h3><a class="header" href="#data-types" id="data-types">Data Types</a></h3>
+<h3 id="data-types"><a class="header" href="#data-types">Data Types</a></h3>
 <p>Python 有一般程式語言常見的數據種類：</p>
 <table><thead><tr><th align="center">名稱</th><th align="center">語法</th><th align="left">說明</th></tr></thead><tbody>
 <tr><td align="center">bool</td><td align="center"><code>True</code>, <code>False</code></td><td align="left">Boolean 布林值，代表 0 和 1。</td></tr>
@@ -260,7 +234,7 @@ line2
 &quot;&quot;&quot;
 </code></pre>
 <p>在 Python 的物件導向概念中，數據類型也是物件，所以可以繼承作為更多用途。</p>
-<h3><a class="header" href="#indexing" id="indexing">Indexing</a></h3>
+<h3 id="indexing"><a class="header" href="#indexing">Indexing</a></h3>
 <p>使用檢索運算子 (index operator) <code>[]</code> 按順序取值。
 索引跟大部分的程式語言一樣都是從 0 開始，並且之支援反向檢索，-1 代表最後一項。
 如果檢索失敗會引發 <code>IndexError</code>。</p>
@@ -281,11 +255,11 @@ fedcba = 'abcdef'[::-1]  # 'fedcba'
 <p>像是知名模組 NumPy 使用 Tuple 容器一樣：</p>
 <pre><code class="language-python">matrix[:, -1] == matrix[(slice(None), -1)]
 </code></pre>
-<h3><a class="header" href="#containers" id="containers">Containers</a></h3>
+<h3 id="containers"><a class="header" href="#containers">Containers</a></h3>
 <p>除了特殊需求，Python 內建了各種完善且快速的容器。</p>
 <p>Python 的記憶體都不是連續規劃的，所以可以儲存不同類型的內容，但是仍建議儲存有規則的內容。</p>
 <p>而容器的大小稱為長度 (Length)，可以由 <code>len()</code> 函式獲得。</p>
-<h4><a class="header" href="#tuple" id="tuple">Tuple</a></h4>
+<h4 id="tuple"><a class="header" href="#tuple">Tuple</a></h4>
 <p>元組 (Tuple) 是一種唯讀的鏈狀容器。
 使用工廠函式 <code>tuple</code> 可以建立空的或轉換可迭代物件。</p>
 <pre><code class="language-python"># 小括弧表示 Tuple，某些情形下可以省略但不建議
@@ -315,7 +289,7 @@ abc = a[0] + a[-1]  # 'abc'
 <p>比較演算法可以直接用運算子達成，可是必須兩方皆為 Tuple。</p>
 <pre><code class="language-python">(1, 2, 3) == (4, 5, 6)
 </code></pre>
-<h4><a class="header" href="#list" id="list">List</a></h4>
+<h4 id="list"><a class="header" href="#list">List</a></h4>
 <p>清單 (List) 是能夠修改的鏈狀容器，支援排序演算法等操作。
 使用工廠函式 <code>list</code> 可以建立空的或轉換可迭代物件。</p>
 <pre><code class="language-python"># 中括弧表示 List
@@ -358,7 +332,7 @@ a.sort(key=getitem_func)  # 由指定函式給值，該函式輸入一個項目�
 <code>sorted</code> 函式支援任何可迭代物件，而且支援 <code>reverse</code> 和 <code>key</code> 選項。</p>
 <pre><code class="language-python">new_list = sorted((5, 6, 8, 7))  # [5, 6, 7, 8]
 </code></pre>
-<h4><a class="header" href="#dict" id="dict">Dict</a></h4>
+<h4 id="dict"><a class="header" href="#dict">Dict</a></h4>
 <p>字典 (Dict) 是一種可修改的樹狀容器。
 使用工廠函式 <code>dict</code> 可以建立空的或轉換兩兩一對的可迭代物件。
 任何可雜湊的 (Hashable) 物件都可以作為索引，每個索引都會配一個值，
@@ -406,7 +380,7 @@ for v in a.values():  # 遍歷 Value
 for k, v in a.items():  # 遍歷 Key 和 Value
     ...
 </code></pre>
-<h4><a class="header" href="#set" id="set">Set</a></h4>
+<h4 id="set"><a class="header" href="#set">Set</a></h4>
 <p>集合 (Set) 為可修改的樹狀容器，其實就是 Dict 的 Key 部份，用來比較不可重複或無序的物件。
 使用工廠函式 <code>set</code> 可以建立空的或轉換可迭代物件。</p>
 <pre><code class="language-python"># 大括弧表示 Set
@@ -445,7 +419,7 @@ a == b  # 相等
 <p>另外還有唯讀的版本 Frozen Set（工廠函式 <code>frozenset</code>），支援雜湊功能。</p>
 <pre><code class="language-python">a = frozenset({1, 2, 3})
 </code></pre>
-<h4><a class="header" href="#closure--iterator" id="closure--iterator">Closure &amp; Iterator</a></h4>
+<h4 id="closure--iterator"><a class="header" href="#closure--iterator">Closure &amp; Iterator</a></h4>
 <p>當我們想表示一個容器是從另一個容器轉換過來時，
 會需要複製和處理的過程。
 如果手續不是很複雜，Python 提供了語法糖表示。</p>
@@ -511,7 +485,7 @@ def _iter():
             yield i
 r = _iter()
 </code></pre>
-<h4><a class="header" href="#builtins-iterator" id="builtins-iterator">Builtins Iterator</a></h4>
+<h4 id="builtins-iterator"><a class="header" href="#builtins-iterator">Builtins Iterator</a></h4>
 <p>內建迭代器 <code>range</code> 提供數字的計數，參數規則與分割器一樣。</p>
 <pre><code class="language-python">list(range(3))  # [0, 1, 2]
 list(range(3, 7))  # [3, 4, 5, 6]
@@ -522,10 +496,10 @@ list(range(3, 8, 2))  # [3, 5, 7]
     print(i, x, y)  # 0 12.0 20.05, 1 4.0 60.5
 </code></pre>
 <p>更多迭代器可以從 <code>itertools</code> 模組導入。</p>
-<h2><a class="header" href="#function-arguments" id="function-arguments">Function Arguments</a></h2>
+<h2 id="function-arguments"><a class="header" href="#function-arguments">Function Arguments</a></h2>
 <p>函式 (Function) 是 Python 中非常普遍的存在。
 Python 的函式不支援重載 (Overloading)，所以是使用引數 (Arguments) 的規則管理，迭代器也相同。</p>
-<h3><a class="header" href="#call-and-return" id="call-and-return">Call and Return</a></h3>
+<h3 id="call-and-return"><a class="header" href="#call-and-return">Call and Return</a></h3>
 <p>呼叫 (Call)，類似數學的語法，函式名稱在前，小括弧在後。
 即使沒有引數，仍需要寫上，不然只代表函式本身（注意函式也是物件），而非它的計算值。</p>
 <pre><code class="language-python">func()
@@ -543,7 +517,7 @@ Python 的函式不支援重載 (Overloading)，所以是使用引數 (Arguments
 g(f() + 10)  # 寫在表達式中可以參與運算後捨棄
 f()  # 若都沒運算會直接捨棄
 </code></pre>
-<h3><a class="header" href="#positional--keyword-arguments" id="positional--keyword-arguments">Positional &amp; Keyword Arguments</a></h3>
+<h3 id="positional--keyword-arguments"><a class="header" href="#positional--keyword-arguments">Positional &amp; Keyword Arguments</a></h3>
 <p>依照位置或關鍵字輸入。
 按語法順序如下：</p>
 <pre><code class="language-python">f(a, b, c, ..., d=d, e=e, f=f, ...)
@@ -563,7 +537,7 @@ f()  # 若都沒運算會直接捨棄
 <pre><code class="language-python">def f(a, b, ..., c=1, d=2, ..., /, e, f, ..., g=3, h=4, ...):
     ...
 </code></pre>
-<h3><a class="header" href="#decorator" id="decorator">Decorator</a></h3>
+<h3 id="decorator"><a class="header" href="#decorator">Decorator</a></h3>
 <p>Python 提供一種比較抽象的方式處理函式包裝的需求（如前處理和後處理），稱為裝飾器 (Decorator)。
 其語法為前方一個 <code>@</code> 符號，置於函式或類型上方一行，可以多個，每個一行，由外層包向內層。</p>
 <p>裝飾器就是函式，只是它們只能填入一個函式引數，且回傳函式。</p>
@@ -587,7 +561,7 @@ f0('50')  # 50mm
 class MyData:
     a: int = 10
 </code></pre>
-<h2><a class="header" href="#reference-counter" id="reference-counter">Reference Counter</a></h2>
+<h2 id="reference-counter"><a class="header" href="#reference-counter">Reference Counter</a></h2>
 <p>其實 Python 中並不叫做「變數 (Variables)」，而是「名稱 (Names)」，這麼做是為了區分 C 語言中的概念。</p>
 <p>在較低層級的程式語言中，為了能夠自由調整記憶體的使用時機，於是分為「Stack」和「Heap」。
 其中 Stack 為 Code Block 內的行程，分為一個 Global 與多個 Local，
@@ -652,7 +626,7 @@ def f():
 f()
 print(g)  # 60
 </code></pre>
-<h2><a class="header" href="#modules" id="modules">Modules</a></h2>
+<h2 id="modules"><a class="header" href="#modules">Modules</a></h2>
 <p>本節要介紹模組導入的概念。
 Python 預設有一組搜尋路徑，分別是執行位置、程式庫位置（包含內建和外部的）、執行檔位置、自訂位置。
 比較重要的是第一個，因為在執行期間，可以透過修改 <code>sys.path</code> 這個 List 來增加搜尋位置（但是不建議）。
@@ -705,7 +679,7 @@ def f3(): pass
 <pre><code class="language-python">def __getattr__(name):
     return ...
 </code></pre>
-<h2><a class="header" href="#objective-orientation" id="objective-orientation">Objective Orientation</a></h2>
+<h2 id="objective-orientation"><a class="header" href="#objective-orientation">Objective Orientation</a></h2>
 <p>經過前面章節的介紹，屬性存取運算子 <code>.</code> 是物件導向程式設計非常重要的一部分。
 如果 Function 是為了某個類型而運作，則稱為 Method。
 可以簡單的理解成：</p>
@@ -814,7 +788,7 @@ if __name__ == '__main__':
 <p>其實，魔法屬性 <code>__dir__</code> 是一個 Dict，而它會紀錄所有的屬性名稱。這是一個遞迴概念，因為 Dict 物件也有 <code>__dir__</code>。
 所以可以簡單理解為，Python 的物件導向是由 Dict 容器做出來的。
 因此每次 Dict 類型效能增加，都會使整個性能大幅提昇。</p>
-<h2><a class="header" href="#exceptions" id="exceptions">Exceptions</a></h2>
+<h2 id="exceptions"><a class="header" href="#exceptions">Exceptions</a></h2>
 <p>在 Python 中不會發生真的「崩潰」錯誤，至少在純 Python 的情況下。
 因為 Python 有一套例外機制，任何錯誤都是有來頭的，像之前提到的 <code>IndexError</code> 等。</p>
 <p>如果在一個可能會發生錯誤的地方想要避免例外，可以提前檢查，如檢查 Key 的存在以避免 <code>KeyError</code>。
@@ -844,7 +818,7 @@ else:
 finally:
     print(&quot;done!&quot;)
 </code></pre>
-<h3><a class="header" href="#context-manager" id="context-manager">Context Manager</a></h3>
+<h3 id="context-manager"><a class="header" href="#context-manager">Context Manager</a></h3>
 <p>單純的 <code>try</code> ... <code>finally</code> 可以在 <code>return</code> 後執行額外的工作，例如關閉檔案。</p>
 <pre><code class="language-python">f = open(&quot;f.txt&quot;, &quot;w+&quot;)
 try:
@@ -860,7 +834,7 @@ finally:
 <pre><code class="language-python">with open(&quot;f.txt&quot;, &quot;w+&quot;) as f:
     return f.read()
 </code></pre>
-<h2><a class="header" href="#doc-string" id="doc-string">Doc String</a></h2>
+<h2 id="doc-string"><a class="header" href="#doc-string">Doc String</a></h2>
 <p>Python 提供使用註解轉換為說明手冊的功能，這些註解稱為 Doc String。
 這些「註解」其實是普通字串，只是沒有指派而已，使用多行字串或是單行皆可以通過。</p>
 <p>由於是註解，不可以使用運算前的樣式，如 <code>+</code> 運算子或 Format Literal。
@@ -892,7 +866,7 @@ class A:
 </code></pre>
 <p>取得文字則是從魔法名稱 <code>__doc__</code> 字串物件中取得，函式和類型則是從魔法屬性。
 而內建函式 <code>help</code> 可以在直譯器中顯示 Doc String。</p>
-<h2><a class="header" href="#annotations" id="annotations">Annotations</a></h2>
+<h2 id="annotations"><a class="header" href="#annotations">Annotations</a></h2>
 <p>Python 3.5 開始逐漸重視類型標注的重要性，之前都使用較狹隘的函式註解標示。</p>
 <pre><code class="language-python">def add_unit(*ns: float, unit: str) -&gt; str:
     s = &quot;&quot;
@@ -935,67 +909,38 @@ print(__annotations__['a'] is int)
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="../languages/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
-
-                        
                             <a rel="next" href="../languages/c-cpp.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="../languages/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
-
-                
                     <a rel="next" href="../languages/c-cpp.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
-
-        
-
-        
-
-        
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
-
-        
-
-        
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
-        
-
     </body>
 </html>
