@@ -471,7 +471,7 @@ let a = Arc::new(Mutex::new(0));
 assert_eq!(*a.lock().unwrap(), 10);
 <span class="boring">}
 </span></code></pre></pre>
-<p>不過對於原始型別，原子化類型 <a href="https://doc.rust-lang.org/std/sync/atomic/index.html"><code>std::sync::atomic::Atomic*</code></a> 應該更容易使用，而完全不需要互斥鎖。因為在支援的平台上，處理器可以自動排程寫入狀態，以避免底層的資料競爭，不過浮點數是不支援的。</p>
+<p>不過對於原始類型，原子化類型 <a href="https://doc.rust-lang.org/std/sync/atomic/index.html"><code>std::sync::atomic::Atomic*</code></a> 應該更容易使用，而完全不需要互斥鎖。因為在支援的平台上，處理器可以自動排程寫入狀態，以避免底層的資料競爭，不過浮點數是不支援的。</p>
 <p>除了普通持有資料的計數外，還有可懸掛空值的<strong>弱參照 (weak reference)</strong>，因此前者相對之下稱為<strong>強參照 (strong reference)</strong>。弱參照持有的原始指標可以修改，類似於 <code>mut &amp;T</code> 或 <code>mut &amp;mut T</code>，可以改變指向，而強參照持有原始資料的指標，因此只能固定。<code>Rc::downgrade()</code> 和 <code>Arc::downgrade()</code> 可以將強參照降級為弱參照，不過由於弱參照會有空值，使用數值時都需要重新檢查，較花時間。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="regular-expression"><a class="header" href="#regular-expression">Regular Expression</a></h1>
 <p>正規表達式 (RE, Regex, Regular Expression) 是一種擷取規則文字的機制。其原理為：</p>
