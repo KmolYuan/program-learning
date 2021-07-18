@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Control Flow - Program Learning</title>
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="程式入門">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="../vc/index.html"><strong aria-hidden="true">2.</strong> Version Control</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vc/git.html"><strong aria-hidden="true">2.1.</strong> Git</a></li></ol></li><li class="chapter-item expanded "><a href="../multilang/index.html"><strong aria-hidden="true">3.</strong> Multi-Language Learning</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../multilang/control-flow.html" class="active"><strong aria-hidden="true">3.1.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="../multilang/assignment.html"><strong aria-hidden="true">3.2.</strong> Assignment</a></li><li class="chapter-item expanded "><a href="../multilang/expr.html"><strong aria-hidden="true">3.3.</strong> Expression and Statement</a></li></ol></li><li class="chapter-item expanded "><a href="../languages/index.html"><strong aria-hidden="true">4.</strong> Languages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../languages/python.html"><strong aria-hidden="true">4.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="../languages/c-cpp.html"><strong aria-hidden="true">4.2.</strong> C / C++</a></li><li class="chapter-item expanded "><a href="../languages/matlab-en.html"><strong aria-hidden="true">4.3.</strong> Matlab (EN)</a></li><li class="chapter-item expanded "><a href="../languages/latex-math.html"><strong aria-hidden="true">4.4.</strong> Latex Math (TODO)</a></li></ol></li><li class="chapter-item expanded "><a href="../webpages/index.html"><strong aria-hidden="true">5.</strong> Webpages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../webpages/html5.html"><strong aria-hidden="true">5.1.</strong> HTML5 &amp; CSS &amp; Markdown</a></li></ol></li><li class="chapter-item expanded "><a href="../data-format/index.html"><strong aria-hidden="true">6.</strong> Data Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-format/yaml.html"><strong aria-hidden="true">6.1.</strong> YAML</a></li></ol></li><li class="chapter-item expanded "><a href="../str-parsing/index.html"><strong aria-hidden="true">7.</strong> String Parsing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../str-parsing/re.html"><strong aria-hidden="true">7.1.</strong> Regular Expression</a></li><li class="chapter-item expanded "><a href="../str-parsing/syntax.html"><strong aria-hidden="true">7.2.</strong> Syntax</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../it-intro.html">Keywords</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Program Learning</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="control-flow"><a class="header" href="#control-flow">Control Flow</a></h1>
+<p><strong>控制流程 (Control Flow)</strong> 是順序控制程式中不可或缺的一部分。以下將介紹程式語言中會出現的流程語法。所謂順序控制，表示程式是依序執行，以利閱讀。以下會以虛擬程式碼的方式解說，搭配可執行的 Rust 語言程式碼示範。</p>
+<pre><code class="language-ignore">do first
+do next
+</code></pre>
+<h2 id="goto-statement"><a class="header" href="#goto-statement">Goto Statement</a></h2>
+<p>跳轉語句是較為原始的控制方式，然而這種直接跳轉的方式比較破壞閱讀和程式的嚴謹，所以通常只在底層使用。此語法需要設定一個位置（如 C / C++ 中稱為 label）再藉由 <code>goto</code> 語句跳轉，由於此位置可以在 <code>goto</code> 前後，較不易控制。在迴圈語句中可用來跳脫迴圈，參見該章節以取得更多說明。</p>
+<p>關於更多 <code>goto</code> 語法，可以參考 <a href="http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf">ANSI C</a> 對於跳轉語句 (jump statement) 的說明。</p>
+<h2 id="condition-statement"><a class="header" href="#condition-statement">Condition Statement</a></h2>
+<p><strong>判斷句</strong>是由一個布林值 (boolean)，也就是 true 和 false 兩個值判斷程式的前進方向，藉此組合出不同的執行效果，最常見的就是 <code>if</code> <code>else</code> 語句。判斷句可以藉由交疊形成多種判斷，如 C / C++ 中的 <code>switch</code> <code>case</code> 語句等等。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 一次判斷
+if true {
+    println!(&quot;do something if true&quot;);
+}
+
+// 一次判斷，包含例外
+if true {
+    println!(&quot;do something if true&quot;);
+} else {
+    println!(&quot;do something if false&quot;);
+}
+
+// 兩次判斷，包含例外
+if false {
+    println!(&quot;case 1&quot;);
+} else if true {
+    println!(&quot;case 2&quot;);
+} else {
+    println!(&quot;case 3&quot;);
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h3 id="pattern-matching"><a class="header" href="#pattern-matching">Pattern Matching</a></h3>
+<p>類似於 <code>if</code> <code>else</code> 的組合，但是通常配合列舉 (enumeration) 的類型做主軸，並且可以設定保護條件 (guard condition)。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum Color {
+    RED,
+    BLACK,
+    WHITE,
+    OTHER(u8, u8, u8),
+}
+
+let color = Color::OTHER(162, 33, 22);
+match color {
+    Color::RED =&gt; { println!(&quot;red&quot;); }
+    Color::BLACK =&gt; { println!(&quot;black&quot;); }
+    Color::WHITE =&gt; { println!(&quot;white&quot;); }
+    Color::OTHER(r, g, b) =&gt; { println!(&quot;color ({}, {}, {})&quot;, r, g, b); }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>在單一匹配的時候，Rust 可以使用 <code>if let</code> 語句。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Color(u8, u8, u8);
+
+let color = Color(162, 33, 22);
+if let Color(r, g, b) = color {
+    println!(&quot;color ({}, {}, {})&quot;, r, g, b);
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h2 id="loop"><a class="header" href="#loop">Loop</a></h2>
+<p><strong>迴圈</strong>可以一直重複程式區段，技術上來說是無法中斷的，必須依靠跳轉語句。為了迴圈而設計的跳轉語句通常為兩種，只跳過當前區段的為 <code>continue</code>；離開迴圈的為 <code>break</code>。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>loop {
+    if true {
+        println!(&quot;break now!&quot;);
+        break;
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>延伸條件的迴圈為 <code>while</code> 迴圈，即為在一開始檢查條件，條件為 <code>true</code> 時就會繼續循環。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut b = true;
+while b {
+    println!(&quot;run once&quot;);
+    b = false;
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>另外迭代器 (iterator) 便是一種針對迴圈設計的資料結構，能夠按順序取得數值。序列 (sequence) 和映射 (map) 都可以轉換成迭代器，在 Rust 中，<code>into_iter()</code> 和 <code>iter()</code> 等方法可以轉換成迭代器。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>for i in [1, 2, 3] {
+    println!(&quot;{}&quot;, i);
+}
+
+// for-loop 等同於
+let mut iter = [1, 2, 3].into_iter();
+while let Some(&amp;i) = iter.next() {
+    println!(&quot;{}&quot;, i);
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>上面的 <code>while let</code> 語句是結合 <code>while</code> 迴圈與 <code>if let</code>，直到匹配失敗才會跳脫迴圈。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../multilang/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../multilang/assignment.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../multilang/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../multilang/assignment.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
