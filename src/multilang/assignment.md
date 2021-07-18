@@ -17,28 +17,30 @@ match 10. {
     _ => {}
 }
 
-// if let pattern matching 也是指派語句
+// if-let pattern matching 也是指派語句
 if let a = 10. {
     assert_eq!(a, 10.);
 }
 
-// while let pattern matching 也是指派語句
+// while-let pattern matching 也是指派語句
 let mut iter = [10.].into_iter();
 while let Some(&a) = iter.next() {
     assert_eq!(a, 10.);
 }
 
 // for-loop 也是指派語句，語意同上
+// 所以有兩次指派（迭代物件和本體）
 for a in [10.] {
     assert_eq!(a, 10.);
 }
 
-// closure 預設是取指標，但是其生命週期必須比原始資料短
+// closure capture 預設是取指標
+// 但是其生命週期必須比原始資料短
 let f1 = |b| { assert_eq!(a, b); };
 // 使用 move 關鍵字會使用指派語句
 let f2 = move |b| { assert_eq!(a, b); };
-// 呼叫函式也是指派語句，同於上面的 b = a
-f1(10.);
+// 呼叫函式 / 運算子也是指派語句，同於上面的 b = a
+f1(5. + 5.);
 f2(10.);
 ```
 
@@ -102,9 +104,25 @@ assert_ne!(p1, p2);
 + 記憶體洩漏 (memory leak)：存入數值後忘記刪除，就刪除指標，會造成浪費記憶體空間（因為直到程式執行完才會清除）。
 + 堆棧溢出 (stack overflow)：指標可以索取連續的記憶體陣列，但是如果檢索的長度超出範圍，會得到錯誤數值。
 
-在 Rust 中，指標與參照是相同的，統一稱為**指標 (pointer)**。不能保證生命週期的指標稱為**原始指標 (raw pointer)**，寫作 `*T`；能保證生命週期的稱為**智慧指標 (smart pointer)**，寫作 `&T`，也是最常用的一種。能保證生命週期的行為也稱為**記憶體安全 (memory safe)**。記憶體安全也是 Rust 語言的一大賣點，所以預設不能使用原始指標，除非開啟 **unsafe** 選項。
+在 Rust 中，指標與參照是相同的，都俗稱為**指標 (pointer)**。不能保證生命週期的指標稱為**原始指標 (raw pointer)**，寫作 `*T`；能保證生命週期的稱為**參照 (reference)**，寫作 `&T`，跟 C++ 雷同，也是最常用的一種。能保證生命週期的行為也稱為**記憶體安全 (memory safe)**。記憶體安全也是 Rust 語言的一大賣點，所以預設不能使用原始指標，除非開啟 **unsafe** 區塊。
 
-原始指標操作簡單，但是較「危險」。智慧指標在 Rust 則是採取**所有權 (ownership)** 系統。
+```rust
+// 原始數值，標注類型 f64 以清楚說明
+let a: f64 = 10.;
+// 取址，指標的類型標註為 &T / &mut T
+let b: &f64 = &a;
+// 手動解開指標，將會使用指派
+// 這邊 f64 有實作 Copy trait
+// 若沒實作 Copy trait，會把所有權移動出來！
+println!("{}", *b);
+// 指標會實作指向類型能夠使用的 trait
+// 如以下範例，Display trait 會自動呼叫
+println!("{}", b);
+// 若要查看指標位置，可以使用 std::fmt::Pointer trait
+println!("{:p}", b);
+```
+
+原始指標操作簡單，但是較「危險」。參照在 Rust 則是採取**所有權 (ownership)** 系統。
 
 ```rust
 let mut a = 10.;
@@ -120,17 +138,17 @@ assert_eq!(a, 20.);
 
 在上面的程式碼中，Rust 可以使用一個大括弧 `{}` 在執行區創造出一個**範圍 (scope)**，這個範圍跟函式、判斷式等 runtime 要素是一樣的。當使用 `let` 關鍵字指派一個新的變數，若變數沒有被移動，則都會在括弧關閉的地方被刪除。此概念在 C / C++ 中也有。
 
-當使用 `&a` / `&mut a` 運算子，表示對變數 `a` 索取智慧指標，若有關鍵字 `mut`，則代表這個指標可以修改變數，前提是變數 `a` 也是可變的。索取指標會造成所有權被借走，導致 `a` 不能使用，這在編譯期間就會檢查，並且指出原始資料與指標之間的關係。
+當使用 `&a` / `&mut a` 運算子，表示對變數 `a` 索取參照，若有關鍵字 `mut`，則代表這個指標可以修改變數，前提是變數 `a` 也是可變的。索取指標會造成所有權被借走，導致 `a` 不能使用，這在編譯期間就會檢查，並且指出原始資料與指標之間的關係。值得注意的是，這邊 `b` 不用加上 `mut` 標示為可變，因為指標僅修改指向的內容，而非自身。
 
-值得注意的是，這邊 `b` 不用加上 `mut` 標示為可變，因為指標僅修改指向的內容，而非自身。
+Rust 中呼叫方法 (method) 時會自動轉換自身（用關鍵字 `self` 代表）的參照 `self` / `&self` / `&mut self`，這樣就不用手動取址或解開引用。另外實作 [`std::convert::AsRef`](https://doc.rust-lang.org/nightly/std/convert/trait.AsRef.html) trait 可以讓類型在取址時也能將自己的指標相容成其他類型，如 `String` 相容於 `&str`、`Vec<T>` 相容於 `&[T]`，並且還有可變的版本 [`std::convert::AsMut`](https://doc.rust-lang.org/nightly/std/convert/trait.AsMut.html)。
 
-所有權系統是為了保障**執行緒安全 (thread safe)**，因此智慧指標只能在單一執行緒使用，如果要在多執行緒使用，比如說平行處理，則必須使用參照計數。
+所有權系統是為了保障**執行緒安全 (thread safe)**，因此參照只能在單一執行緒使用，如果要在多執行緒使用，比如說平行處理，則必須使用參照計數。
 
 ## Reference Counted
 
 在程式語言中，通常會有**記憶體管理 (memory management)** 系統。短暫的執行區稱為 stack，用來作為部份資料生命週期的判定；而必須跨越多個執行區、太龐大或長期使用的資料則會放置在 heap。Rust 的所有權系統都是在 stack 間移動，不過為了達成跨執行緒存取，必須將資料轉移至 heap，這時就必須使用原始指標達成。
 
-**參照計數**的概念在於，所有的資料都存於 heap，當新增「變數」（Python 稱為「名稱」）時，就會增加計數器；當參照的數量變成 0 時，就會刪除資料。例如 Java、JavaScript 或 Python 這種只有參照計數系統的程式語言，就是用模擬 stack 的方式移除資料的引用。不過，完全以參照計數為主的程式語言便需要一套**垃圾收集 (garbage collection)** 系統，移除長久未使用的變數，它們可能在載入的過程中遺留下來，造成另類的記憶體洩漏。
+**參照計數**的概念在於，所有的資料都存於 heap，當新增「變數」（Python 稱為「名稱 (name)」）時，就會增加計數器；當參照的數量變成 0 時，就會刪除資料。例如 Java、JavaScript 或 Python 這種只有參照計數系統的程式語言，就是用模擬 stack 的方式移除資料的引用。不過，完全以參照計數為主的程式語言便需要一套**垃圾收集 (garbage collection)** 系統，移除長久未使用的變數，它們可能在載入的過程中遺留下來，造成另類的記憶體洩漏。
 
 在 Rust 中，[`std::rc::Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html) 和 [`std::sync::Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html) 是標準庫 (standard library) 提供的參照計數器，`Rc` 是單執行緒使用的，可以應用於在容器之間分享資料；`Arc` 則是多執行緒使用的，可以在不同執行緒間分享資料。若沒有多執行緒用途，`Rc` 存取的速度會較好。
 
