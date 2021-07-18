@@ -38,26 +38,28 @@ if i := True:
 int will_be_10 = (first(), second(), 10);
 ```
 
-類似的特性被 Rust 引用，任何 code block 都是表達式（代表末尾值，加分號 `;` 成為陳述式）：
+類似的特性被 Rust 引用，任何 code block 都是表達式（代表末尾值，加分號 `;` 成為陳述式）；反而使用 `return` 關鍵字為陳述式，必須加分號。
 
 ```rust
-/// function code block 可以不寫 return
-fn my_function() -> u8 { 10 }
+/// code block 可以不寫 return
+fn my_function(condition: bool) -> u8 {
+    if condition {
+        // Statement
+        return 10;
+    } else {
+        // Expression
+        20
+    }
+}
 
-let a = if check() { 10 } else { 20 };
-let b = while check() {
-    dothing();
-    callback()
+let a = if {
+    let b = true;
+    b
+} {
+    10
+} else {
+    20
 };
-// 匹配，可以解決 none、try catch 和 switch case 的問題
-let c = match b {
-    MyCase::Done(done) => done,
-    // return 關鍵字是從函式回傳而非 code block
-    // return 反而是陳述句
-    MyCase::None => { return Result::Err("not work"); }
-};
-// 另一種 match pattern
-let d = if let Case::Done(done) = b { 10 } else { 20 };
 ```
 
 JavaScript 的函式也是很經典的例子，總共有三種函式寫法：
