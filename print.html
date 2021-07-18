@@ -357,27 +357,32 @@ if false {
 <span class="boring">}
 </span></code></pre></pre>
 <h3 id="pattern-matching"><a class="header" href="#pattern-matching">Pattern Matching</a></h3>
-<p>類似於 <code>if</code> <code>else</code> 的組合，但是通常配合列舉 (enumeration) 的類型做主軸，並且可以設定保護條件 (guard condition)。</p>
+<p>類似於 <code>if</code> <code>else</code> 的組合，但是通常配合列舉 (enumeration) 的類型做主軸，可以設定保護條件 (guard condition)，甚至是解包 (unpack) 內含的資料。</p>
 <pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>enum Color {
-    RED,
-    BLACK,
-    WHITE,
-    OTHER(u8, u8, u8),
+    Red,
+    Black,
+    White,
+    // Rust 允許攜帶資料的選項
+    Other(u8, u8, u8),
 }
 
 let color = Color::OTHER(162, 33, 22);
 match color {
-    Color::RED =&gt; { println!(&quot;red&quot;); }
-    Color::BLACK =&gt; { println!(&quot;black&quot;); }
-    Color::WHITE =&gt; { println!(&quot;white&quot;); }
-    Color::OTHER(r, g, b) =&gt; { println!(&quot;color ({}, {}, {})&quot;, r, g, b); }
+    Color::Red =&gt; { println!(&quot;red&quot;); }
+    Color::Black =&gt; { println!(&quot;black&quot;); }
+    Color::White =&gt; { println!(&quot;white&quot;); }
+    // 匹配定值
+    Color::Other(0, 0, 0) =&gt; { println!(&quot;black&quot;); }
+    Color::Other(255, 255, 255) =&gt; { println!(&quot;white&quot;); }
+    // 按順序解開攜帶的資料
+    Color::Other(r, g, b) =&gt; { println!(&quot;color ({}, {}, {})&quot;, r, g, b); }
 }
 <span class="boring">}
 </span></code></pre></pre>
-<p>在單一匹配的時候，Rust 可以使用 <code>if let</code> 語句。</p>
+<p>在單一匹配的時候，Rust 可以使用 <code>if let</code> 語句，當然不限於 <code>enum</code> 類型，解包或單純的付值也可以，只是會變成 <code>if true</code> 或 <code>if false</code> 可簡化的情況。</p>
 <pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
