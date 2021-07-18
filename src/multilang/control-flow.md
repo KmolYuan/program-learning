@@ -1,10 +1,11 @@
 # Control Flow
 
-**控制流程 (Control Flow)** 是順序控制程式中不可或缺的一部分。以下將介紹程式語言中會出現的流程語法。所謂順序控制，表示程式是依序執行，以利閱讀。以下會以虛擬程式碼的方式解說，搭配可執行的 Rust 語言程式碼示範。
+**控制流程 (Control Flow)** 是順序控制程式中不可或缺的一部分。以下將介紹程式語言中會出現的流程語法。所謂順序控制，表示程式是依序執行，習慣會從上到下、從左到右，以利閱讀。以下會搭配可執行的 Rust 語言程式碼來示範。
 
 ```ignore
-do first
-do next
+do first;
+do next;
+first; second; third;
 ```
 
 ## Goto Statement
