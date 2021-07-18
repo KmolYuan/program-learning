@@ -43,26 +43,31 @@ if false {
 
 ### Pattern Matching
 
-類似於 `if` `else` 的組合，但是通常配合列舉 (enumeration) 的類型做主軸，並且可以設定保護條件 (guard condition)。
+類似於 `if` `else` 的組合，但是通常配合列舉 (enumeration) 的類型做主軸，可以設定保護條件 (guard condition)，甚至是解包 (unpack) 內含的資料。
 
 ```rust
 enum Color {
-    RED,
-    BLACK,
-    WHITE,
-    OTHER(u8, u8, u8),
+    Red,
+    Black,
+    White,
+    // Rust 允許攜帶資料的選項
+    Other(u8, u8, u8),
 }
 
 let color = Color::OTHER(162, 33, 22);
 match color {
-    Color::RED => { println!("red"); }
-    Color::BLACK => { println!("black"); }
-    Color::WHITE => { println!("white"); }
-    Color::OTHER(r, g, b) => { println!("color ({}, {}, {})", r, g, b); }
+    Color::Red => { println!("red"); }
+    Color::Black => { println!("black"); }
+    Color::White => { println!("white"); }
+    // 匹配定值
+    Color::Other(0, 0, 0) => { println!("black"); }
+    Color::Other(255, 255, 255) => { println!("white"); }
+    // 按順序解開攜帶的資料
+    Color::Other(r, g, b) => { println!("color ({}, {}, {})", r, g, b); }
 }
 ```
 
-在單一匹配的時候，Rust 可以使用 `if let` 語句。
+在單一匹配的時候，Rust 可以使用 `if let` 語句，當然不限於 `enum` 類型，解包或單純的付值也可以，只是會變成 `if true` 或 `if false` 可簡化的情況。
 
 ```rust
 struct Color(u8, u8, u8);
