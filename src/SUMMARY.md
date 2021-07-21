@@ -7,6 +7,7 @@
   + [Control Flow](multilang/control-flow.md)
   + [Assignment](multilang/assignment.md)
   + [Expression and Statement](multilang/expr.md)
+  + [Module](multilang/module.md)
 + [Languages](languages/README.md)
   + [Python](languages/python.md)
   + [C / C++](languages/c-cpp.md)
