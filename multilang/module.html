@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Module - Program Learning</title>
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="程式入門">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="../vc/index.html"><strong aria-hidden="true">2.</strong> Version Control</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vc/git.html"><strong aria-hidden="true">2.1.</strong> Git</a></li></ol></li><li class="chapter-item expanded "><a href="../multilang/index.html"><strong aria-hidden="true">3.</strong> Multi-Language Learning</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../multilang/control-flow.html"><strong aria-hidden="true">3.1.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="../multilang/assignment.html"><strong aria-hidden="true">3.2.</strong> Assignment</a></li><li class="chapter-item expanded "><a href="../multilang/expr.html"><strong aria-hidden="true">3.3.</strong> Expression and Statement</a></li><li class="chapter-item expanded "><a href="../multilang/module.html" class="active"><strong aria-hidden="true">3.4.</strong> Module</a></li></ol></li><li class="chapter-item expanded "><a href="../languages/index.html"><strong aria-hidden="true">4.</strong> Languages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../languages/python.html"><strong aria-hidden="true">4.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="../languages/c-cpp.html"><strong aria-hidden="true">4.2.</strong> C / C++</a></li><li class="chapter-item expanded "><a href="../languages/matlab-en.html"><strong aria-hidden="true">4.3.</strong> Matlab (EN)</a></li><li class="chapter-item expanded "><a href="../languages/latex-math.html"><strong aria-hidden="true">4.4.</strong> Latex Math (TODO)</a></li></ol></li><li class="chapter-item expanded "><a href="../webpages/index.html"><strong aria-hidden="true">5.</strong> Webpages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../webpages/html5.html"><strong aria-hidden="true">5.1.</strong> HTML5 &amp; CSS &amp; Markdown</a></li></ol></li><li class="chapter-item expanded "><a href="../data-format/index.html"><strong aria-hidden="true">6.</strong> Data Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-format/yaml.html"><strong aria-hidden="true">6.1.</strong> YAML</a></li></ol></li><li class="chapter-item expanded "><a href="../str-parsing/index.html"><strong aria-hidden="true">7.</strong> String Parsing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../str-parsing/re.html"><strong aria-hidden="true">7.1.</strong> Regular Expression</a></li><li class="chapter-item expanded "><a href="../str-parsing/syntax.html"><strong aria-hidden="true">7.2.</strong> Syntax</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../it-intro.html">Keywords</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Program Learning</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="module"><a class="header" href="#module">Module</a></h1>
+<p><strong>模組 (module)</strong> 是較新的程式語言都會有的概念。通常程式碼一多，不會將程式碼都寫在同一個檔案中，因為造成協同管理與版本控制的不便。然而，這些分開的檔案，要如何描述在程式語言中呢？</p>
+<p>在較早的程式語言中，會用包含 (include) 的方式將檔案嵌套在一起，變成一個超大的檔案，因為畢竟那就是編譯二進制檔案 (binary file) 完後的樣子。但是這種方式會把變數、函式等等的名稱都混淆在一起，根本無法辨認。所以一些改良後的程式語言就發明了名稱空間。</p>
+<h2 id="namespace"><a class="header" href="#namespace">Namespace</a></h2>
+<p><strong>名稱空間</strong>是一種解決方案，透過此一語法的包裹，能夠替其中的名稱加上前綴 (prefix)，例如 <code>my_func</code> 變成類似 <code>__abc_my_func</code> 的樣子。除了層層包裹，再透過設計一些<strong>可見性 (visibility)</strong> 概念，就可以將不想看見的名稱都編上一個雜湊碼 (hash code) 避免重複就行了。</p>
+<p>可見性分為基本的兩種：公開 (public) 與私有 (private)，即向其他名稱空間公開，或僅向相同名稱空間公開。當然這些只是語義上的識別，真正的二進制檔案中全都是可見的，只是都編上了雜湊前綴，以避免重複和識別。各種程式語言的可見性語義稍有不同，例如在 C++ 中 <code>protect</code> 關鍵字表示名稱僅在繼承後的類型中可見。</p>
+<p>在名稱空間的改良下，原始碼檔案可以用一個名稱空間包裹，以表示該檔案是一個作用範圍。在更後期的程式語言中，名稱空間會造成閱讀程式馬上的不便，因此更簡單的方式便是，將原始碼檔案與目錄 (directory) 直接當作名稱空間即可，並稱之為模組。</p>
+<h2 id="module-1"><a class="header" href="#module-1">Module</a></h2>
+<p><strong>模組</strong>以檔案與目錄的關係建構，不過一些不同的程式語言仍有些微的差異。以下是專有名詞：</p>
+<ul>
+<li>根模組 (root module)：整個專案的起始模組。</li>
+<li>導入 (import)：引用來自其他模組的名稱。</li>
+<li>遞迴導入 (recursive import)：兩模組包含互相引用，或導入順序形成閉環。</li>
+<li>分支 (branch)：樹狀結構的非末端，通常只有目錄的位置。</li>
+<li>子模組 (child module)：下一層模組，只有分支會包含子模組。</li>
+<li>父模組 (parent module)：上一層模組，父模組就是分支。</li>
+</ul>
+<p>關於定義分支，如 Python 中使用 <code>__init__.py</code> 特殊檔案名稱來表示與目錄同名的模組；過去的 Rust 則是使用與目錄同名的檔案名稱，不過現在使用 <code>mod.rs</code> 來代表，因為 <code>mod</code> 是關鍵字不會重複，修改模組名稱就不用跟著改。</p>
+<p>關於模組的搜尋方式，如 Python 是動態語言，所以僅在導入時才會搜尋並快取，最初執行或拿來導入的地方作為根模組，且不可以遞迴導入，必須是樹狀相依。另外 Python 在導入時能使用 <code>.</code> 和更多 <code>..</code> 作為前綴，表示上一層和更上層模組，但是由於必須避開遞迴導入，盡量使用從根模組開始的全名描述。</p>
+<p>Rust 則是將可執行程式 binary crate 的根模組設定為 <code>main.rs</code>，程式庫 library crate 的根模組設定為 <code>lib.rs</code>，且必須在根模組與分支中用 <code>mod</code> 關鍵字列出全部子模組的名稱。其中根模組使用關鍵字 <code>crate</code> 表示，當前模組使用 <code>self</code> 關鍵字表示，上一層模組則是用 <code>super</code> 關鍵字。而且由於有實現真正的前向引用 (forward reference)，Rust 不會被導入的相依性影響，可以比較沒負擔的全部導入可見名稱。不過重複名稱仍以最後導入的為主，且引用上不可以有岐義。</p>
+<h2 id="visibility"><a class="header" href="#visibility">Visibility</a></h2>
+<p><strong>可見性</strong>在模組間的處理，除了用關鍵字 <code>public</code> 等直接定義，如 Python 沒有可見性設計的程式語言會使用 <code>_</code> 底線字元作為前綴，來表示僅限內部引用，不過語義上仍沒有強制力，使用者仍可刻意使用。對程式庫來說，這些「可見的部份」其實就是應用程式介面 (Application Programing Interface, API)，意思是使用者能夠在程式庫中使用的名稱。</p>
+<p>藉由導入，重新出現的名稱可作為一種別名 (alias)，這對 API 設計有幫助。程式庫的使用者可以比較輕鬆的引入想要的名稱，而非親自從個別的模組導入。但是也會產生一些問題，如 Python 其實可以任意導入一個模組已導入的其他名稱，使得 API 看起來很亂，所以設計了 <code>__all__</code> 名稱清單列舉 API 提供的名稱，不過仍沒有強制性。</p>
+<p>而設計了可見性標示的程式語言，有益於透過分析程式碼的工具將「可見」的名稱製作成 API 說明文件，也算是盡其優勢。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../multilang/expr.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../languages/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../multilang/expr.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../languages/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="vc/index.html"><strong aria-hidden="true">2.</strong> Version Control</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="vc/git.html"><strong aria-hidden="true">2.1.</strong> Git</a></li></ol></li><li class="chapter-item expanded "><a href="multilang/index.html"><strong aria-hidden="true">3.</strong> Multi-Language Learning</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="multilang/control-flow.html"><strong aria-hidden="true">3.1.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="multilang/assignment.html"><strong aria-hidden="true">3.2.</strong> Assignment</a></li><li class="chapter-item expanded "><a href="multilang/expr.html"><strong aria-hidden="true">3.3.</strong> Expression and Statement</a></li></ol></li><li class="chapter-item expanded "><a href="languages/index.html"><strong aria-hidden="true">4.</strong> Languages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="languages/python.html"><strong aria-hidden="true">4.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="languages/c-cpp.html"><strong aria-hidden="true">4.2.</strong> C / C++</a></li><li class="chapter-item expanded "><a href="languages/matlab-en.html"><strong aria-hidden="true">4.3.</strong> Matlab (EN)</a></li><li class="chapter-item expanded "><a href="languages/latex-math.html"><strong aria-hidden="true">4.4.</strong> Latex Math (TODO)</a></li></ol></li><li class="chapter-item expanded "><a href="webpages/index.html"><strong aria-hidden="true">5.</strong> Webpages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webpages/html5.html"><strong aria-hidden="true">5.1.</strong> HTML5 &amp; CSS &amp; Markdown</a></li></ol></li><li class="chapter-item expanded "><a href="data-format/index.html"><strong aria-hidden="true">6.</strong> Data Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-format/yaml.html"><strong aria-hidden="true">6.1.</strong> YAML</a></li></ol></li><li class="chapter-item expanded "><a href="str-parsing/index.html"><strong aria-hidden="true">7.</strong> String Parsing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="str-parsing/re.html"><strong aria-hidden="true">7.1.</strong> Regular Expression</a></li><li class="chapter-item expanded "><a href="str-parsing/syntax.html"><strong aria-hidden="true">7.2.</strong> Syntax</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="it-intro.html">Keywords</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="vc/index.html"><strong aria-hidden="true">2.</strong> Version Control</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="vc/git.html"><strong aria-hidden="true">2.1.</strong> Git</a></li></ol></li><li class="chapter-item expanded "><a href="multilang/index.html"><strong aria-hidden="true">3.</strong> Multi-Language Learning</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="multilang/control-flow.html"><strong aria-hidden="true">3.1.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="multilang/assignment.html"><strong aria-hidden="true">3.2.</strong> Assignment</a></li><li class="chapter-item expanded "><a href="multilang/expr.html"><strong aria-hidden="true">3.3.</strong> Expression and Statement</a></li><li class="chapter-item expanded "><a href="multilang/module.html"><strong aria-hidden="true">3.4.</strong> Module</a></li></ol></li><li class="chapter-item expanded "><a href="languages/index.html"><strong aria-hidden="true">4.</strong> Languages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="languages/python.html"><strong aria-hidden="true">4.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="languages/c-cpp.html"><strong aria-hidden="true">4.2.</strong> C / C++</a></li><li class="chapter-item expanded "><a href="languages/matlab-en.html"><strong aria-hidden="true">4.3.</strong> Matlab (EN)</a></li><li class="chapter-item expanded "><a href="languages/latex-math.html"><strong aria-hidden="true">4.4.</strong> Latex Math (TODO)</a></li></ol></li><li class="chapter-item expanded "><a href="webpages/index.html"><strong aria-hidden="true">5.</strong> Webpages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="webpages/html5.html"><strong aria-hidden="true">5.1.</strong> HTML5 &amp; CSS &amp; Markdown</a></li></ol></li><li class="chapter-item expanded "><a href="data-format/index.html"><strong aria-hidden="true">6.</strong> Data Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-format/yaml.html"><strong aria-hidden="true">6.1.</strong> YAML</a></li></ol></li><li class="chapter-item expanded "><a href="str-parsing/index.html"><strong aria-hidden="true">7.</strong> String Parsing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="str-parsing/re.html"><strong aria-hidden="true">7.1.</strong> Regular Expression</a></li><li class="chapter-item expanded "><a href="str-parsing/syntax.html"><strong aria-hidden="true">7.2.</strong> Syntax</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="it-intro.html">Keywords</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -153,26 +153,19 @@
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="version-control"><a class="header" href="#version-control">Version Control</a></h1>
 <p>撰寫程式前，必須先理解如何控制版本。</p>
+<p><strong>版本控制</strong>就是將文本檔案 (text-based file) 進行管理的方法。試想，將一個檔案新增 n 行，刪除 m 行，可以變成另一個檔案；只需要儲存這兩個變更，而非同時儲存兩個檔案（除非最差的狀況下）。這個比較的演算法算是經典題目，有興趣可以自行搜尋。</p>
+<p>至於此架構下的其他二進制檔案 (binary file) 只能同時儲存兩個副本，因此不推薦將頻繁變更的二進制檔案加入，諸如：圖片、音樂、影片、壓縮檔、編譯好的程式和程式庫、資料庫（需要額外版控）等等。</p>
+<p><strong>版本控制</strong>最大的好處即是，新增 n 行，刪除 m 行，可以成為最新的版本；新增 m 行，刪除 n 行，可以回到上一個版本。每次新增刪除會視為一次<strong>提交 (Commit)</strong>，當一個還未提交的內容想要清除，則會移轉成 <strong>stash</strong>，回到上一個提交（可以復原）。提交可以取別名，稱為<strong>標籤 (Tag)</strong>，如 <code>v1.0</code>，這樣就不用打它的雜湊值 (hash code) 來操作了。</p>
+<p>為了測試方便，提交不是線性堆疊的，而是可以基於相同的提交延伸出不同的堆疊，稱為<strong>分支 (Branch)</strong>；基於的提交（分岔點）和其之前的提交稱為 <strong>Base</strong>。</p>
+<p>版本控制分為<strong>集中式版本控制</strong>與<strong>分散式版本控制</strong>，前者由伺服器統一處理，近端的版本僅為備份，必須重新同步 (synchronize) 後才可以繼續提交，類似線上遊戲的數據同步。而後者則是去中心化的存放各種版本樹，並可藉由一台甚至多台伺服器做版本之間的提交。注意儘管分散式的方式可以進行「同步」行為，但也可以是非必要的，藉此開發者能夠測試出更多程式的可能性。</p>
+<p>現在較為流行的版本控制方式大都是分散式的，最流行的莫屬 Git。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="git"><a class="header" href="#git">Git</a></h1>
 <h2 id="github"><a class="header" href="#github">GitHub</a></h2>
 <p>GitHub 只是使用 Git 的網路倉儲服務，這兩個是不同東西。</p>
 <p>GitLab、BitBucket、Microsoft Azure 等都有提供類似的功能。</p>
 <h2 id="git-1"><a class="header" href="#git-1">Git</a></h2>
 <p><a href="https://git-scm.com/">Git</a> 是一種<strong>分散</strong>式<strong>版本控制</strong>架構。</p>
-<p>其中<strong>版本控制</strong>就是將 Text-based File 進行管理的方法。
-試想，將一個檔案新增 n 行，刪除 m 行，可以變成另一個檔案；
-只需要儲存這兩個變更，而非同時儲存兩個檔案（除非最差的狀況下）。
-這個比較的演算法算是經典題目，有興趣可以自行搜尋。</p>
-<p>至於此架構下的其他 Binary File 只能同時儲存兩個副本，因此不推薦將頻繁變更的 Binary File 加入，
-諸如：圖片、音樂、影片、壓縮檔、編譯好的程式和程式庫、資料庫（需要額外版控）等等。</p>
-<p><strong>版本控制</strong>最大的好處即是，新增 n 行，刪除 m 行，可以成為最新的版本；
-新增 m 行，刪除 n 行，可以回到上一個版本。
-每次新增刪除會視為一次<strong>提交 (Commit)</strong>，
-當一個還未提交的內容想要清除，則會移轉成 <strong>stash</strong>，回到上一個提交（可以復原）。
-提交可以取別名，稱為<strong>標籤 (Tag)</strong>，如 <code>v1.0</code>，這樣就不用打它的 Hash code 來操作了。</p>
-<p>為了測試方便，提交不是線性堆疊的，而是可以基於相同的提交延伸出不同的堆疊，
-稱為<strong>分支 (Branch)</strong>；基於的提交（分岔點）和其之前的提交稱為 <strong>Base</strong>。
-在 Git 系統中第一個 Branch 通常稱為 master 或 trunk。
+<p>在 Git 系統中第一個 Branch 通常稱為 master 或 trunk。
 而分支跟標籤類似，只差在分支會跟隨新提交而往前移動，最新的提交稱為 <strong>ORIG_HEAD</strong>，
 而當前的提交稱為 <strong>HEAD</strong>。
 如果一個分支被刪除，它的 Base 以外的提交也會被刪除，除非它的 ORIG_HEAD 有掛標籤。</p>
@@ -669,6 +662,30 @@ const f = async () =&gt; {};
 // 無指派，執行後回收函式本體
 (function () {})();
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="module"><a class="header" href="#module">Module</a></h1>
+<p><strong>模組 (module)</strong> 是較新的程式語言都會有的概念。通常程式碼一多，不會將程式碼都寫在同一個檔案中，因為造成協同管理與版本控制的不便。然而，這些分開的檔案，要如何描述在程式語言中呢？</p>
+<p>在較早的程式語言中，會用包含 (include) 的方式將檔案嵌套在一起，變成一個超大的檔案，因為畢竟那就是編譯二進制檔案 (binary file) 完後的樣子。但是這種方式會把變數、函式等等的名稱都混淆在一起，根本無法辨認。所以一些改良後的程式語言就發明了名稱空間。</p>
+<h2 id="namespace"><a class="header" href="#namespace">Namespace</a></h2>
+<p><strong>名稱空間</strong>是一種解決方案，透過此一語法的包裹，能夠替其中的名稱加上前綴 (prefix)，例如 <code>my_func</code> 變成類似 <code>__abc_my_func</code> 的樣子。除了層層包裹，再透過設計一些<strong>可見性 (visibility)</strong> 概念，就可以將不想看見的名稱都編上一個雜湊碼 (hash code) 避免重複就行了。</p>
+<p>可見性分為基本的兩種：公開 (public) 與私有 (private)，即向其他名稱空間公開，或僅向相同名稱空間公開。當然這些只是語義上的識別，真正的二進制檔案中全都是可見的，只是都編上了雜湊前綴，以避免重複和識別。各種程式語言的可見性語義稍有不同，例如在 C++ 中 <code>protect</code> 關鍵字表示名稱僅在繼承後的類型中可見。</p>
+<p>在名稱空間的改良下，原始碼檔案可以用一個名稱空間包裹，以表示該檔案是一個作用範圍。在更後期的程式語言中，名稱空間會造成閱讀程式馬上的不便，因此更簡單的方式便是，將原始碼檔案與目錄 (directory) 直接當作名稱空間即可，並稱之為模組。</p>
+<h2 id="module-1"><a class="header" href="#module-1">Module</a></h2>
+<p><strong>模組</strong>以檔案與目錄的關係建構，不過一些不同的程式語言仍有些微的差異。以下是專有名詞：</p>
+<ul>
+<li>根模組 (root module)：整個專案的起始模組。</li>
+<li>導入 (import)：引用來自其他模組的名稱。</li>
+<li>遞迴導入 (recursive import)：兩模組包含互相引用，或導入順序形成閉環。</li>
+<li>分支 (branch)：樹狀結構的非末端，通常只有目錄的位置。</li>
+<li>子模組 (child module)：下一層模組，只有分支會包含子模組。</li>
+<li>父模組 (parent module)：上一層模組，父模組就是分支。</li>
+</ul>
+<p>關於定義分支，如 Python 中使用 <code>__init__.py</code> 特殊檔案名稱來表示與目錄同名的模組；過去的 Rust 則是使用與目錄同名的檔案名稱，不過現在使用 <code>mod.rs</code> 來代表，因為 <code>mod</code> 是關鍵字不會重複，修改模組名稱就不用跟著改。</p>
+<p>關於模組的搜尋方式，如 Python 是動態語言，所以僅在導入時才會搜尋並快取，最初執行或拿來導入的地方作為根模組，且不可以遞迴導入，必須是樹狀相依。另外 Python 在導入時能使用 <code>.</code> 和更多 <code>..</code> 作為前綴，表示上一層和更上層模組，但是由於必須避開遞迴導入，盡量使用從根模組開始的全名描述。</p>
+<p>Rust 則是將可執行程式 binary crate 的根模組設定為 <code>main.rs</code>，程式庫 library crate 的根模組設定為 <code>lib.rs</code>，且必須在根模組與分支中用 <code>mod</code> 關鍵字列出全部子模組的名稱。其中根模組使用關鍵字 <code>crate</code> 表示，當前模組使用 <code>self</code> 關鍵字表示，上一層模組則是用 <code>super</code> 關鍵字。而且由於有實現真正的前向引用 (forward reference)，Rust 不會被導入的相依性影響，可以比較沒負擔的全部導入可見名稱。不過重複名稱仍以最後導入的為主，且引用上不可以有岐義。</p>
+<h2 id="visibility"><a class="header" href="#visibility">Visibility</a></h2>
+<p><strong>可見性</strong>在模組間的處理，除了用關鍵字 <code>public</code> 等直接定義，如 Python 沒有可見性設計的程式語言會使用 <code>_</code> 底線字元作為前綴，來表示僅限內部引用，不過語義上仍沒有強制力，使用者仍可刻意使用。對程式庫來說，這些「可見的部份」其實就是應用程式介面 (Application Programing Interface, API)，意思是使用者能夠在程式庫中使用的名稱。</p>
+<p>藉由導入，重新出現的名稱可作為一種別名 (alias)，這對 API 設計有幫助。程式庫的使用者可以比較輕鬆的引入想要的名稱，而非親自從個別的模組導入。但是也會產生一些問題，如 Python 其實可以任意導入一個模組已導入的其他名稱，使得 API 看起來很亂，所以設計了 <code>__all__</code> 名稱清單列舉 API 提供的名稱，不過仍沒有強制性。</p>
+<p>而設計了可見性標示的程式語言，有益於透過分析程式碼的工具將「可見」的名稱製作成 API 說明文件，也算是盡其優勢。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="languages"><a class="header" href="#languages">Languages</a></h1>
 <p>學習一些程式語言範本。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="python"><a class="header" href="#python">Python</a></h1>
@@ -2118,7 +2135,7 @@ end_fun();
     r.require();
 }
 </code></pre>
-<h2 id="namespace"><a class="header" href="#namespace">Namespace</a></h2>
+<h2 id="namespace-1"><a class="header" href="#namespace-1">Namespace</a></h2>
 <p>「名稱空間 (Namespace)」是 C++ 用來避免名稱重複的語法，可以為區域中的內容編上前綴名。
 引用時使用 Scope Member 存取運算子 <code>::</code> 取值，同一個名稱空間中的內容互相引用不需要加上前綴。
 習慣上名稱空間的內容不會縮排，而是在結尾括弧增加註解辨識。
