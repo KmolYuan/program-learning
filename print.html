@@ -620,7 +620,7 @@ assert_eq!(*a.lock().unwrap(), 10);
 <p>關於模組的搜尋方式，如 Python 是動態語言，所以僅在導入時才會搜尋並快取，最初執行或拿來導入的地方作為根模組，且不可以遞迴導入，必須是樹狀相依。另外 Python 在導入時能使用 <code>.</code> 和更多 <code>..</code> 作為前綴，表示上一層和更上層模組，但是由於必須避開遞迴導入，盡量使用從根模組開始的全名描述。</p>
 <p>Rust 則是將可執行程式 binary crate 的根模組設定為 <code>main.rs</code>，程式庫 library crate 的根模組設定為 <code>lib.rs</code>，且必須在根模組與分支中用 <code>mod</code> 關鍵字列出全部子模組的名稱。其中根模組使用關鍵字 <code>crate</code> 表示，當前模組使用 <code>self</code> 關鍵字表示，上一層模組則是用 <code>super</code> 關鍵字。而且由於有實現真正的前向引用 (forward reference)，Rust 不會被導入的相依性影響，可以比較沒負擔的全部導入可見名稱。不過重複名稱仍以最後導入的為主，且引用上不可以有岐義。</p>
 <h2 id="visibility"><a class="header" href="#visibility">Visibility</a></h2>
-<p><strong>可見性</strong>在模組間的處理，除了用關鍵字 <code>public</code> 等直接定義，如 Python 沒有可見性設計的程式語言會使用 <code>_</code> 底線字元作為前綴，來表示僅限內部引用，不過語義上仍沒有強制力，使用者仍可刻意使用。對程式庫來說，這些「可見的部份」其實就是應用程式介面 (Application Programing Interface, API)，意思是使用者能夠在程式庫中使用的名稱。</p>
+<p><strong>可見性</strong>在模組間的處理，除了用關鍵字 <code>public</code> 等直接定義，如 Python 沒有可見性設計的程式語言會使用 <code>_</code> 底線字元作為前綴，來表示僅限內部引用，不過語義上仍沒有強制力，使用者仍可刻意使用。對程式庫來說，這些「可見的部份」其實就是<strong>應用程式介面 (Application Programing Interface, API)</strong>，意思是使用者能夠在程式庫中使用的名稱。</p>
 <p>藉由導入，重新出現的名稱可作為一種別名 (alias)，這對 API 設計有幫助。程式庫的使用者可以比較輕鬆的引入想要的名稱，而非親自從個別的模組導入。但是也會產生一些問題，如 Python 其實可以任意導入一個模組已導入的其他名稱，使得 API 看起來很亂，所以設計了 <code>__all__</code> 名稱清單列舉 API 提供的名稱，不過仍沒有強制性。</p>
 <p>而設計了可見性標示的程式語言，有益於透過分析程式碼的工具將「可見」的名稱製作成 API 說明文件，也算是盡其優勢。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="functional-programming"><a class="header" href="#functional-programming">Functional Programming</a></h1>
@@ -691,7 +691,7 @@ give_world(run_me);
 </span></code></pre></pre>
 <p>在 Rust 中，靜態函式可被記作 <code>fn(參數類型) -&gt; 回傳類型</code>，不回傳則會回傳單元 (unit) 類型 <code>()</code>，可記作 <code>-&gt; ()</code> 或直接省略。上面的例子中可以將靜態函式傳送給另一個函式呼叫。</p>
 <h2 id="closure"><a class="header" href="#closure">Closure</a></h2>
-<p><strong>閉包 (closure)</strong> 是一種動態產生的函式，意旨在於，執行的時候想產生需要客製化的程式碼，例如有很多想操作的參數，但是不方便一起作為參數輸入。閉包可藉由將外部變數傳入的方式取得其值或是參照，這個行為稱為<strong>捕獲 (capture)</strong>，來動態執行更多內容。</p>
+<p><strong>閉包</strong>是一種動態產生的函式，意旨在於，執行的時候想產生需要客製化的程式碼，例如有很多想操作的參數，但是不方便一起作為參數輸入。閉包可藉由將外部變數傳入的方式取得其值或是參照，這個行為稱為<strong>捕獲 (capture)</strong>，來動態執行更多內容。</p>
 <p>捕獲變數是有條件的，因為閉包產生後，不會馬上被呼叫。被呼叫的次數也是關鍵，如果只需要呼叫一次，大可直接刪除閉包，將捕獲對象歸還，但是閉包若是需要執行多次、改變捕獲對象的值，或甚至作為回傳值，條件都將更苛刻。</p>
 <p>在 Rust 中，閉包雖然是可呼叫的，但是和靜態函式不一樣，擁有更多限制，像是捕獲對象的生命週期。大部分的情況下，閉包可以自動判斷條件和類型標示，只需要下列的定義：</p>
 <ul>
@@ -747,6 +747,7 @@ closures(&amp;mut f1);
 <div style="break-before: page; page-break-before: always;"></div><h1 id="object-oriented-programming"><a class="header" href="#object-oriented-programming">Object-oriented Programming</a></h1>
 <p><strong>物件導向編程 (Object-oriented Programming)</strong> 是一種程式的設計模式。廣義來說，任何圍繞著<strong>結構體類型</strong>設計的寫作方式都可以稱為物件導向，儘管有些程式語言並不習慣以此方式操作或設計。在一般的程式語言中，會有著原始類型 (primitive type)，當要同時操作多個變數，支援<strong>結構體 (structure)</strong> 或<strong>聯合體 (union)</strong> 類型的程式語言可以將多個變數一起儲存。</p>
 <p>聯合體與結構體的差別在於，聯合體的欄位都是共用的，以最長的欄位為總空間，結構體則是分開的，消耗的空間是全欄位的總和。聯合體共用欄位會導致二進位數值在每個欄位的意義都不同，所以讀寫都是不安全的。結構體可以沒有欄位，以作為一種泛型標示，後面會提到。</p>
+<p><strong>類型 (type)</strong> 準確來說是一種<strong>記憶體布局 (memory layout)</strong>，從系統中索取記憶體大小，再將資料存入。這些各別存入的資料又稱為<strong>實例 (instance)</strong>。例如儲存整數時使用 8 位元，雖然記憶體用量很小，但是其數值無法超過 2 的 8 次方 256，所以後續還有更長的記憶體空間的類型。又以結構體來說，若定義一個「平面點座標」由兩個 64 位元的浮點數構成，記憶體長度就會是兩倍，且創造出每個點都會有兩個 64 位元的浮點數，此時這些點便稱為「平面點座標」的實例。</p>
 <pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
@@ -807,13 +808,225 @@ let p1 = Point {x: 10., y: 0.};
 let p2 = Point {x: 40., y: 40.};
 // 呼叫關聯函式 (associated function)
 println!(&quot;{}&quot;, Point::distance(&amp;p1, &amp;p2));
-// 呼叫方法 (method)
+// 以成員存取運算子呼叫該函式
 println!(&quot;{}&quot;, (&amp;p1).distance(&amp;p2));
-// Rust 中的方法可以自動取址和解參照
-println!(&quot;{}&quot;, p1.distance(&amp;p2));
 <span class="boring">}
 </span></code></pre></pre>
-<p>在上面的範例中，可以使用 <code>impl Point</code> 語句將 <code>distance</code> 函式「實作」於 <code>Point</code> 類型中，這樣就可以以<strong>關聯函式 (associated function)</strong> 的方式呼叫。不過這樣子稍顯累贅，因此更可以用<strong>方法 (method)</strong> 的樣式呼叫，直接使用 <code>.</code> 成員存取運算子呼叫該函式出來。其中，函式的第一項參數已替換為本身，以 <code>self</code> 關鍵字代表，而進行二元運算時，習慣把另一方稱為 <code>rhs</code> (Right Hand Side)。</p>
+<p>在上面的範例中，可以使用 <code>impl Point</code> 語句將 <code>distance</code> 函式「實作 (implement)」於 <code>Point</code> 類型中，這樣就可以用<strong>關聯函式 (associated function)</strong> 的方式呼叫，這些函式又稱為<strong>方法 (method)</strong>。不過這樣子稍顯累贅，對於已創造的實例，可以直接使用 <code>.</code> 成員存取運算子呼叫該函式。</p>
+<p>實作語句中為了方便，可以直接使用大寫開頭的 <code>Self</code> 關鍵字稱呼自己的類型，用小寫開頭的 <code>self</code> 關鍵字稱呼自己的實例。函式的第一項參數可以替換為自己的實例，而進行二元運算時，習慣把另一方稱為 <code>rhs</code> (Right Hand Side)。</p>
+<p>在 Rust 中的方法有下列幾種：</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Dummy {
+    value: f64
+}
+
+impl Dummy {
+    fn new() -&gt; Self {
+        Self { value: 0. }
+    }
+
+    fn builder(mut self, value: f64) -&gt; Self {
+        self.value = value;
+        self
+    }
+
+    fn into_value(self) -&gt; f64 { self.value }
+
+    fn setter(&amp;mut self, value: f64) {
+        self.value = value;
+    }
+
+    fn getter(&amp;self) -&gt; f64 {
+        self.value
+    }
+}
+
+let mut d = Dummy::new().builder(20.);
+println!(&quot;{}&quot;, d.getter());
+d.setter(30.);
+println!(&quot;{}&quot;, d.into_value());
+<span class="boring">}
+</span></code></pre></pre>
+<p>由上而下分別是：</p>
+<ul>
+<li><strong>靜態方法 (static method)</strong>，又稱為<strong>類型方法 (class method)</strong>：其主要是進行與此類型相關的計算，或是實例的生成，如 <code>new</code> 函式是用來產生此類型的實體。</li>
+<li><strong>建造方法 (builder method)</strong>：傳入自身實例再傳出，藉由將實例標示為可變的 (mutable)，可以作為初始化專用的方法。如 <code>builder</code> 函式可以用在 <code>new</code> 函式之後接連呼叫。</li>
+<li><strong>消耗方法 (consuming method)</strong>：傳入自身實例，但是沒有傳出。這導致實例本身會在函式結束時被刪除，這種方法通常用做構建其他類型。如 <code>into_value</code> 函式會消耗自身，回傳攜帶的數值。若要定義刪除時的行為，應該實作 <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a> trait。</li>
+<li><strong>可變實例方法 (mutable instance method)</strong>：以可變參照的方式參與函式，實例必須先標記為可變。如 <code>setter</code> 函式途中變更攜帶的數值。</li>
+<li><strong>實例方法 (instance method)</strong>：以唯讀參照的方式參與函式。如 <code>getter</code> 函式僅讀取攜帶的數值。</li>
+</ul>
+<p>在範例程式中可發現，Rust 使用成員存取運算子 <code>.</code> 時可以自動解開參照或取址，這樣就不用特別寫 <code>(*x).method()</code> 或 <code>(&amp;x).field</code> 的語法了。另外，Rust 中欄位的名稱和方法的名稱不會衝突，端看使用的語法，如 <code>x.method()</code> 和 <code>X::method</code> 會認為是方法，而 <code>x.field</code> 會被認為是欄位成員。至於可呼叫的成員，呼叫時必須特別加優先權運算子 <code>(x.field)()</code>。</p>
+<h2 id="inheritance"><a class="header" href="#inheritance">Inheritance</a></h2>
+<p><strong>繼承</strong>是一種方便將多個類型混合的概念，這樣父類型能夠相容子類型，達到函式能接受多類型的條件。下面用 Python 舉例：</p>
+<pre><code class="language-python">class Point2D:
+    x: float
+    y: float
+
+class Point3D(Point2D):
+    z: float
+</code></pre>
+<p>但是，繼承產生的結構會變得很複雜：父類型可以被多個子類型繼承，但是如果要附加某些功能，勢必要父類型去繼承更多，但是父類型間很可能也不相容。通常這樣的解法會是使用多重繼承，允許有多個父類型，各類型間會變成跳躍式的樹狀關係。例如 Python 要製作整數列舉類型，會同時繼承整數與列舉類型：</p>
+<pre><code class="language-python">from enum import auto, Enum
+
+class IntEnum(int, Enum):
+    FIRST = auto()
+    SECOND = auto()
+</code></pre>
+<p>然而，這之中可以形成一個閉迴路，會讓衝突更難解決：若兩個父類型有相同的方法或成員，究竟該使用哪個呢？順序繼承？要如何處理重複的名稱呢？可見性？而且，設計 API 時若是粗心大意，就一定要從上游解決了。</p>
+<p>在 Rust 中沒有繼承，當然想要手動作是可以：</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Point2D {
+    x: f64,
+    y: f64,
+}
+
+struct Point3D {
+    base: Point2D,
+    z: f64,
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>嗯…語法上會比較繁瑣，不過倒是沒有上述的問題了，因為「父類型」已經變成自己的成員了，呼叫方法一定要從 <code>base</code> 欄位。當然這也不是建議的作法，而是要用強大的泛型下手。</p>
+<h2 id="generic"><a class="header" href="#generic">Generic</a></h2>
+<p><strong>泛型</strong>的主要目的是<strong>藉由參數創造類型</strong>。打個比方，在 Rust 中 32 位元整數的陣列類型寫為 <code>[i32]</code>，而 32 位元浮點數的陣列 (array) 類型寫為 <code>[f32]</code>，而陣列寫做 <code>[T]</code>，其中 <code>T</code> 是一個類型的代號，用來「泛化」的指稱任何陣列類型。除了用類型作為參數，還可以用定值作為參數，例如陣列是有長度的，不同長度的陣列算是不同類型，記為 <code>[T; N]</code>，而 <code>N</code> 就是一種定值參數。這些參數又稱為<strong>模板參數 (template parameter)</strong>。</p>
+<p>另一個功用在於解決繼承的煩惱，如果我們為類型設下了<strong>條件</strong>，那程式碼就能允許使用這個類型了，以下用「支援加法運算子」來當範例。</p>
+<p>先從傳統有繼承系統的程式語言為例，Python 支援加法運算子主要是覆蓋 <code>__add__</code> 方法，這種名稱樣式稱為<strong>魔法 (magic)</strong> 名稱，可以想像成 Python 的潛規則。<code>__add__</code> 方法也能視為 C++ 中的 <code>operator+</code> 方法。</p>
+<pre><code class="language-python">from typing import TypeVar, Protocol
+
+T = TypeVar(&quot;T&quot;)
+R = TypeVar(&quot;R&quot;)
+
+class Add(Protocol[T, R]):
+    def __add__(self, rhs: T) -&gt; R:
+        ...
+
+def plus(a: Add[T, R], b: T) -&gt; R:
+    return a + b
+</code></pre>
+<p>在 Python 3.8 中終於推出了「協議 (protocol)」類型，當用作類型標示時，代表只要輸入的類型有該方法或成員即滿足條件。不過得重申一次 Python 是動態語言，以上僅對靜態分析有用。C++20 則是稱為「概念 (concept)」，詳見：<a href="https://en.cppreference.com/w/cpp/language/constraints">https://en.cppreference.com/w/cpp/language/constraints</a>。在這之前，C++ 的泛型功能僅支援模板，所有類型都能接受，且在編譯時才會提示錯誤。</p>
+<p>不過這些都只是附加一個條件在類型標註上。Rust 延伸自 Java 的介面 (interface) 概念，稱為特徵 (trait)，讓這些條件參與到程式設計中。順帶一題，Java 的繼承系統沒有多重繼承，算是兼容兩種概念。</p>
+<p>以下是 Rust 中對加法運算子的 trait。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub trait Add&lt;Rhs = Self&gt; {
+    type Output;
+
+    #[must_use]
+    fn add(self, rhs: Rhs) -&gt; Self::Output;
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>其中，「實作」<code>Add</code> trait 的類型可視作 <code>A</code>；上面的 <code>Rhs</code> 模板參數可視作 <code>B</code>；最後 <code>Add::Output</code> 這個類型別名 (type alias) 可視作 <code>C</code>，即 <code>A + B = C</code> 的關係。以下為實作範例：</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">use std::ops::Add;
+</span>#[derive(Debug)]
+struct Time(u64);
+
+struct Duration{
+    sec: u64,
+};
+
+impl Add for Time {
+    type Output = Time;
+
+    fn add(self, rhs: Self) -&gt; Self::Output {
+        // Tuple structure 的成員存取是用欄位順序
+        Self(self.0 + rhs.0)
+    }
+}
+
+impl Add&lt;Duration&gt; for Time {
+    type Output = Time;
+
+    fn add(self, rhs: Duration) -&gt; Self::Output {
+        Self(self.0 + rhs.sec)
+    }
+}
+
+println!(&quot;{:?}&quot;, Time(20) + Time(30));
+println!(&quot;{:?}&quot;, Time(20) + Duration { sec: 30 });
+<span class="boring">}
+</span></code></pre></pre>
+<p>上面的範例可以看到，<code>impl A for B</code> 語句僅能為兩者實作一次，不過有模板參數的 trait 可以實作多次，第一次為 <code>Add&lt;Time&gt;</code>，第二次為 <code>Add&lt;Duration&gt;</code>，因為類型和 trait 只要搭配不同模板參數，就會被視為不一樣。</p>
+<p>至於要將 trait 應用到類型標註中，觀念就很重要了：</p>
+<ul>
+<li>Trait <strong>不是</strong>類型，而是類型的<strong>條件</strong>。因此 <code>impl A for B</code> 的 <code>A</code> 必須是 trait，<code>B</code> 必須是類型（<code>struct</code>、<code>enum</code>、<code>union</code> 皆可），在這個區塊內，<code>self</code> 和 <code>Self</code> <strong>永遠</strong>是指 <code>B</code>，只是剛好也滿足 <code>A</code>。定義 <code>A</code> 時也是如此，不過 <code>B</code> 還不存在，只會有自身條件可用。</li>
+<li>條件可以有<strong>先決條件</strong>，如 <code>Copy</code> trait 必須先實作 <code>Clone</code> trait，<code>Clone</code> 提供了複製的能力，<code>Copy</code> 表示在指派過程中會採取複製。</li>
+<li>條件可以<strong>累加</strong>，所以 trait 可以用加法運算子相加，這樣必須滿足全部要求。如 <code>Copy + Debug</code> 代表類型必須實作 <code>Copy</code> trait 和 <code>Debug</code> trait。由於 trait 可能有先決條件，這些行為算是聯集，重複的要求不會影響條件。</li>
+<li>模板參數是<strong>類型</strong>，可以加上條件。</li>
+<li>類型別名也是<strong>類型</strong>，在定義 trait 時可以加上條件。</li>
+<li>條件裡的相關名稱衝突時，可以使用 <code>&lt;A as Add&gt;::Output</code> 語法指定名稱。</li>
+</ul>
+<p>實際應用中，函數可以加上模板：</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">use std::ops::Add;
+</span>fn plus&lt;A, B&gt;(a: A, b: B) -&gt; A::Output
+where
+    A: Add&lt;B&gt;,
+{
+    a + b
+}
+
+println!(&quot;{}&quot;, plus(10., 20.));
+<span class="boring">}
+</span></code></pre></pre>
+<p>模板參數的條件也可以都寫在尖括弧中，如 <code>&lt;A: Add&lt;B&gt;, B&gt;</code>，不過巢括弧比較難看，可以用 <code>where</code> 關鍵字統一擺到最後面條列。</p>
+<p>若不使用 trait，單純使用類型的模板也可以，以下是範例：</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Handler&lt;T&gt; {
+    inner: T,
+}
+
+impl&lt;T&gt; Clone for Handler&lt;T&gt;
+where
+    T: Clone,
+{
+    fn clone(&amp;self) -&gt; Self {
+        Self { inner: self.inner.clone() }
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>上面的實作區塊中新增了模板參數，以及 <code>where</code> 的補充語句。在函式中的模版參數，是來自於呼叫時；而實作區塊的模版參數，則是在創造實例或呼叫靜態方法時。上面的實作區塊表示，當 <code>inner</code> 欄位的類型有實作 <code>Clone</code> trait 的話，<code>Handler</code> 類型也會實作 <code>Clone</code>。</p>
+<p>當然，如果一開始限制 <code>inner</code> 的話也可以，這樣直接由派生巨集來產生實作區塊就好。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>#[derive(Clone)]
+struct Handler&lt;T: Clone&gt; {
+    inner: T,
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>在大多情況下，Rust 會自動填入模板參數的類型，如容器類型 <code>Vec&lt;T&gt;</code> 可以在 <code>Vec::push</code> 呼叫時推斷類型。若要主動填入模板參數，可以使用名稱空間存取運算子 <code>::</code> 在後方，如呼叫 <a href="https://doc.rust-lang.org/std/vec/struct.Vec.html#method.new"><code>Vec::&lt;i32&gt;::new</code></a> 能夠填入 <code>Vec</code> 類型的模板；<a href="https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.collect"><code>Iterator::collect::&lt;Vec&lt;_&gt;&gt;</code></a> 能夠填入 <code>Iterator::collect</code> 的模板，底線的部份則是交由編譯器推導的必填欄位，可選欄位可不輸入。</p>
+<p>上面提到的「先決條件」則是在 trait 定義時就要使用，如 <code>Copy</code> trait 的定義：</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub trait Copy: Clone {}
+<span class="boring">}
+</span></code></pre></pre>
+<p>由於 <code>Copy</code> trait 是一種<strong>標記 (marker)</strong> 用的 trait，因此沒有任何要求，它的用途之前也都提過了。類似的例子如 <code>Sized</code> trait，表示已知大小的類型，動態大小的類型會寫上 <code>?Sized</code>，而反向條件目前還未支援。要創造一種標記式的 trait，除了定義先決條件外，還可以實作給全部符合條件的對象，如下面所示：</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub trait Marker: Clone {}
+
+impl&lt;T: Clone&gt; Marker for T {}
+<span class="boring">}
+</span></code></pre></pre>
+<p>在 Rust 中，實作語句 <code>impl A for B</code> 除了僅能實作一次，且只能在 <code>A</code> 或 <code>B</code> 其一是在與定義位於同一個專案（稱為 crate）中才行，以防尋找語句上的問題。但是 <code>impl A</code> 語句倒是不用配合 trait 必須一次實作完的限制，所以可以分散在同一個專案內的不同模組。在語法上，實作語句存在於任意模組即可，是不用導入的。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="expression-and-statement"><a class="header" href="#expression-and-statement">Expression and Statement</a></h1>
 <p>表達式 (Expression) 和陳述式 (Statement) 的差別在於，
 前者為一種值 (value)，後者不代表任何運行結果，範例如下：</p>
