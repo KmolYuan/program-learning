@@ -1026,7 +1026,7 @@ struct Handler&lt;T: Clone&gt; {
 impl&lt;T: Clone&gt; Marker for T {}
 <span class="boring">}
 </span></code></pre></pre>
-<p>在 Rust 中，實作語句 <code>impl A for B</code> 除了僅能實作一次，且只能在 <code>A</code> 或 <code>B</code> 其一是在與定義位於同一個專案（稱為 crate）中才行，以防尋找語句上的問題。但是 <code>impl A</code> 語句倒是不用配合 trait 必須一次實作完的限制，所以可以分散在同一個專案內的不同模組。在語法上，實作語句存在於任意模組即可，是不用導入的。</p>
+<p>在 Rust 中，實作語句 <code>impl A for B</code> 除了僅能實作一次，且只能在 <code>A</code> 或 <code>B</code> 其一是在與定義位於同一個專案（稱為 crate）中才行，以防尋找語句上的問題。但是 <code>impl A</code> 語句倒是不用配合 trait 必須一次實作完的限制，所以可以分散在同一個專案內的不同模組。在語法上，實作語句存在於任意模組即可，是不用導入的，不過與 trait 有關的方法必須導入該 trait。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="expression-and-statement"><a class="header" href="#expression-and-statement">Expression and Statement</a></h1>
 <p>表達式 (Expression) 和陳述式 (Statement) 的差別在於，
 前者為一種值 (value)，後者不代表任何運行結果，範例如下：</p>
