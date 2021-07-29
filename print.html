@@ -934,10 +934,31 @@ struct Point3D {
 <span class="boring">}
 </span></code></pre></pre>
 <p>嗯…語法上會比較繁瑣，不過倒是沒有上述的問題了，因為「父類型」已經變成自己的成員了，呼叫方法一定要從 <code>base</code> 欄位。當然這也不是建議的作法，而是要從強大的泛型下手。</p>
+<h2 id="abstract-class"><a class="header" href="#abstract-class">Abstract Class</a></h2>
+<p><strong>抽象類型</strong>又稱<strong>虛擬類型 (Virtual Class)</strong>，其功用在於解決繼承時實作不完全的困擾。作為一個中間層類型，抽象類型通常不可以初始化，必須再被繼承一次後才能使用，以確保功能已經被實作。可以視為，抽象類型先用「抽象名稱」佔據一個名稱，子類型實作時再檢查，避免跳著繼承時的問題。</p>
+<pre><code class="language-python">from abc import ABC, abstractmethod
+
+class Base(ABC):
+    @abstractmethod
+    def method(self):
+        ...
+</code></pre>
+<p>透過繼承抽象類型，子類型必須實作標記為「抽象方法」的部份，藉此避免有子類型忽視某些缺乏的功能，父類型也有一個能夠引用的對象。但是抽象類型的表述仍不直觀，若作為 API，必須為抽象類型設定相關的說明，而且亦有犯錯的可能。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="generic"><a class="header" href="#generic">Generic</a></h1>
 <p><strong>泛型</strong>的主要目的是<strong>藉由參數創造類型</strong>。打個比方，在 Rust 中 32 位元整數的陣列類型寫為 <code>[i32]</code>，而 32 位元浮點數的陣列 (array) 類型寫為 <code>[f32]</code>，而陣列寫做 <code>[T]</code>，其中 <code>T</code> 是一個類型的代號，用來「泛化」的指稱任何陣列類型。除了用類型作為參數，還可以用定值作為參數，例如陣列是有長度的，不同長度的陣列算是不同類型，記為 <code>[T; N]</code>，而 <code>N</code> 就是一種定值參數。這些參數又稱為<strong>模板參數 (template parameter)</strong>。</p>
-<p>另一個功用在於解決繼承的煩惱，如果我們為類型設下了<strong>條件</strong>，那程式碼就能允許使用這個類型了，以下用「支援加法運算子」來當範例。</p>
-<p>先從傳統有繼承系統的程式語言為例，Python 支援加法運算子主要是覆蓋 <code>__add__</code> 方法，這種名稱樣式稱為<strong>魔法 (magic)</strong> 名稱，可以想像成 Python 的潛規則。<code>__add__</code> 方法也能視為 C++ 中的 <code>operator+</code> 方法。</p>
+<p>Rust 中的泛型參數是可以自動推導的，如容器類型：</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn vector() -&gt; Vec&lt;f32&gt; {
+    let mut v = Vec::new(); // Vec&lt;?&gt;
+    v.push(20.); // Vec&lt;Float?&gt;
+    v // Vec&lt;f32&gt;
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h2 id="interface"><a class="header" href="#interface">Interface</a></h2>
+<p><strong>介面</strong>與抽象類型不同的地方在於，介面不是「繼承」而是「實作」，通常只會提供方法。先從傳統有繼承系統的程式語言為例，Python 支援加法運算子主要是覆蓋 <code>__add__</code> 方法，這種名稱樣式稱為<strong>魔法 (magic)</strong> 名稱，可以想像成 Python 的潛規則。<code>__add__</code> 方法也能視為 C++ 中的 <code>operator+</code> 方法。</p>
 <pre><code class="language-python">from typing import TypeVar, Protocol
 
 T = TypeVar(&quot;T&quot;)
@@ -950,8 +971,8 @@ class Add(Protocol[T, R]):
 def plus(a: Add[T, R], b: T) -&gt; R:
     return a + b
 </code></pre>
-<p>在 Python 3.8 中終於推出了「協議 (protocol)」類型，當用作類型標示時，代表只要輸入的類型有該方法或成員即滿足條件。不過得重申一次 Python 是動態語言，以上僅對靜態分析有用。C++20 則是稱為「概念 (concept)」，詳見：<a href="https://en.cppreference.com/w/cpp/language/constraints">https://en.cppreference.com/w/cpp/language/constraints</a>。在這之前，C++ 的泛型功能僅支援模板，所有類型都能接受，且在編譯時才會提示錯誤。</p>
-<p>不過這些都只是附加一個條件在類型標註上。Rust 延伸自 Java 的介面 (interface) 概念，稱為特徵 (trait)，讓這些條件參與到程式設計中。順帶一題，Java 的繼承系統沒有多重繼承，算是兼容兩種概念。</p>
+<p>在 Python 3.8 中終於推出了「協議 (protocol)」類型，當用作類型標示時，代表只要輸入的類型有該方法或成員即滿足條件。可惜的是，真正用來表示繼承關係的抽象類型反而沒有用在標準庫中。另外得重申一次 Python 是動態語言，以上僅對靜態分析有用。C++20 則是稱為「概念 (concept)」，詳見：<a href="https://en.cppreference.com/w/cpp/language/constraints">https://en.cppreference.com/w/cpp/language/constraints</a>。在這之前，C++ 的泛型功能僅支援模板，所有類型都能接受，且在編譯時才會提示錯誤。</p>
+<p>Rust 延伸自 Java 的介面概念，稱為特徵 (trait)，讓這些條件參與到程式設計中。順帶一題，Java 的繼承系統沒有多重繼承，算是兼容兩種概念。</p>
 <p>以下是 Rust 中對加法運算子的 trait。</p>
 <pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
@@ -1041,7 +1062,12 @@ where
 }
 <span class="boring">}
 </span></code></pre></pre>
-<p>上面的實作區塊中新增了模板參數，以及 <code>where</code> 的補充語句。在函式中的模版參數，是來自於呼叫時；而實作區塊的模版參數，則是在創造實例或呼叫靜態方法時。上面的實作區塊表示，當 <code>inner</code> 欄位的類型有實作 <code>Clone</code> trait 的話，<code>Handler</code> 類型也會實作 <code>Clone</code>。</p>
+<p>上面的實作區塊中新增了模板參數，以及 <code>where</code> 的補充語句。表示當 <code>inner</code> 欄位的類型有實作 <code>Clone</code> trait 的話，<code>Handler</code> 類型也會實作 <code>Clone</code>。</p>
+<p>模版參數在以下位置定義時：</p>
+<ul>
+<li>函式中：來自於函式呼叫時。</li>
+<li>類型、trait 與實作區塊：在引用實例時。</li>
+</ul>
 <p>當然，如果一開始限制 <code>inner</code> 的話也可以，這樣直接由派生巨集來產生實作區塊就好。</p>
 <pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
@@ -1070,6 +1096,44 @@ impl&lt;T: Clone&gt; Marker for T {}
 <span class="boring">}
 </span></code></pre></pre>
 <p>在 Rust 中，實作語句 <code>impl A for B</code> 除了僅能實作一次，且只能在 <code>A</code> 或 <code>B</code> 其一是在與定義位於同一個專案（稱為 crate）中才行，以防尋找語句上的問題。但是 <code>impl A</code> 語句倒是不用配合 trait 必須一次實作完的限制，所以可以分散在同一個專案內的不同模組。在語法上，實作語句存在於任意模組即可，是不用導入的，不過與 trait 有關的方法必須導入該 trait。</p>
+<h2 id="lifetime"><a class="header" href="#lifetime">Lifetime</a></h2>
+<p><strong>生命週期</strong>在 Rust 可以作為泛型參數，以確保外部變數存活的時間長於當前環境，如一般的函式其實都有各別的生命週期。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn func1(s: &amp;str) -&gt; &amp;str {
+    s.strip_prefix(&quot;abc&quot;).unwrap()
+}
+
+fn func2&lt;'a&gt;(s: &amp;'a str) -&gt; &amp;'a str {
+    s.strip_prefix(&quot;abc&quot;).unwrap()
+}
+
+let s = &quot;abc123&quot;;
+println!(&quot;{}&quot;, func2(s));
+<span class="boring">}
+</span></code></pre></pre>
+<p>上面的函式 <code>func1</code> 是一般的函式，函式 <code>func2</code> 是編譯器自動推導的標註樣式。在 Rust 中的指派取址時才可以標註生命週期變數，名稱由單引號開頭，如 <code>'a</code>。生命週期變數的推導時間跟其他模板參數一樣，用途是比較參照的引用時間必須<strong>小於</strong>的生命週期。所以範例的程式碼表示，變數 <code>s</code> 必須在生命週期 <code>'a</code> 以內，而呼叫的 <code>str::strip_prefix</code> 會傳回一小段分割參照，表示移除前綴後的字串結果。</p>
+<p>通常使用分割器 (spliter) 製作的參照是引用自原始資料，因此 <code>&quot;123&quot;</code> 是 <code>&quot;abc123&quot;</code> 的一部分，生命週期要小於變數 <code>s</code>。</p>
+<p>同樣的，若是標註在類型、trait 與實作區塊的生命週期變數，該參照和其容器的生命週期必須比原本資料短。在任何類型中如果有參照欄位，都需要在模板添加生命週期變數。不過，其他時候大都可以自動推導，其他如閉包內的參照輸入可能就必須標示。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Title&lt;'a&gt; {
+    inner: &amp;'a str
+}
+
+impl&lt;'a&gt; Title&lt;'a&gt; {
+    fn title(&amp;self) -&gt; &amp;str {
+        self.inner
+    }
+}
+
+let s = &quot;Title&quot;;
+let t = Title { inner: s };
+println!(&quot;{}&quot;, t.title());
+<span class="boring">}
+</span></code></pre></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="expression-and-statement"><a class="header" href="#expression-and-statement">Expression and Statement</a></h1>
 <p>表達式 (Expression) 和陳述式 (Statement) 的差別在於，
 前者為一種值 (value)，後者不代表任何運行結果，範例如下：</p>
