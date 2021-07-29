@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Generic - Program Learning</title>
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="程式入門">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="../vc/index.html"><strong aria-hidden="true">2.</strong> Version Control</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../vc/git.html"><strong aria-hidden="true">2.1.</strong> Git</a></li></ol></li><li class="chapter-item expanded "><a href="../multilang/index.html"><strong aria-hidden="true">3.</strong> Multi-Language Learning</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../multilang/control-flow.html"><strong aria-hidden="true">3.1.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="../multilang/memory.html"><strong aria-hidden="true">3.2.</strong> Memory Management</a></li><li class="chapter-item expanded "><a href="../multilang/assignment.html"><strong aria-hidden="true">3.3.</strong> Assignment</a></li><li class="chapter-item expanded "><a href="../multilang/module.html"><strong aria-hidden="true">3.4.</strong> Module</a></li><li class="chapter-item expanded "><a href="../multilang/function.html"><strong aria-hidden="true">3.5.</strong> Functional Programming</a></li><li class="chapter-item expanded "><a href="../multilang/object.html"><strong aria-hidden="true">3.6.</strong> Object-oriented Programming</a></li><li class="chapter-item expanded "><a href="../multilang/generic.html" class="active"><strong aria-hidden="true">3.7.</strong> Generic</a></li><li class="chapter-item expanded "><a href="../multilang/expr.html"><strong aria-hidden="true">3.8.</strong> Expression and Statement</a></li></ol></li><li class="chapter-item expanded "><a href="../languages/index.html"><strong aria-hidden="true">4.</strong> Languages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../languages/python.html"><strong aria-hidden="true">4.1.</strong> Python</a></li><li class="chapter-item expanded "><a href="../languages/c-cpp.html"><strong aria-hidden="true">4.2.</strong> C / C++</a></li><li class="chapter-item expanded "><a href="../languages/matlab-en.html"><strong aria-hidden="true">4.3.</strong> Matlab (EN)</a></li><li class="chapter-item expanded "><a href="../languages/latex-math.html"><strong aria-hidden="true">4.4.</strong> Latex Math (TODO)</a></li></ol></li><li class="chapter-item expanded "><a href="../webpages/index.html"><strong aria-hidden="true">5.</strong> Webpages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../webpages/html5.html"><strong aria-hidden="true">5.1.</strong> HTML5 &amp; CSS &amp; Markdown</a></li></ol></li><li class="chapter-item expanded "><a href="../data-format/index.html"><strong aria-hidden="true">6.</strong> Data Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-format/yaml.html"><strong aria-hidden="true">6.1.</strong> YAML</a></li></ol></li><li class="chapter-item expanded "><a href="../str-parsing/index.html"><strong aria-hidden="true">7.</strong> String Parsing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../str-parsing/re.html"><strong aria-hidden="true">7.1.</strong> Regular Expression</a></li><li class="chapter-item expanded "><a href="../str-parsing/syntax.html"><strong aria-hidden="true">7.2.</strong> Syntax</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../it-intro.html">Keywords</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Program Learning</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="generic"><a class="header" href="#generic">Generic</a></h1>
+<p><strong>泛型</strong>的主要目的是<strong>藉由參數創造類型</strong>。打個比方，在 Rust 中 32 位元整數的陣列類型寫為 <code>[i32]</code>，而 32 位元浮點數的陣列 (array) 類型寫為 <code>[f32]</code>，而陣列寫做 <code>[T]</code>，其中 <code>T</code> 是一個類型的代號，用來「泛化」的指稱任何陣列類型。除了用類型作為參數，還可以用定值作為參數，例如陣列是有長度的，不同長度的陣列算是不同類型，記為 <code>[T; N]</code>，而 <code>N</code> 就是一種定值參數。這些參數又稱為<strong>模板參數 (template parameter)</strong>。</p>
+<p>另一個功用在於解決繼承的煩惱，如果我們為類型設下了<strong>條件</strong>，那程式碼就能允許使用這個類型了，以下用「支援加法運算子」來當範例。</p>
+<p>先從傳統有繼承系統的程式語言為例，Python 支援加法運算子主要是覆蓋 <code>__add__</code> 方法，這種名稱樣式稱為<strong>魔法 (magic)</strong> 名稱，可以想像成 Python 的潛規則。<code>__add__</code> 方法也能視為 C++ 中的 <code>operator+</code> 方法。</p>
+<pre><code class="language-python">from typing import TypeVar, Protocol
+
+T = TypeVar(&quot;T&quot;)
+R = TypeVar(&quot;R&quot;)
+
+class Add(Protocol[T, R]):
+    def __add__(self, rhs: T) -&gt; R:
+        ...
+
+def plus(a: Add[T, R], b: T) -&gt; R:
+    return a + b
+</code></pre>
+<p>在 Python 3.8 中終於推出了「協議 (protocol)」類型，當用作類型標示時，代表只要輸入的類型有該方法或成員即滿足條件。不過得重申一次 Python 是動態語言，以上僅對靜態分析有用。C++20 則是稱為「概念 (concept)」，詳見：<a href="https://en.cppreference.com/w/cpp/language/constraints">https://en.cppreference.com/w/cpp/language/constraints</a>。在這之前，C++ 的泛型功能僅支援模板，所有類型都能接受，且在編譯時才會提示錯誤。</p>
+<p>不過這些都只是附加一個條件在類型標註上。Rust 延伸自 Java 的介面 (interface) 概念，稱為特徵 (trait)，讓這些條件參與到程式設計中。順帶一題，Java 的繼承系統沒有多重繼承，算是兼容兩種概念。</p>
+<p>以下是 Rust 中對加法運算子的 trait。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub trait Add&lt;Rhs = Self&gt; {
+    type Output;
+
+    #[must_use]
+    fn add(self, rhs: Rhs) -&gt; Self::Output;
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>其中，「實作」<code>Add</code> trait 的類型可視作 <code>A</code>；上面的 <code>Rhs</code> 模板參數可視作 <code>B</code>；最後 <code>Add::Output</code> 這個類型別名 (type alias) 可視作 <code>C</code>，即 <code>A + B = C</code> 的關係。以下為實作範例：</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">use std::ops::Add;
+</span>#[derive(Debug)]
+struct Time(u64);
+
+struct Duration{
+    sec: u64,
+};
+
+impl Add for Time {
+    type Output = Time;
+
+    fn add(self, rhs: Self) -&gt; Self::Output {
+        // Tuple structure 的成員存取是用欄位順序
+        Self(self.0 + rhs.0)
+    }
+}
+
+impl Add&lt;Duration&gt; for Time {
+    type Output = Time;
+
+    fn add(self, rhs: Duration) -&gt; Self::Output {
+        Self(self.0 + rhs.sec)
+    }
+}
+
+println!(&quot;{:?}&quot;, Time(20) + Time(30));
+println!(&quot;{:?}&quot;, Time(20) + Duration { sec: 30 });
+<span class="boring">}
+</span></code></pre></pre>
+<p>上面的範例可以看到，<code>impl A for B</code> 語句僅能為兩者實作一次，不過有模板參數的 trait 可以實作多次，第一次為 <code>Add&lt;Time&gt;</code>，第二次為 <code>Add&lt;Duration&gt;</code>，因為類型和 trait 只要搭配不同模板參數，就會被視為不一樣。</p>
+<p>至於要將 trait 應用到類型標註中，觀念就很重要了：</p>
+<ul>
+<li>Trait <strong>不是</strong>類型，而是類型的<strong>條件</strong>。因此 <code>impl A for B</code> 的 <code>A</code> 必須是 trait，<code>B</code> 必須是類型（<code>struct</code>、<code>enum</code>、<code>union</code> 皆可），在這個區塊內，<code>self</code> 和 <code>Self</code> <strong>永遠</strong>是指 <code>B</code>，只是剛好也滿足 <code>A</code>。定義 <code>A</code> 時也是如此，不過 <code>B</code> 還不存在，只會有自身條件可用。</li>
+<li>條件可以有<strong>先決條件</strong>，如 <code>Copy</code> trait 必須先實作 <code>Clone</code> trait，<code>Clone</code> 提供了複製的能力，<code>Copy</code> 表示在指派過程中會採取複製。</li>
+<li>條件可以<strong>累加</strong>，所以 trait 可以用加法運算子相加，這樣必須滿足全部要求。如 <code>Copy + Debug</code> 代表類型必須實作 <code>Copy</code> trait 和 <code>Debug</code> trait。由於 trait 可能有先決條件，這些行為算是聯集，重複的要求不會影響條件。</li>
+<li>模板參數是<strong>類型</strong>，可以加上條件。</li>
+<li>類型別名也是<strong>類型</strong>，在定義 trait 時可以加上條件。</li>
+<li>條件裡的相關名稱衝突時，可以使用 <code>&lt;A as Add&gt;::Output</code> 語法指定名稱。</li>
+</ul>
+<p>實際應用中，函數可以加上模板：</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">use std::ops::Add;
+</span>fn plus&lt;A, B&gt;(a: A, b: B) -&gt; A::Output
+where
+    A: Add&lt;B&gt;,
+{
+    a + b
+}
+
+println!(&quot;{}&quot;, plus(10., 20.));
+<span class="boring">}
+</span></code></pre></pre>
+<p>模板參數的條件也可以都寫在尖括弧中，如 <code>&lt;A: Add&lt;B&gt;, B&gt;</code>，不過巢括弧比較難看，可以用 <code>where</code> 關鍵字統一擺到最後面條列。</p>
+<p>若不使用 trait，單純使用類型的模板也可以，以下是範例：</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Handler&lt;T&gt; {
+    inner: T,
+}
+
+impl&lt;T&gt; Clone for Handler&lt;T&gt;
+where
+    T: Clone,
+{
+    fn clone(&amp;self) -&gt; Self {
+        Self { inner: self.inner.clone() }
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>上面的實作區塊中新增了模板參數，以及 <code>where</code> 的補充語句。在函式中的模版參數，是來自於呼叫時；而實作區塊的模版參數，則是在創造實例或呼叫靜態方法時。上面的實作區塊表示，當 <code>inner</code> 欄位的類型有實作 <code>Clone</code> trait 的話，<code>Handler</code> 類型也會實作 <code>Clone</code>。</p>
+<p>當然，如果一開始限制 <code>inner</code> 的話也可以，這樣直接由派生巨集來產生實作區塊就好。</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>#[derive(Clone)]
+struct Handler&lt;T: Clone&gt; {
+    inner: T,
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>在大多情況下，Rust 會自動填入模板參數的類型，如容器類型 <code>Vec&lt;T&gt;</code> 可以在 <code>Vec::push</code> 呼叫時推斷類型。若要主動填入模板參數，可以使用名稱空間存取運算子 <code>::</code> 在後方，如呼叫 <a href="https://doc.rust-lang.org/std/vec/struct.Vec.html#method.new"><code>Vec::&lt;i32&gt;::new</code></a> 能夠填入 <code>Vec</code> 類型的模板；<a href="https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.collect"><code>Iterator::collect::&lt;Vec&lt;_&gt;&gt;</code></a> 能夠填入 <code>Iterator::collect</code> 的模板，底線的部份則是交由編譯器推導的必填欄位，可選欄位可不輸入。</p>
+<p>上面提到的「先決條件」則是在 trait 定義時就要使用，如 <code>Copy</code> trait 的定義：</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub trait Copy: Clone {}
+<span class="boring">}
+</span></code></pre></pre>
+<p>由於 <code>Copy</code> trait 是一種<strong>標記 (marker)</strong> 用的 trait，因此沒有任何要求，它的用途之前也都提過了。類似的例子如 <code>Sized</code> trait，表示已知大小的類型，動態大小的類型會寫上 <code>?Sized</code>，而反向條件目前還未支援。要創造一種標記式的 trait，除了定義先決條件外，還可以實作給全部符合條件的對象，如下面所示：</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub trait Marker: Clone {}
+
+impl&lt;T: Clone&gt; Marker for T {}
+<span class="boring">}
+</span></code></pre></pre>
+<p>在 Rust 中，實作語句 <code>impl A for B</code> 除了僅能實作一次，且只能在 <code>A</code> 或 <code>B</code> 其一是在與定義位於同一個專案（稱為 crate）中才行，以防尋找語句上的問題。但是 <code>impl A</code> 語句倒是不用配合 trait 必須一次實作完的限制，所以可以分散在同一個專案內的不同模組。在語法上，實作語句存在於任意模組即可，是不用導入的，不過與 trait 有關的方法必須導入該 trait。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../multilang/object.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../multilang/expr.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../multilang/object.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../multilang/expr.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
