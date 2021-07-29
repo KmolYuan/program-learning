@@ -10,6 +10,7 @@
   + [Module](multilang/module.md)
   + [Functional Programming](multilang/function.md)
   + [Object-oriented Programming](multilang/object.md)
+  + [Generic](multilang/generic.md)
   + [Expression and Statement](multilang/expr.md)
 + [Languages](languages/README.md)
   + [Python](languages/python.md)
