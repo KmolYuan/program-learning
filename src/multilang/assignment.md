@@ -146,9 +146,7 @@ Rust 中呼叫方法 (method) 時會自動轉換自身（用關鍵字 `self` 代
 
 ## Reference Counted
 
-在程式語言中，通常會有**記憶體管理 (memory management)** 系統。短暫的執行區稱為 stack，用來作為部份資料生命週期的判定；而必須跨越多個執行區、太龐大或長期使用的資料則會放置在 heap。Rust 的所有權系統都是在 stack 間移動，不過為了達成跨執行緒存取，必須將資料轉移至 heap，這時就必須使用原始指標達成。
-
-**參照計數**的概念在於，所有的資料都存於 heap，當新增「變數」（Python 稱為「名稱 (name)」）時，就會增加計數器；當參照的數量變成 0 時，就會刪除資料。例如 Java、JavaScript 或 Python 這種只有參照計數系統的程式語言，就是用模擬 stack 的方式移除資料的引用。不過，完全以參照計數為主的程式語言便需要一套**垃圾收集 (garbage collection)** 系統，移除長久未使用的變數，它們可能在載入的過程中遺留下來，造成另類的記憶體洩漏。
+**參照計數**的概念在於，所有的資料都存於 heap（詳見[記憶體管理](memory.md)），當新增「變數」（Python 稱為「名稱 (name)」）時，就會增加計數器；當參照的數量變成 0 時，就會刪除資料。例如 Java、JavaScript 或 Python 這種只有參照計數系統的程式語言，就是用模擬 stack 的方式移除資料的引用。不過，完全以參照計數為主的程式語言便需要一套**垃圾收集 (garbage collection)** 系統，移除長久未使用的變數，它們可能在載入的過程中遺留下來，造成另類的記憶體洩漏。
 
 在 Rust 中，[`std::rc::Rc`](https://doc.rust-lang.org/std/rc/struct.Rc.html) 和 [`std::sync::Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html) 是標準庫 (standard library) 提供的參照計數器，`Rc` 是單執行緒使用的，可以應用於在容器之間分享資料；`Arc` 則是多執行緒使用的，可以在不同執行緒間分享資料。若沒有多執行緒用途，`Rc` 存取的速度會較好。
 

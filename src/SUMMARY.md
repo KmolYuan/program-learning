@@ -5,6 +5,7 @@
   + [Git](vc/git.md)
 + [Multi-Language Learning](multilang/README.md)
   + [Control Flow](multilang/control-flow.md)
+  + [Memory Management](multilang/memory.md)
   + [Assignment](multilang/assignment.md)
   + [Module](multilang/module.md)
   + [Functional Programming](multilang/function.md)
