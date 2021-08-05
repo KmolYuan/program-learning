@@ -6,8 +6,6 @@
         <title>Program Learning</title>
         <meta name="robots" content="noindex" />
         <!-- Custom HTML head -->
-        
-
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="程式入門">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -86,7 +84,6 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -1114,7 +1111,7 @@ println!(&quot;{}&quot;, func2(s));
 <span class="boring">}
 </span></code></pre></pre>
 <p>上面的函式 <code>func1</code> 是一般的函式，函式 <code>func2</code> 是編譯器自動推導的標註樣式。在 Rust 中的指派取址時才可以標註生命週期變數，名稱由單引號開頭，如 <code>'a</code>。生命週期變數的推導時間跟其他模板參數一樣，用途是比較參照的引用時間必須<strong>小於</strong>的生命週期。所以範例的程式碼表示，變數 <code>s</code> 必須在生命週期 <code>'a</code> 以內，而呼叫的 <code>str::strip_prefix</code> 會傳回一小段分割參照，表示移除前綴後的字串結果。</p>
-<p>通常使用分割器 (spliter) 製作的參照是引用自原始資料，因此 <code>&quot;123&quot;</code> 是 <code>&quot;abc123&quot;</code> 的一部分，生命週期要小於變數 <code>s</code>。</p>
+<p>通常使用分割器 (spliter) 製作的參照是引用自原始資料，因此 <code>&quot;123&quot;</code> 是 <code>&quot;abc123&quot;</code> 的一部分，生命週期要小於變數 <code>s</code>。若是長久存在的變數，則會標示為特殊的名稱 <code>'static</code>，定義時則會使用 <code>static</code> 關鍵字。</p>
 <p>同樣的，若是標註在類型、trait 與實作區塊的生命週期變數，該參照和其容器的生命週期必須比原本資料短。在任何類型中如果有參照欄位，都需要在模板添加生命週期變數。不過，其他時候大都可以自動推導，其他如閉包內的參照輸入可能就必須標示。</p>
 <pre><pre class="playground"><code class="language-rust edition2018">
 <span class="boring">#![allow(unused)]
